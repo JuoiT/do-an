@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Coupon extends Model
+class Comment extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = "coupons";
-    protected $fillable = ['name', 'status', 'value', 'start_at', 'end_at', 'limit', 'description'];
+    protected $fillable = ['product_id', 'blog_id', 'user_id', 'status', 'content'];
 }

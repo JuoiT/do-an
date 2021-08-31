@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCouponsTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,19 @@ class CreateCouponsTable extends Migration
      */
     public function up()
     {
-        Schema::create('coupons', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->text('description')->nullable();
-            $table->tinyInteger('status')->default(0);
-            $table->tinyInteger('value');
-            $table->integer('limit');
-            $table->timestamp('start_at')->default();
-            $table->timestamp('end_at')->default();
-            $table->softDeletes();
+            $table->string('image');
+            $table->float('price');
+            $table->float('sale_price')->default(0);
+            $table->bigInteger('category_id')->unsigned();
             $table->timestamps();
+            $table->tinyInteger('status')->default(1);
+            $table->text('description')->nullable();
+
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->softDeletes();
             $table->dropSoftDeletes();
         });
     }
@@ -35,6 +37,6 @@ class CreateCouponsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coupons');
+        Schema::dropIfExists('products');
     }
 }

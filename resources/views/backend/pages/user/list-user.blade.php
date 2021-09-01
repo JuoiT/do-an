@@ -19,7 +19,7 @@
         <div class="col s12 m6 l8">
             <div class="card subscriber-list-card animate fadeRight">
                 <div class="card-content pb-1">
-                    <h4 class="card-title mb-0">Danh sách order</h4>
+                    <h4 class="card-title mb-0">Danh sách khách hàng</h4>
                 </div>
                 <table class="subscription-table responsive-table highlight">
                     <thead>
@@ -35,7 +35,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($list_order as $value)
+                        @foreach($list_user as $value)
                         <tr>
                             <td>
                                 {{$loop->index+1}}
@@ -63,23 +63,23 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{route('order.show', $value->id)}}" class="badge green lighten-5 green-text text-accent-4">Detail</a>
+                                <a href="{{route('user.show', $value->id)}}" class="badge green lighten-5 green-text text-accent-4">Detail</a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
                 <!-- <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
-                    if($list_order->currentPage() != 1)
-                    <a href="($list_order->previousPageUrl())" class=" paginate_button previous" aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
+                    if($list_user->currentPage() != 1)
+                    <a href="($list_user->previousPageUrl())" class=" paginate_button previous" aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
                     <span>
                     endif
-                    for($i=1; $i<=$list_order->lastpage(); $i++)
-                        <a href="($list_order->url($i))" class="($i == $list_order->currentPage() ? 'current' : 'd-none') paginate_button" aria-controls="data-table-contact" >($i)</a>
+                    for($i=1; $i<=$list_user->lastpage(); $i++)
+                        <a href="($list_user->url($i))" class="($i == $list_user->currentPage() ? 'current' : 'd-none') paginate_button" aria-controls="data-table-contact" >($i)</a>
                     endfor
-                    if($list_order->currentPage() != $list_order->lastpage())
+                    if($list_user->currentPage() != $list_user->lastpage())
                     </span>
-                    <a href="($list_order->nextPageUrl())" class=" paginate_button next" aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
+                    <a href="($list_user->nextPageUrl())" class=" paginate_button next" aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
                     endif
                 </div> -->
             </div>

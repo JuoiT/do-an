@@ -86,23 +86,17 @@ var x = location.href;
 
         <!-- People -->
 
-        <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/user'|Request::url() === 'http://127.0.0.1:8000/admin/user/create') ? 'active' : ''}} bold">
-            <a class="collapsible-header waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin/user'|Request::url() === 'http://127.0.0.1:8000/admin/user/create') ? 'active' : ''}}" href="JavaScript:void(0)">
+        <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/user') ? 'active' : ''}} bold">
+            <a class="collapsible-header waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin/user') ? 'active' : ''}}" href="JavaScript:void(0)">
                 <i class="material-icons">people</i>
                 <span class="menu-title" data-i18n="Dashboard">People</span>
             </a>
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/user') ? 'active' : ''}}">
-                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/user') ? 'active' : ''}}" href="">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/user') ? 'active' : ''}}" href="{{route('user.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách users</span>
-                        </a>
-                    </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/user/create') ? 'active' : ''}}">
-                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/user/create') ? 'active' : ''}}" href="">
-                            <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="eCommerce">Thêm mới users</span>
+                            <span data-i18n="Modern">Danh sách khách hàng</span>
                         </a>
                     </li>
                 </ul>
@@ -119,13 +113,13 @@ var x = location.href;
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner') ? 'active' : ''}}">
-                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner') ? 'active' : ''}}" href="">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner') ? 'active' : ''}}" href="{{route('banner.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
                             <span data-i18n="Modern">Danh sách banner</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner/create') ? 'active' : ''}}">
-                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner/create') ? 'active' : ''}}" href="">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner/create') ? 'active' : ''}}" href="{{route('banner.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
                             <span data-i18n="eCommerce">Thêm mới banner</span>
                         </a>
@@ -144,13 +138,13 @@ var x = location.href;
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide') ? 'active' : ''}}">
-                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide') ? 'active' : ''}}" href="">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide') ? 'active' : ''}}" href="{{route('slide.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
                             <span data-i18n="Modern">Danh sách slide</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide/create') ? 'active' : ''}}">
-                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide/create') ? 'active' : ''}}" href="">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide/create') ? 'active' : ''}}" href="{{route('slide.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
                             <span data-i18n="eCommerce">Thêm mới slide</span>
                         </a>
@@ -169,13 +163,13 @@ var x = location.href;
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog') ? 'active' : ''}}">
-                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog') ? 'active' : ''}}" href="">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog') ? 'active' : ''}}" href="{{route('blog.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
                             <span data-i18n="Modern">Danh sách blogs</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog/create') ? 'active' : ''}}">
-                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog/create') ? 'active' : ''}}" href="">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog/create') ? 'active' : ''}}" href="{{route('blog.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
                             <span data-i18n="eCommerce">Thêm mới blog</span>
                         </a>
@@ -186,15 +180,15 @@ var x = location.href;
 
         <!-- Order -->
 
-        <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/order'|Request::url() === 'http://127.0.0.1:8000/admin/order/create') ? 'active' : ''}} bold">
-            <a class="collapsible-header waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin/order'|Request::url() === 'http://127.0.0.1:8000/admin/order/create') ? 'active' : ''}}" href="JavaScript:void(0)">
+        <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/order') ? 'active' : ''}} bold">
+            <a class="collapsible-header waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin/order') ? 'active' : ''}}" href="JavaScript:void(0)">
                 <i class="material-icons">menu_book</i>
                 <span class="menu-title" data-i18n="Dashboard">Orders</span>
             </a>
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/order') ? 'active' : ''}}">
-                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/order') ? 'active' : ''}}" href="">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/order') ? 'active' : ''}}" href="{{route('order.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
                             <span data-i18n="Modern">Danh sách order</span>
                         </a>
@@ -202,6 +196,7 @@ var x = location.href;
                 </ul>
             </div>
         </li>
+
     </ul>
     <div class="navigation-background"></div>
     <a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only" href="#" data-target="slide-out">

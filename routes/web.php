@@ -11,7 +11,7 @@ use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ShipController;
 use App\Http\Controllers\Backend\SlideController;
-use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ShopController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,6 +59,18 @@ Route::group(['prefix'=>'admin'], function() {
 // Frontend
 Route::group(['prefix'=>'organic'], function() {
 
-    Route::get('home', [HomeController::class, 'home'])->name('home');
+    Route::get('home', [ShopController::class, 'home'])->name('home');
+
+    Route::get('product', [ShopController::class, 'product'])->name('product');
+
+    Route::get('detail', [ShopController::class, 'detail'])->name('detail');
+
+    Route::get('cart', [ShopController::class, 'cart'])->name('cart');
+
+    Route::get('checkout', [ShopController::class, 'checkout'])->name('checkout');
+
+    Route::get('whishlist', [ShopController::class, 'whishlist'])->name('whishlist');
+
+    Route::get('my_account', [ShopController::class, 'my_account'])->name('my_account');
 
 });

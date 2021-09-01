@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
+class CreateBannersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('banners', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name', 255)->unique();
-            $table->tinyInteger('status')->default(0);
+            $table->string('name', 255);
+            $table->string('image');
+            $table->string('link');
+
+            $table->tinyInteger('status')->default(1);
             $table->softDeletes();
             $table->dropSoftDeletes();
         });
@@ -30,6 +33,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('banners');
     }
 }

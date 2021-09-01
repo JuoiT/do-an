@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateCouponsTable extends Migration
@@ -20,8 +21,8 @@ class CreateCouponsTable extends Migration
             $table->tinyInteger('status')->default(0);
             $table->tinyInteger('value');
             $table->integer('limit');
-            $table->timestamp('start_at')->default();
-            $table->timestamp('end_at')->default();
+            $table->timestamp('start_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('end_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->softDeletes();
             $table->timestamps();
             $table->dropSoftDeletes();

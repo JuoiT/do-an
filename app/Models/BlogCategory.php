@@ -11,4 +11,9 @@ class BlogCategory extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['name', 'status'];
+
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
 }

@@ -11,4 +11,14 @@ class Rate extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['product_id', 'user_id', 'status', 'value'];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

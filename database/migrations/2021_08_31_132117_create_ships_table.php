@@ -19,9 +19,8 @@ class CreateShipsTable extends Migration
             $table->float('price');
             $table->tinyInteger('status')->default(1);
             $table->text('description')->nullable();
-            $table->timestamps();
             $table->softDeletes();
-            $table->dropSoftDeletes();
+            $table->timestamps();
         });
     }
 

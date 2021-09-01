@@ -17,13 +17,12 @@ class CreateOrderDetailsTable extends Migration
             $table->id();
             $table->bigInteger('order_id')->unsigned();
             $table->bigInteger('product_id')->unsigned();
-            $table->timestamps();
             $table->double('price');
             $table->integer('quantity')->unsigned();
             $table->foreign('order_id')->references('id')->on('orders');
             $table->foreign('product_id')->references('id')->on('products');
             $table->softDeletes();
-            $table->dropSoftDeletes();
+            $table->timestamps();
         });
     }
 

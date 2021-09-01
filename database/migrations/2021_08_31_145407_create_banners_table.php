@@ -15,14 +15,12 @@ class CreateBannersTable extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name', 255);
             $table->string('image');
             $table->string('link');
-
             $table->tinyInteger('status')->default(1);
             $table->softDeletes();
-            $table->dropSoftDeletes();
+            $table->timestamps();
         });
     }
 

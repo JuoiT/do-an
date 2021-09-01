@@ -20,13 +20,11 @@ class CreateProductsTable extends Migration
             $table->float('price');
             $table->float('sale_price')->default(0);
             $table->bigInteger('category_id')->unsigned();
-            $table->timestamps();
             $table->tinyInteger('status')->default(1);
             $table->text('description')->nullable();
-
             $table->foreign('category_id')->references('id')->on('categories');
             $table->softDeletes();
-            $table->dropSoftDeletes();
+            $table->timestamps();
         });
     }
 

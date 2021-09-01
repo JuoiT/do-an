@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 // Backend
 Route::group(['prefix'=>'admin'], function() {
 
@@ -56,6 +57,7 @@ Route::group(['prefix'=>'admin'], function() {
     Route::resource('coupon', CouponController::class);
 
 });
+
 // Frontend
 Route::group(['prefix'=>'organic'], function() {
 

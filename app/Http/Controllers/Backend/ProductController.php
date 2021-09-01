@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -14,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $list_product = [];
+        $list_product = Product::paginate(5);
         return view('backend.pages.product.list-product', compact('list_product'));
     }
 
@@ -25,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $category = [];
+        $category = Category::all();
         return view('backend.pages.product.add-product', compact('category'));
     }
 

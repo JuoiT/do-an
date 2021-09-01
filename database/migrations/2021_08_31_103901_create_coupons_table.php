@@ -25,7 +25,6 @@ class CreateCouponsTable extends Migration
             $table->timestamp('end_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->softDeletes();
             $table->timestamps();
-            $table->dropSoftDeletes();
         });
     }
 

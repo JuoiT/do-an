@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Category\AddCategoryRequest;
+use App\Http\Requests\Category\EditCategoryRequest;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $list_category = [];
+        $list_category = Category::paginate(5);
         return view('backend.pages.category.list-category', compact('list_category'));
     }
 
@@ -34,9 +37,14 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddCategoryRequest $request)
     {
-        //
+        $category = Category::create($request->all());
+        if ($category) {
+            return redirect()->route('category.index')->with('success', 'Thêm mới danh mục thành công!');
+        } else {
+            return redirect()->back()->with('error', 'Thêm mới danh mục thất bại!');
+        }
     }
 
     /**
@@ -58,7 +66,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('backend.pages.category.edit-category', compact('category'));
     }
 
     /**
@@ -68,9 +77,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditCategoryRequest $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->update($request->all());
+        if ($category) {
+            return redirect()->route('category.index')->with('success', 'Sửa danh mục thành công!');
+        } else {
+            return redirect()->back()->with('error', 'Sửa danh mục thất bại!');
+        }
     }
 
     /**

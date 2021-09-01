@@ -31,7 +31,6 @@
                             <th>Price</th>
                             <th>Sale Price</th>
                             <th>Status</th>
-                            <th>Famous</th>
                             <th>Category</th>
                             <th>Action</th>
                         </tr>
@@ -66,13 +65,6 @@
                                 @endif
                             </td>
                             <td>
-                                @if($value->famous==1)
-                                <span class="badge green lighten-5 green-text text-accent-4">Có</span>
-                                @else
-                                <span class="badge pink lighten-5 pink-text text-accent-2">Không</span>
-                                @endif
-                            </td>
-                            <td>
                                 {{$value->category->name}}
                             </td>
                             <td>
@@ -89,19 +81,19 @@
                         @endforeach
                     </tbody>
                 </table>
-                <!-- <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
-                    if($list_product->currentPage() != 1)
-                    <a href="($list_product->previousPageUrl())" class=" paginate_button previous" aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
+                <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
+                    @if($list_product->currentPage() != 1)
+                    <a href="{{$list_product->previousPageUrl()}}" class=" paginate_button previous" aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
                     <span>
-                    endif
-                    for($i=1; $i<=$list_product->lastpage(); $i++)
-                        <a href="($list_product->url($i))" class="($i == $list_product->currentPage() ? 'current' : 'd-none') paginate_button" aria-controls="data-table-contact" >($i)</a>
-                    endfor
-                    if($list_product->currentPage() != $list_product->lastpage())
+                    @endif
+                    @for($i=1; $i<=$list_product->lastpage(); $i++)
+                        <a href="{{$list_product->url($i)}}" class="{{$i == $list_product->currentPage() ? 'current' : 'd-none'}} paginate_button" aria-controls="data-table-contact" >{{$i}}</a>
+                    @endfor
+                    @if($list_product->currentPage() != $list_product->lastpage())
                     </span>
-                    <a href="($list_product->nextPageUrl())" class=" paginate_button next" aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
-                    endif
-                </div> -->
+                    <a href="{{$list_product->nextPageUrl()}}" class=" paginate_button next" aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

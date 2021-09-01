@@ -30,7 +30,6 @@
                         <tr>
                             <th>Name</th>
                             <th>Status</th>
-                            <th>Slug</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -42,7 +41,6 @@
                                     class="badge green lighten-5 green-text text-accent-4">Còn</span>
                                 @else<span class="badge pink lighten-5 pink-text text-accent-2">Hết</span>
                                 @endif</td>
-                            <td>{{$value->slug}}</td>
                             <td><a href="{{route('category.edit', $value->id)}}"><i class="badge green lighten-5 material-icons green-text">edit_note</i></a>
                                 <form style="display: inline-block !important;" action="{{route('category.destroy', $value->id)}}" method="POST">
                                     @method('DELETE')
@@ -55,6 +53,19 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
+                    @if($list_category->currentPage() != 1)
+                    <a href="{{$list_category->previousPageUrl()}}" class=" paginate_button previous" aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
+                    <span>
+                    @endif
+                    @for($i=1; $i<=$list_category->lastpage(); $i++)
+                        <a href="{{$list_category->url($i)}}" class="{{$i == $list_category->currentPage() ? 'current' : 'd-none'}} paginate_button" aria-controls="data-table-contact" >{{$i}}</a>
+                    @endfor
+                    @if($list_category->currentPage() != $list_category->lastpage())
+                    </span>
+                    <a href="{{$list_category->nextPageUrl()}}" class=" paginate_button next" aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

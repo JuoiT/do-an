@@ -17,9 +17,8 @@ class CreateBlogCategoriesTable extends Migration
             $table->id();
             $table->string('name', 255)->unique();
             $table->tinyInteger('status')->default(1);
-            $table->timestamps();
             $table->softDeletes();
-            $table->dropSoftDeletes();
+            $table->timestamps();
         });
     }
 

@@ -15,12 +15,11 @@ class CreatePaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('name', 255)->unique();
             $table->tinyInteger('status')->default(1);
             $table->text('description')->nullable();
             $table->softDeletes();
-            $table->dropSoftDeletes();
+            $table->timestamps();
         });
     }
 

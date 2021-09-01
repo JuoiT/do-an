@@ -178,6 +178,81 @@ var x = location.href;
             </div>
         </li>
 
+        <!-- Ship -->
+
+        <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/ship'|Request::url() === 'http://127.0.0.1:8000/admin/ship/create') ? 'active' : ''}} bold">
+            <a class="collapsible-header waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin/ship'|Request::url() === 'http://127.0.0.1:8000/admin/ship/create') ? 'active' : ''}}" href="JavaScript:void(0)">
+                <i class="material-icons">local_shipping</i>
+                <span class="menu-title" data-i18n="Dashboard">Ships</span>
+            </a>
+            <div class="collapsible-body">
+                <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/ship') ? 'active' : ''}}">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/ship') ? 'active' : ''}}" href="{{route('ship.index')}}">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="Modern">Danh sách ships</span>
+                        </a>
+                    </li>
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/ship/create') ? 'active' : ''}}">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/ship/create') ? 'active' : ''}}" href="{{route('ship.create')}}">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="eCommerce">Thêm mới ship</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <!-- Payment -->
+
+        <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/payment'|Request::url() === 'http://127.0.0.1:8000/admin/payment/create') ? 'active' : ''}} bold">
+            <a class="collapsible-header waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin/payment'|Request::url() === 'http://127.0.0.1:8000/admin/payment/create') ? 'active' : ''}}" href="JavaScript:void(0)">
+                <i class="material-icons">payments</i>
+                <span class="menu-title" data-i18n="Dashboard">Payments</span>
+            </a>
+            <div class="collapsible-body">
+                <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/payment') ? 'active' : ''}}">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/payment') ? 'active' : ''}}" href="{{route('payment.index')}}">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="Modern">Danh sách payments</span>
+                        </a>
+                    </li>
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/payment/create') ? 'active' : ''}}">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/payment/create') ? 'active' : ''}}" href="{{route('payment.create')}}">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="eCommerce">Thêm mới payment</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <!-- Coupons -->
+
+        <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/coupon'|Request::url() === 'http://127.0.0.1:8000/admin/coupon/create') ? 'active' : ''}} bold">
+            <a class="collapsible-header waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin/coupon'|Request::url() === 'http://127.0.0.1:8000/admin/coupon/create') ? 'active' : ''}}" href="JavaScript:void(0)">
+                <i class="material-icons">savings</i>
+                <span class="menu-title" data-i18n="Dashboard">Coupons</span>
+            </a>
+            <div class="collapsible-body">
+                <ul class="collapsible collapsible-sub" data-collapsible="accordion">
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/coupon') ? 'active' : ''}}">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/coupon') ? 'active' : ''}}" href="{{route('coupon.index')}}">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="Modern">Danh sách coupons</span>
+                        </a>
+                    </li>
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/coupon/create') ? 'active' : ''}}">
+                        <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/coupon/create') ? 'active' : ''}}" href="{{route('coupon.create')}}">
+                            <i class="material-icons">radio_button_unchecked</i>
+                            <span data-i18n="eCommerce">Thêm mới coupon</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
         <!-- Order -->
 
         <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/order') ? 'active' : ''}} bold">

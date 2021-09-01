@@ -3,10 +3,13 @@
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\HomeAdminController;
 use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\ProductController;
+use App\Http\Controllers\Backend\ShipController;
 use App\Http\Controllers\Backend\SlideController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +48,12 @@ Route::group(['prefix'=>'admin'], function() {
     Route::resource('slide', SlideController::class);
 
     Route::resource('user', CustomerController::class);
+
+    Route::resource('ship', ShipController::class);
+
+    Route::resource('payment', PaymentController::class);
+
+    Route::resource('coupon', CouponController::class);
 
 });
 // Frontend

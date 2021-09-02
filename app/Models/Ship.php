@@ -9,6 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Ship extends Model
 {
     use HasFactory, SoftDeletes;
-
+    protected $table = "ships";
     protected $fillable = ['name', 'price', 'description', 'status'];
 }

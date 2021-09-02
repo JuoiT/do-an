@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Banner\AddBannerRequest;
+use App\Http\Requests\Banner\EditBannerRequest;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class BannerController extends Controller
@@ -14,7 +17,7 @@ class BannerController extends Controller
      */
     public function index()
     {
-        $list_banner = [];
+        $list_banner = Banner::paginate(5);
         return view('backend.pages.banner.list-banner', compact('list_banner'));
     }
 
@@ -34,9 +37,14 @@ class BannerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddBannerRequest $request, Banner $add_banner)
     {
-        //
+        $banner = $add_banner->add_banner($request);
+        if ($banner) {
+            return redirect()->route('banner.index')->with('success', 'Thêm mới banner thành công!');
+        } else {
+            return redirect()->back()->with('error', 'Thêm mới banner thất bại!');
+        }
     }
 
     /**
@@ -58,7 +66,8 @@ class BannerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $banner = Banner::find($id);
+        return view('backend.pages.banner.edit-banner', compact('banner'));
     }
 
     /**
@@ -68,9 +77,14 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditBannerRequest $request, $id, Banner $edit_banner)
     {
-        //
+        $banner = $edit_banner->edit_banner($request, $id);
+        if ($banner) {
+            return redirect()->route('banner.index')->with('success', 'Sửa banner thành công!');
+        } else {
+            return redirect()->back()->with('error', 'Sửa banner thất bại!');
+        }
     }
 
     /**

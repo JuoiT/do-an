@@ -37,10 +37,13 @@
                         @foreach($list_category as $value)
                         <tr>
                             <td>{{$value->name}}</td>
-                            <td>@if($value->status==1)<span
-                                    class="badge green lighten-5 green-text text-accent-4">Còn</span>
-                                @else<span class="badge pink lighten-5 pink-text text-accent-2">Hết</span>
-                                @endif</td>
+                            <td>
+                                @if($value->status==1)
+                                <span class="badge green lighten-5 green-text text-accent-4">Còn</span>
+                                @else
+                                <span class="badge pink lighten-5 pink-text text-accent-2">Hết</span>
+                                @endif
+                            </td>
                             <td><a href="{{route('category.edit', $value->id)}}"><i class="badge green lighten-5 material-icons green-text">edit_note</i></a>
                                 <form style="display: inline-block !important;" action="{{route('category.destroy', $value->id)}}" method="POST">
                                     @method('DELETE')

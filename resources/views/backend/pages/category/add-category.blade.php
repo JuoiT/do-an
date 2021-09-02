@@ -17,6 +17,7 @@
                     <h4 class="card-title">Thêm mới danh mục</h4>
                     <form action="{{route('category.index')}}" method="POST">
                         @csrf
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <input type="text" id="name" value="{{old('name')}}" name="name" placeholder="Name">
@@ -26,6 +27,7 @@
                                 @endif
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <label class="active">Status</label>
@@ -41,8 +43,12 @@
                                         <span>Hết</span>
                                     </label>
                                 </p>
+                                @if($errors->has('status'))
+                                <span style="color: orangered;">{{$errors->first('status')}}</span>
+                                @endif
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <button
@@ -52,6 +58,7 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

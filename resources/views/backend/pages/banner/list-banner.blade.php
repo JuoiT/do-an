@@ -28,8 +28,8 @@
                             <th>STT</th>
                             <th>Name</th>
                             <th>Image</th>
-                            <th>Sale off</th>
-                            <th>Proviso</th>
+                            <th>Link</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -40,23 +40,19 @@
                                 {{$loop->index+1}}
                             </td>
                             <td>
-                                @if(strlen("$value->name")>15)
-                                {{substr("$value->name", 0, 15)}}...
-                                @else
-                                {{substr("$value->name", 0, 15)}}
-                                @endif
+                                {{$value->name}}
                             </td>
                             <td>
                                 <img style="width: 250px;" src="{{url('upload-banner')}}/{{$value->image}}" alt="">
                             </td>
                             <td>
-                                {{$value->sale_off}}%
+                                {{$value->link}}
                             </td>
                             <td>
-                                @if(strlen("$value->proviso")>25)
-                                {{substr("$value->proviso", 0, 25)}}...
+                                @if($value->status==1)
+                                <span class="badge green lighten-5 green-text text-accent-4">Hiện</span>
                                 @else
-                                {{substr("$value->proviso", 0, 25)}}
+                                <span class="badge pink lighten-5 pink-text text-accent-2">Ẩn</span>
                                 @endif
                             </td>
                             <td>
@@ -73,6 +69,19 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
+                    @if($list_banner->currentPage() != 1)
+                    <a href="{{$list_banner->previousPageUrl()}}" class=" paginate_button previous" aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
+                    <span>
+                    @endif
+                    @for($i=1; $i<=$list_banner->lastpage(); $i++)
+                        <a href="{{$list_banner->url($i)}}" class="{{$i == $list_banner->currentPage() ? 'current' : 'd-none'}} paginate_button" aria-controls="data-table-contact" >{{$i}}</a>
+                    @endfor
+                    @if($list_banner->currentPage() != $list_banner->lastpage())
+                    </span>
+                    <a href="{{$list_banner->nextPageUrl()}}" class=" paginate_button next" aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

@@ -43,6 +43,9 @@
                                         <span>Hết</span>
                                     </label>
                                 </p>
+                                @if($errors->has('status'))
+                                <span style="color: orangered;">{{$errors->first('status')}}</span>
+                                @endif
                             </div>
                         </div>
                         <div class="row">

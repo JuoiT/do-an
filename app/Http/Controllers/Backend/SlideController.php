@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Slide\AddSlideRequest;
+use App\Http\Requests\Slide\EditSlideRequest;
+use App\Models\Slide;
 use Illuminate\Http\Request;
 
 class SlideController extends Controller
@@ -14,7 +17,7 @@ class SlideController extends Controller
      */
     public function index()
     {
-        $list_slide = [];
+        $list_slide = Slide::paginate(5);
         return view('backend.pages.slide.list-slide', compact('list_slide'));
     }
 
@@ -34,9 +37,14 @@ class SlideController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddSlideRequest $request, Slide $add_slide)
     {
-        //
+        $slide = $add_slide->add_slide($request);
+        if ($slide) {
+            return redirect()->route('slide.index')->with('success', 'Thêm mới slide thành công!');
+        } else {
+            return redirect()->back()->with('error', 'Thêm mới slide thất bại!');
+        }
     }
 
     /**
@@ -58,7 +66,8 @@ class SlideController extends Controller
      */
     public function edit($id)
     {
-        //
+        $slide = Slide::find($id);
+        return view('backend.pages.slide.edit-slide', compact('slide'));
     }
 
     /**
@@ -68,9 +77,14 @@ class SlideController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditSlideRequest $request, $id, Slide $edit_slide)
     {
-        //
+        $slide = $edit_slide->edit_slide($request, $id);
+        if ($slide) {
+            return redirect()->route('slide.index')->with('success', 'Sửa slide thành công!');
+        } else {
+            return redirect()->back()->with('error', 'Sửa slide thất bại!');
+        }
     }
 
     /**

@@ -41,20 +41,31 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="number" value="{{$banner->sale_off}}" name="sale_off" placeholder="Sale off">
-                                <label class="active">Sale off</label>
-                                @if($errors->has('sale_off'))
-                                <span style="color: orangered;">{{$errors->first('sale_off')}}</span>
+                                <input type="text" value="{{$banner->link}}" name="link" placeholder="Link">
+                                <label class="active">Link</label>
+                                @if($errors->has('link'))
+                                <span style="color: orangered;">{{$errors->first('link')}}</span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="text" value="{{$banner->proviso}}" name="proviso" placeholder="Proviso">
-                                <label class="active">Proviso</label>
-                                @if($errors->has('proviso'))
-                                <span style="color: orangered;">{{$errors->first('proviso')}}</span>
+                                <label class="active">Status</label>
+                                <p>
+                                    <label>
+                                        <input name="status" type="radio" value="1" checked />
+                                        <span>Hiện</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input name="status" type="radio" value="0" />
+                                        <span>Ẩn</span>
+                                    </label>
+                                </p>
+                                @if($errors->has('status'))
+                                <span style="color: orangered;">{{$errors->first('status')}}</span>
                                 @endif
                             </div>
                         </div>

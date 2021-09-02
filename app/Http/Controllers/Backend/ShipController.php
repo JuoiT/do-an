@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Ship\AddShipRequest;
+use App\Http\Requests\Ship\EditShipRequest;
+use App\Models\Ship;
 use Illuminate\Http\Request;
 
 class ShipController extends Controller
@@ -14,7 +17,7 @@ class ShipController extends Controller
      */
     public function index()
     {
-        $list_ship = [];
+        $list_ship = Ship::paginate(5);
         return view('backend.pages.ship.list-ship', compact('list_ship'));
     }
 
@@ -34,9 +37,14 @@ class ShipController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddShipRequest $request)
     {
-        //
+        $ship = Ship::create($request->all());
+        if ($ship) {
+            return redirect()->route('ship.index')->with('success', 'Thêm mới đơn vị vận chuyển thành công!');
+        } else {
+            return redirect()->back()->with('error', 'Thêm mới đơn vị vận chuyển thất bại!');
+        }
     }
 
     /**
@@ -58,7 +66,8 @@ class ShipController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ship = Ship::find($id);
+        return view('backend.pages.ship.edit-ship', compact('ship'));
     }
 
     /**
@@ -68,9 +77,15 @@ class ShipController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditShipRequest $request, $id)
     {
-        //
+        $ship = Ship::find($id);
+        $ship->update($request->all());
+        if ($ship) {
+            return redirect()->route('ship.index')->with('success', 'Sửa thông tin đơn vị vận chuyển thành công!');
+        } else {
+            return redirect()->back()->with('error', 'Sửa thông tin đơn vị vận chuyển thất bại!');
+        }
     }
 
     /**

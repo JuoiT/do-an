@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Category;
+namespace App\Http\Requests\Payment;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EditCategoryRequest extends FormRequest
+class AddPaymentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class EditCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:categories,name,'.$this->id,
+            'name' => 'required|unique:payments',
             'status' => 'required|boolean',
         ];
     }
@@ -32,9 +32,9 @@ class EditCategoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => "Tên danh mục không được để rỗng!",
-            'name.unique' => "Danh mục $this->name đã tồn tại!",
-            'status.required' => "Trạng thái danh mục không được để rỗng!",
+            'name.required' => "Tên phương thức thanh toán không được để rỗng!",
+            'name.unique' => "Phương thức thanh toán $this->name đã tồn tại!",
+            'status.required' => "Trạng thái phương thức thanh toán không được để rỗng!",
             'status.boolean' => "Đừng phá nữa ba!",
         ];
     }

@@ -40,7 +40,7 @@
                             <li class="collection-item right-sidebar-chat-item sidenav-trigger display-flex avatar pl-5 pb-0"
                                 data-target="slide-out-chat">
                                 <span class="avatar-status avatar-online avatar-50"><img
-                                        src="{{url('assets-backend')}}/images/avatar/avatar-7.png" alt="avatar" />
+                                        src="{{ url('assets-backend') }}/images/avatar/avatar-7.png" alt="avatar" />
                                     <i></i>
                                 </span>
                                 <div class="user-content">
@@ -205,8 +205,8 @@
                                 <p class="timeline-text">Here are some news feed interactions
                                     concepts.</p>
                                 <div class="timeline-content">
-                                    <img src="{{url('assets-backend')}}/images/icon/pdf.png" alt="document" height="30"
-                                        width="25" class="mr-1">Registration.doc
+                                    <img src="{{ url('assets-backend') }}/images/icon/pdf.png" alt="document"
+                                        height="30" width="25" class="mr-1">Registration.doc
                                 </div>
                             </li>
                             <li class="timeline-items timeline-icon-indigo active">
@@ -215,8 +215,8 @@
                                 <p class="timeline-text">Here are some news feed interactions
                                     concepts.</p>
                                 <div class="timeline-content">
-                                    <img src="{{url('assets-backend')}}/images/icon/pdf.png" alt="document" height="30"
-                                        width="25" class="mr-1">Activity.doc
+                                    <img src="{{ url('assets-backend') }}/images/icon/pdf.png" alt="document"
+                                        height="30" width="25" class="mr-1">Activity.doc
                                 </div>
                             </li>
                             <li class="timeline-items timeline-icon-orange">
@@ -248,8 +248,8 @@
                                 <p class="timeline-text">Here are some news feed interactions
                                     concepts.</p>
                                 <div class="timeline-content">
-                                    <img src="{{url('assets-backend')}}/images/icon/pdf.png" alt="document" height="30"
-                                        width="25" class="mr-1">Database-log.doc
+                                    <img src="{{ url('assets-backend') }}/images/icon/pdf.png" alt="document"
+                                        height="30" width="25" class="mr-1">Database-log.doc
                                 </div>
                             </li>
                         </ul>
@@ -283,7 +283,7 @@
             <ul class="collection">
                 <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
                     <span class="avatar-status avatar-online avatar-50"><img
-                            src="{{url('assets-backend')}}/images/avatar/avatar-7.png" alt="avatar" />
+                            src="{{ url('assets-backend') }}/images/avatar/avatar-7.png" alt="avatar" />
                     </span>
                     <div class="user-content speech-bubble">
                         <p class="medium-small">hello!</p>
@@ -297,7 +297,7 @@
                 </li>
                 <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
                     <span class="avatar-status avatar-online avatar-50"><img
-                            src="{{url('assets-backend')}}/images/avatar/avatar-7.png" alt="avatar" />
+                            src="{{ url('assets-backend') }}/images/avatar/avatar-7.png" alt="avatar" />
                     </span>
                     <div class="user-content speech-bubble">
                         <p class="medium-small">I am looking for the best admin template.?</p>
@@ -317,7 +317,7 @@
 
                 <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
                     <span class="avatar-status avatar-online avatar-50"><img
-                            src="{{url('assets-backend')}}/images/avatar/avatar-7.png" alt="avatar" />
+                            src="{{ url('assets-backend') }}/images/avatar/avatar-7.png" alt="avatar" />
                     </span>
                     <div class="user-content speech-bubble">
                         <p class="medium-small">Ohh! very nice</p>
@@ -331,7 +331,7 @@
                 </li>
                 <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
                     <span class="avatar-status avatar-online avatar-50"><img
-                            src="{{url('assets-backend')}}/images/avatar/avatar-7.png" alt="avatar" />
+                            src="{{ url('assets-backend') }}/images/avatar/avatar-7.png" alt="avatar" />
                     </span>
                     <div class="user-content speech-bubble">
                         <p class="medium-small">How can I purchase it?</p>
@@ -356,7 +356,7 @@
                 </li>
                 <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
                     <span class="avatar-status avatar-online avatar-50"><img
-                            src="{{url('assets-backend')}}/images/avatar/avatar-7.png" alt="avatar" />
+                            src="{{ url('assets-backend') }}/images/avatar/avatar-7.png" alt="avatar" />
                     </span>
                     <div class="user-content speech-bubble">
                         <p class="medium-small">Ohh! Thank you.</p>
@@ -364,7 +364,7 @@
                 </li>
                 <li class="collection-item display-flex avatar pl-5 pb-0" data-target="slide-out-chat">
                     <span class="avatar-status avatar-online avatar-50"><img
-                            src="{{url('assets-backend')}}/images/avatar/avatar-7.png" alt="avatar" />
+                            src="{{ url('assets-backend') }}/images/avatar/avatar-7.png" alt="avatar" />
                     </span>
                     <div class="user-content speech-bubble">
                         <p class="medium-small">I will purchase it for sure.</p>
@@ -566,8 +566,8 @@
             <div class="input-field col s12">
                 <div class="switch">
                     Navbar Fixed
-                    <label class="float-right"><input class="navbar-fixed-checkbox" type="checkbox" checked /> <span
-                            class="lever ml-0"></span></label>
+                    <label class="float-right"><input class="navbar-fixed-checkbox" type="checkbox" checked />
+                        <span class="lever ml-0"></span></label>
                 </div>
             </div>
         </div>
@@ -594,35 +594,37 @@
 <footer
     class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
     <div class="footer-copyright">
-        <div class="container"><span>&copy; 2020 <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent"
-                    target="_blank">PIXINVENT</a> All rights reserved.</span><span
-                class="right hide-on-small-only">Design and Developed by <a
+        <div class="container"><span>&copy; 2020 <a
+                    href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PIXINVENT</a>
+                All rights reserved.</span><span class="right hide-on-small-only">Design and Developed by <a
                     href="https://pixinvent.com/">PIXINVENT</a></span></div>
     </div>
 </footer>
 
 <!-- BEGIN VENDOR JS-->
-<script src="{{url('assets-backend')}}/js/vendors.min.js"></script>
+<script src="{{ url('assets-backend') }}/js/vendors.min.js"></script>
 <!-- BEGIN VENDOR JS-->
 <!-- BEGIN PAGE VENDOR JS-->
-<script src="{{url('assets-backend')}}{{url('assets-backend')}}/vendors/chartjs/chart.min.js"></script>
-<script src="{{url('assets-backend')}}/vendors/chartist-js/chartist.min.js"></script>
-<script src="{{url('assets-backend')}}/vendors/chartist-js/chartist-plugin-tooltip.js"></script>
-<script src="{{url('assets-backend')}}/vendors/chartist-js/chartist-plugin-fill-donut.min.js"></script>
+<script src="{{ url('assets-backend') }}{{ url('assets-backend') }}/vendors/chartjs/chart.min.js"></script>
+<script src="{{ url('assets-backend') }}/vendors/chartist-js/chartist.min.js"></script>
+<script src="{{ url('assets-backend') }}/vendors/chartist-js/chartist-plugin-tooltip.js"></script>
+<script src="{{ url('assets-backend') }}/vendors/chartist-js/chartist-plugin-fill-donut.min.js"></script>
 <!-- END PAGE VENDOR JS-->
-    <script src="{{url('assets-backend')}}/vendors/dropify/js/dropify.min.js"></script>
+<script src="{{ url('assets-backend') }}/vendors/dropify/js/dropify.min.js"></script>
 <!-- BEGIN THEME  JS-->
-<script src="{{url('assets-backend')}}/js/plugins.min.js"></script>
-<script src="{{url('assets-backend')}}/js/search.min.js"></script>
-<script src="{{url('assets-backend')}}/js/custom/custom-script.min.js"></script>
-<script src="{{url('assets-backend')}}/js/scripts/customizer.min.js"></script>
+<script src="{{ url('assets-backend') }}/js/plugins.min.js"></script>
+<script src="{{ url('assets-backend') }}/js/search.min.js"></script>
+<script src="{{ url('assets-backend') }}/js/custom/custom-script.min.js"></script>
+<script src="{{ url('assets-backend') }}/js/scripts/customizer.min.js"></script>
 <!-- END THEME  JS-->
 <!-- BEGIN PAGE LEVEL JS-->
-<script src="{{url('assets-backend')}}/js/scripts/dashboard-modern.js"></script>
-<script src="{{url('assets-backend')}}/js/scripts/intro.min.js"></script>
+<script src="{{ url('assets-backend') }}/js/scripts/dashboard-modern.js"></script>
+<script src="{{ url('assets-backend') }}/js/scripts/intro.min.js"></script>
 <!-- END PAGE LEVEL JS-->
 <!-- BEGIN PAGE LEVEL JS-->
-<script src="{{url('assets-backend')}}/js/scripts/form-file-uploads.min.js"></script>
+<script src="{{ url('assets-backend') }}/js/scripts/form-file-uploads.min.js"></script>
+
+@yield('script')
 <!-- END PAGE LEVEL JS-->
 </body>
 

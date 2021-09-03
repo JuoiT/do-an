@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Product\AddProductRequest;
+use App\Http\Requests\Product\EditProductRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -16,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $list_product = Product::paginate(5);
+        $list_product = Product::with('category')->paginate(5);
         return view('backend.pages.product.list-product', compact('list_product'));
     }
 
@@ -37,9 +39,21 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddProductRequest $request, Product $product)
     {
-        //
+        // get product.image first, move uploaded image
+        $upImage = $request->image;
+        $imageName = time().$upImage->getClientOriginalName();
+        $upImage->move(config('const.imagePath'), $imageName);
+
+        // insert product to db
+        $insertedProduct = $product->add($request, $imageName);
+
+        // upload des_image
+        if ($request->des_image) {
+            $product->upDesImages($request->des_image, $insertedProduct->id);
+        }
+        return redirect(route('product.index'));
     }
 
     /**
@@ -61,7 +75,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $category = Category::all();
+        return view('backend.pages.product.edit-product', compact('product', 'category'));
     }
 
     /**
@@ -71,7 +87,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditProductRequest $request, $id)
     {
         //
     }

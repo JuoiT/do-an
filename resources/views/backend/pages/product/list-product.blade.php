@@ -29,7 +29,6 @@
                             <th>Name</th>
                             <th>Image</th>
                             <th>Price</th>
-                            <th>Sale Price</th>
                             <th>Status</th>
                             <th>Category</th>
                             <th>Action</th>
@@ -49,13 +48,16 @@
                                 @endif
                             </td>
                             <td>
-                                <img style="width: 150px;" src="{{url('upload')}}/{{$value->image}}" alt="">
+                                <img style="width: 150px;" src="{{url('product-images')}}/{{$value->image}}" alt="">
                             </td>
                             <td>
-                                {{$value->price}}
-                            </td>
-                            <td>
-                                {{$value->sale_price}}
+                                <span>
+                                    {{$value->price}}
+                                </span>
+                                <br>
+                                <span class="green-text" {{$value->sale_price==0?'hidden':''}}>
+                                    {{$value->sale_price}}
+                                </span>
                             </td>
                             <td>
                                 @if($value->status==1)

@@ -18,6 +18,7 @@
                     <form action="{{route('category.update', $category->id)}}" method="POST">
                         @method('PUT')
                         @csrf
+
                         <input type="hidden" value="{{$category->id}}" name="id">
                         <div class="row">
                             <div class="input-field col s12">
@@ -28,6 +29,7 @@
                                 @endif
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <label class="active">Status</label>
@@ -48,6 +50,7 @@
                                 @endif
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="input-field col s12">
                                 <button
@@ -57,6 +60,7 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>

@@ -34,7 +34,7 @@ class AddCategoryRequest extends FormRequest
         return [
             'name.required' => "Tên danh mục không được để rỗng!",
             'name.unique' => "Danh mục $this->name đã tồn tại!",
-            'status.required' => "Danh mục không được để rỗng!",
+            'status.required' => "Trạng thái danh mục không được để rỗng!",
             'status.boolean' => "Đừng phá nữa ba!",
         ];
     }

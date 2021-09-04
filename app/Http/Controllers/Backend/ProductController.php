@@ -7,7 +7,12 @@ use App\Http\Requests\Product\AddProductRequest;
 use App\Http\Requests\Product\EditProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+
+use function PHPUnit\Framework\fileExists;
 
 class ProductController extends Controller
 {
@@ -43,7 +48,7 @@ class ProductController extends Controller
     {
         // get product.image first, move uploaded image
         $upImage = $request->image;
-        $imageName = time().$upImage->getClientOriginalName();
+        $imageName = time() . $upImage->getClientOriginalName();
         $upImage->move(config('const.imagePath'), $imageName);
 
         // insert product to db
@@ -89,7 +94,32 @@ class ProductController extends Controller
      */
     public function update(EditProductRequest $request, $id)
     {
-        //
+        $product = new Product();
+        $productImage = new ProductImage();
+
+        $updateProduct = Product::find($id);
+        $imageName = $updateProduct->image;
+        $listOldDesImage = $productImage::where('product_id', $id)->get();
+
+        // get product.image first, move uploaded image
+        if ($request->image) {
+            $upImage = $request->image;
+            $imageName = time() . $upImage->getClientOriginalName();
+            $upImage->move(config('const.imagePath'), $imageName);
+
+            // delete old image
+            File::delete(config('const.imagePath').'/'.$updateProduct->image);
+        }
+
+        $updateProduct = $updateProduct->edit($updateProduct, $request, $imageName);
+        $updateProduct->save();
+
+        // upload new des image/ remove old des_image
+        if ($request->des_image) {
+            $product->removeOldDesImages($id);
+            $product->upDesImages($request->des_image, $id);
+        }
+        return redirect(route('product.index'));
     }
 
     /**

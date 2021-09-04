@@ -104,7 +104,7 @@
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="editor" value="" name="description" placeholder="Description">
+                                    <textarea id="editor" name="description" placeholder="Description">
                                         {{ old('description') }}
                                     </textarea>
                                     <label class="active">Description</label>

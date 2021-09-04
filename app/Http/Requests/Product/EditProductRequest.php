@@ -26,7 +26,8 @@ class EditProductRequest extends FormRequest
         return [
             'name' => 'required|max:255',
             'image' => 'image',
-            'des_image' => 'image',
+            'des_image' => 'array',
+            'des_image.*' => 'image|max:5000',
             'price' => 'required|numeric|min:0',
             'sale_price' => 'required|numeric|min:0',
             'description' => 'required|max:5000'
@@ -47,7 +48,7 @@ class EditProductRequest extends FormRequest
             'price.numeric|min' => "Giá không hợp lệ!",
 
             'sale_price.numeric|min' => "Giá sale không hợp lệ!",
-            
+
             'description.required' => "Mô tả không được để rỗng!",
             'description.max' => "Mô tả quá dài!",
         ];

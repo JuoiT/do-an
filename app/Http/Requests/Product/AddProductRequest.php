@@ -30,6 +30,7 @@ class AddProductRequest extends FormRequest
             'des_image.*' => 'image|max:5000',
             'price' => 'required|numeric|min:0',
             'sale_price' => 'required|numeric|min:0',
+            'category_id' => 'required',
             'description' => 'required|max:5000'
         ];
     }
@@ -49,6 +50,8 @@ class AddProductRequest extends FormRequest
             'price.numeric|min' => "Giá không hợp lệ!",
 
             'sale_price.numeric|min' => "Giá sale không hợp lệ!",
+
+            'category_id.required' => 'Cần chọn danh mục cho sản phẩm',
 
             'description.required' => "Mô tả không được để rỗng!",
             'description.max' => "Mô tả quá dài!",

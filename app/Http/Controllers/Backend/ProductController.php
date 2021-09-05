@@ -34,8 +34,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $category = Category::all();
-        return view('backend.pages.product.add-product', compact('category'));
+        $categories = Category::all();
+        return view('backend.pages.product.add-product', compact('categories'));
     }
 
     /**
@@ -81,8 +81,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        $category = Category::all();
-        return view('backend.pages.product.edit-product', compact('product', 'category'));
+        $categories = Category::all();
+        // $desImages = ProductImage::where('product_id', $id)->get();
+        // dd($desImages);
+        return view('backend.pages.product.edit-product', compact('product', 'categories', 'desImages'));
     }
 
     /**
@@ -130,6 +132,16 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        // move to trash, soft delete, withTrash to see
+        $product -> delete();
+    }
+
+    public function getTrashed()
+    {
+        $products = Product::onlyTrashed()->get();
+        foreach ($products as $pro){
+            dd($pro->name);
+        }
     }
 }

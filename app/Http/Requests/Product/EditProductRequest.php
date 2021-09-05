@@ -25,8 +25,8 @@ class EditProductRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'image' => 'image',
-            'des_image' => 'image',
+            'image' => 'required|image',
+            'des_image' => 'required|image',
             'price' => 'required|numeric|min:0',
             'sale_price' => 'required|numeric|min:0',
             'description' => 'required|max:5000'
@@ -39,15 +39,17 @@ class EditProductRequest extends FormRequest
             'name.required' => "Tên không được để rỗng!",
             'name.max' => "Tên quá dài!",
 
+            'image.required' => "Ảnh sản phẩm không được để rỗng!",
             'image.image' => "Ảnh không hợp lệ!",
 
+            'image.required' => "Ảnh mô tả sản phẩm không được để rỗng!",
             'des_image.image' => "Ảnh mô tả không hợp lệ!",
 
             'price.required' => "Giá không được để rỗng!",
             'price.numeric|min' => "Giá không hợp lệ!",
 
             'sale_price.numeric|min' => "Giá sale không hợp lệ!",
-            
+
             'description.required' => "Mô tả không được để rỗng!",
             'description.max' => "Mô tả quá dài!",
         ];

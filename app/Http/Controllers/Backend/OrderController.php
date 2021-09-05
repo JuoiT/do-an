@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\Else_;
 
 class OrderController extends Controller
 {
@@ -14,7 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $list_order = [];
+        $list_order = Order::orderBy('created_at', 'DESC')->paginate(5);
         return view('backend.pages.order.list-order', compact('list_order'));
     }
 
@@ -47,7 +50,9 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $customer = Order::find($id);
+        $detail = OrderDetail::where('order_id', $id)->get();
+        return view('backend.pages.order.detail', compact('customer', 'detail'));
     }
 
     /**
@@ -70,7 +75,15 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = Order::find($id);
+        if ($order->status > $request->status) {
+            return redirect()->back()->with('error', 'Sửa thông tin đơn hàng thất bại!');
+        }else {
+            $order->update([
+                'status' => $request->status,
+            ]);
+            return redirect()->back()->with('success', 'Sửa thông tin đơn hàng thành công!');
+        }
     }
 
     /**

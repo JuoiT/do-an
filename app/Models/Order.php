@@ -12,6 +12,19 @@ class Order extends Model
 
     protected $fillable = ['payment_id', 'ship_id', 'user_id', 'coupon_id', 'status', 'total_price', 'quantity', 'description'];
 
+    public function update_order($request, $id)
+    {
+        $update_order = Order::find($id);
+        if ($update_order->status > $request->status) {
+            return redirect()->back()->with('error', 'Sửa thông tin đơn hàng thất bại!');
+        }else {
+            $update_order->update([
+                'status' => $request->status,
+            ]);
+        }
+        return $update_order;
+    }
+
     public function payment()
     {
         return $this->hasOne(Payment::class);

@@ -36,6 +36,7 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="{{url('assets-backend')}}/css/custom/custom.css">
     <!-- END: Custom CSS-->
+    @yield('css');
 </head>
 <!-- END: Head-->
 

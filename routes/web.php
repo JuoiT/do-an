@@ -39,6 +39,7 @@ Route::group(['prefix'=>'admin'], function() {
     Route::resource('category', CategoryController::class);
 
     Route::resource('product', ProductController::class);
+    Route::get('/product.getTrashed', [ProductController::class, 'getTrashed'])->name('product.getTrashed');
 
     Route::resource('order', OrderController::class);
 

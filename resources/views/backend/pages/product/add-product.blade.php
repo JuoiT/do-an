@@ -90,7 +90,7 @@
                                     <div class="select-wrapper">
                                         <select name="category_id" id="input">
                                             {{-- <option value="" disabled="" selected>Choose category</option> --}}
-                                            @foreach ($category as $cate)
+                                            @foreach ($categories as $cate)
                                                 <option {{old('category_id')==$cate->id?'selected':''}} value="{{ $cate->id }}">{{ $cate->name }}</option>
                                             @endforeach
                                         </select>
@@ -103,7 +103,7 @@
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="editor" value="" name="description" placeholder="Description">
+                                    <textarea id="editor" name="description" placeholder="Description">
                                         {{ old('description') }}
                                     </textarea>
                                     <label class="active">Description</label>

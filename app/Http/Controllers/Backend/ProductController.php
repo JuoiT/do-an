@@ -7,7 +7,12 @@ use App\Http\Requests\Product\AddProductRequest;
 use App\Http\Requests\Product\EditProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+
+use function PHPUnit\Framework\fileExists;
 
 class ProductController extends Controller
 {
@@ -29,8 +34,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $category = Category::all();
-        return view('backend.pages.product.add-product', compact('category'));
+        $categories = Category::all();
+        return view('backend.pages.product.add-product', compact('categories'));
     }
 
     /**
@@ -41,6 +46,10 @@ class ProductController extends Controller
      */
     public function store(AddProductRequest $request, Product $product)
     {
+        // get product.image first, move uploaded image
+        $upImage = $request->image;
+        $imageName = time() . $upImage->getClientOriginalName();
+        $upImage->move(config('const.imagePath'), $imageName);
 
         // insert product to db
         $insertedProduct = $product->add($request);
@@ -72,8 +81,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        $category = Category::all();
-        return view('backend.pages.product.edit-product', compact('product', 'category'));
+        $categories = Category::all();
+        // $desImages = ProductImage::where('product_id', $id)->get();
+        // dd($desImages);
+        return view('backend.pages.product.edit-product', compact('product', 'categories', 'desImages'));
     }
 
     /**
@@ -85,7 +96,32 @@ class ProductController extends Controller
      */
     public function update(EditProductRequest $request, $id)
     {
-        //
+        $product = new Product();
+        $productImage = new ProductImage();
+
+        $updateProduct = Product::find($id);
+        $imageName = $updateProduct->image;
+        $listOldDesImage = $productImage::where('product_id', $id)->get();
+
+        // get product.image first, move uploaded image
+        if ($request->image) {
+            $upImage = $request->image;
+            $imageName = time() . $upImage->getClientOriginalName();
+            $upImage->move(config('const.imagePath'), $imageName);
+
+            // delete old image
+            File::delete(config('const.imagePath').'/'.$updateProduct->image);
+        }
+
+        $updateProduct = $updateProduct->edit($updateProduct, $request, $imageName);
+        $updateProduct->save();
+
+        // upload new des image/ remove old des_image
+        if ($request->des_image) {
+            $product->removeOldDesImages($id);
+            $product->upDesImages($request->des_image, $id);
+        }
+        return redirect(route('product.index'));
     }
 
     /**
@@ -96,6 +132,16 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        // move to trash, soft delete, withTrash to see
+        $product -> delete();
+    }
+
+    public function getTrashed()
+    {
+        $products = Product::onlyTrashed()->get();
+        foreach ($products as $pro){
+            dd($pro->name);
+        }
     }
 }

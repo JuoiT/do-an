@@ -36,7 +36,7 @@ class Product extends Model
         $imageName = time().$upImage->getClientOriginalName();
         $upImage->move(config('const.imagePath'), $imageName);
         $product = Product::create([
-            'name'=> trimm($req->name),
+            'name'=> trim($req->name),
             'price'=> $req->price,
             'sale_price'=> $req->sale_price,
             'image'=> $imageName,

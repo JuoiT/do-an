@@ -46,10 +46,6 @@ class ProductController extends Controller
      */
     public function store(AddProductRequest $request, Product $product)
     {
-        // get product.image first, move uploaded image
-        $upImage = $request->image;
-        $imageName = time() . $upImage->getClientOriginalName();
-        $upImage->move(config('const.imagePath'), $imageName);
 
         // insert product to db
         $insertedProduct = $product->add($request);
@@ -141,7 +137,7 @@ class ProductController extends Controller
     {
         $products = Product::onlyTrashed()->get();
         foreach ($products as $pro){
-            dd($pro->name);
+            dd($pro);
         }
     }
 }

@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
     public function home()
     {
-        return view('frontend.pages.home');
+        $new_product = Product::orderBy('created_at', 'DESC')->limit(5)->get();
+        return view('frontend.pages.home', compact('new_product'));
     }
 
     public function product()

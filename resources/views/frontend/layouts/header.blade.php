@@ -27,13 +27,12 @@
 
         <div id="contact">
             <p class="tel"><span class="color-text">Phone:</span>(+91)123456789</p>
-            <p class="email"><span class="color-text">Email:</span>inquiry@gmail.com</p>
+            <p class="email"><span class="color-text">Email:</span>kemkiuu@gmail.com</p>
         </div>
         <div class="select">
             <div id="language" class="language">
                 <div>
-                    <img src="{{url('assets-frontend')}}/images/flag-france.png" alt=""><span>FRENCH</span><i
-                        class="fal fa-angle-down icon-down"></i><span class="currency">
+                    <img src="{{url('assets-frontend')}}/images/flag-france.png" alt=""><span>FRENCH</span><i class="fal fa-angle-down icon-down"></i><span class="currency">
                         <ul class="select-lg">
                             <li><img src="{{url('assets-frontend')}}/images/flag-france.png" alt=""><span>FRENCH</span></li>
                             <li><img src="{{url('assets-frontend')}}/images/flag-vn.png" alt=""><span>VIET NAM</span></li>
@@ -51,8 +50,7 @@
                 </div>
             </div>
             <div class="account">
-                <p><i class="fal fa-user icon-user"></i><span>My Account</span><i
-                        class="fal fa-angle-down icon-down"></i></p>
+                <p><i class="fal fa-user icon-user"></i><span>My Account</span><i class="fal fa-angle-down icon-down"></i></p>
                 <ul class="list-account">
                     <li><a href="{{route('my_account')}}">My account</a></li>
                     <li><a href="{{route('whishlist')}}">Whishlist</a></li>

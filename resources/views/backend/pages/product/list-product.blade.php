@@ -44,11 +44,7 @@
                                         {{ $loop->index + 1 }}
                                     </td>
                                     <td>
-                                        @if (strlen(" $value->name") > 15)
-                                            {{ substr("$value->name", 0, 15) }}...
-                                        @else
-                                            {{ substr("$value->name", 0, 15) }}
-                                        @endif
+                                        {{$value->name}}
                                     </td>
                                     <td>
                                         <img style="width: 150px;" src="{{ url('product-images') }}/{{ $value->image }}"
@@ -89,8 +85,7 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                        <a href="{{ route('product.getTrashed') }}" class="red-text"><i
-                                class="badge red lighten-5 material-icons green-text"></i>trashed</a>
+                        <a href="{{ route('product.getTrashed') }}" class="red-text"><i class="material-icons left">delete_outline</i></a>
                     </table>
                     <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
                         @if ($list_product->currentPage() != 1)

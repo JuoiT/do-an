@@ -52,7 +52,7 @@
                     <div class="item">
                         <img src="{{url('assets-frontend')}}/images/fresh-fruits-img.jpg" alt="">
                         <p class="name-product">Fresh <span>Fruits</span></p>
-                        <p class="title">View Collections</p>
+                        <a class="title">View Collections</a>
                     </div><!-- End item-->
                 </div><!-- End product-item-->
 
@@ -60,7 +60,7 @@
                     <div class="item">
                         <img src="{{url('assets-frontend')}}/images/fresh-vegetables-img.jpg" alt="">
                         <p class="name-product">Fresh <span>Vegetables</span></p>
-                        <p class="title">View Collections</p>
+                        <a class="title">View Collections</a>
                     </div><!-- End item-->
                 </div><!-- End product-item-->
 
@@ -68,7 +68,7 @@
                     <div class="item">
                         <img src="{{url('assets-frontend')}}/images/organic-foods-img.jpg" alt="">
                         <p class="name-product">Organic <span>Foods</span></p>
-                        <p class="title">View Collections</p>
+                        <a class="title">View Collections</a>
                     </div><!-- End item-->
                 </div><!-- End product-item-->
             </div><!-- End product-row-->
@@ -81,93 +81,25 @@
         <img src="{{url('assets-frontend')}}/images/banner-product.png" alt="">
     </div>
     <div class="owl-product owl-carousel owl-theme">
-        <!-- Item 1 -->
+        @foreach($new_product as $value)
         <div class="item">
             <div class="item-bg">
                 <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
-                </div>
-            </div>
-            <div class="item-product">
-                <img src="{{url('assets-frontend')}}/images/tao_xanh.jpg" alt="">
-                <p class="name-product">Jessica Simpson Fruit's</p>
-                <p class="price"><span>$19.00</span><span class="del">$12.00</span></p>
-                <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
-            </div>
-        </div>
-        <!-- Item 2 -->
-        <div class="item">
-            <div class="item-bg">
-                <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
-                </div>
-            </div>
-            <div class="item-product">
-                <div class="sale">sale</div>
-                <img src="{{url('assets-frontend')}}/images/hong_xiem.jpg" alt="">
-                <p class="name-product">Jessica Simpson Fruit's</p>
-                <p class="price"><span>$23.00</span><span class="del">$12.00</span></p>
-                <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
-            </div>
-        </div>
-        <!-- Item 3 -->
-        <div class="item">
-            <div class="item-bg">
-                <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
-                </div>
-            </div>
-            <div class="item-product">
-                <img src="{{url('assets-frontend')}}/images/kiwi.jpg" alt="">
-                <p class="name-product">JLee Uniforms Vegetable's</p>
-                <p class="price"><span>$33.00</span><span class="del">$12.00</span></p>
-                <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
-            </div>
-        </div>
-        <!-- Item 4 -->
-        <div class="item">
-            <div class="item-bg">
-                <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
+                    <a href="{{route('whishlist')}}"><i class="fal fa-heart"></i></a>
+                    <a href="{{route('detail')}}"><i class="fal fa-eye"></i></a>
+                    <a href="{{route('cart')}}"><i class="far fa-shopping-basket"></i></a>
                 </div>
             </div>
             <div class="item-product">
                 <div class="new">new</div>
-                <img src="{{url('assets-frontend')}}/images/khoai.jpg" alt="">
-                <p class="name-product">Lee Uniforms Vegetable's</p>
-                <p class="price"><span>$25.00</span><span class="del">$12.00</span></p>
+                <div class="sale">sale</div>
+                <img src="{{url('product-images')}}/{{$value->image}}" alt="">
+                <p class="name-product">{{$value->created_at}}</p>
+                <p class="price"><span>$19.00</span><span class="del">$12.00</span></p>
                 <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
             </div>
         </div>
-        <!-- Item 5 -->
-        <div class="item">
-            <div class="item-bg">
-                <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
-                </div>
-            </div>
-            <div class="item-product">
-                <img src="{{url('assets-frontend')}}/images/dau_tay.jpg" alt="">
-                <p class="name-product">JLee Uniforms Vegetable's</p>
-                <p class="price"><span>$33.00</span><span class="del">$12.00</span></p>
-                <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div><!-- End Arrivars-->
 <div class="content">

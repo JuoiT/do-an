@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use App\Models\Filterable as ModelsFilterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 class Product extends Model
 {
-    use HasFactory, SoftDeletes, ModelsFilterable;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = ['name', 'status', 'image', 'price', 'sale_price', 'category_id', 'description'];
     protected $filterable = ['status', 'category_id'];
@@ -83,25 +83,70 @@ class Product extends Model
     }
 
     // For filter
-    public function filterName($query, $value)
-    {
-        return $query->where('name', 'LIKE', '%' . $value . '%');
-    }
-
-    // No more needed
-    // public function filterStatus($query, $value)
+    // public function scopeName($query, $request)
     // {
-    //     return $query->where('status', $value);
-    // }
-    // public function filterCategory($query, $value)
-    // {
-    //     return $query->where('category_id', $value);
+    //     if($request->name){
+    //         $query->where('name', 'LIKE', '%' . $request->name . '%');
+    //     }
+    //     return $query;
     // }
 
-    public function filterTrashed($query, $value)
-    {
-        if ($value == 'true') {
-            return $query->onlyTrashed();
-        }
-    }
+    // public function scopeStatus($query, $request)
+    // {
+    //     if($request->status){
+    //         $query->where('status', $request->status);
+    //     }
+    //     return $query;
+    // }
+
+    // public function scopeCategoryId($query, $request)
+    // {
+    //     if($request->category_id){
+    //         $query->where('category_id', $request->category_id);
+    //     }
+    //     return $query;
+    // }
+
+    // public function scopeTrashed($query, $request)
+    // {
+    //     if($request->trashed){
+    //         if ($request->trashed == 'true') {
+    //             $query->onlyTrashed();
+    //         }
+    //     }
+    //     return $query;
+    // }
+
+    // public function scopeFilter($params)
+    // {
+    //     $query = Product::with('category');
+    //     dd($params);
+    //     foreach ($params as $field => $value) {
+    //         // vd: filterStatus
+    //         $method = 'filter' . Str::studly($field);
+
+    //         if ($value === '') {
+    //             continue;
+    //         }
+
+    //         // Kiem tra neu method ton tai thi call
+    //         dd($method);
+
+    //         if (method_exists($this, $method)) {
+    //             $this->{$method}($query, $value);
+    //             continue;
+    //         }
+
+    //         if (empty($this->filterable) || !is_array($this->filterable)) {
+    //             continue;
+    //         }
+
+    //         if (in_array($field, $this->filterable)) {
+    //             $query->where($this->table . '.' . $field, $value);
+    //             continue;
+    //         }
+    //     }
+
+    //     return $query;
+    // }
 }

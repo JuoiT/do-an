@@ -32,21 +32,21 @@
                                 <div class="valign-wrapper col s6">
                                     <div class="pr-3">Sắp xếp</div>
                                     <select id="field" class="input-field" name="orderBy">
-                                        <option value="created_at">Ngày thêm</option>
-                                        <option value="updated_at">Ngày sửa đổi</option>
-                                        <option value="sale_quantity">Số lượng bán</option>
-                                        <option value="price">Giá bán</option>
-                                        <option value="name">Tên sản phẩm</option>
+                                        <option {{session('forms.orderBy')=='created_at'?'selected':''}} value="created_at">Ngày thêm</option>
+                                        <option {{session('forms.orderBy')=='updated_at'?'selected':''}} value="updated_at">Ngày sửa đổi</option>
+                                        <option {{session('forms.orderBy')=='price'?'selected':''}} value="price">Giá bán</option>
+                                        <option {{session('forms.orderBy')=='name'?'selected':''}} value="name">Tên sản phẩm</option>
+                                        {{-- <option {{session('forms.orderBy')=='sale_quantity'?'selected':''}} value="sale_quantity">Số lượng bán</option> --}}
                                     </select>
                                     <select id="role" class="input-field" name="orderByRole">
-                                        <option value="0">Giảm dần</option>
-                                        <option value="1">Tăng dần</option>
+                                        <option {{session('forms.orderByRole')=='0'?'selected':''}} value="0">Giảm dần</option>
+                                        <option {{session('forms.orderByRole')=='1'?'selected':''}} value="1">Tăng dần</option>
                                     </select>
                                 </div>
                                 <div class="valign-wrapper col s3 offset-s3 mt-1">
                                     <label class="mt-1">
-                                        <input type="checkbox" id="isShowTrash" name="trashed"
-                                            {{ old('isShowTrash') == 'true' ? 'checked' : '' }} />
+                                        <input type="checkbox" id="isShowTrash" value="true" name="trashed"
+                                            {{ session('forms.trashed') == 'true' ? 'checked' : '' }} />
                                         <span class="list-title">Xem thùng rác</span>
                                     </label>
                                 </div>
@@ -57,7 +57,7 @@
                                     <select id="category_id" class="input-field" name="category_id">
                                         <option value="">Tất cả</option>
                                         @foreach ($categories as $cate)
-                                            <option value="{{ $cate->id }}">{{ $cate->name }}</option>
+                                            <option {{session('forms.category_id')==$cate->id?'selected':''}} value="{{ $cate->id }}">{{ $cate->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -65,12 +65,12 @@
                                     <div class="pr-3">Trạng thái</div>
                                     <select id="status" class="input-field" name="status">
                                         <option value="">Tất cả</option>
-                                        <option value="1">Còn</option>
-                                        <option value="0">Hết</option>
+                                        <option {{session('forms.status')=='1'?'selected':''}} value="1">Còn</option>
+                                        <option {{session('forms.status')=='0'?'selected':''}} value="0">Hết</option>
                                     </select>
                                 </div>
                                 <div class="valign-wrapper col s4">
-                                    <input type="text" name="name" id="searchValue" placeholder="Search by name" />
+                                    <input value="{{session('forms.name')}}" type="text" name="name" id="searchValue" placeholder="Search by name" />
                                 </div>
                             </div>
                         </div>

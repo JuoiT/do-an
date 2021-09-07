@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Http\Request;
 
-trait Filterable
+trait FilterableTrait
 {
-    public function scopeFilter(Request $param)
+    public function scopeFilter(Request $params)
     {
         $query = Product::with('category');
-        dd($param);
-        foreach ($param as $field => $value) {
+        dd($params);
+        foreach ($params as $field => $value) {
             // vd: filterStatus
             $method = 'filter' . Str::studly($field);
 

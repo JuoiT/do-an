@@ -92,10 +92,14 @@
             </div>
             <div class="item-product">
                 <div class="new">new</div>
-                <div class="sale">sale</div>
+                <!-- <div class="sale">sale</div> -->
                 <img src="{{url('product-images')}}/{{$value->image}}" alt="">
-                <p class="name-product">{{$value->created_at}}</p>
-                <p class="price"><span>$19.00</span><span class="del">$12.00</span></p>
+                <p class="name-product">{{$value->name}}</p>
+                @if($value->sale_price == 0)
+                <p class="price"><span>{{number_format($value->price)}} đ</span></p>
+                @else
+                <p class="price"><span>{{number_format($value->sale_price)}} đ</span><span class="del">{{number_format($value->price)}} đ</span></p>
+                @endif
                 <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
             </div>
         </div>
@@ -107,7 +111,12 @@
         <img src="{{url('assets-frontend')}}/images/logo_2.png" alt="">
     </div>
     <div class="menu-product">
-        <p><span>all</span>/<span>Fruit</span>/<span>Meet</span>/<span>Vegetable</span></p>
+        <p>
+            <span><a href="">all</a></span>
+            @foreach($category as $value)
+            /<span><a href="">{{$value->name}}</a></span>
+            @endforeach
+        </p>
     </div>
     <div class="product-sale">
         <div class="poduct-item">

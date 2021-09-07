@@ -10,8 +10,8 @@ use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
+use function PHPSTORM_META\type;
 use function PHPUnit\Framework\fileExists;
 
 class ProductController extends Controller
@@ -21,10 +21,13 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $list_product = Product::with('category')->paginate(5);
-        return view('backend.pages.product.list-product', compact('list_product'));
+        $categories = Category::all();
+        $param = ($request->all());
+        $query = Product::filter($param);
+        $list_product = $query->paginate(1);
+        return view('backend.pages.product.list-product', compact('list_product', 'categories'));
     }
 
     /**
@@ -106,7 +109,7 @@ class ProductController extends Controller
             $upImage->move(config('const.imagePath'), $imageName);
 
             // delete old image
-            File::delete(config('const.imagePath').'/'.$updateProduct->image);
+            File::delete(config('const.imagePath') . '/' . $updateProduct->image);
         }
 
         $updateProduct = $updateProduct->edit($updateProduct, $request, $imageName);
@@ -130,14 +133,6 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         // move to trash, soft delete, withTrash to see
-        $product -> delete();
-    }
-
-    public function getTrashed()
-    {
-        $products = Product::onlyTrashed()->get();
-        foreach ($products as $pro){
-            dd($pro);
-        }
+        $product->delete();
     }
 }

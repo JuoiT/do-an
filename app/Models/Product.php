@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use GuzzleHttp\Psr7\Request;
+use App\Models\Filterable as ModelsFilterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\File;
 
 class Product extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, ModelsFilterable;
 
     protected $fillable = ['name', 'status', 'image', 'price', 'sale_price', 'category_id', 'description'];
+    protected $filterable = ['status', 'category_id'];
 
     public function category()
     {
@@ -36,13 +37,13 @@ class Product extends Model
         $imageName = time().$upImage->getClientOriginalName();
         $upImage->move(config('const.imagePath'), $imageName);
         $product = Product::create([
-            'name'=> trim($req->name),
-            'price'=> $req->price,
-            'sale_price'=> $req->sale_price,
-            'image'=> $imageName,
-            'status'=> $req->status,
-            'category_id'=> $req->category_id,
-            'description'=> $req->description,
+            'name' => trimm($req->name),
+            'price' => $req->price,
+            'sale_price' => $req->sale_price,
+            'image' => $imageName,
+            'status' => $req->status,
+            'category_id' => $req->category_id,
+            'description' => $req->description,
         ]);
 
         return $product;
@@ -66,7 +67,7 @@ class Product extends Model
         // dd($desImages);
         foreach ($desImages as $image) {
             // get files name, move files
-            $imageName = time().$image->getClientOriginalName();
+            $imageName = time() . $image->getClientOriginalName();
             $image->move(config('const.desImagePath'), $imageName);
 
             // insert to product_image table
@@ -81,8 +82,31 @@ class Product extends Model
     {
         $oldDesImages = ProductImage::where('product_id', $productId)->get();
         foreach ($oldDesImages as $oldDesImage) {
-            File::delete(config('const.desImagePath').'/'.$oldDesImage->image);
+            File::delete(config('const.desImagePath') . '/' . $oldDesImage->image);
             $oldDesImage->forceDelete();
+        }
+    }
+
+    // For filter
+    public function filterName($query, $value)
+    {
+        return $query->where('name', 'LIKE', '%' . $value . '%');
+    }
+
+    // No more needed
+    // public function filterStatus($query, $value)
+    // {
+    //     return $query->where('status', $value);
+    // }
+    // public function filterCategory($query, $value)
+    // {
+    //     return $query->where('category_id', $value);
+    // }
+
+    public function filterTrashed($query, $value)
+    {
+        if ($value == 'true') {
+            return $query->onlyTrashed();
         }
     }
 }

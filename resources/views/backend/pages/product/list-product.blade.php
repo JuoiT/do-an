@@ -39,8 +39,8 @@
                                         {{-- <option {{session('forms.orderBy')=='sale_quantity'?'selected':''}} value="sale_quantity">Số lượng bán</option> --}}
                                     </select>
                                     <select id="role" class="input-field" name="orderByRole">
-                                        <option {{session('forms.orderByRole')=='0'?'selected':''}} value="0">Giảm dần</option>
-                                        <option {{session('forms.orderByRole')=='1'?'selected':''}} value="1">Tăng dần</option>
+                                        <option {{session('forms.orderByRole')=='desc'?'selected':''}} value="desc">Giảm dần</option>
+                                        <option {{session('forms.orderByRole')=='asc'?'selected':''}} value="asc">Tăng dần</option>
                                     </select>
                                 </div>
                                 <div class="valign-wrapper col s3 offset-s3 mt-1">

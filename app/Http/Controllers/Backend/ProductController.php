@@ -24,9 +24,45 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $categories = Category::all();
-        $param = ($request->all());
-        $query = Product::filter($param);
+        // $params = $request->all();
+        // dd($params);
+
+        $query = Product::with('category');
+        if ($request->trashed && ($request->trashed)!='') {
+            session()->put('forms.trashed', $request->trashed);
+            $query->onlyTrashed();
+        }else{
+            session()->forget('forms.trashed');
+        }
+        if ($request->category_id && ($request->category_id)!='') {
+            session()->put('forms.category_id', $request->category_id);
+            $query->where('category_id', $request->category_id);
+        }else{
+            session()->forget('forms.category_id');
+        }
+        if ($request->name && ($request->name)!='') {
+            session()->put('forms.name', $request->name);
+            $query->where('name', 'like', '%'.$request->name.'%');
+        }else{
+            session()->forget('forms.name');
+        }
+        if ($request->status && ($request->status)!='') {
+            session()->put('forms.status', $request->status);
+            $query->where('status', $request->status);
+        }else{
+            session()->forget('forms.status');
+        }
+        if ($request->orderBy && $request->orderByRole && $request->orderBy != '' && $request->orderByRole != '') {
+            session()->put('forms.orderBy', $request->orderBy);
+            session()->put('forms.orderByRole', $request->orderByRole);
+            $query->orderBy($request->orderBy, $request->orderByRole=='0'?'desc':'asc');
+        }else{
+            session()->forget('forms.orderBy');
+            session()->forget('forms.orderByRole');
+        }
+
         $list_product = $query->paginate(1);
+
         return view('backend.pages.product.list-product', compact('list_product', 'categories'));
     }
 

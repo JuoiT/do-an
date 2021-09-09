@@ -28,39 +28,6 @@
                         @csrf
                         <div class="card-content pb-1">
                             <h4 class="card-title mt-2">Lọc sản phẩm</h4>
-<<<<<<< HEAD
-=======
-                            <div class="row">
-                                <div class="row">
-                                <div class="valign-wrapper col s6">
-                                    <div class="pr-3">Sắp xếp</div>
-                                    <select id="field" class="input-field" name="orderBy">
-                                        <option {{ session('forms.orderBy') == 'created_at' ? 'selected' : '' }}
-                                            value="created_at">Ngày thêm</option>
-                                        <option {{ session('forms.orderBy') == 'updated_at' ? 'selected' : '' }}
-                                            value="updated_at">Ngày sửa đổi</option>
-                                        <option {{ session('forms.orderBy') == 'price' ? 'selected' : '' }}
-                                            value="price">Giá bán</option>
-                                        <option {{ session('forms.orderBy') == 'name' ? 'selected' : '' }}
-                                            value="name">Tên sản phẩm</option>
-                                        <!-- <option {{session('forms.orderBy')=='sale_quantity'?'selected':''}} value="sale_quantity">Số lượng bán</option> -->
-                                    </select>
-                                    <select id="role" class="input-field" name="orderByRole">
-                                        <option {{ session('forms.orderByRole') == 'desc' ? 'selected' : '' }}
-                                            value="desc">Giảm dần</option>
-                                        <option {{ session('forms.orderByRole') == 'asc' ? 'selected' : '' }}
-                                            value="asc">Tăng dần</option>
-                                    </select>
-                                </div>
-                                <div class="valign-wrapper col s3 offset-s3 mt-1">
-                                    <label class="mt-1">
-                                        <input type="checkbox" id="isShowTrash" value="true" name="trashed"
-                                            {{ session('forms.trashed') == 'true' ? 'checked' : '' }} />
-                                        <span class="list-title">Xem thùng rác</span>
-                                    </label>
-                                </div>
-                            </div>
->>>>>>> 499bc7e5c47df89903928755a2b7f6f7e7a0cc9f
                             <div class="row">
                                 <div class="row">
                                     <div class="valign-wrapper col s6">
@@ -70,12 +37,12 @@
                                                 value="created_at">Ngày thêm</option>
                                             <option {{ session('filter.products.orderBy') == 'updated_at' ? 'selected' : '' }}
                                                 value="updated_at">Ngày sửa đổi</option>
-                                            <option {{ session('filter.products.orderBy') == 'final_price' ? 'selected' : '' }}
-                                                value="final_price">Giá bán</option>
+                                            <option {{ session('filter.products.orderBy') == 'product_price' ? 'selected' : '' }}
+                                                value="product_price">Giá bán</option>
                                             <option {{ session('filter.products.orderBy') == 'name' ? 'selected' : '' }}
                                                 value="name">Tên sản phẩm</option>
-                                            {{-- <option {{session('filter.products.orderBy')=='sale_quantity'?'selected':''}}
-                                                value="sale_quantity">Số lượng bán</option> --}}
+                                            <option {{session('filter.products.orderBy')=='order_details_count'?'selected':''}}
+                                                value="order_details_count">Số lượng bán</option>
                                         </select>
                                         <select id="role" class="input-field" name="orderByRole">
                                             <option {{ session('filter.products.orderByRole') == 'desc' ? 'selected' : '' }}
@@ -120,11 +87,7 @@
                                 </div>
                             </div>
 
-<<<<<<< HEAD
-                            <button type="submit" class="btn mt-2 green">Lọc sản phẩm</button>
-=======
                         <button type="submit" class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">Lọc sản phẩm</button>
->>>>>>> 499bc7e5c47df89903928755a2b7f6f7e7a0cc9f
                     </form>
 
                     <h4 class="card-title mt-2">Danh sách sản phẩm</h4>
@@ -134,12 +97,12 @@
                         <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Name</th>
-                                <th>Image</th>
-                                <th>Price</th>
-                                <th>Status</th>
-                                <th>Category</th>
-                                <th>Action</th>
+                                <th>Tên</th>
+                                <th>Ảnh</th>
+                                <th>Giá</th>
+                                <th>Trạng thái</th>
+                                <th>Danh mục</th>
+                                <th>ACT</th>
                             </tr>
                         </thead>
                     @endif
@@ -147,8 +110,9 @@
                         @if (count($list_product) > 0)
                             @foreach ($list_product as $value)
                                 <tr>
+                                    {{-- 5 là số bản ghi trên 1 trang--}}
                                     <td>
-                                        {{ $loop->index + 1 }}
+                                        {{ $loop->index + 1 + ($list_product->currentPage() - 1) * 5 }}
                                     </td>
                                     <td>
                                         @if (strlen(" $value->name") > 15)
@@ -182,17 +146,17 @@
                                     </td>
                                     <td>
                                         @if (session('filter.products.trashed') == 'true')
-                                            <a href="{{ route('product-restore', $value->id) }}"><i
+                                            <a title="restore" href="{{ route('product-restore', $value->id) }}"><i
                                                     class="badge green lighten-5 material-icons green-text">restore</i></a>
                                         @else
-                                            <a href="{{ route('product.edit', $value->id) }}"><i
+                                            <a title="edit" href="{{ route('product.edit', $value->id) }}"><i
                                                     class="badge green lighten-5 material-icons green-text">edit_note</i></a>
                                             <form style="display: inline-block !important;"
                                                 action="{{ route('product.destroy', $value->id) }}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                                 <input type="hidden" value="{{ $value->id }}">
-                                                <button style="border: none !important;"
+                                                <button title="move to trash" style="border: none !important;"
                                                     class="badge pink lighten-5 material-icons pink-text"
                                                     type="submit">clear</button>
                                             </form>
@@ -203,7 +167,7 @@
                         @else
                             <tr>
                                 <div style="padding: 10px; text-align: center; font-size: 20px; color:rgb(155, 0, 0)">
-                                    Không tìm thấy sản phẩm nào!
+                                    Không tìm thấy bản ghi nào!
                                 </div>
                             </tr>
                         @endif

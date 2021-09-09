@@ -50,15 +50,28 @@ trait FilterableTrait
                 session()->put("filter.$this->table.orderBy", $params['orderBy']);
                 session()->put("filter.$this->table.orderByRole", $params['orderByRole']);
 
-                // dd($this->table . '.' . $params['orderBy'], $params['orderByRole']);
-                if ($params['orderBy'] == 'final_price') {
+                // filter if product has sale_price
+                if ($params['orderBy'] == 'product_price') {
                     $role = $params['orderByRole'];
-                    
+
                     return $query
                     ->orderByRaw("CASE WHEN products.sale_price > 0 THEN sale_price ELSE price END $role");
                 }
+                // orderBy count of order details
+                if ($params['orderBy'] == 'order_details_count') {
+                    $role = $params['orderByRole'];
+
+                    return $query
+                    ->withCount('orderDetails')->orderBy('order_details_count', $role);
+                }
+                // orderBy count of products
+                if ($params['orderBy'] == 'products_count') {
+                    $role = $params['orderByRole'];
+
+                    return $query
+                    ->withCount('products')->orderBy('products_count', $role);
+                }
                 return $query->orderBy($this->table . '.' . $params['orderBy'], $params['orderByRole']);
-                // dd($query);
             }
         }
 

@@ -2,76 +2,144 @@
 
 @section('main')
 
-@if(Session::get('success'))
-<div class="alert alert-success">
-    <strong
-        class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">{{Session::get('success')}}</strong>
-</div>
-@endif
+    @if (Session::get('success'))
+        <div class="alert alert-success">
+            <strong
+                class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">{{ Session::get('success') }}</strong>
+        </div>
+    @endif
 
-@if(Session::get('error'))
-<div class="alert alert-danger">
-    <strong
-        class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-deep-orange-orange gradient-shadow">{{Session::get('error')}}</strong>
-</div>
-@endif
+    @if (Session::get('error'))
+        <div class="alert alert-danger">
+            <strong
+                class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-deep-orange-orange gradient-shadow">{{ Session::get('error') }}</strong>
+        </div>
+    @endif
 
-<div class="section">
-    <div class="row">
-        <div class="col s12 m6 l8">
-            <div class="card subscriber-list-card animate fadeRight">
-                <a class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow"
-                    href="{{route('category.create')}}">Thêm mới</a>
-                <div class="card-content pb-1">
-                    <h4 class="card-title mb-0">Danh sách danh mục</h4>
-                </div>
-                <table class="subscription-table responsive-table highlight">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($list_category as $value)
-                        <tr>
-                            <td>{{$value->name}}</td>
-                            <td>
-                                @if($value->status==1)
-                                <span class="badge green lighten-5 green-text text-accent-4">Còn</span>
-                                @else
-                                <span class="badge pink lighten-5 pink-text text-accent-2">Hết</span>
-                                @endif
-                            </td>
-                            <td><a href="{{route('category.edit', $value->id)}}"><i class="badge green lighten-5 material-icons green-text">edit_note</i></a>
-                                <form style="display: inline-block !important;" action="{{route('category.destroy', $value->id)}}" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <input type="hidden" value="{{$value->id}}">
-                                    <button style="border: none !important;" class="badge pink lighten-5 material-icons pink-text" type="submit">clear</button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
-                    @if($list_category->currentPage() != 1)
-                    <a href="{{$list_category->previousPageUrl()}}" class=" paginate_button previous" aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
-                    <span>
-                    @endif
-                    @for($i=1; $i<=$list_category->lastpage(); $i++)
-                        <a href="{{$list_category->url($i)}}" class="{{$i == $list_category->currentPage() ? 'current' : 'd-none'}} paginate_button" aria-controls="data-table-contact" >{{$i}}</a>
-                    @endfor
-                    @if($list_category->currentPage() != $list_category->lastpage())
-                    </span>
-                    <a href="{{$list_category->nextPageUrl()}}" class=" paginate_button next" aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
-                    @endif
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m6 l8">
+                <div class="card subscriber-list-card animate fadeRight">
+                    <a class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow"
+                        href="{{ route('category.create') }}">Thêm mới</a>
+
+                    {{-- Form filter --}}
+                    <form class="" action=" {{ route('product.index') }}" method="get">
+                        @csrf
+                        <div class="card-content pb-1">
+                            <h4 class="card-title mt-2">Lọc sản phẩm</h4>
+                            <div class="row">
+                                <div class="row">
+                                    <div class="valign-wrapper col s6">
+                                        <div class="pr-3">Sắp xếp</div>
+                                        <select id="field" class="input-field" name="orderBy">
+                                            <option
+                                                {{ session('filter.products.orderBy') == 'created_at' ? 'selected' : '' }}
+                                                value="created_at">Ngày thêm</option>
+                                            <option
+                                                {{ session('filter.products.orderBy') == 'updated_at' ? 'selected' : '' }}
+                                                value="updated_at">Ngày sửa đổi</option>
+                                            <option {{ session('filter.products.orderBy') == 'name' ? 'selected' : '' }}
+                                                value="name">Tên sản phẩm</option>
+                                        </select>
+                                        <select id="role" class="input-field" name="orderByRole">
+                                            <option
+                                                {{ session('filter.products.orderByRole') == 'desc' ? 'selected' : '' }}
+                                                value="desc">Giảm dần</option>
+                                            <option
+                                                {{ session('filter.products.orderByRole') == 'asc' ? 'selected' : '' }}
+                                                value="asc">Tăng dần</option>
+                                        </select>
+                                    </div>
+                                    <div class="valign-wrapper col s3 offset-s3 mt-1">
+                                        <label class="mt-1">
+                                            <input type="checkbox" id="isShowTrash" value="true" name="trashed"
+                                                {{ session('filter.products.trashed') == 'true' ? 'checked' : '' }} />
+                                            <span class="list-title">Xem thùng rác</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="valign-wrapper col s4">
+                                        <div class="pr-3">Trạng thái</div>
+                                        <select id="status" class="input-field" name="status">
+                                            <option value="">Tất cả</option>
+                                            <option {{ session('filter.products.status') == '1' ? 'selected' : '' }}
+                                                value="1">Còn
+                                            </option>
+                                            <option {{ session('filter.products.status') == '0' ? 'selected' : '' }}
+                                                value="0">Hết
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="valign-wrapper col s4">
+                                        <input value="{{ session('filter.products.name') }}" type="text" name="name"
+                                            id="searchValue" placeholder="Search by name" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn mt-2 green">Lọc sản phẩm</button>
+                    </form>
+
+                    <div class="card-content pb-1">
+                        <h4 class="card-title mb-0">Danh sách danh mục</h4>
+                    </div>
+                    <table class="subscription-table responsive-table highlight">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($list_category as $value)
+                                <tr>
+                                    <td>{{ $value->name }}</td>
+                                    <td>
+                                        @if ($value->status == 1)
+                                            <span class="badge green lighten-5 green-text text-accent-4">Còn</span>
+                                        @else
+                                            <span class="badge pink lighten-5 pink-text text-accent-2">Hết</span>
+                                        @endif
+                                    </td>
+                                    <td><a href="{{ route('category.edit', $value->id) }}"><i
+                                                class="badge green lighten-5 material-icons green-text">edit_note</i></a>
+                                        <form style="display: inline-block !important;"
+                                            action="{{ route('category.destroy', $value->id) }}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <input type="hidden" value="{{ $value->id }}">
+                                            <button style="border: none !important;"
+                                                class="badge pink lighten-5 material-icons pink-text"
+                                                type="submit">clear</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
+                        @if ($list_category->currentPage() != 1)
+                            <a href="{{ $list_category->previousPageUrl() }}" class=" paginate_button previous"
+                                aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
+                            <span>
+                        @endif
+                        @for ($i = 1; $i <= $list_category->lastpage(); $i++)
+                            <a href="{{ $list_category->url($i) }}"
+                                class="{{ $i == $list_category->currentPage() ? 'current' : 'd-none' }} paginate_button"
+                                aria-controls="data-table-contact">{{ $i }}</a>
+                        @endfor
+                        @if ($list_category->currentPage() != $list_category->lastpage())
+                            </span>
+                            <a href="{{ $list_category->nextPageUrl() }}" class=" paginate_button next"
+                                aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 @stop

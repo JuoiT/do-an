@@ -25,44 +25,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $params = $request->all();
-        // dd($params);
         $query = Product::filter($request);
-
-        // Filter here (no more needed)
-        // $query = Product::with('category');
-        // if ($request->trashed && ($request->trashed) != '') {
-        //     session()->put('forms.trashed', $request->trashed);
-        //     $query->onlyTrashed();
-        // } else {
-        //     session()->forget('forms.trashed');
-        // }
-        // if ($request->category_id && ($request->category_id) != '') {
-        //     session()->put('forms.category_id', $request->category_id);
-        //     $query->where('category_id', $request->category_id);
-        // } else {
-        //     session()->forget('forms.category_id');
-        // }
-        // if ($request->name && ($request->name) != '') {
-        //     session()->put('forms.name', $request->name);
-        //     $query->where('name', 'like', '%' . $request->name . '%');
-        // } else {
-        //     session()->forget('forms.name');
-        // }
-        // if ($request->status && ($request->status) != '') {
-        //     session()->put('forms.status', $request->status);
-        //     $query->where('status', $request->status);
-        // } else {
-        //     session()->forget('forms.status');
-        // }
-        // if ($request->orderBy && $request->orderByRole && $request->orderBy != '' && $request->orderByRole != '') {
-        //     session()->put('forms.orderBy', $request->orderBy);
-        //     session()->put('forms.orderByRole', $request->orderByRole);
-        //     $query->orderBy($request->orderBy, $request->orderByRole == '0' ? 'desc' : 'asc');
-        // } else {
-        //     session()->forget('forms.orderBy');
-        //     session()->forget('forms.orderByRole');
-        // }
-
         $list_product = $query->paginate(5);
 
         return view('backend.pages.product.list-product', compact('list_product', 'categories'));
@@ -169,11 +132,21 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::find($id);
+        $product = Product::withTrashed()->find($id);
         // move to trash - force delete from trashed
         if ($product->deleted_at != null)
             $product->forceDelete();
         else
             $product->delete();
+
+        return redirect(route('product.index'));
+    }
+
+    public function restore($id)
+    {
+        $product = Product::onlyTrashed($id);
+        $product->restore();
+
+        return redirect(route('product.index'));
     }
 }

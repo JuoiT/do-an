@@ -45,6 +45,7 @@ class EditProductRequest extends FormRequest
 
             'image.required' => "Ảnh mô tả sản phẩm không được để rỗng!",
             'des_image.image' => "Ảnh mô tả không hợp lệ!",
+            'des_image.max' => "Ảnh mô tả quá lớn!",
 
             'price.required' => "Giá không được để rỗng!",
             'price.numeric|min' => "Giá không hợp lệ!",

@@ -44,8 +44,8 @@ class AddProductRequest extends FormRequest
             'image.required' => "Ảnh sản phẩm không được để rỗng!",
             'image.image' => "Ảnh sản phẩm không hợp lệ!",
 
-            'image.required' => "Ảnh mô tả sản phẩm không được để rỗng!",
-            'des_image.image' => "Ảnh mô tả sản phẩm không hợp lệ!",
+            'des_image.image' => "Ảnh không hợp lệ!",
+            'des_image.max' => "Ảnh quá lớn!",
 
             'price.required' => "Giá sản phẩm không được để rỗng!",
             'price.numeric|min' => "Giá sản phẩm không hợp lệ!",

@@ -18,7 +18,9 @@
                         <p>Natural Health Care Ingredientsa</p>
                     </div>
                     <div class="orgnanic">
-                        <p>100% <span>ORGANIC</span></p>
+                        <p>100%
+                            <span>ORGANIC</span>
+                        </p>
                     </div>
                     <div class="question">
                         <p>Are they safer? More nutritious?</p>
@@ -32,7 +34,9 @@
                         <p>Natural Health Care Ingredientsa</p>
                     </div>
                     <div class="orgnanic">
-                        <p>100% <span>ORGANIC</span></p>
+                        <p>100%
+                            <span>ORGANIC</span>
+                        </p>
                     </div>
                     <div class="question">
                         <p>Are they safer? More nutritious?</p>
@@ -41,7 +45,8 @@
             </div>
         </div>
     </div>
-</div><!-- End Banner-->
+</div>
+<!-- End Banner-->
 
 <!-- Catagories -->
 <div class="categories">
@@ -51,24 +56,30 @@
                 <div class="product-item">
                     <div class="item">
                         <img src="{{url('assets-frontend')}}/images/fresh-fruits-img.jpg" alt="">
-                        <p class="name-product">Fresh <span>Fruits</span></p>
-                        <p class="title">View Collections</p>
+                        <p class="name-product">Fresh
+                            <span>Fruits</span>
+                        </p>
+                        <a class="title">View Collections</a>
                     </div><!-- End item-->
                 </div><!-- End product-item-->
 
                 <div class="product-item">
                     <div class="item">
                         <img src="{{url('assets-frontend')}}/images/fresh-vegetables-img.jpg" alt="">
-                        <p class="name-product">Fresh <span>Vegetables</span></p>
-                        <p class="title">View Collections</p>
+                        <p class="name-product">Fresh
+                            <span>Vegetables</span>
+                        </p>
+                        <a class="title">View Collections</a>
                     </div><!-- End item-->
                 </div><!-- End product-item-->
 
                 <div class="product-item">
                     <div class="item">
                         <img src="{{url('assets-frontend')}}/images/organic-foods-img.jpg" alt="">
-                        <p class="name-product">Organic <span>Foods</span></p>
-                        <p class="title">View Collections</p>
+                        <p class="name-product">Organic
+                            <span>Foods</span>
+                        </p>
+                        <a class="title">View Collections</a>
                     </div><!-- End item-->
                 </div><!-- End product-item-->
             </div><!-- End product-row-->
@@ -81,93 +92,43 @@
         <img src="{{url('assets-frontend')}}/images/banner-product.png" alt="">
     </div>
     <div class="owl-product owl-carousel owl-theme">
-        <!-- Item 1 -->
+        @foreach($new_product as $value)
         <div class="item">
             <div class="item-bg">
                 <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
-                </div>
-            </div>
-            <div class="item-product">
-                <img src="{{url('assets-frontend')}}/images/tao_xanh.jpg" alt="">
-                <p class="name-product">Jessica Simpson Fruit's</p>
-                <p class="price"><span>$19.00</span><span class="del">$12.00</span></p>
-                <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
-            </div>
-        </div>
-        <!-- Item 2 -->
-        <div class="item">
-            <div class="item-bg">
-                <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
-                </div>
-            </div>
-            <div class="item-product">
-                <div class="sale">sale</div>
-                <img src="{{url('assets-frontend')}}/images/hong_xiem.jpg" alt="">
-                <p class="name-product">Jessica Simpson Fruit's</p>
-                <p class="price"><span>$23.00</span><span class="del">$12.00</span></p>
-                <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
-            </div>
-        </div>
-        <!-- Item 3 -->
-        <div class="item">
-            <div class="item-bg">
-                <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
-                </div>
-            </div>
-            <div class="item-product">
-                <img src="{{url('assets-frontend')}}/images/kiwi.jpg" alt="">
-                <p class="name-product">JLee Uniforms Vegetable's</p>
-                <p class="price"><span>$33.00</span><span class="del">$12.00</span></p>
-                <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
-            </div>
-        </div>
-        <!-- Item 4 -->
-        <div class="item">
-            <div class="item-bg">
-                <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
+                    <a href="{{route('whishlist')}}">
+                        <i class="fal fa-heart"></i>
+                    </a>
+                    <a href="{{route('detail')}}">
+                        <i class="fal fa-eye"></i>
+                    </a>
+                    <a href="{{route('cart')}}">
+                        <i class="far fa-shopping-basket"></i>
+                    </a>
                 </div>
             </div>
             <div class="item-product">
                 <div class="new">new</div>
-                <img src="{{url('assets-frontend')}}/images/khoai.jpg" alt="">
-                <p class="name-product">Lee Uniforms Vegetable's</p>
-                <p class="price"><span>$25.00</span><span class="del">$12.00</span></p>
-                <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
+                <!-- <div class="sale">sale</div> -->
+                <img src="{{url('product-images')}}/{{$value->image}}" alt="">
+                <p class="name-product">{{$value->name}}</p>
+                @if($value->sale_price == 0)
+                <p class="price">
+                    <span>{{number_format($value->price)}} đ</span>
+                </p>
+                @else
+                <p class="price">
+                    <span>{{number_format($value->sale_price)}} đ</span>
+                    <span class="del">{{number_format($value->price)}} đ</span>
+                </p>
+                @endif
+                <a class="buy-now">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>BUY NOW</span>
+                </a>
             </div>
         </div>
-        <!-- Item 5 -->
-        <div class="item">
-            <div class="item-bg">
-                <div class="icon-bg">
-                    <a href="{{url('assets-frontend')}}/html/whishlist.html"><i class="fal fa-heart"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/product-detail.html"><i class="fal fa-eye"></i></a>
-                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                            class="far fa-shopping-basket"></i></a>
-                </div>
-            </div>
-            <div class="item-product">
-                <img src="{{url('assets-frontend')}}/images/dau_tay.jpg" alt="">
-                <p class="name-product">JLee Uniforms Vegetable's</p>
-                <p class="price"><span>$33.00</span><span class="del">$12.00</span></p>
-                <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY NOW</span></a>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div><!-- End Arrivars-->
 <div class="content">
@@ -175,7 +136,16 @@
         <img src="{{url('assets-frontend')}}/images/logo_2.png" alt="">
     </div>
     <div class="menu-product">
-        <p><span>all</span>/<span>Fruit</span>/<span>Meet</span>/<span>Vegetable</span></p>
+        <p>
+            <span>
+                <a href="">all</a>
+            </span>
+            @foreach($category as $value)
+            <span>
+                <a href="">{{$value->name}}</a>
+            </span>
+            @endforeach
+        </p>
     </div>
     <div class="product-sale">
         <div class="poduct-item">
@@ -186,11 +156,21 @@
                     </div>
                     <div class="content-product">
                         <p class="title">Jessica Simpson Fruit's</p>
-                        <p class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i
-                                class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                        <p class="price"><span>$25.00</span><span class="del">$12.00</span></p>
-                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now"><i
-                                class="far fa-shopping-basket"></i><span>BUY NOW</span></a>
+                        <p class="stars">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </p>
+                        <p class="price">
+                            <span>$25.00</span>
+                            <span class="del">$12.00</span>
+                        </p>
+                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now">
+                            <i class="far fa-shopping-basket"></i>
+                            <span>BUY NOW</span>
+                        </a>
                     </div>
 
                 </div>
@@ -200,11 +180,21 @@
                     </div>
                     <div class="content-product">
                         <p class="title">Jessica Simpson Fruit's</p>
-                        <p class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i
-                                class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                        <p class="price"><span>$25.00</span><span class="del">$12.00</span></p>
-                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now"><i
-                                class="far fa-shopping-basket"></i><span>BUY NOW</span></a>
+                        <p class="stars">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </p>
+                        <p class="price">
+                            <span>$25.00</span>
+                            <span class="del">$12.00</span>
+                        </p>
+                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now">
+                            <i class="far fa-shopping-basket"></i>
+                            <span>BUY NOW</span>
+                        </a>
                     </div>
 
                 </div>
@@ -214,11 +204,21 @@
                     </div>
                     <div class="content-product">
                         <p class="title">Jessica Simpson Fruit's</p>
-                        <p class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i
-                                class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                        <p class="price"><span>$25.00</span><span class="del">$12.00</span></p>
-                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now"><i
-                                class="far fa-shopping-basket"></i><span>BUY NOW</span></a>
+                        <p class="stars">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </p>
+                        <p class="price">
+                            <span>$25.00</span>
+                            <span class="del">$12.00</span>
+                        </p>
+                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now">
+                            <i class="far fa-shopping-basket"></i>
+                            <span>BUY NOW</span>
+                        </a>
                     </div>
                 </div>
             </div><!-- End Item-left-->
@@ -233,13 +233,21 @@
                             </div>
                             <div class="importan-product">
                                 <p class="title">Kensie Fruit's Wool Cocoon CoatKensie Fruits</p>
-                                <p class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i
-                                        class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                                <p class="stars">
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
                                 </p>
-                                <p class="price"><span>$25.00</span><span class="del">$12.00</span></p>
-                                <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now"><i
-                                        class="far fa-shopping-basket"></i><span>BUY
-                                        NOW</span></a>
+                                <p class="price">
+                                    <span>$25.00</span>
+                                    <span class="del">$12.00</span>
+                                </p>
+                                <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now">
+                                    <i class="far fa-shopping-basket"></i>
+                                    <span>BUY NOW</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -253,11 +261,21 @@
                     </div>
                     <div class="content-product">
                         <p class="title">Jessica Simpson Fruit's</p>
-                        <p class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i
-                                class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                        <p class="price"><span>$25.00</span><span class="del">$12.00</span></p>
-                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now"><i
-                                class="far fa-shopping-basket"></i><span>BUY NOW</span></a>
+                        <p class="stars">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </p>
+                        <p class="price">
+                            <span>$25.00</span>
+                            <span class="del">$12.00</span>
+                        </p>
+                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now">
+                            <i class="far fa-shopping-basket"></i>
+                            <span>BUY NOW</span>
+                        </a>
                     </div>
 
                 </div>
@@ -267,11 +285,21 @@
                     </div>
                     <div class="content-product">
                         <p class="title">Jessica Simpson Fruit's</p>
-                        <p class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i
-                                class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                        <p class="price"><span>$25.00</span><span class="del">$12.00</span></p>
-                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now"><i
-                                class="far fa-shopping-basket"></i><span>BUY NOW</span></a>
+                        <p class="stars">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </p>
+                        <p class="price">
+                            <span>$25.00</span>
+                            <span class="del">$12.00</span>
+                        </p>
+                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now">
+                            <i class="far fa-shopping-basket"></i>
+                            <span>BUY NOW</span>
+                        </a>
                     </div>
 
                 </div>
@@ -281,11 +309,21 @@
                     </div>
                     <div class="content-product">
                         <p class="title">Jessica Simpson Fruit's</p>
-                        <p class="stars"><i class="far fa-star"></i><i class="far fa-star"></i><i
-                                class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
-                        <p class="price"><span>$25.00</span><span class="del">$12.00</span></p>
-                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now"><i
-                                class="far fa-shopping-basket"></i><span>BUY NOW</span></a>
+                        <p class="stars">
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </p>
+                        <p class="price">
+                            <span>$25.00</span>
+                            <span class="del">$12.00</span>
+                        </p>
+                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html" class="buy-now">
+                            <i class="far fa-shopping-basket"></i>
+                            <span>BUY NOW</span>
+                        </a>
                     </div>
                 </div>
             </div><!-- End Item-right-->
@@ -297,7 +335,9 @@
                         <img src="" alt="">
                     </div>
                     <div class="title">
-                        <p>fresh <span>Fruits</span></p>
+                        <p>fresh
+                            <span>Fruits</span>
+                        </p>
                     </div>
                     <div class="shop-now">
                         <a href="#">Shop now</a>
@@ -325,7 +365,9 @@
                         <img src="{{url('assets-frontend')}}/images/organic-news-img-1.jpg" alt="">
                         <div class="content">
                             <p class="date">March 04, 2018</p>
-                            <p class="title">Quick dinners, healthy<br /> recipes, and more. </p>
+                            <p class="title">Quick dinners, healthy
+                                <br/>recipes, and more.
+                            </p>
                         </div>
                         <div class="item_child-bg"></div>
                     </div>
@@ -338,7 +380,9 @@
                         </div>
                         <div class="content">
                             <p class="date">March 04, 2018</p>
-                            <p class="title">5 Reasons Why Grapes<br> Are Good for You </p>
+                            <p class="title">5 Reasons Why Grapes
+                                <br>Are Good for You
+                            </p>
                         </div>
                         <div class="item_child-bg"></div>
                     </div>
@@ -351,7 +395,9 @@
                         </div>
                         <div class="content">
                             <p class="date">March 04, 2018</p>
-                            <p class="title">Chicken & Spring <br>Vegetable Lasagna Recipe </p>
+                            <p class="title">Chicken & Spring
+                                <br>Vegetable Lasagna Recipe
+                            </p>
                         </div>
                         <div class="item_child-bg"></div>
                     </div>
@@ -364,7 +410,9 @@
                         </div>
                         <div class="content">
                             <p class="date">March 04, 2018</p>
-                            <p class="title">Fusce ac pharetra urna.<br> Duis non lacus sit</p>
+                            <p class="title">Fusce ac pharetra urna.
+                                <br>Duis non lacus sit
+                            </p>
                         </div>
                         <div class="item_child-bg"></div>
                     </div>
@@ -444,9 +492,13 @@
     <div class="newsletter">
         <div class="main">
             <div class="main-text">
-                <p class="title">Sign up <span>newsletter</span></p>
-                <p class="text">Sign up our newsletter to recieve <span>latest news</span> and <span>greate
-                        offers</span></p>
+                <p class="title">Sign up
+                    <span>newsletter</span>
+                </p>
+                <p class="text">Sign up our newsletter to recieve
+                    <span>latest news</span>and
+                    <span>greate offers</span>
+                </p>
             </div>
             <div class="main-email">
                 <input type="text" name="" id="" placeholder="Enter your email here...">

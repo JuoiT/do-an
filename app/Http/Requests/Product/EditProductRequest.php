@@ -40,8 +40,10 @@ class EditProductRequest extends FormRequest
             'name.required' => "Tên không được để rỗng!",
             'name.max' => "Tên quá dài!",
 
+            'image.required' => "Ảnh sản phẩm không được để rỗng!",
             'image.image' => "Ảnh không hợp lệ!",
 
+            'image.required' => "Ảnh mô tả sản phẩm không được để rỗng!",
             'des_image.image' => "Ảnh mô tả không hợp lệ!",
             'des_image.max' => "Ảnh mô tả quá lớn!",
 

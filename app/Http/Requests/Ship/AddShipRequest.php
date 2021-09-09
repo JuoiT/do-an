@@ -25,7 +25,7 @@ class AddShipRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:ships',
-            'price' => 'required|numeric',
+            'price' => 'required|numeric|min:0',
             'status' => 'required|boolean',
         ];
     }
@@ -36,6 +36,7 @@ class AddShipRequest extends FormRequest
             'name.required' => "Tên đơn vị ship không được để rỗng!",
             'name.unique' => "Đơn vị ship $this->name đã tồn tại!",
             'price.required' => "Giá vận chuyển không được rỗng!",
+            'price.min' => "Giá vận chuyển không được nhỏ hơn 0!",
             'price.numeric' => "Giá vận chuyển phải là số!",
             'status.required' => "Danh mục không được để rỗng!",
             'status.boolean' => "Đừng phá nữa ba!",

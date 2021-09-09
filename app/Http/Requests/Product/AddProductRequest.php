@@ -38,19 +38,19 @@ class AddProductRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => "Tên không được để rỗng!",
-            'name.max' => "Tên quá dài!",
+            'name.required' => "Tên sản phẩm không được để rỗng!",
+            'name.max' => "Tên sản phẩm quá dài!",
 
-            'image.required' => "Ảnh không được để rỗng!",
-            'image.image' => "Ảnh không hợp lệ!",
+            'image.required' => "Ảnh sản phẩm không được để rỗng!",
+            'image.image' => "Ảnh sản phẩm không hợp lệ!",
 
             'des_image.image' => "Ảnh không hợp lệ!",
             'des_image.max' => "Ảnh quá lớn!",
 
-            'price.required' => "Giá không được để rỗng!",
-            'price.numeric|min' => "Giá không hợp lệ!",
+            'price.required' => "Giá sản phẩm không được để rỗng!",
+            'price.numeric|min' => "Giá sản phẩm không hợp lệ!",
 
-            'sale_price.numeric|min' => "Giá sale không hợp lệ!",
+            'sale_price.numeric|min' => "Giá sale của sản phẩm không hợp lệ!",
 
             'category_id.required' => 'Cần chọn danh mục cho sản phẩm',
 

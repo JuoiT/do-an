@@ -1,4 +1,4 @@
-<footer>
+    <footer>
         <div class="main-page">
             <div class="customer-service">
                 <div class="item">
@@ -107,34 +107,74 @@
                         <img src="{{url('assets-frontend')}}/images/instagram-img-4.jpg" alt="photo" class="img-responsive">
                         <img src="{{url('assets-frontend')}}/images/instagram-img-5.jpg" alt="photo" class="img-responsive">
                         <img src="{{url('assets-frontend')}}/images/instagram-img-6.jpg" alt="photo" class="img-responsive">
-
                     </div>
                 </div>
             </div><!-- End Infomation-->
             <div class="contact">
                 <div class="copy-right">
-                    <p>© NOGNIC <span>2019 All rights reserved</span></p>
-                    <p>Website designed & Developed by <span>NCode Technologies, Inc.</span></p>
+                    <p>© NOGNIC
+                        <span>2019 All rights reserved</span>
+                    </p>
+                    <p>Website designed & Developed by
+                        <span>NCode Technologies, Inc.</span>
+                    </p>
                 </div>
                 <div class="social-icon">
                     <ul>
-                        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                        <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                        <li><a href=""><i class="fab fa-pinterest-p"></i></a></li>
-                        <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                        <li>
+                            <a href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fab fa-google-plus-g"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="payment">
                     <ul>
-                        <li><a href="#"><img src="{{url('assets-frontend')}}/images/card-1.png" alt=""></a></li>
-                        <li><a href="#"><img src="{{url('assets-frontend')}}/images/card-2.png" alt=""></a></li>
-                        <li><a href="#"><img src="{{url('assets-frontend')}}/images/card-3.png" alt=""></a></li>
-                        <li><a href="#"><img src="{{url('assets-frontend')}}/images/card-4.png" alt=""></a></li>
+                        <li>
+                            <a href="#">
+                                <img src="{{url('assets-frontend')}}/images/card-1.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{{url('assets-frontend')}}/images/card-2.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{{url('assets-frontend')}}/images/card-3.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="{{url('assets-frontend')}}/images/card-4.png" alt="">
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </div><!-- End Main-page -->
+        </div>
+        <!-- End Main-page -->
     </footer>
 
     <script src="{{url('assets-frontend')}}/js/Jquery.js"></script>

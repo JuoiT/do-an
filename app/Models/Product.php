@@ -31,8 +31,12 @@ class Product extends Model
         return $this->hasMany(ProductImage::class);
     }
 
-    public function add($req, $imageName)
+    public function add($req)
     {
+        // get product.image first, move uploaded image
+        $upImage = $req->image;
+        $imageName = time().$upImage->getClientOriginalName();
+        $upImage->move(config('const.imagePath'), $imageName);
         $product = Product::create([
             'name' => trimm($req->name),
             'price' => $req->price,
@@ -61,6 +65,7 @@ class Product extends Model
 
     public function upDesImages($desImages, $productId)
     {
+        // dd($desImages);
         foreach ($desImages as $image) {
             // get files name, move files
             $imageName = time() . $image->getClientOriginalName();

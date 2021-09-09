@@ -18,7 +18,9 @@
 <div class="container">
     <div class="container-main">
         <ul class="list-page">
-            <li><a href="home.html">Home</a></li>
+            <li>
+                <a href="home.html">Home</a>
+            </li>
             <li>Checkout</li>
         </ul>
         <h1 class="title">Checkout</h1>
@@ -26,19 +28,15 @@
     <div class="container-page">
         <div class="checkout-step-one">
             <h2 class="checkout-tit">01 / Checkout Method</h2>
-            <p class="checkout-desc">If you have shopped with us before, please enter your details in the boxes. If
-                you are a new customer. Please proceeed to the Billing &amp; Shipping Section.
-            </p>
+            <p class="checkout-desc">If you have shopped with us before, please enter your details in the boxes. If you are a new customer. Please proceeed to the Billing &amp; Shipping Section.</p>
             <form id="form-lg">
                 <div class="row">
                     <div class="row-left">
-                        <input id="l_email" type="email" name="email" class="form-control"
-                            placeholder="User name or Email">
+                        <input id="l_email" type="email" name="email" class="form-control" placeholder="User name or Email">
                         <span class="l_email_blur"></span>
                     </div>
                     <div class="row-right">
-                        <input id="l_password" type="password" name="password" class="form-control"
-                            placeholder="password">
+                        <input id="l_password" type="password" name="password" class="form-control" placeholder="password">
                     </div>
                     <div class="row-login">
                         <input type="submit" value="login" class="login">
@@ -172,8 +170,7 @@
                 <div class="row-check-out">
                     <div class="card-list">
                         <span>Credit card (PayPal)</span>
-                        <img src="{{url('assets-frontend')}}/images/card-list.png" alt="credit card"
-                            class="img-responsive">
+                        <img src="{{url('assets-frontend')}}/images/card-list.png" alt="credit card" class="img-responsive">
                     </div>
                     <p class="check-out-desc">Pay with your credit card via PayPal Website payments Pro.</p>
                     <div class="form-checkout">
@@ -181,16 +178,14 @@
                             <div class="row">
                                 <div class="row-inf">
                                     <div class="call-number">
-                                        <input type="text" name="call_number" class="form-control"
-                                            placeholder="Card Number">
+                                        <input type="text" name="call_number" class="form-control" placeholder="Card Number">
                                     </div>
                                     <div class="expiry">
                                         <input type="date" name="expiry" class="form-control"
                                             data-placeholder="Expiry (MM/YY)">
                                     </div>
                                     <div class="card-code">
-                                        <input type="text" name="card_code" class="form-control"
-                                            placeholder="Card Code">
+                                        <input type="text" name="card_code" class="form-control" placeholder="Card Code">
                                     </div>
                                 </div>
                                 <div class="oder-now">

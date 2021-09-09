@@ -28,6 +28,39 @@
                         @csrf
                         <div class="card-content pb-1">
                             <h4 class="card-title mt-2">Lọc sản phẩm</h4>
+<<<<<<< HEAD
+=======
+                            <div class="row">
+                                <div class="row">
+                                <div class="valign-wrapper col s6">
+                                    <div class="pr-3">Sắp xếp</div>
+                                    <select id="field" class="input-field" name="orderBy">
+                                        <option {{ session('forms.orderBy') == 'created_at' ? 'selected' : '' }}
+                                            value="created_at">Ngày thêm</option>
+                                        <option {{ session('forms.orderBy') == 'updated_at' ? 'selected' : '' }}
+                                            value="updated_at">Ngày sửa đổi</option>
+                                        <option {{ session('forms.orderBy') == 'price' ? 'selected' : '' }}
+                                            value="price">Giá bán</option>
+                                        <option {{ session('forms.orderBy') == 'name' ? 'selected' : '' }}
+                                            value="name">Tên sản phẩm</option>
+                                        <!-- <option {{session('forms.orderBy')=='sale_quantity'?'selected':''}} value="sale_quantity">Số lượng bán</option> -->
+                                    </select>
+                                    <select id="role" class="input-field" name="orderByRole">
+                                        <option {{ session('forms.orderByRole') == 'desc' ? 'selected' : '' }}
+                                            value="desc">Giảm dần</option>
+                                        <option {{ session('forms.orderByRole') == 'asc' ? 'selected' : '' }}
+                                            value="asc">Tăng dần</option>
+                                    </select>
+                                </div>
+                                <div class="valign-wrapper col s3 offset-s3 mt-1">
+                                    <label class="mt-1">
+                                        <input type="checkbox" id="isShowTrash" value="true" name="trashed"
+                                            {{ session('forms.trashed') == 'true' ? 'checked' : '' }} />
+                                        <span class="list-title">Xem thùng rác</span>
+                                    </label>
+                                </div>
+                            </div>
+>>>>>>> 499bc7e5c47df89903928755a2b7f6f7e7a0cc9f
                             <div class="row">
                                 <div class="row">
                                     <div class="valign-wrapper col s6">
@@ -87,7 +120,11 @@
                                 </div>
                             </div>
 
+<<<<<<< HEAD
                             <button type="submit" class="btn mt-2 green">Lọc sản phẩm</button>
+=======
+                        <button type="submit" class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">Lọc sản phẩm</button>
+>>>>>>> 499bc7e5c47df89903928755a2b7f6f7e7a0cc9f
                     </form>
 
                     <h4 class="card-title mt-2">Danh sách sản phẩm</h4>

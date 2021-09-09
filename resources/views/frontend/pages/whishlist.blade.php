@@ -17,7 +17,9 @@
 <div class="container">
     <div class="container-main">
         <ul class="list-page">
-            <li><a href="home.html">Home</a></li>
+            <li>
+                <a href="home.html">Home</a>
+            </li>
             <li>Whishlist</li>
         </ul>
         <h1 class="title">Whishlist</h1>
@@ -38,52 +40,87 @@
                 <tbody>
                     <tr>
                         <td class="cart-image-wrapper">
-                            <a href="#"><img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-4.jpg"
-                                    alt=""></a>
+                            <a href="#">
+                                <img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-4.jpg" alt="">
+                            </a>
                         </td>
-                        <td class="product-tit"><a href="#">Strawberries, 16 oz</a></td>
-                        <td class="price"><span class="money">$2.34 / ea</span></td>
+                        <td class="product-tit">
+                            <a href="#">Strawberries, 16 oz</a>
+                        </td>
+                        <td class="price">
+                            <span class="money">$2.34 / ea</span>
+                        </td>
                         <td>In stock</td>
-                        <td class="total"><a class="add-to-cart" href="#">Add to cart</a></td>
-                        <td class="del"><i class="far fa-times"></i></td>
+                        <td class="total">
+                            <a class="add-to-cart" href="#">Add to cart</a>
+                        </td>
+                        <td class="del">
+                            <i class="far fa-times"></i>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="cart-image-wrapper">
-                            <a href="#"><img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-5.jpg"
-                                    alt=""></a>
+                            <a href="#">
+                                <img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-5.jpg" alt="">
+                            </a>
                         </td>
-                        <td class="product-tit"><a href="#">Broccoli, bunch</a></td>
-                        <td class="price"><span class="money">$5.50 / ea</span></td>
+                        <td class="product-tit">
+                            <a href="#">Broccoli, bunch</a>
+                        </td>
+                        <td class="price">
+                            <span class="money">$5.50 / ea</span>
+                        </td>
                         <td>In stock</td>
-                        <td class="total"><a class="add-to-cart" href="#">Add to cart</a></td>
-                        <td class="del"><i class="far fa-times"></i></td>
+                        <td class="total">
+                            <a class="add-to-cart" href="#">Add to cart</a>
+                        </td>
+                        <td class="del">
+                            <i class="far fa-times"></i>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="cart-image-wrapper">
-                            <a href="#"><img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-2.jpg"
-                                    alt=""></a>
+                            <a href="#">
+                                <img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-2.jpg" alt="">
+                            </a>
                         </td>
-                        <td class="product-tit"><a href="#">Strawberries, 16 oz</a></td>
-                        <td class="price"><span class="money">$3.57 / ea</span></td>
+                        <td class="product-tit">
+                            <a href="#">Strawberries, 16 oz</a>
+                        </td>
+                        <td class="price">
+                            <span class="money">$3.57 / ea</span>
+                        </td>
                         <td>In stock</td>
-                        <td class="total"><a class="add-to-cart" href="#">Add to cart</a></td>
-                        <td class="del"><i class="far fa-times"></i></td>
+                        <td class="total">
+                            <a class="add-to-cart" href="#">Add to cart</a>
+                        </td>
+                        <td class="del">
+                            <i class="far fa-times"></i>
+                        </td>
                     </tr>
 
                     <tr>
                         <td class="cart-image-wrapper">
-                            <a href="#"><img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-1.jpg"
-                                    alt=""></a>
+                            <a href="#">
+                                <img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-1.jpg" alt="">
+                            </a>
                         </td>
-                        <td class="product-tit"><a href="#">Broccoli, bunch</a></td>
-                        <td class="price"><span class="money">$4.25 / ea</span></td>
+                        <td class="product-tit">
+                            <a href="#">Broccoli, bunch</a>
+                        </td>
+                        <td class="price">
+                            <span class="money">$4.25 / ea</span>
+                        </td>
                         <td>In stock</td>
-                        <td class="total"><a class="add-to-cart" href="#">Add to cart</a></td>
-                        <td class="del"><i class="far fa-times"></i></td>
+                        <td class="total">
+                            <a class="add-to-cart" href="#">Add to cart</a>
+                        </td>
+                        <td class="del">
+                            <i class="far fa-times"></i>
+                        </td>
                     </tr>
-
                 </tbody>
                 <tfoot>
                 </tfoot>

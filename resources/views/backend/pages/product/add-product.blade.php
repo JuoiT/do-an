@@ -41,8 +41,7 @@
                             <div class="row">
                                 <div class="input-field col s12 m7">
                                     <label class="active">Description Image</label>
-                                    <input type="file" name="des_image[]" id="input-file-now" class="dropify"
-                                        multiple="multiple" multiple/>
+                                    <input type="file" name="des_image[]" id="input-file-now" class="dropify" multiple="multiple"/>
                                     @if ($errors->has('des_image'))
                                         <span style="color: orangered;">{{ $errors->first('des_image') }}</span>
                                     @endif

@@ -49,13 +49,13 @@
                         <div class="col m6 s12">
                             <h6 class="invoice-from">Bill From</h6>
                             <div class="invoice-address">
-                                <span>{{Auth::user()->name}}</span>
+                                <span>name</span>
                             </div>
                             <div class="invoice-address">
                                 <span>Xuân Châu</span>
                             </div>
                             <div class="invoice-address">
-                                <span>{{Auth::user()->email}}</span>
+                                <span>email</span>
                             </div>
                             <div class="invoice-address">
                                 <span>0866024929</span>
@@ -85,13 +85,11 @@
                             @csrf
                             <div class="col m6 s12">
                                 <select name="status">
-                                    @if($customer->status==1)
-                                    <option value="1" selected>Đã hoàn thành</option>
-                                    <option value="0">Chưa hoàn thành</option>
-                                    @else
-                                    <option value="1">Đã hoàn thành</option>
-                                    <option value="0" selected>Chưa hoàn thành</option>
-                                    @endif
+                                    <option value="0" {{($customer->status==0) ? 'selected' : ''}}>Confirming</option>
+                                    <option value="1" {{($customer->status==1) ? 'selected' : ''}}>Taking order</option>
+                                    <option value="2" {{($customer->status==2) ? 'selected' : ''}}>Delivery</option>
+                                    <option value="3" {{($customer->status==3) ? 'selected' : ''}}>Done</option>
+                                    <option value="4" {{($customer->status==4) ? 'selected' : ''}}>Cancel</option>
                                 </select>
                             </div>
                             <div class="col m6 s12">
@@ -121,7 +119,7 @@
                                 @foreach($detail as $value)
                                 <tr>
                                     <td>{{$value->product->name}}</td>
-                                    <td><img style="width: 150px;" src="{{url('upload')}}/{{$value->product->image}}" alt=""></td>
+                                    <td><img style="width: 150px;" src="{{url('upload-product')}}/{{$value->product->image}}" alt=""></td>
                                     <td>{{$value->quantity}}</td>
                                     <td>{{$value->note}}</td>
                                     <td class="indigo-text right-align">{{number_format($value->price)}} đ</td>
@@ -141,7 +139,7 @@
                                 <ul>
                                     <li class="display-flex justify-content-between">
                                         <span class="invoice-subtotal-title">Subtotal</span>
-                                        <h6 class="invoice-subtotal-value">{{number_format($customer->total_amount)}} đ</h6>
+                                        <h6 class="invoice-subtotal-value">{{number_format($customer->total_price)}} đ</h6>
                                     </li>
                                     <!-- <li class="display-flex justify-content-between">
                                         <span class="invoice-subtotal-title">Discount</span>

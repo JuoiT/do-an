@@ -54,13 +54,9 @@ class ProductController extends Controller
      */
     public function store(AddProductRequest $request, Product $product)
     {
-        // get product.image first, move uploaded image
-        $upImage = $request->image;
-        $imageName = time() . $upImage->getClientOriginalName();
-        $upImage->move(config('const.imagePath'), $imageName);
 
         // insert product to db
-        $insertedProduct = $product->add($request, $imageName);
+        $insertedProduct = $product->add($request);
 
         // upload des_image
         if ($request->des_image) {

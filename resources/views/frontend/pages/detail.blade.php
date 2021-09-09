@@ -28,9 +28,15 @@
     <div class="product-container">
         <div class="container-main">
             <ul class="list-page">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="home.html">Vegetables</a></li>
-                <li><a href="home.html">Leaf vegetables</a></li>
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+                <li>
+                    <a href="home.html">Vegetables</a>
+                </li>
+                <li>
+                    <a href="home.html">Leaf vegetables</a>
+                </li>
                 <li>Vegetables</li>
             </ul>
             <h1 class="title">Retis Lapen Casen</h1>
@@ -58,23 +64,33 @@
                 <div class="content">
                     <p class="name-product">Retis Lapen Casen</p>
                     <p class="stars">
-                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                            class="far fa-star"></i><i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
                         <span>( 05 reviews )</span>
                     </p>
-                    <p class="price"><span class="new-price">$19.00</span><span class="old-price">$12.00</span></p>
-                    <p class="availablity">Available: <span>In Stock</span></p>
-                    <p class="information">Retis Lapen Casen is a rich source of Vitamin A, B & C and minerals such
-                        as magnesium, zinc and "potassium". It is cholesterol-free and contains dietary fibre.
-                        Calories = 22. It aids in the prevention of certain types of "cancer" and in the regulation
-                        of cholesterol in the blood. It helps boost the immune system and increases bone health.
+                    <p class="price">
+                        <span class="new-price">$19.00</span>
+                        <span class="old-price">$12.00</span>
                     </p>
+                    <p class="availablity">Available:
+                        <span>In Stock</span>
+                    </p>
+                    <p class="information">Retis Lapen Casen is a rich source of Vitamin A, B & C and minerals such as magnesium, zinc and "potassium". It is cholesterol-free and contains dietary fibre. Calories = 22. It aids in the prevention of certain types of "cancer" and in the regulation of cholesterol in the blood. It helps boost the immune system and increases bone health.</p>
                 </div>
                 <div class="cart-process">
                     <div class="btn">
-                        <span class="input-btn"><button class="minus">-</button></span>
-                        <span class="input-btn"><input class="value" value="1"></span>
-                        <span class="input-btn"><button class="plus">+</button></span>
+                        <span class="input-btn">
+                            <button class="minus">-</button>
+                        </span>
+                        <span class="input-btn">
+                            <input class="value" value="1">
+                        </span>
+                        <span class="input-btn">
+                            <button class="plus">+</button>
+                        </span>
                     </div>
                     <div class="card">
                         <button>add to card</button>
@@ -91,7 +107,8 @@
                         <span class="inf">537mkc8500</span>
                     </div>
                     <div class="tag-row">
-                        <span class="tag-label">Category</span><span class="dots">:</span>
+                        <span class="tag-label">Category</span>
+                        <span class="dots">:</span>
                         <span class="category">Vegetables</span>
                     </div>
                     <div class="tag-row">
@@ -108,11 +125,31 @@
                         <span class="dots">:</span>
                         <div class="tag-label">
                             <ul class="social">
-                                <li><a href=""><i class="fab fa-facebook-f"></i></a>
-                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                                <li><a href=""><i class="fab fa-pinterest-p"></i></a></li>
-                                <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                                <li>
+                                    <a href="">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fab fa-pinterest-p"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -128,22 +165,8 @@
                     <div class="border-wapper"></div>
                 </div>
                 <div class="descriptions">
-                    <p>
-                        Retis Lapen Casen is a rich source of Vitamin A, B & C and minerals such as magnesium, zinc
-                        and "potassium". It is cholesterol-free and contains dietary fibre. Calories = 22. It aids
-                        in the prevention of certain types.
-                    </p>
-                    <p class="mar-btm-60">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                        unknown
-                        printer took a galley of type and scrambled it to make a type specimen book. It has survived
-                        not
-                        only five centuries, but also the leap into electronic typesetting, remaining essentially
-                        unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-                        Lorem
-                        Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                        including versions of Lorem Ipsum.
-                    </p>
+                    <p>Retis Lapen Casen is a rich source of Vitamin A, B & C and minerals such as magnesium, zinc and "potassium". It is cholesterol-free and contains dietary fibre. Calories = 22. It aids in the prevention of certain types.</p>
+                    <p class="mar-btm-60">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     <h3>Retis Lapen Casen is a rich source of Vitamin</h3>
                     <ul class="list-view">
                         <li>Etiam et justo ut magna lobortis convallis a eu mauris.</li>
@@ -154,13 +177,7 @@
                         <li>Vestibulum sollicitudin massa non tortor malesuada, quis tristique leo aliquet.</li>
                         <li>Nulla vestibulum arcu bibendum eros pharetra facilisis.</li>
                     </ul>
-                    <p>It has survived not only five centuries, but also the leap into electronic typesetting,
-                        remaining
-                        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-                        containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                        Aldus
-                        PageMaker including versions of Lorem Ipsum.
-                    </p>
+                    <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
                 <div class="reviews" style="display: none">
                     <h3>Write a reviews</h3>
@@ -189,26 +206,13 @@
             <div class="wapper-mobile">
                 <div class="wapper-des">
                     <div class="btn-des">
-                        <span class="btn" id="btn-1">Description<i id="change-value-1"
-                                class="fas fa-sort-down"></i></span>
+                        <span class="btn" id="btn-1">Description
+                            <i id="change-value-1" class="fas fa-sort-down"></i>
+                        </span>
                     </div>
                     <div class="descriptions des-mobile">
-                        <p>
-                            Retis Lapen Casen is a rich source of Vitamin A, B & C and minerals such as magnesium, zinc
-                            and "potassium". It is cholesterol-free and contains dietary fibre. Calories = 22. It aids
-                            in the prevention of certain types.
-                        </p>
-                        <p class="mar-btm-60">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                            unknown
-                            printer took a galley of type and scrambled it to make a type specimen book. It has survived
-                            not
-                            only five centuries, but also the leap into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-                            Lorem
-                            Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                            including versions of Lorem Ipsum.
-                        </p>
+                        <p> Retis Lapen Casen is a rich source of Vitamin A, B & C and minerals such as magnesium, zinc and "potassium". It is cholesterol-free and contains dietary fibre. Calories = 22. It aids in the prevention of certain types.</p>
+                        <p class="mar-btm-60">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                         <h3>Retis Lapen Casen is a rich source of Vitamin</h3>
                         <ul class="list-view">
                             <li>Etiam et justo ut magna lobortis convallis a eu mauris.</li>
@@ -219,19 +223,14 @@
                             <li>Vestibulum sollicitudin massa non tortor malesuada, quis tristique leo aliquet.</li>
                             <li>Nulla vestibulum arcu bibendum eros pharetra facilisis.</li>
                         </ul>
-                        <p>It has survived not only five centuries, but also the leap into electronic typesetting,
-                            remaining
-                            essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-                            containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                            Aldus
-                            PageMaker including versions of Lorem Ipsum.
-                        </p>
+                        <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
                     </div>
                 </div>
                 <div class="wapper-reviews">
                     <div class="btn-reviews">
-                        <span class="btn" id="btn-2">Reviews(S)<i id="change-value-2"
-                                class="fas fa-sort-down"></i></span>
+                        <span class="btn" id="btn-2">Reviews(S)
+                            <i id="change-value-2" class="fas fa-sort-down"></i>
+                        </span>
                     </div>
                     <div class="reviews rev-mobile">
                         <h3>Write a reviews</h3>
@@ -274,12 +273,15 @@
                             <div class="item">
                                 <div class="item-bg">
                                     <div class="icon-bg">
-                                        <a href="{{url('assets-frontend')}}/html/whishlist.html"><i
-                                                class="fal fa-heart"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/product-detail.html"><i
-                                                class="fal fa-eye"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                                                class="far fa-shopping-basket"></i></a>
+                                        <a href="{{url('assets-frontend')}}/html/whishlist.html">
+                                            <i class="fal fa-heart"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/product-detail.html">
+                                            <i class="fal fa-eye"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html">
+                                            <i class="far fa-shopping-basket"></i>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="item-product">
@@ -288,9 +290,14 @@
                                     </div>
                                     <div class="content">
                                         <p class="name-product">JLee Uniforms Vegetable's</p>
-                                        <p class="price"><span>$33.00</span><span class="del">$12.00</span></p>
-                                        <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY
-                                                NOW</span></a>
+                                        <p class="price">
+                                            <span>$33.00</span>
+                                            <span class="del">$12.00</span>
+                                        </p>
+                                        <a class="buy-now">
+                                            <i class="fas fa-shopping-basket"></i>
+                                            <span>BUY NOW</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -300,12 +307,15 @@
                             <div class="item">
                                 <div class="item-bg">
                                     <div class="icon-bg">
-                                        <a href="{{url('assets-frontend')}}/html/whishlist.html"><i
-                                                class="fal fa-heart"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/product-detail.html"><i
-                                                class="fal fa-eye"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                                                class="far fa-shopping-basket"></i></a>
+                                        <a href="{{url('assets-frontend')}}/html/whishlist.html">
+                                            <i class="fal fa-heart"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/product-detail.html">
+                                            <i class="fal fa-eye"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html">
+                                            <i class="far fa-shopping-basket"></i>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="item-product">
@@ -314,9 +324,14 @@
                                     </div>
                                     <div class="content">
                                         <p class="name-product">JLee Uniforms Vegetable's</p>
-                                        <p class="price"><span>$33.00</span><span class="del">$12.00</span></p>
-                                        <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY
-                                                NOW</span></a>
+                                        <p class="price">
+                                            <span>$33.00</span>
+                                            <span class="del">$12.00</span>
+                                        </p>
+                                        <a class="buy-now">
+                                            <i class="fas fa-shopping-basket"></i>
+                                            <span>BUY NOW</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -326,12 +341,15 @@
                             <div class="item">
                                 <div class="item-bg">
                                     <div class="icon-bg">
-                                        <a href="{{url('assets-frontend')}}/html/whishlist.html"><i
-                                                class="fal fa-heart"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/product-detail.html"><i
-                                                class="fal fa-eye"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                                                class="far fa-shopping-basket"></i></a>
+                                        <a href="{{url('assets-frontend')}}/html/whishlist.html">
+                                            <i class="fal fa-heart"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/product-detail.html">
+                                            <i class="fal fa-eye"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html">
+                                            <i class="far fa-shopping-basket"></i>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="item-product">
@@ -340,9 +358,14 @@
                                     </div>
                                     <div class="content">
                                         <p class="name-product">JLee Uniforms Vegetable's</p>
-                                        <p class="price"><span>$33.00</span><span class="del">$12.00</span></p>
-                                        <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY
-                                                NOW</span></a>
+                                        <p class="price">
+                                            <span>$33.00</span>
+                                            <span class="del">$12.00</span>
+                                        </p>
+                                        <a class="buy-now">
+                                            <i class="fas fa-shopping-basket"></i>
+                                            <span>BUY NOW</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -352,12 +375,15 @@
                             <div class="item">
                                 <div class="item-bg">
                                     <div class="icon-bg">
-                                        <a href="{{url('assets-frontend')}}/html/whishlist.html"><i
-                                                class="fal fa-heart"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/product-detail.html"><i
-                                                class="fal fa-eye"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                                                class="far fa-shopping-basket"></i></a>
+                                        <a href="{{url('assets-frontend')}}/html/whishlist.html">
+                                            <i class="fal fa-heart"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/product-detail.html">
+                                            <i class="fal fa-eye"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html">
+                                            <i class="far fa-shopping-basket"></i>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="item-product">
@@ -366,9 +392,14 @@
                                     </div>
                                     <div class="content">
                                         <p class="name-product">JLee Uniforms Vegetable's</p>
-                                        <p class="price"><span>$33.00</span><span class="del">$12.00</span></p>
-                                        <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY
-                                                NOW</span></a>
+                                        <p class="price">
+                                            <span>$33.00</span>
+                                            <span class="del">$12.00</span>
+                                        </p>
+                                        <a class="buy-now">
+                                            <i class="fas fa-shopping-basket"></i>
+                                            <span>BUY NOW</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -378,12 +409,15 @@
                             <div class="item">
                                 <div class="item-bg">
                                     <div class="icon-bg">
-                                        <a href="{{url('assets-frontend')}}/html/whishlist.html"><i
-                                                class="fal fa-heart"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/product-detail.html"><i
-                                                class="fal fa-eye"></i></a>
-                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html"><i
-                                                class="far fa-shopping-basket"></i></a>
+                                        <a href="{{url('assets-frontend')}}/html/whishlist.html">
+                                            <i class="fal fa-heart"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/product-detail.html">
+                                            <i class="fal fa-eye"></i>
+                                        </a>
+                                        <a href="{{url('assets-frontend')}}/html/shopping_cart.html">
+                                            <i class="far fa-shopping-basket"></i>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="item-product">
@@ -392,14 +426,18 @@
                                     </div>
                                     <div class="content">
                                         <p class="name-product">JLee Uniforms Vegetable's</p>
-                                        <p class="price"><span>$33.00</span><span class="del">$12.00</span></p>
-                                        <a class="buy-now"><i class="fas fa-shopping-basket"></i><span>BUY
-                                                NOW</span></a>
+                                        <p class="price">
+                                            <span>$33.00</span>
+                                            <span class="del">$12.00</span>
+                                        </p>
+                                        <a class="buy-now">
+                                            <i class="fas fa-shopping-basket"></i>
+                                            <span>BUY NOW</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

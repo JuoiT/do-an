@@ -27,7 +27,7 @@
                         @csrf
                         <div class="card-content pb-1">
                             <h4 class="card-title mt-2">Lọc sản phẩm</h4>
-                            <div class="row"">
+                            <div class="row">
                                 <div class=" row">
                                 <div class="valign-wrapper col s6">
                                     <div class="pr-3">Sắp xếp</div>
@@ -39,8 +39,8 @@
                                         {{-- <option {{session('forms.orderBy')=='sale_quantity'?'selected':''}} value="sale_quantity">Số lượng bán</option> --}}
                                     </select>
                                     <select id="role" class="input-field" name="orderByRole">
-                                        <option {{session('forms.orderByRole')=='0'?'selected':''}} value="0">Giảm dần</option>
-                                        <option {{session('forms.orderByRole')=='1'?'selected':''}} value="1">Tăng dần</option>
+                                        <option {{session('forms.orderByRole')=='desc'?'selected':''}} value="desc">Giảm dần</option>
+                                        <option {{session('forms.orderByRole')=='asc'?'selected':''}} value="asc">Tăng dần</option>
                                     </select>
                                 </div>
                                 <div class="valign-wrapper col s3 offset-s3 mt-1">
@@ -75,7 +75,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn mt-2 green">Lọc sản phẩm</button>
+                        <button type="submit" class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">Lọc sản phẩm</button>
                     </form>
 
                     <h4 class="card-title mt-2">Danh sách sản phẩm</h4>

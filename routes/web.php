@@ -39,7 +39,7 @@ Route::group(['prefix'=>'admin'], function() {
     Route::resource('category', CategoryController::class);
 
     Route::resource('product', ProductController::class);
-    Route::post('/product-filter', [ProductController::class, 'filter'])->name('product-filter');
+    Route::get('/product-restore/{id}', [ProductController::class, 'restore'])->name('product-restore');
 
     Route::resource('order', OrderController::class);
 

@@ -45,6 +45,7 @@ class AddProductRequest extends FormRequest
             'image.image' => "Ảnh không hợp lệ!",
 
             'des_image.image' => "Ảnh không hợp lệ!",
+            'des_image.max' => "Ảnh quá lớn!",
 
             'price.required' => "Giá không được để rỗng!",
             'price.numeric|min' => "Giá không hợp lệ!",

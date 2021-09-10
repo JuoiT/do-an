@@ -45,4 +45,9 @@ class ShopController extends Controller
     {
         return view('frontend.pages.my-account');
     }
+
+    public function blog()
+    {
+        return view('frontend.pages.blog');
+    }
 }

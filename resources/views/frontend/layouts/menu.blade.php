@@ -74,8 +74,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">Blog
-                            <img class="leave" src="{{url('assets-frontend')}}/images/leave.png" alt="">
+                        <a href="{{route('blog')}}">Blog
+                            <img class="leave {{(Request::url() === 'http://127.0.0.1:8000/organic/blog') ? 'leave_1' : ''}}" src="{{url('assets-frontend')}}/images/leave.png" alt="">
                         </a>
                     </li>
                     <li>
@@ -213,7 +213,7 @@
                         <a href="#">Gallery</a>
                     </li>
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="{{route('blog')}}">Blog</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>

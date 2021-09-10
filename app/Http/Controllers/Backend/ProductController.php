@@ -9,10 +9,8 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-
-use function PHPSTORM_META\type;
-use function PHPUnit\Framework\fileExists;
 
 class ProductController extends Controller
 {
@@ -24,9 +22,15 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $categories = Category::all();
+
         $params = $request->all();
-        $query = Product::filter($request);
-        $list_product = $query->paginate(5);
+        if (count($params)<=1) {
+            // for paginate / redirect, get old filter value from session
+            $params = session()->get("filter.products");
+        }
+        
+        $query = Product::filter($params);
+        $list_product = $query->with('category')->paginate(5);
 
         return view('backend.pages.product.list-product', compact('list_product', 'categories'));
     }

@@ -37,6 +37,7 @@ Route::group(['prefix'=>'admin'], function() {
     Route::get('/', [HomeAdminController::class, 'home_admin'])->name('home_admin');
 
     Route::resource('category', CategoryController::class);
+    Route::get('/category-restore/{id}', [CategoryController::class, 'restore'])->name('category-restore');
 
     Route::resource('product', ProductController::class);
     Route::get('/product-restore/{id}', [ProductController::class, 'restore'])->name('product-restore');

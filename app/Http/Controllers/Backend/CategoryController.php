@@ -15,9 +15,17 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $list_category = Category::paginate(5);
+        // session()->forget("filter.categories");
+        $params = $request->all();
+        if (count($params)<=1) {
+            // for paginate / redirect, get old filter value from session
+            $params = session()->get("filter.categories");
+        }
+        
+        $query = Category::filter($params);
+        $list_category = $query->withCount('products')->paginate(5);
         return view('backend.pages.category.list-category', compact('list_category'));
     }
 
@@ -96,6 +104,16 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return redirect()->route('category.index')->with('success', 'Xóa danh mục thành công!');
+    }
+
+    public function restore($id)
+    {
+        $category = Category::onlyTrashed($id);
+        $category->restore();
+
+        return redirect(route('category.index'))->with('success', 'Khôi phục danh mục thành công!');
     }
 }

@@ -22,68 +22,70 @@
                 <div class="card subscriber-list-card animate fadeRight">
                     <a class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow"
                         href="{{ route('product.create') }}">Thêm mới</a>
-                    {{-- <a href="{{ route('product.getTrashed') }}" class="red-text"><i class="badge red lighten-5 material-icons green-text"></i>trashed</a> --}}
+
+                    {{-- Form filter --}}
                     <form class="" action=" {{ route('product.index') }}" method="get">
                         @csrf
                         <div class="card-content pb-1">
                             <h4 class="card-title mt-2">Lọc sản phẩm</h4>
                             <div class="row">
                                 <div class="row">
-                                <div class="valign-wrapper col s6">
-                                    <div class="pr-3">Sắp xếp</div>
-                                    <select id="field" class="input-field" name="orderBy">
-                                        <option {{ session('forms.orderBy') == 'created_at' ? 'selected' : '' }}
-                                            value="created_at">Ngày thêm</option>
-                                        <option {{ session('forms.orderBy') == 'updated_at' ? 'selected' : '' }}
-                                            value="updated_at">Ngày sửa đổi</option>
-                                        <option {{ session('forms.orderBy') == 'price' ? 'selected' : '' }}
-                                            value="price">Giá bán</option>
-                                        <option {{ session('forms.orderBy') == 'name' ? 'selected' : '' }}
-                                            value="name">Tên sản phẩm</option>
-                                        <!-- <option {{session('forms.orderBy')=='sale_quantity'?'selected':''}} value="sale_quantity">Số lượng bán</option> -->
-                                    </select>
-                                    <select id="role" class="input-field" name="orderByRole">
-                                        <option {{ session('forms.orderByRole') == 'desc' ? 'selected' : '' }}
-                                            value="desc">Giảm dần</option>
-                                        <option {{ session('forms.orderByRole') == 'asc' ? 'selected' : '' }}
-                                            value="asc">Tăng dần</option>
-                                    </select>
+                                    <div class="valign-wrapper col s6">
+                                        <div class="pr-3">Sắp xếp</div>
+                                        <select id="field" class="input-field" name="orderBy">
+                                            <option {{ session('filter.products.orderBy') == 'created_at' ? 'selected' : '' }}
+                                                value="created_at">Ngày thêm</option>
+                                            <option {{ session('filter.products.orderBy') == 'updated_at' ? 'selected' : '' }}
+                                                value="updated_at">Ngày sửa đổi</option>
+                                            <option {{ session('filter.products.orderBy') == 'product_price' ? 'selected' : '' }}
+                                                value="product_price">Giá bán</option>
+                                            <option {{ session('filter.products.orderBy') == 'name' ? 'selected' : '' }}
+                                                value="name">Tên sản phẩm</option>
+                                            <option {{session('filter.products.orderBy')=='order_details_count'?'selected':''}}
+                                                value="order_details_count">Số lượng bán</option>
+                                        </select>
+                                        <select id="role" class="input-field" name="orderByRole">
+                                            <option {{ session('filter.products.orderByRole') == 'desc' ? 'selected' : '' }}
+                                                value="desc">Giảm dần</option>
+                                            <option {{ session('filter.products.orderByRole') == 'asc' ? 'selected' : '' }}
+                                                value="asc">Tăng dần</option>
+                                        </select>
+                                    </div>
+                                    <div class="valign-wrapper col s3 offset-s3 mt-1">
+                                        <label class="mt-1">
+                                            <input type="checkbox" id="isShowTrash" value="true" name="trashed"
+                                                {{ session('filter.products.trashed') == 'true' ? 'checked' : '' }} />
+                                            <span class="list-title">Xem thùng rác</span>
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="valign-wrapper col s3 offset-s3 mt-1">
-                                    <label class="mt-1">
-                                        <input type="checkbox" id="isShowTrash" value="true" name="trashed"
-                                            {{ session('forms.trashed') == 'true' ? 'checked' : '' }} />
-                                        <span class="list-title">Xem thùng rác</span>
-                                    </label>
+                                <div class="row">
+                                    <div class="valign-wrapper col s4">
+                                        <div class="pr-3">Danh mục</div>
+                                        <select id="category_id" class="input-field" name="category_id">
+                                            <option value="">Tất cả</option>
+                                            @foreach ($categories as $cate)
+                                                <option {{ session('filter.products.category_id') == $cate->id ? 'selected' : '' }}
+                                                    value="{{ $cate->id }}">{{ $cate->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="valign-wrapper col s4">
+                                        <div class="pr-3">Trạng thái</div>
+                                        <select id="status" class="input-field" name="status">
+                                            <option value="">Tất cả</option>
+                                            <option {{ session('filter.products.status') == '1' ? 'selected' : '' }} value="1">Còn
+                                            </option>
+                                            <option {{ session('filter.products.status') == '0' ? 'selected' : '' }} value="0">Hết
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="valign-wrapper col s4">
+                                        <input value="{{ session('filter.products.name') }}" type="text" name="name"
+                                            id="searchValue" placeholder="Search by name" />
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="valign-wrapper col s4">
-                                    <div class="pr-3">Danh mục</div>
-                                    <select id="category_id" class="input-field" name="category_id">
-                                        <option value="">Tất cả</option>
-                                        @foreach ($categories as $cate)
-                                            <option {{ session('forms.category_id') == $cate->id ? 'selected' : '' }}
-                                                value="{{ $cate->id }}">{{ $cate->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="valign-wrapper col s4">
-                                    <div class="pr-3">Trạng thái</div>
-                                    <select id="status" class="input-field" name="status">
-                                        <option value="">Tất cả</option>
-                                        <option {{ session('forms.status') == '1' ? 'selected' : '' }} value="1">Còn
-                                        </option>
-                                        <option {{ session('forms.status') == '0' ? 'selected' : '' }} value="0">Hết
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="valign-wrapper col s4">
-                                    <input value="{{ session('forms.name') }}" type="text" name="name" id="searchValue"
-                                        placeholder="Search by name" />
-                                </div>
-                            </div>
-                        </div>
 
                         <button type="submit" class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">Lọc sản phẩm</button>
                     </form>
@@ -95,12 +97,12 @@
                         <thead>
                             <tr>
                                 <th>STT</th>
-                                <th>Name</th>
-                                <th>Image</th>
-                                <th>Price</th>
-                                <th>Status</th>
-                                <th>Category</th>
-                                <th>Action</th>
+                                <th>Tên</th>
+                                <th>Ảnh</th>
+                                <th>Giá</th>
+                                <th>Trạng thái</th>
+                                <th>Danh mục</th>
+                                <th>ACT</th>
                             </tr>
                         </thead>
                     @endif
@@ -108,8 +110,9 @@
                         @if (count($list_product) > 0)
                             @foreach ($list_product as $value)
                                 <tr>
+                                    {{-- 5 là số bản ghi trên 1 trang--}}
                                     <td>
-                                        {{ $loop->index + 1 }}
+                                        {{ $loop->index + 1 + ($list_product->currentPage() - 1) * 5 }}
                                     </td>
                                     <td>
                                         @if (strlen(" $value->name") > 15)
@@ -142,18 +145,18 @@
                                         {{ $value->category->name }}
                                     </td>
                                     <td>
-                                        @if (session('forms.trashed') == 'true')
-                                            <a href="{{ route('product-restore', $value->id) }}"><i
+                                        @if (session('filter.products.trashed') == 'true')
+                                            <a title="restore" href="{{ route('product-restore', $value->id) }}"><i
                                                     class="badge green lighten-5 material-icons green-text">restore</i></a>
                                         @else
-                                            <a href="{{ route('product.edit', $value->id) }}"><i
+                                            <a title="edit" href="{{ route('product.edit', $value->id) }}"><i
                                                     class="badge green lighten-5 material-icons green-text">edit_note</i></a>
                                             <form style="display: inline-block !important;"
                                                 action="{{ route('product.destroy', $value->id) }}" method="POST">
                                                 @method('DELETE')
                                                 @csrf
                                                 <input type="hidden" value="{{ $value->id }}">
-                                                <button style="border: none !important;"
+                                                <button title="move to trash" style="border: none !important;"
                                                     class="badge pink lighten-5 material-icons pink-text"
                                                     type="submit">clear</button>
                                             </form>
@@ -164,7 +167,7 @@
                         @else
                             <tr>
                                 <div style="padding: 10px; text-align: center; font-size: 20px; color:rgb(155, 0, 0)">
-                                    Không tìm thấy sản phẩm nào!
+                                    Không tìm thấy bản ghi nào!
                                 </div>
                             </tr>
                         @endif

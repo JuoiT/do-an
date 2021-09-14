@@ -1,225 +1,117 @@
-            <div class="menu">
-                <ul>
-                    <li>
-                        <a href="{{route('home')}}">Home
-                            <img class="leave {{(Request::url() === 'http://127.0.0.1:8000/organic/home') ? 'leave_1' : ''}}" src="{{url('assets-frontend')}}/images/leave.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">About
-                            <img class="leave" src="{{url('assets-frontend')}}/images/leave.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('product')}}">Shop
-                            <img class="leave {{(Request::url() === 'http://127.0.0.1:8000/organic/product') ? 'leave_1' : ''}}" src="{{url('assets-frontend')}}/images/leave.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">Organic Fruits
-                            <img class="leave" src="{{url('assets-frontend')}}/images/leave.png" alt="">
-                        </a>
-                        <ul class="menu-child">
-                            <li>
-                                <a href="">Seasonal Fruits</a>
-                            </li>
-                            <li>
-                                <a href="">Dry Fruits</a>
-                            </li>
-                            <li>
-                                <a href="">Regular Fruits</a>
-                            </li>
-                            <li>
-                                <a href="">Exotics Fruits</a>
-                            </li>
-                            <li>
-                                <a href="">Imported Fruits</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">Pages
-                            <img class="leave" src="{{url('assets-frontend')}}/images/leave.png" alt="">
-                        </a>
-                        <!-- <ul class="menu-child">
-                            <li>
-                                <a href="{{url('assets-frontend')}}/html/product_listing.html">Product Listing</a>
-                            </li>
-                            <li>
-                                <a href="{{url('assets-frontend')}}/html/product-detail.html">Product Detail</a>
-                            </li>
-                            <li>
-                                <a href="">Faq</a>
-                            </li>
-                            <li>
-                                <a href="{{url('assets-frontend')}}/html/my_account.html">My account</a>
-                            </li>
-                            <li>
-                                <a href="{{url('assets-frontend')}}/html/shopping_cart.html">Cart</a>
-                            </li>
-                            <li>
-                                <a href="{{url('assets-frontend')}}/html/whishlist.html">Whishlist</a>
-                            </li>
-                            <li>
-                                <a href="{{url('assets-frontend')}}/html/check_out.html">Checkout</a>
-                            </li>
-                            <li>
-                                <a href="">404</a>
-                            </li>
-                        </ul> -->
-                    </li>
-                    <li>
-                        <a href="">Gallery
-                            <img class="leave" src="{{url('assets-frontend')}}/images/leave.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('blog')}}">Blog
-                            <img class="leave {{(Request::url() === 'http://127.0.0.1:8000/organic/blog') ? 'leave_1' : ''}}" src="{{url('assets-frontend')}}/images/leave.png" alt="">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">Contact
-                            <img class="leave" src="{{url('assets-frontend')}}/images/leave.png" alt="">
-                        </a>
-                    </li>
-                </ul>
+<div class="bottom-header">
+    <div class="container">
+        <div class="vishlist">
+            <div class="vishlist-inner">
+                <a href="{{route('whishlist')}}"><i class="icon-heart"></i></a>
+                <div class="vishlist-counter">01</div>
             </div>
         </div>
-        <div class="menu-mobile">
-            <div class="menu-mobile-main" id="navigation">
-                <div class="remove">
-                    <i class="far fa-times"></i>
+        <nav class="navbar">
+            <div class="nav-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="logo">
+                    <a href="{{route('home')}}"><img src="{{url('assets-frontend')}}/images/logo.png" /></a>
                 </div>
+            </div>
+            <div class="collapse" id="organic-food-navigation">
+                <div class="remove"><i class="icon-cancel-music"></i></div>
                 <div class="menu-logo">
-                    <a href="">
-                        <img src="{{url('assets-frontend')}}/images/logo.png" alt="logo nav mobile">
-                    </a>
+                    <a href="{{route('home')}}"><img src="{{url('assets-frontend')}}/images/logo.png" /></a>
                 </div>
-
-                <ul class="list-menu">
-                    <li class="active">
+                <ul class="nav navbar-nav">
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/home') ? 'active' : ''}}">
                         <a href="{{route('home')}}">Home</a>
                     </li>
-                    <li>
-                        <a href="#">About</a>
+                    <li class="">
+                        <a href="#">History</a>
                     </li>
-                    <li class="megamenu-li">
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/product') ? 'active' : ''}}">
                         <a href="{{route('product')}}">Shop</a>
-                        <!-- <i id="show-menu-shop" class="far fa-chevron-down"></i>
-                        <div class="menu-lv2">
-                            <ul class="mega-menu-shop">
-                                <li>
-                                    <a href="#">Banana</a>
-                                </li>
-                                <li>
-                                    <a href="#">Tender Coconut</a>
-                                </li>
-                                <li>
-                                    <a href="#">Mango</a>
-                                </li>
-                                <li>
-                                    <a href="#">Orange</a>
-                                </li>
-                                <li>
-                                    <a href="#">Grapes</a>
-                                </li>
-                                <li>
-                                    <a href="#">Avocado</a>
-                                </li>
-                                <li>
-                                    <a href="#">Mangosteen</a>
-                                </li>
-                                <li>
-                                    <a href="#">Kiwi Green</a>
-                                </li>
-                                <li>
-                                    <a href="#">Apple</a>
-                                </li>
-                                <li>
-                                    <a href="#">Passion Fruit</a>
-                                </li>
-                                <li>
-                                    <a href="#">Oranges</a>
-                                </li>
-                                <li>
-                                    <a href="#">Lemons</a>
-                                </li>
-                                <li>
-                                    <a href="#">Apple</a>
-                                </li>
-                                <li>
-                                    <a href="#">Passion Fruit</a>
-                                </li>
-                            </ul>
-                        </div> -->
                     </li>
-                    <li class="droapdown">
+                    <li class="">
+                        <a href="#">Fruits</a>
+                    </li>
+                    <li class="">
                         <a href="#">Organic Fruits</a>
-                        <i id="show-menu-organic" class="far fa-chevron-down"></i>
-                        <div class="menu-lv2">
-                            <ul class="mega-menu-organic">
-                                <li>
-                                    <a href="#">Seasonal Fruits</a>
-                                </li>
-                                <li>
-                                    <a href="#">Dry Fruits</a>
-                                </li>
-                                <li>
-                                    <a href="#">Regular Fruits</a>
-                                </li>
-                                <li>
-                                    <a href="#">Exotics Fruits</a>
-                                </li>
-                                <li>
-                                    <a href="#">Imported Fruits</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
-                    <li class="droapdown">
-                        <a href="#">Pages</a>
-                        <!-- <i id="show-menu-page" class="far fa-chevron-down"></i>
-                        <div class="menu-lv2">
-                            <ul class="mega-menu-page">
-                                <li>
-                                    <a href="{{url('assets-frontend')}}/html/product_listing.html">Product Listing</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('assets-frontend')}}/html/product-detail.html">Product Detail</a>
-                                </li>
-                                <li>
-                                    <a href="#">Faq</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('assets-frontend')}}/html/my_account.html">My account</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('assets-frontend')}}/html/shopping_cart.html">Cart</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('assets-frontend')}}/html/whishlist.html">Whishlist</a>
-                                </li>
-                                <li>
-                                    <a href="{{url('assets-frontend')}}/html/check_out.html">Checkout</a>
-                                </li>
-                                <li>
-                                    <a href="#">404</a>
-                                </li>
-                            </ul>
-                        </div> -->
+                    <li class="">
+                        <a href="#">Sprouts</a>
                     </li>
-                    <li>
-                        <a href="#">Gallery</a>
+                    <li class="">
+                        <a href="#">Custom</a>
                     </li>
-                    <li>
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/blog') ? 'active' : ''}}">
                         <a href="{{route('blog')}}">Blog</a>
                     </li>
-                    <li>
+                    <li class="">
                         <a href="#">Contact</a>
                     </li>
                 </ul>
             </div>
+        </nav>
+        <div class="search-and-cart">
+            <div class="search">
+                <div class="search-inner"><a href="#"><i class="icon-magnifying-glass"></i></a></div>
+            </div>
+            <div class="cart">
+                <div class="cart-inner">
+                    <a href="#"><i class="icon-shopping-bag"></i></a>
+                    <div class="cart-counter">01</div>
+                </div>
+                <div class="cart-popup">
+                    <p class="item-in-cart">2 items in your cart</p>
+                    <div class="item-list">
+                        <div class="box">
+                            <div class="img-part">
+                                <img class="img-responsive"
+                                    src="{{url('assets-frontend')}}/images/cart-popup-img-1.jpg">
+                            </div>
+                            <div class="text-part">
+                                <a class="product-name">Strawberries, 16 oz</a>
+                                <div class="quantity-and-price">1 x $2.50</div>
+                            </div>
+                            <a href="#" class="clear-btn"><i class="icon-cancel-music"></i></a>
+                        </div>
+                        <div class="box">
+                            <div class="img-part">
+                                <img class="img-responsive"
+                                    src="{{url('assets-frontend')}}/images/cart-popup-img-2.jpg">
+                            </div>
+                            <div class="text-part">
+                                <a class="product-name">Broccoli, bunch</a>
+                                <div class="quantity-and-price">2 x $4.00</div>
+                            </div>
+                            <a href="#" class="clear-btn"><i class="icon-cancel-music"></i></a>
+                        </div>
+                    </div>
+                    <div class="cart-total">
+                        <span>Total: $6.50</span>
+                    </div>
+                    <div class="cart-btm">
+                        <div class="btn-group">
+                            <a href="{{route('cart')}}" class="btn cart-view">view cart</a>
+                            <a href="{{route('checkout')}}" class="btn checkout">checkout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="nav-overlay remove"></div>
-    </nav>
+        <div class="searchbox">
+            <div class="inner">
+                <div class="container-1">
+                    <div class="pos-rel">
+                        <input class="input-serch" type="text" name="" placeholder="Search our store" />
+                        <div class="cross"><i class="icon-search"></i></div>
+                        <div class="cross"><i class="icon-cancel-music"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+<div class="clearfix"></div>

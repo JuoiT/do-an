@@ -46,6 +46,16 @@ class ShopController extends Controller
         return view('frontend.pages.my-account');
     }
 
+    public function register()
+    {
+        return view('frontend.pages.register');
+    }
+
+    public function login()
+    {
+        return view('frontend.pages.login');
+    }
+
     public function blog()
     {
         return view('frontend.pages.blog');

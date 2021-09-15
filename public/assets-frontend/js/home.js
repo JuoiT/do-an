@@ -1,4 +1,7 @@
 new WOW().init();
+
+
+
 $('.new-arrivals-slider').owlCarousel({
     loop: true,
     margin: 24,
@@ -73,6 +76,8 @@ $('.deal-slider').owlCarousel({
     center: true
 });
 
+
+
 function Dropdown(seletor) {
     var Selected = $(seletor);
     var Drop = $(seletor + '-drop');
@@ -101,6 +106,9 @@ function Dropdown(seletor) {
     });
 }
 Dropdown('#country');
+
+
+
 $(window).resize(function() {
     get_max_div_height();
 });
@@ -135,6 +143,9 @@ $(document).ready(function() {
         $('body').removeClass('overflow');
     });
 });
+
+
+
 filterSelection("all")
 
 function filterSelection(c) {
@@ -172,32 +183,5 @@ $(document).ready(function() {
     $('#myBtnContainer .btn').click(function() {
         $('#myBtnContainer .btn').removeClass("active");
         $(this).addClass("active");
-    });
-});
-
-
-
-var slider = new Slider('#price-range', {});
-
-$(document).ready(function() {
-
-    jQuery('#grid').click(function() {
-        jQuery(this).addClass('active');
-        jQuery('#list-btn').removeClass('active');
-    });
-
-    jQuery('#list-btn').click(function() {
-        jQuery(this).addClass('active');
-        jQuery('#grid').removeClass('active');
-    });
-
-    $('#list-btn').click(function(event) {
-        event.preventDefault();
-        $('#products .item').addClass('list-group-item');
-    });
-    $('#grid').click(function(event) {
-        event.preventDefault();
-        $('#products .item').removeClass('list-group-item');
-        $('#products .item').addClass('grid-group-item');
     });
 });

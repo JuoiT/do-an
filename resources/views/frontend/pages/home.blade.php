@@ -2,7 +2,8 @@
 
 @section('main')
 
-<link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/home.css" />
+<link href="{{url('assets-frontend')}}/css/page/home.css" rel="stylesheet"/>
+<link href="{{url('assets-frontend')}}/css/library/responsive-slider.css" rel="stylesheet" />
 
 <div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
     <div class="slides" data-group="slides">
@@ -708,5 +709,6 @@
     </div>
 </section>
 <div class="clearfix"></div>
+
 
 @stop

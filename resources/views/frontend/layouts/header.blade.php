@@ -9,10 +9,8 @@
     <meta name="author" content="">
     <title>Organic Foodstore</title>
     <!-- Library -->
-    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/fontello.css" />
     <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/responsive-slider.css" />
-    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/bootstrap-slider.min.css" />
+    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/fontello.css" />
     <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/owl.carousel.min.css">
     <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/animate.css">

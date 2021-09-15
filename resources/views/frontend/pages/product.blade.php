@@ -2,6 +2,7 @@
 
 @section('main')
 
+<link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/bootstrap-slider.min.css">
 <link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/product.css">
 
 <section class="sub-banner wow fadeInUp">
@@ -184,6 +185,117 @@
                         </div>
                     </div>
                     <div id="products" class="product-list list-group">
+                        <div class="col-sm-4 col-xs-12 wow fadeInUp item">
+                            <div class="wrapper">
+                                <div class="pro-img">
+                                    <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-1.jpg" /></a>
+                                </div>
+                                <div class="contain-wrapper">
+                                    <div class="tit"><a href="{{route('detail')}}">Jessica Simpson Fruit's</a></div>
+                                    <div class="ratting">
+                                        <ul>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="price">
+                                        <div class="new-price">$33.00</div>
+                                        <div class="old-price"><del>$33.00</del></div>
+                                    </div>
+                                    <div class="btn-part">
+                                        <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                        <i class="icon-basket-supermarket"></i>
+                                    </div>
+                                    <div class="btn-part">
+                                        <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                        <i class="icon-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="sale">sale</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 wow fadeInUp item">
+                            <div class="wrapper">
+                                <div class="pro-img">
+                                    <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-2.jpg" /></a>
+                                </div>
+                                <div class="contain-wrapper">
+                                    <div class="tit"><a href="{{route('detail')}}">Lee Uniforms Vegetable's</a></div>
+                                    <div class="ratting">
+                                        <ul>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="price">
+                                        <div class="new-price">$33.00</div>
+                                        <div class="old-price"><del>$12.00</del></div>
+                                    </div>
+                                    <div class="btn-part">
+                                        <a href="cart.html" class="cart-btn">buy now</a>
+                                        <i class="icon-basket-supermarket"></i>
+                                    </div>
+                                    <div class="btn-part">
+                                        <a href="cart.html" class="cart-btn">whishlist</a>
+                                        <i class="icon-heart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-12 wow fadeInUp item">
+                            <div class="wrapper">
+                                <div class="pro-img">
+                                    <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-3.jpg" /></a>
+                                </div>
+                                <div class="contain-wrapper">
+                                    <div class="tit"><a href="{{route('detail')}}">Original Penguin</a></div>
+                                    <div class="ratting">
+                                        <ul>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            </li>
+                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="price">
+                                        <div class="new-price">$25.00</div>
+                                        <div class="old-price"><del>$12.00</del></div>
+                                    </div>
+                                    <div class="btn-part">
+                                        <a href="cart.html" class="cart-btn">buy now</a>
+                                        <i class="icon-basket-supermarket"></i>
+                                    </div>
+                                    <div class="btn-part">
+                                        <a href="cart.html" class="cart-btn">whishlist</a>
+                                        <i class="icon-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="new">new</div>
+                            </div>
+                        </div>
+
                         <div class="col-sm-4 col-xs-12 wow fadeInUp item">
                             <div class="wrapper">
                                 <div class="pro-img">

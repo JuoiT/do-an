@@ -135,14 +135,28 @@
         </div>
     </div>
 </footer>
+
 <script src="{{url('assets-frontend')}}/js/jquery-1.11.3.min.js"></script>
 <script src="{{url('assets-frontend')}}/js/bootstrap.min.js"></script>
-<script src="{{url('assets-frontend')}}/js/responsive-slider.js"></script>
-<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
 <script src="{{url('assets-frontend')}}/js/custom.js"></script>
 <script src="{{url('assets-frontend')}}/js/owl.carousel.min.js"></script>
 <script src="{{url('assets-frontend')}}/js/wow.min.js"></script>
-<script src="{{url('assets-frontend')}}/js/bootstrap.js"></script>
+@if(Request::url() === 'http://127.0.0.1:8000/organic/home')
+<script src="{{url('assets-frontend')}}/js/responsive-slider.js"></script>
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+<script src="{{url('assets-frontend')}}/js/home.js"></script>
+@elseif(Request::url() === 'http://127.0.0.1:8000/organic/product')
+<script src="{{url('assets-frontend')}}/js/bootstrap-slider.min.js"></script>
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+<script src="{{url('assets-frontend')}}/js/product.js"></script>
+@elseif(Request::url() === 'http://127.0.0.1:8000/organic/login')
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+<script src="{{url('assets-frontend')}}/js/login-register.js"></script>
+@elseif(Request::url() === 'http://127.0.0.1:8000/organic/detail')
+<script src="{{url('assets-frontend')}}/js/responsiveTabs.min.js"></script>
+<script src="{{url('assets-frontend')}}/js/smoothproducts.min.js"></script>
+<script src="{{url('assets-frontend')}}/js/detail.js"></script>
+@endif
 
 </body>
 

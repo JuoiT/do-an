@@ -247,8 +247,8 @@
 .wrapper .contain-wrapper .new-price,
 .related-product-slider .wrapper .contain-wrapper .new-price {
     display: inline-block;
-    font-weight: 100;
-    font-size: 30px;
+    font-weight: 500;
+    font-size: 20px;
     color: #4a4642;
     line-height: 30px;
 }
@@ -308,12 +308,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    ;
     opacity: 1;
     background: rgba(167, 207, 71, 0.8);
     overflow: hidden;
     width: 100%;
     height: 100%;
+    -webkit-transform: scale(0);
     cursor: pointer;
 }
 
@@ -624,8 +624,8 @@
 
 .deal-slider .price .new-price {
     display: inline-block;
-    font-weight: 100;
-    font-size: 30px;
+    font-weight: 500;
+    font-size: 20px;
     color: #4a4642;
     line-height: 30px;
     vertical-align: middle;
@@ -711,8 +711,8 @@
 
 .filterDiv .text-part .price .new-price {
     display: inline-block;
-    font-weight: 100;
-    font-size: 30px;
+    font-weight: 500;
+    font-size: 20px;
     color: #4a4642;
     line-height: 30px;
     vertical-align: middle;

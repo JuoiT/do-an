@@ -82,7 +82,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="price">$19.00</div>
+                                    <div class="price">$1.00</div>
                                 </div>
                             </div>
                             <div class="seller-box">
@@ -105,7 +105,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="price">$19.00</div>
+                                    <div class="price">$2.00</div>
                                 </div>
                             </div>
                             <div class="seller-box">
@@ -128,7 +128,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="price">$19.00</div>
+                                    <div class="price">$3.00</div>
                                 </div>
                             </div>
                         </div>
@@ -146,12 +146,12 @@
                             <div class="tag-div">
                                 <a class="tag-btn" href="#">Bru</a>
                                 <a class="tag-btn" href="#">Lmao</a>
-                                <a class="tag-btn" href="#">Bru</a>
-                                <a class="tag-btn" href="#">Lmao</a>
-                                <a class="tag-btn" href="#">Bru</a>
-                                <a class="tag-btn" href="#">Lmao</a>
-                                <a class="tag-btn" href="#">Bru</a>
-                                <a class="tag-btn" href="#">Lmao</a>
+                                <a class="tag-btn" href="#">Dảkádasd</a>
+                                <a class="tag-btn" href="#">Mlem</a>
+                                <a class="tag-btn" href="#">Mòe</a>
+                                <a class="tag-btn" href="#">Luan nv</a>
+                                <a class="tag-btn" href="#">Bla</a>
+                                <a class="tag-btn" href="#">Blu</a>
                             </div>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
                                     <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-1.jpg" /></a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Jessica Simpson Fruit's</a></div>
+                                    <div class="tit"><a href="{{route('detail')}}">Lmao</a></div>
                                     <div class="ratting">
                                         <ul>
                                             <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
@@ -207,8 +207,8 @@
                                         </ul>
                                     </div>
                                     <div class="price">
-                                        <div class="new-price">$33.00</div>
-                                        <div class="old-price"><del>$33.00</del></div>
+                                        <div class="new-price">$2.00</div>
+                                        <div class="old-price"><del>$7.00</del></div>
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('cart')}}" class="cart-btn">buy now</a>
@@ -228,7 +228,7 @@
                                     <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-2.jpg" /></a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Lee Uniforms Vegetable's</a></div>
+                                    <div class="tit"><a href="{{route('detail')}}">Bru</a></div>
                                     <div class="ratting">
                                         <ul>
                                             <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
@@ -244,8 +244,8 @@
                                         </ul>
                                     </div>
                                     <div class="price">
-                                        <div class="new-price">$33.00</div>
-                                        <div class="old-price"><del>$12.00</del></div>
+                                        <div class="new-price">$3.00</div>
+                                        <div class="old-price"><del>$6.00</del></div>
                                     </div>
                                     <div class="btn-part">
                                         <a href="cart.html" class="cart-btn">buy now</a>
@@ -264,7 +264,7 @@
                                     <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-3.jpg" /></a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Original Penguin</a></div>
+                                    <div class="tit"><a href="{{route('detail')}}">Mlem</a></div>
                                     <div class="ratting">
                                         <ul>
                                             <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
@@ -280,8 +280,8 @@
                                         </ul>
                                     </div>
                                     <div class="price">
-                                        <div class="new-price">$25.00</div>
-                                        <div class="old-price"><del>$12.00</del></div>
+                                        <div class="new-price">$4.00</div>
+                                        <div class="old-price"><del>$6.00</del></div>
                                     </div>
                                     <div class="btn-part">
                                         <a href="cart.html" class="cart-btn">buy now</a>
@@ -302,7 +302,7 @@
                                     <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-1.jpg" /></a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Jessica Simpson Fruit's</a></div>
+                                    <div class="tit"><a href="{{route('detail')}}">Bru</a></div>
                                     <div class="ratting">
                                         <ul>
                                             <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
@@ -318,8 +318,8 @@
                                         </ul>
                                     </div>
                                     <div class="price">
-                                        <div class="new-price">$33.00</div>
-                                        <div class="old-price"><del>$33.00</del></div>
+                                        <div class="new-price">$3.00</div>
+                                        <div class="old-price"><del>$6.00</del></div>
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('cart')}}" class="cart-btn">buy now</a>
@@ -339,7 +339,7 @@
                                     <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-2.jpg" /></a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Lee Uniforms Vegetable's</a></div>
+                                    <div class="tit"><a href="{{route('detail')}}">Bla Bla</a></div>
                                     <div class="ratting">
                                         <ul>
                                             <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
@@ -355,8 +355,8 @@
                                         </ul>
                                     </div>
                                     <div class="price">
-                                        <div class="new-price">$33.00</div>
-                                        <div class="old-price"><del>$12.00</del></div>
+                                        <div class="new-price">$4.00</div>
+                                        <div class="old-price"><del>$5.00</del></div>
                                     </div>
                                     <div class="btn-part">
                                         <a href="cart.html" class="cart-btn">buy now</a>
@@ -375,7 +375,7 @@
                                     <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-3.jpg" /></a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Original Penguin</a></div>
+                                    <div class="tit"><a href="{{route('detail')}}">Mòe lol</a></div>
                                     <div class="ratting">
                                         <ul>
                                             <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
@@ -391,8 +391,8 @@
                                         </ul>
                                     </div>
                                     <div class="price">
-                                        <div class="new-price">$25.00</div>
-                                        <div class="old-price"><del>$12.00</del></div>
+                                        <div class="new-price">$4.00</div>
+                                        <div class="old-price"><del>$7.00</del></div>
                                     </div>
                                     <div class="btn-part">
                                         <a href="cart.html" class="cart-btn">buy now</a>

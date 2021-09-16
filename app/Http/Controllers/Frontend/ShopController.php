@@ -60,4 +60,9 @@ class ShopController extends Controller
     {
         return view('frontend.pages.blog');
     }
+
+    public function blog_detail()
+    {
+        return view('frontend.pages.blog-detail');
+    }
 }

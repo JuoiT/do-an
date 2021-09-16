@@ -1,0 +1,348 @@
+.table {
+    border: 1px solid #dbdbdb;
+    margin: 0;
+}
+
+.table tr,
+.total-box,
+.total-box .tit,
+.tax-box {
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+}
+
+.table>tbody>tr>td.total .add-to-cart {
+    text-transform: uppercase;
+}
+
+.table>tbody>tr>td.total .add-to-cart:hover {
+    color: #549843;
+}
+
+.table>thead>tr>th {
+    border: none;
+    background: #f1f1f1;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #5a4a3b;
+    text-align: left;
+    vertical-align: middle;
+    padding: 0 30px;
+    line-height: 58px;
+}
+
+.table>tbody>tr>td {
+    padding: 38px 30px;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 14px;
+    color: #4a4642;
+    font-weight: 500;
+}
+
+.table>tbody>tr>td a,
+.table>tbody>tr>td a i:before {
+    color: #4a4642;
+}
+
+.table>tbody>tr>td.total {
+    font-weight: 600;
+}
+
+.table>tbody>tr>td.cancle {
+    font-size: 12px;
+}
+
+.table input[type="number"] {
+    width: 56px;
+    height: 33px;
+    border: 1px solid #dbdbdb;
+    padding: 0 8px;
+}
+
+.table>tfoot>tr>td {
+    padding: 32px 28px;
+}
+
+.table tfoot .l-part {
+    float: left;
+}
+
+.table tfoot .r-part {
+    float: right;
+}
+
+.table tfoot .l-part .continue-shopping-btn {
+    line-height: 42px;
+    padding: 0 20px;
+    display: block;
+    border: 2px solid #e6e1dd;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #5a4a3b;
+}
+
+.table tfoot .l-part .continue-shopping-btn i:before {
+    margin: 0 0 0 12px;
+    color: #5a4a3b;
+    font-size: 12px;
+    transition: 0.3s all ease-in;
+    -webkit-transition: 0.3s all ease-in;
+    -moz-transition: 0.3s all ease-in;
+}
+
+.table tfoot .l-part .continue-shopping-btn:hover {
+    background: #549843;
+    border-color: #549843;
+    color: #fff;
+}
+
+.table tfoot .l-part .continue-shopping-btn:hover i:before {
+    color: #fff;
+}
+
+.table tfoot .r-part .cancle-cart-btn,
+.table tfoot .r-part .update-cart-btn:hover {
+    background: #549843;
+    border: 2px solid #549843;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 42px;
+    margin: 0 3px;
+    padding: 0 18px;
+}
+
+.table tfoot .r-part .cancle-cart-btn i:before {
+    font-size: 12px;
+    margin: 0 10px 0 0;
+    transition: 0.3s all ease-in;
+    -webkit-transition: 0.3s all ease-in;
+    -moz-transition: 0.3s all ease-in;
+}
+
+.table tfoot .r-part .cancle-cart-btn:hover i:before {
+    color: #5a4a3b;
+}
+
+.table tfoot .r-part .update-cart-btn,
+.table tfoot .r-part .cancle-cart-btn:hover {
+    background: transparent;
+    border: 2px solid #e6e1dd;
+    color: #5a4a3b;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: inline-block;
+    line-height: 42px;
+    margin: 0 3px;
+    padding: 0 18px;
+}
+
+.coupon {
+    float: left;
+    width: 100%;
+    background: #d9d5d2;
+    padding: 30px 40px 25px;
+    margin-bottom: 44px;
+}
+
+.coupon label {
+    font-size: 24px;
+    color: #5a4a3b;
+    text-transform: capitalize;
+    font-weight: 600;
+    float: left;
+    margin: 0;
+    line-height: 52px;
+}
+
+.coupon .coupon_text {
+    margin: 0 18px;
+    float: left;
+    line-height: 46px;
+    border: 3px solid #fff;
+    background: transparent;
+    padding: 0 15px;
+    width: calc(100% - 462px);
+}
+
+.coupon .coupon-btn {
+    padding: 0 80px;
+    background: #5a4a3b;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 46px;
+    border: 3px solid transparent;
+}
+
+.coupon .coupon-btn:hover {
+    background: #549843;
+}
+
+.total-box {
+    float: left;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #dbdbdb;
+}
+
+.tax-box .tit,
+.total-box .tit {
+    float: left;
+    color: #5a4a3b;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 22px 36px;
+    width: 100%;
+    line-height: 15px;
+    border-bottom: 1px solid #dbdbdb;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+    position: relative;
+}
+
+.total-box-inner {
+    float: left;
+    background: #e3dfdc;
+    width: 100%;
+    padding: 34px;
+}
+
+.total-box-inner .sub-total,
+.total-box-inner .grand-total {
+    width: 100%;
+    float: left;
+}
+
+.total-box-inner span {
+    float: left;
+}
+
+.total-box-inner span.price {
+    float: right;
+}
+
+.total-box-inner .sub-total {
+    color: #4a4642;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 400;
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+.total-box-inner .grand-total {
+    color: #4a4642;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 700;
+    padding-bottom: 40px;
+}
+
+.total-box-inner .checkout-btn {
+    line-height: 56px;
+    background: #549843;
+    font-weight: 500;
+    color: #fff;
+    font-size: 18px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 5px;
+}
+
+.total-box-inner .checkout-btn i:before {
+    margin: -3px 15px 0 0;
+    font-size: 12px;
+    line-height: 12px;
+    vertical-align: middle;
+}
+
+.total-box-inner .checkout-btn:hover {
+    background: #5a4a3b
+}
+
+.tax-box {
+    float: left;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #dbdbdb;
+}
+
+.tax-box .tit {
+    padding-left: 25px;
+}
+
+.tax-box-inner {
+    padding: 25px;
+    float: left;
+    width: 100%;
+}
+
+.tax-box-inner p {
+    font-size: 14px;
+    color: #4a4642;
+    font-weight: 500;
+    margin-bottom: 22px;
+}
+
+.tax-box-inner label {
+    color: #4a4642;
+    font-weight: 500;
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    display: block;
+    line-height: 13px;
+}
+
+.tax-box-inner input[type="number"],
+.tax-box-inner select,
+.tax-box-inner .postal-text {
+    height: 34px;
+    border: 1px solid #dbdbdb;
+    padding: 0 12px;
+    font-size: 12px;
+    color: #4a4642;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.tax-box-inner select,
+.tax-box-inner input[type="number"] {
+    height: 34px;
+    border: 1px solid #dbdbdb;
+}
+
+.tax-box-inner .quote {
+    height: 42px;
+    line-height: 38px;
+    border: 2px solid #e6e1dd;
+    padding: 0 20px;
+    color: #5a4a3b;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: transparent;
+}
+
+.tax-box-inner .quote i:before {
+    margin: 0 10px 0 0;
+    font-size: 14px;
+}
+
+.tax-box-inner .quote:hover {
+    color: #fff;
+    background: #5a4a3b;
+    border-color: #5a4a3b;
+}

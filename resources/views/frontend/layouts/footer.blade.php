@@ -54,8 +54,7 @@
                     <div class="logo">
                         <img class="img-responsive" src="{{url('assets-frontend')}}/images/footer-logo.png" />
                     </div>
-                    <div class="adress"><i class="icon-placeholder"></i><span>Lorem Ipsum is dummy text of the printing
-                            typesetting</span></div>
+                    <div class="adress"><i class="icon-placeholder"></i><span>Hanoi</span></div>
                     <div class="clearfix"></div>
                     <div class="phone"><i class="icon-icon"></i><a href="tel:+8888888888">+(888) 888-8888</a></div>
                     <div class="mail"><i class="icon-envelope"></i><a
@@ -109,11 +108,6 @@
                 </div>
             </div>
             <div class="bottom-footer">
-                <div class="lpart">
-                    <p class="copyright">© Organic Foodstroe <span>2021</span></p>
-                    <p class="design">Website designed & Developed by <a target="_blank"
-                            href="#">Bru lmao</a></p>
-                </div>
                 <div class="center-part">
                     <ul class="social">
                         <li><a href="#"><i class="icon-facebook"></i></a></li>
@@ -156,6 +150,19 @@
 <script src="{{url('assets-frontend')}}/js/responsiveTabs.min.js"></script>
 <script src="{{url('assets-frontend')}}/js/smoothproducts.min.js"></script>
 <script src="{{url('assets-frontend')}}/js/detail.js"></script>
+@elseif(Request::url() === 'http://127.0.0.1:8000/organic/blog')
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+<script src="{{url('assets-frontend')}}/js/jquery.matchHeight-min.js"></script>
+<script src="{{url('assets-frontend')}}/js/blog.js"></script>
+@elseif(Request::url() === 'http://127.0.0.1:8000/organic/detail')
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+<script src="{{url('assets-frontend')}}/js/blog-detail.js"></script>
+@elseif(Request::url() === 'http://127.0.0.1:8000/organic/cart')
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+<script src="{{url('assets-frontend')}}/js/cart.js"></script>
+@elseif(Request::url() === 'http://127.0.0.1:8000/organic/checkout')
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+<script src="{{url('assets-frontend')}}/js/check-out.js"></script>
 @endif
 
 </body>

@@ -83,4 +83,6 @@ Route::group(['prefix'=>'organic'], function() {
 
     Route::get('blog', [ShopController::class, 'blog'])->name('blog');
 
+    Route::get('blog_detail', [ShopController::class, 'blog_detail'])->name('blog_detail');
+
 });

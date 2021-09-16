@@ -71,8 +71,8 @@
                                     src="{{url('assets-frontend')}}/images/cart-popup-img-1.jpg">
                             </div>
                             <div class="text-part">
-                                <a class="product-name">Strawberries, 16 oz</a>
-                                <div class="quantity-and-price">1 x $2.50</div>
+                                <a class="product-name">Lmao Mlem</a>
+                                <div class="quantity-and-price">1 x $2.00</div>
                             </div>
                             <a href="#" class="clear-btn"><i class="icon-cancel-music"></i></a>
                         </div>
@@ -82,14 +82,14 @@
                                     src="{{url('assets-frontend')}}/images/cart-popup-img-2.jpg">
                             </div>
                             <div class="text-part">
-                                <a class="product-name">Broccoli, bunch</a>
+                                <a class="product-name">Bru Dak</a>
                                 <div class="quantity-and-price">2 x $4.00</div>
                             </div>
                             <a href="#" class="clear-btn"><i class="icon-cancel-music"></i></a>
                         </div>
                     </div>
                     <div class="cart-total">
-                        <span>Total: $6.50</span>
+                        <span>Total: $6.00</span>
                     </div>
                     <div class="cart-btm">
                         <div class="btn-group">

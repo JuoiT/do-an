@@ -14,10 +14,10 @@
                     <div class="carouseal-caption">
                         <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500"
                             data-length="300">
-                            <div class="sub-tit">Natural Health Care Ingredientsa</div>
-                            <h2><span>100%</span> Organic</h2>
+                            <div class="sub-tit">Luan nv Lmao</div>
+                            <h2><span>100%</span> Sale</h2>
                             <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800"
-                                data-length="300">Are they safer? More nutritious? </div>
+                                data-length="300">Bla Bla Bla Bru Lmao dak áncnal</div>
                         </div>
                     </div>
                 </div>
@@ -28,10 +28,10 @@
                     <div class="carouseal-caption">
                         <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500"
                             data-length="300">
-                            <div class="sub-tit">Natural Health Care Ingredientsa</div>
-                            <h2><span>100%</span> Organic</h2>
+                            <div class="sub-tit">Lmao Bru Lmao</div>
+                            <h2><span>100%</span> chất bảo quản</h2>
                             <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800"
-                                data-length="300">Are they safer? More nutritious? </div>
+                                data-length="300">Không chết không lấy tiền</div>
                         </div>
                     </div>
                 </div>
@@ -48,21 +48,21 @@
                 <div class="col-sm-4 col-xs-12 wow bounce">
                     <img class="img-responsive" src="{{url('assets-frontend')}}/images/fresh-fruits-img.jpg" />
                     <div class="tit-btn-wrapper">
-                        <div class="tit"><span>fresh</span> fruits</div>
+                        <div class="tit"><span>Bru</span> Lmao</div>
                         <a class="btn">View Collections</a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 wow bounce">
                     <img class="img-responsive" src="{{url('assets-frontend')}}/images/fresh-vegetables-img.jpg" />
                     <div class="tit-btn-wrapper">
-                        <div class="tit"><span>fresh</span> Vegetables</div>
+                        <div class="tit"><span>Bru</span> Luan nv</div>
                         <a class="btn">View Collections</a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 wow bounce">
                     <img class="img-responsive" src="{{url('assets-frontend')}}/images/organic-foods-img.jpg" />
                     <div class="tit-btn-wrapper">
-                        <div class="tit"><span>Organic</span> Foods</div>
+                        <div class="tit"><span>Bru</span> Dak</div>
                         <a class="btn">View Collections</a>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
             <div class="col-sm-12 col-xs-12  wow fadeInUp">
                 <div class="section-tit">
                     <div class="inner">
-                        <h2><span>New</span>arrivals</h2>
+                        <h2><span>Bru</span> Lmao</h2>
                     </div>
                 </div>
             </div>
@@ -92,10 +92,10 @@
                                     src="{{url('assets-frontend')}}/images/new-arrivals-img-1.jpg" />
                             </div>
                             <div class="contain-wrapper">
-                                <div class="tit">Jessica Simpson Fruit's</div>
+                                <div class="tit">Ngu người</div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$1.00</div>
+                                    <div class="old-price"><del>$1000.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -119,10 +119,10 @@
                                     src="{{url('assets-frontend')}}/images/new-arrivals-img-2.jpg" />
                             </div>
                             <div class="contain-wrapper">
-                                <div class="tit">Jessica Simpson Fruit's</div>
+                                <div class="tit">Óc chó</div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$1.00</div>
+                                    <div class="old-price"><del>$2.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -147,10 +147,10 @@
                                     src="{{url('assets-frontend')}}/images/new-arrivals-img-3.jpg" />
                             </div>
                             <div class="contain-wrapper">
-                                <div class="tit">Lee Uniforms Vegetable's Short-Sleeve</div>
+                                <div class="tit">Ngôn lù</div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price"><del>$5.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -174,10 +174,10 @@
                                     src="{{url('assets-frontend')}}/images/new-arrivals-img-4.jpg" />
                             </div>
                             <div class="contain-wrapper">
-                                <div class="tit">Lee Uniforms Vegetable's Short-Sleeve</div>
+                                <div class="tit">Dak Bru</div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$4.00</div>
+                                    <div class="old-price"><del>$5.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -202,10 +202,10 @@
                                     src="{{url('assets-frontend')}}/images/new-arrivals-img-1.jpg" />
                             </div>
                             <div class="contain-wrapper">
-                                <div class="tit">Jessica Simpson Fruit's</div>
+                                <div class="tit">Lmao Bla</div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$4.00</div>
+                                    <div class="old-price"><del>$6.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -229,10 +229,10 @@
                                     src="{{url('assets-frontend')}}/images/new-arrivals-img-1.jpg" />
                             </div>
                             <div class="contain-wrapper">
-                                <div class="tit">Jessica Simpson Fruit's</div>
+                                <div class="tit">Mlem Mlem</div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$4.00</div>
+                                    <div class="old-price"><del>$6.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -277,10 +277,10 @@
                                                 src="{{url('assets-frontend')}}/images/deal-img-7.png" />
                                         </div>
                                         <div class="contain-wrapper">
-                                            <div class="tit">Kensie Fruit's Wool Cocoon CoatKensie Fruit</div>
+                                            <div class="tit">Ngu như chó</div>
                                             <div class="price">
-                                                <div class="new-price">$23.00</div>
-                                                <div class="old-price"><del>$12.00</del></div>
+                                                <div class="new-price">$3.00</div>
+                                                <div class="old-price"><del>$6.00</del></div>
                                             </div>
                                             <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                                 <i class="icon-basket-supermarket"></i>
@@ -293,10 +293,10 @@
                                                 src="{{url('assets-frontend')}}/images/deal-img-7.png" />
                                         </div>
                                         <div class="contain-wrapper">
-                                            <div class="tit">Kensie Fruit's Wool Cocoon CoatKensie Fruit</div>
+                                            <div class="tit">Óc chó</div>
                                             <div class="price">
-                                                <div class="new-price">$23.00</div>
-                                                <div class="old-price"><del>$12.00</del></div>
+                                                <div class="new-price">$2.00</div>
+                                                <div class="old-price"><del>$5.00</del></div>
                                             </div>
                                             <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                                 <i class="icon-basket-supermarket"></i>
@@ -309,10 +309,10 @@
                                                 src="{{url('assets-frontend')}}/images/deal-img-7.png" />
                                         </div>
                                         <div class="contain-wrapper">
-                                            <div class="tit">Kensie Fruit's Wool Cocoon CoatKensie Fruit</div>
+                                            <div class="tit">Lmao Bru</div>
                                             <div class="price">
-                                                <div class="new-price">$23.00</div>
-                                                <div class="old-price"><del>$12.00</del></div>
+                                                <div class="new-price">$3.00</div>
+                                                <div class="old-price"><del>$4.00</del></div>
                                             </div>
                                             <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                                 <i class="icon-basket-supermarket"></i>
@@ -337,7 +337,7 @@
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-1.jpg" />
                             </div>
                             <div class="text-part">
-                                <div class="box-tit">Jessica Simpson Fruit's</div>
+                                <div class="box-tit">Bla Bla</div>
                                 <div class="ratting">
                                     <ul>
                                         <li><a href="#"><img class="img-responsive"
@@ -358,8 +358,8 @@
                                     </ul>
                                 </div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price"><del>$3.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -371,7 +371,7 @@
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-2.jpg" />
                             </div>
                             <div class="text-part">
-                                <div class="box-tit">Jessica Simpson Fruit's</div>
+                                <div class="box-tit">Bru lamo</div>
                                 <div class="ratting">
                                     <ul>
                                         <li><a href="#"><img class="img-responsive"
@@ -392,8 +392,8 @@
                                     </ul>
                                 </div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$3.00</div>
+                                    <div class="old-price"><del>$6.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -405,7 +405,7 @@
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-3.jpg" />
                             </div>
                             <div class="text-part">
-                                <div class="box-tit">Jessica Simpson Fruit's</div>
+                                <div class="box-tit">Dak Bru</div>
                                 <div class="ratting">
                                     <ul>
                                         <li><a href="#"><img class="img-responsive"
@@ -426,8 +426,8 @@
                                     </ul>
                                 </div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$3.00</div>
+                                    <div class="old-price"><del>$8.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -441,7 +441,7 @@
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-4.jpg" />
                             </div>
                             <div class="text-part">
-                                <div class="box-tit">Jessica Simpson Fruit's</div>
+                                <div class="box-tit">Lmao Lmao</div>
                                 <div class="ratting">
                                     <ul>
                                         <li><a href="#"><img class="img-responsive"
@@ -462,8 +462,8 @@
                                     </ul>
                                 </div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$3.00</div>
+                                    <div class="old-price"><del>$6.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -475,7 +475,7 @@
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-5.jpg" />
                             </div>
                             <div class="text-part">
-                                <div class="box-tit">Jessica Simpson Fruit's</div>
+                                <div class="box-tit">Mlem Mlem</div>
                                 <div class="ratting">
                                     <ul>
                                         <li><a href="#"><img class="img-responsive"
@@ -496,8 +496,8 @@
                                     </ul>
                                 </div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price"><del>$4.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -509,7 +509,7 @@
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-6.jpg" />
                             </div>
                             <div class="text-part">
-                                <div class="box-tit">Jessica Simpson Fruit's</div>
+                                <div class="box-tit">Ngu vừa đủ</div>
                                 <div class="ratting">
                                     <ul>
                                         <li><a href="#"><img class="img-responsive"
@@ -528,8 +528,8 @@
                                     </ul>
                                 </div>
                                 <div class="price">
-                                    <div class="new-price">$33.00</div>
-                                    <div class="old-price"><del>$33.00</del></div>
+                                    <div class="new-price">$3.00</div>
+                                    <div class="old-price"><del>$9.00</del></div>
                                 </div>
                                 <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
@@ -556,7 +556,7 @@
             <div class="col-sm-4  rpart  wow slideInRight">
                 <div class="bg equal-height">
                     <div class="free-shipping">freee shipping</div>
-                    <p>With order over $500</p>
+                    <p>With order over $1000</p>
                     <a href="#" class="shop-btn-1">shop now</a>
                     </span>
                 </div>
@@ -585,8 +585,8 @@
                     <div class="overlay">
                     </div>
                     <div class="text">
-                        <div class="date">March 04, 2018</div>
-                        <div class="title"><a href="#">Quick dinners, healthy recipes, and more. </a></div>
+                        <div class="date">July 30, 2021</div>
+                        <div class="title"><a href="#">Bru Lmao Dak Mlem </a></div>
                     </div>
                 </div>
             </div>
@@ -596,8 +596,8 @@
                     <div class="overlay">
                     </div>
                     <div class="text">
-                        <div class="date">March 04, 2018</div>
-                        <div class="title"><a href="#">5 Reasons Why Grapes Are Good for You </a></div>
+                        <div class="date">July 15, 2021</div>
+                        <div class="title"><a href="#">Ngu vua du</a></div>
                     </div>
                 </div>
             </div>
@@ -607,8 +607,8 @@
                     <div class="overlay">
                     </div>
                     <div class="text">
-                        <div class="date">March 04, 2018</div>
-                        <div class="title"><a href="#">Chicken & Spring Vegetable Lasagna Recipe </a></div>
+                        <div class="date">July 1, 2021</div>
+                        <div class="title"><a href="#">Ngu hoi qua</a></div>
                     </div>
                 </div>
             </div>
@@ -618,8 +618,8 @@
                     <div class="overlay">
                     </div>
                     <div class="text">
-                        <div class="date">March 04, 2018</div>
-                        <div class="title"><a href="#">Fusce ac pharetra urna. Duis non lacus sit</a></div>
+                        <div class="date">June 30, 2021</div>
+                        <div class="title"><a href="#">Ngu vai lol</a></div>
                     </div>
                 </div>
             </div>

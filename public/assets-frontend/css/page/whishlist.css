@@ -1,539 +1,57 @@
-/* ------ Begin Nav ------ */
-
-.nav-pc {
-    width: 90%;
-    margin: 0 auto;
-    height: 180px;
-    position: relative;
+.whishlist-page {
+    padding: 72px 0 180px
 }
 
-.nav-pc .logo {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 25px;
-    position: relative;
-}
-
-.logo .item {
-    width: 60px;
-    height: 60px;
-    position: relative;
-    transition: all 0.5s;
-    background-image: url(../images/icon-bg.png);
-    background-repeat: no-repeat;
-}
-
-.logo .item:hover {
-    background-image: url(../images/icon-bg-1.png);
-}
-
-.logo .icon-item__small {
-    position: absolute;
-    top: 14px;
-    left: 15px;
-    font-size: 24px;
-    color: #fff;
-}
-
-.nav-mobile {
-    width: 60px;
-    height: 60px;
-    transition: all 0.5s;
-    background-image: url(../images/icon-bg.png);
-    background-repeat: no-repeat;
-}
-
-.nav-mobile:hover {
-    background-image: url(../images/icon-bg-1.png);
-}
-
-.nav-mobile .icon-item__small {
-    position: absolute;
-    top: 14px;
-    left: 15px;
-    font-size: 24px;
-    color: #fff;
-}
-
-.logo .amount {
-    text-align: center;
-    font-weight: bold;
-    width: 24px;
-    height: 24px;
-    background: #928a83;
-    border-radius: 50%;
-    color: #fff;
-    line-height: 24px;
-    font-size: 11px;
-    font-weight: 600;
-    position: absolute;
-    top: -8px;
-    right: 3px;
-}
-
-.logo .img-logo {
-    width: 120px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.logo .icon-nav {
-    display: flex;
-}
-
-.logo .item-left {
-    position: absolute;
-    top: 30px;
-    left: 0;
-}
-
-.logo .item-right {
-    position: absolute;
-    top: 30px;
-    display: flex;
-    right: 0;
-}
-
-.logo .item {
-    margin-right: 10px;
-}
-
-
-/* ------ End Nav ------ */
-
-
-/* ------------------------ */
-
-
-/* ------ Begin Banner ------ */
-
-.banner {
-    width: 100%;
-}
-
-.banner img {
-    width: 100%;
-    vertical-align: middle;
-}
-
-
-/* ------ End Banner ------ */
-
-
-/* ------------------------ */
-
-
-/* ------ Begin Table ------ */
-
-.container {
-    width: 90%;
-    padding-bottom: 160px;
-    margin: 0 auto;
-    position: relative;
-}
-
-
-/* --- Container Main --- */
-
-.container-main {
-    background: #549843;
-    width: 100%;
-    margin: 0 auto;
-    padding: 25px 32px 18px;
-    text-align: left;
-    font-weight: bold;
-    color: #fff;
-    font-size: 14px;
-    position: absolute;
-    top: -5%;
-}
-
-.container-main .list-page {
-    list-style: none;
-    display: flex;
-}
-
-.container-main .list-page li:last-child {
-    margin-left: 5px;
-}
-
-.container-main .list-page li a {
-    margin-right: 5px;
-    border-right: 1px solid #94bf89;
-    padding: 0px 10px 0px 0px;
-    color: #94bf89;
-    transition: all 0.3s;
-}
-
-.container-main h1 {
-    color: #fff;
-    font-weight: bold;
-    font-size: 48px;
-}
-
-
-/* --- Container Table --- */
-
-.container-table {
-    padding: 150px 0px 0px;
-}
-
-.container-table .table-main {
+.table {
     border: 1px solid #dbdbdb;
-    border-spacing: 0;
-    width: 100%;
+    margin: 0;
 }
 
-.container-table .table-main thead tr,
-.container-table .table-main tbody tr {
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s;
+.table tr {
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.09);
 }
 
-.container-table .table-main thead tr th {
+.table>tbody>tr>td.total .add-to-cart {
+    text-transform: uppercase;
+}
+
+.table>tbody>tr>td.total .add-to-cart:hover {
+    color: #549843;
+}
+
+.table>thead>tr>th {
     border: none;
-    white-space: nowrap;
     background: #f1f1f1;
+    font-weight: 600;
     font-size: 15px;
-    font-weight: bold;
     text-transform: uppercase;
     color: #5a4a3b;
     text-align: left;
     vertical-align: middle;
     padding: 0 30px;
     line-height: 58px;
-    height: 58px;
 }
 
-.container-table .table-main tbody tr td {
-    padding: 15px 30px;
+.table>tbody>tr>td {
+    padding: 38px 30px;
     vertical-align: middle;
     text-align: left;
     font-size: 14px;
     color: #4a4642;
+    font-weight: 500;
 }
 
-.container-table .table-main tbody tr .del {
-    font-size: 22px;
+.table>tbody>tr>td a,
+.table>tbody>tr>td a i:before {
+    color: #4a4642;
 }
 
-.container-table .table-main tbody tr:hover {
-    background-color: rgba(207, 201, 195, 0.4);
+.table>tbody>tr>td.total {
+    font-weight: 600;
 }
 
-
-/* ------ End Nav ------ */
-
-
-/* ====== RESPONSIVE ====== */
-
-
-/* ------- Mobile: width < 768px ------ */
-
-@media only screen and (max-width: 767px) {
-    /* ------ Begin Nav ------ */
-    nav {
-        padding-bottom: 30px;
-        margin-bottom: 20px;
-    }
-    .nav-pc {
-        width: 90%;
-        margin: 0 auto;
-        height: 180px;
-        position: relative;
-        margin-top: 15%;
-    }
-    .nav-pc .logo {
-        width: 100%;
-        padding-bottom: 40px;
-        position: unset;
-    }
-    .nav-pc .logo .img-logo {
-        padding-top: 10px;
-    }
-    .logo .amount {
-        text-align: center;
-        font-weight: bold;
-        width: 24px;
-        height: 24px;
-        background: #928a83;
-        border-radius: 50%;
-        color: #fff;
-        line-height: 24px;
-        font-size: 11px;
-        font-weight: 600;
-        position: absolute;
-        top: -5px;
-        right: 5px;
-    }
-    .logo .icon-nav {
-        position: absolute;
-        top: 10px;
-    }
-    .logo .item-left {
-        position: absolute;
-        top: 30px;
-        left: 0;
-    }
-    .logo .item {
-        margin-right: 0;
-    }
-    .logo .icon-nav {
-        width: 100%;
-        top: 120px;
-        height: 40px;
-    }
-    .logo .item-left {
-        position: absolute;
-        bottom: -20px;
-    }
-    .logo .item-right {
-        position: absolute;
-        top: 30px;
-        display: flex;
-        right: 17%;
-    }
-    /* --- End Nav --- */
-    /* ----------------------*/
-    /* --- Begin Container --- */
-    .container {
-        width: 90%;
-    }
-    .container-main {
-        padding: 15px 15px 10px;
-        top: 0;
-    }
-    .container-main h1 {
-        font-size: 34px;
-    }
-    .container-table {
-        width: 100%;
-        padding: 150px 0px 0px;
-        margin-bottom: 300px;
-        overflow-x: auto;
-    }
-    .container-table .table-border {
-        width: 100%;
-        overflow-y: hidden;
-        border: 1px solid #ddd;
-    }
-    .container-table .table-main thead tr th {
-        font-size: 13px;
-        padding: 0px 25px;
-        line-height: 20px;
-    }
-    .container-table .table-main tbody tr td {
-        padding: 15px 25px;
-        font-size: 14px;
-        color: #8d8d8d;
-    }
-    .container-table .table-main tbody tr .product-tit a {
-        color: #4a4642;
-    }
-    .container-table .table-main tbody tr .total .add-to-cart {
-        color: #4a4642;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: bold;
-    }
-    .container-table .table-main tbody tr td img {
-        width: 150%;
-        padding-left: 0;
-    }
-    /* --- End Container --- */
-}
-
-
-/* ------- Tablet: width >= 740px and width < 1024 ------ */
-
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-    /* ------ Begin Nav ------ */
-    nav {
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-    .nav-pc {
-        height: 150px;
-    }
-    /* .nav-pc .logo {} */
-    .nav-pc .logo .img-logo {
-        width: 120px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        transform: translateX(0);
-    }
-    .nav-pc .logo .icon-nav {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 40px;
-    }
-    .logo .amount {
-        text-align: center;
-        font-weight: bold;
-        width: 24px;
-        height: 24px;
-        background: #928a83;
-        border-radius: 50%;
-        color: #fff;
-        line-height: 24px;
-        font-size: 11px;
-        font-weight: 600;
-        position: absolute;
-        top: -5px;
-        right: 5px;
-    }
-    .logo .item {
-        margin-right: 0;
-    }
-    .logo .item-left {
-        position: absolute;
-        top: 30px;
-        left: -210px;
-    }
-    .logo .item-right {
-        position: absolute;
-        display: flex;
-        right: 30%;
-        margin-right: 30px;
-    }
-    /* --- End Nav --- */
-    /* ----------------------*/
-    /* --- Begin Container --- */
-    .container {
-        width: 95%;
-        padding-bottom: 230px;
-        margin: 0 auto;
-        position: relative;
-    }
-    /* --- Container Main --- */
-    .container-main {
-        background: #549843;
-        width: 100%;
-        margin: 0 auto;
-        padding: 25px 32px 18px;
-        text-align: left;
-        font-weight: bold;
-        color: #fff;
-        font-size: 14px;
-        position: absolute;
-        top: -2%;
-    }
-    .container-main .list-page {
-        list-style: none;
-        display: flex;
-    }
-    .container-main .list-page li:last-child {
-        margin-left: 5px;
-    }
-    .container-main .list-page li a {
-        margin-right: 5px;
-        border-right: 1px solid #94bf89;
-        padding: 0px 10px 0px 0px;
-        color: #94bf89;
-        transition: all 0.3s;
-    }
-    .container-main h1 {
-        color: #fff;
-        font-weight: bold;
-        font-size: 48px;
-    }
-    /* --- Container Table --- */
-    .container-table {
-        padding: 180px 0px 0px;
-    }
-    .container-table .table-main {
-        border: 1px solid #dbdbdb;
-        border-spacing: 0;
-        width: 100%;
-    }
-    .container-table .table-main thead tr th {
-        background: #f1f1f1;
-        font-size: 14px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #5a4a3b;
-        text-align: left;
-        vertical-align: middle;
-        padding: 0 15px;
-        line-height: 58px;
-        height: 58px;
-    }
-    .container-table .table-main tbody tr td {
-        padding: 15px 15px;
-        font-size: 14px;
-        color: #4a4642;
-    }
-    .container-table .table-main tbody tr td img {
-        width: 120%;
-        padding-left: 0;
-    }
-    /* --- End Container --- */
-    /* --- End Brands --- */
-}
-
-
-/* ------- Pc: width >= 1024px ------ */
-
-@media only screen and (min-width: 1024px) {
-    /* --- Container Main --- */
-    .container {
-        width: 90%;
-        padding-bottom: 135px;
-    }
-    .container-main {
-        background: #549843;
-        width: 100%;
-        margin: 0 auto;
-        padding: 25px 32px 18px;
-        text-align: left;
-        font-weight: bold;
-        color: #fff;
-        font-size: 14px;
-        position: absolute;
-        top: -2%;
-    }
-    .container-main .list-page {
-        list-style: none;
-        display: flex;
-    }
-    .container-main .list-page li:last-child {
-        margin-left: 5px;
-    }
-    .container-main .list-page li a {
-        margin-right: 5px;
-        border-right: 1px solid #94bf89;
-        padding: 0px 10px 0px 0px;
-        color: #94bf89;
-        transition: all 0.3s;
-    }
-    .container-main h1 {
-        color: #fff;
-        font-weight: bold;
-        font-size: 48px;
-    }
-    /* --- Container Table --- */
-    .container-table {
-        padding: 180px 0px 0px;
-    }
-    .container-table .table-main {
-        border: 1px solid #dbdbdb;
-        border-spacing: 0;
-        width: 100%;
-    }
-    .container-table .table-main thead tr th {
-        font-size: 14px;
-        padding: 0 15px;
-    }
-    .container-table .table-main tbody tr td {
-        padding: 15px 15px;
-        font-size: 14px;
-        color: #4a4642;
-    }
-    .container-table .table-main tbody tr td img {
-        width: 75%;
-        padding-left: 0;
-    }
+.table>tbody>tr>td.cancle {
+    font-size: 12px;
 }

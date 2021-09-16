@@ -2,10 +2,10 @@
 
 @section('main')
 
-<link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/login-register.css" />
+<link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/login-register.css"/>
 
 <section class="sub-banner wow fadeInUp">
-    <img class="banner" src="{{url('assets-frontend')}}/images/cart-page-banner.jpg" />
+    <img class="banner" src="{{url('assets-frontend')}}/images/cart-page-banner.jpg"/>
 </section>
 
 <section class="breadcrumb-section wow fadeInUp">
@@ -13,7 +13,7 @@
         <div class="breadcrumb">
             <ul class="list-inline">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('home')}}">Home</a>
                 </li>
                 <li>Register</li>
             </ul>
@@ -32,17 +32,17 @@
 
                         <h2 class="text-left text-capitalize">Register</h2>
 
-                        <input type="text" name="name" class="form-control required" placeholder="Your Name" required="required" />
-                        <span class="asterisk_input"> </span>
+                        <input type="text" name="name" class="form-control required" placeholder="Your Name" required="required"/>
+                        <span class="asterisk_input"></span>
 
-                        <input type="text" name="email" class="form-control required" placeholder="Your Email" required="required" />
-                        <span class="asterisk_input"> </span>
+                        <input type="text" name="email" class="form-control required" placeholder="Your Email" required="required"/>
+                        <span class="asterisk_input"></span>
 
-                        <input type="text" name="password" class="form-control required" placeholder="Password" required="required" />
-                        <span class="asterisk_input"> </span>
+                        <input type="text" name="password" class="form-control required" placeholder="Password" required="required"/>
+                        <span class="asterisk_input"></span>
 
-                        <input type="text" name="repassword" class="form-control required" placeholder="Repeat Password" required="required" />
-                        <span class="asterisk_input"> </span>
+                        <input type="text" name="repassword" class="form-control required" placeholder="Repeat Password" required="required"/>
+                        <span class="asterisk_input"></span>
 
                         <button type="submit">SUBMIT</button>
 

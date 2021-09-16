@@ -483,7 +483,7 @@ form.searchform input[type="text"] {
     border: 3px solid rgba(90, 74, 59, 0.60);
 }
 
-form.searchform input[type="submit"] {
+form.searchform button[type="submit"] {
     background: url(../../images/search-icon.png) no-repeat center center;
     position: absolute;
     right: 0px;

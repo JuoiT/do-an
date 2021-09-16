@@ -2,128 +2,136 @@
 
 @section('main')
 
-<link rel="stylesheet" href="{{url('assets-frontend')}}/css/whishlist.css">
+<link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/whishlist.css">
 
-<!-- Back To Top -->
-<div class="back-top">
-    <i class="fal fa-chevron-up"></i>
-</div>
-
-<!-- Banner -->
-<div class="banner">
-    <img src="{{url('assets-frontend')}}/images/cart-page-banner.jpg" alt="">
-</div>
-
-<div class="container">
-    <div class="container-main">
-        <ul class="list-page">
-            <li>
-                <a href="home.html">Home</a>
-            </li>
-            <li>Whishlist</li>
-        </ul>
-        <h1 class="title">Whishlist</h1>
+<section class="sub-banner wow fadeInUp">
+    <img class="banner" src="{{url('assets-frontend')}}/images/cart-page-banner.jpg">
+</section>
+<section class="breadcrumb-section wow fadeInUp">
+    <div class="container">
+        <div class="breadcrumb">
+            <ul class="list-inline">
+                <li>
+                    <a href="{{route('home')}}">Home</a>
+                </li>
+                <li>Shoping Cart</li>
+            </ul>
+            <h1 class="page-tit">Shoping Cart</h1>
+        </div>
     </div>
-    <div class="container-table">
-        <div class="table-border">
-            <table class="table-main">
+</section>
+
+<div class="content-part whishlist-page">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover table-responsive wow fadeInUp">
                 <thead>
                     <tr>
-                        <th>PRODUCT</th>
-                        <th>Name &amp; Description</th>
-                        <th>Price</th>
-                        <th>product status</th>
-                        <th>add to cart</th>
-                        <th></th>
+                        <th class="product">PRODUCT</th>
+                        <th class="name">Name</th>
+                        <th class="price">Price</th>
+                        <th class="quantity">Status</th>
+                        <th class="total">Add to cart</th>
+                        <th class="cancle"></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="cart-image-wrapper">
                             <a href="#">
-                                <img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-4.jpg" alt="">
+                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-1.jpg" alt="">
                             </a>
                         </td>
                         <td class="product-tit">
-                            <a href="#">Strawberries, 16 oz</a>
+                            <a href="#">Lmao</a>
                         </td>
                         <td class="price">
-                            <span class="money">$2.34 / ea</span>
+                            <span class="money">$2.00</span>
                         </td>
-                        <td>In stock</td>
+                        <td>
+                            In stock
+                        </td>
                         <td class="total">
                             <a class="add-to-cart" href="#">Add to cart</a>
                         </td>
-                        <td class="del">
-                            <i class="far fa-times"></i>
+                        <td class="cancle">
+                            <a href="#">
+                                <i class="icon-cancel-music"></i>
+                            </a>
                         </td>
                     </tr>
-
                     <tr>
                         <td class="cart-image-wrapper">
                             <a href="#">
-                                <img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-5.jpg" alt="">
+                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-2.jpg" alt="">
                             </a>
                         </td>
                         <td class="product-tit">
-                            <a href="#">Broccoli, bunch</a>
+                            <a href="#">Bru</a>
                         </td>
                         <td class="price">
-                            <span class="money">$5.50 / ea</span>
+                            <span class="money">$2.00</span>
                         </td>
-                        <td>In stock</td>
+                        <td>
+                            In stock
+                        </td>
                         <td class="total">
                             <a class="add-to-cart" href="#">Add to cart</a>
                         </td>
-                        <td class="del">
-                            <i class="far fa-times"></i>
+                        <td class="cancle">
+                            <a href="#">
+                                <i class="icon-cancel-music"></i>
+                            </a>
                         </td>
                     </tr>
-
                     <tr>
                         <td class="cart-image-wrapper">
                             <a href="#">
-                                <img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-2.jpg" alt="">
-                            </a>
-                        </td>
+                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-3.jpg" alt=""></a>
+                            </td>
                         <td class="product-tit">
-                            <a href="#">Strawberries, 16 oz</a>
+                            <a href="#">Dảk</a>
                         </td>
                         <td class="price">
-                            <span class="money">$3.57 / ea</span>
+                            <span class="money">$2.00</span>
                         </td>
-                        <td>In stock</td>
+                        <td>
+                            In stock
+                        </td>
                         <td class="total">
                             <a class="add-to-cart" href="#">Add to cart</a>
                         </td>
-                        <td class="del">
-                            <i class="far fa-times"></i>
+                        <td class="cancle">
+                            <a href="#">
+                                <i class="icon-cancel-music"></i>
+                            </a>
                         </td>
                     </tr>
-
                     <tr>
                         <td class="cart-image-wrapper">
                             <a href="#">
-                                <img class="product-img" src="{{url('assets-frontend')}}/images/deal-img-1.jpg" alt="">
+                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-4.jpg" alt="">
                             </a>
                         </td>
                         <td class="product-tit">
-                            <a href="#">Broccoli, bunch</a>
+                            <a href="#">Mlem</a>
                         </td>
                         <td class="price">
-                            <span class="money">$4.25 / ea</span>
+                            <span class="money">$2.00</span>
                         </td>
-                        <td>In stock</td>
+                        <td>
+                            In stock
+                        </td>
                         <td class="total">
                             <a class="add-to-cart" href="#">Add to cart</a>
                         </td>
-                        <td class="del">
-                            <i class="far fa-times"></i>
+                        <td class="cancle">
+                            <a href="#">
+                                <i class="icon-cancel-music"></i>
+                            </a>
                         </td>
                     </tr>
                 </tbody>
-                <tfoot>
-                </tfoot>
             </table>
         </div>
     </div>

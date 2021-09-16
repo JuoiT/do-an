@@ -7,11 +7,14 @@
 <section class="sub-banner wow fadeInUp">
     <img class="banner" src="{{url('assets-frontend')}}/images/cart-page-banner.jpg" />
 </section>
+
 <section class="breadcrumb-section wow fadeInUp">
     <div class="container">
         <div class="breadcrumb">
             <ul class="list-inline">
-                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="{{route('home')}}">Home</a>
+                </li>
                 <li>Checkout</li>
             </ul>
             <h1 class="page-tit">Checkout</h1>
@@ -28,13 +31,13 @@
                         <h2 class="checkout-head">Billing & Shipping details</h2>
                         <div class="checkout-form text-left">
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" name="name" class="form-control" placeholder="Name" />
+                                <input type="text" name="name" class="form-control" placeholder="Name"/>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" name="" class="form-control" placeholder="Phone" />
+                                <input type="text" name="" class="form-control" placeholder="Phone"/>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" name="" class="form-control" placeholder="Email" />
+                                <input type="text" name="" class="form-control" placeholder="Email"/>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="selectdiv">
@@ -48,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <input type="text" name="" class="form-control" placeholder="Address" />
+                                <input type="text" name="" class="form-control" placeholder="Address"/>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <textarea cols="" rows="5" class="form-control" placeholder="Order notes"></textarea>

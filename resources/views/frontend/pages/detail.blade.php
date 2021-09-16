@@ -8,14 +8,19 @@
 <link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/product-detail.css">
 
 <section class="sub-banner wow fadeInUp">
-    <img class="banner" src="{{url('assets-frontend')}}/images/product-page-banner.jpg" />
+    <img class="banner" src="{{url('assets-frontend')}}/images/product-page-banner.jpg"/>
 </section>
+
 <section class="breadcrumb-section wow fadeInUp">
     <div class="container">
         <div class="breadcrumb">
             <ul class="list-inline">
-                <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="{{route('product')}}">Shop</a></li>
+                <li>
+                    <a href="{{route('home')}}">Home</a>
+                </li>
+                <li>
+                    <a href="{{route('product')}}">Shop</a>
+                </li>
                 <li>Detail</li>
             </ul>
             <h1 class="page-tit">Lmao</h1>
@@ -46,22 +51,39 @@
                             <div class="product-name">Bru Lmao</div>
                             <div class="ratting">
                                 <ul>
-                                    <li><a href="#"><img class="img-responsive"
-                                                src="{{url('assets-frontend')}}/images/green-star-1.png"></a></li>
-                                    <li><a href="#"><img class="img-responsive"
-                                                src="{{url('assets-frontend')}}/images/green-star-1.png"></a></li>
-                                    <li><a href="#"><img class="img-responsive"
-                                                src="{{url('assets-frontend')}}/images/green-star-1.png"></a></li>
-                                    <li><a href="#"><img class="img-responsive"
-                                                src="{{url('assets-frontend')}}/images/dark-star-1.png"></a></li>
-                                    <li><a href="#"><img class="img-responsive"
-                                                src="{{url('assets-frontend')}}/images/dark-star-1.png"></a></li>
+                                    <li>
+                                        <a href="#">
+                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-1.png">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-1.png">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-1.png">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-1.png">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-1.png">
+                                        </a>
+                                    </li>
                                 </ul>
                                 <span>( 05 reviews )</span>
                             </div>
                             <div class="price">
                                 <div class="new-price">$3.00</div>
-                                <div class="old-price"><del>$5.00</del></div>
+                                <div class="old-price">
+                                    <del>$5.00</del>
+                                </div>
                             </div>
                             <div class="availablity">
                                 Available: <span>In Stock</span>
@@ -69,21 +91,16 @@
                             <p class="product-information">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                                 Iusto, vitae. Repudiandae in perspiciatis fugiat consequuntur accusantium asperiores
                                 debitis illo ut, illum recusandae eos voluptatem vitae sunt animi deserunt. Quas,
-                                aperiam.
-                            </p>
-
+                                aperiam.</p>
                             <div class="cart-process">
-                                <form action="">
+                                <form action="" method="POST">
                                     <div class="qty">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-number" disabled="disabled"
-                                                data-type="minus" data-field="quantity"> - </button>
+                                            <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quantity"> - </button>
                                         </span>
-                                        <input type="text" name="quantity" class="form-control input-number" value="1"
-                                            min="1" max="10">
+                                        <input type="text" name="quantity" class="form-control input-number" value="1" min="1" max="100">
                                         <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-number" data-type="plus"
-                                                data-field="quantity"> + </button>
+                                            <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quantity"> + </button>
                                         </span>
                                     </div>
                                     <div class="cart">
@@ -92,35 +109,65 @@
                                 </form>
                                 <div class="extra">
                                     <ul class="list-inline">
-                                        <li><a href="#"><i class="icon-favorite-heart-button"></i></a></li>
-                                        <li><a href="#"><i class="icon-line-menu"></i></a></li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-favorite-heart-button"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-line-menu"></i>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-
                             <div class="tag-box">
                                 <div class="tag-row">
-                                    <span class="tag-label category">Category</span><span class="dots">:</span><span
-                                        class="tag-label-value category-value">Vegetables</span>
+                                    <span class="tag-label category">Category</span>
+                                    <span class="dots">:</span>
+                                    <span class="tag-label-value category-value">Vegetables</span>
                                 </div>
                                 <div class="tag-row">
-                                    <span class="tag-label">Tags</span><span class="dots">:</span><span
+                                    <span class="tag-label">Tags</span>
+                                    <span class="dots">:</span>
+                                    <span
                                         class="tag-label-value">
                                         <a class="tag-btn" href="#">Bru</a>
                                         <a class="tag-btn" href="#">Lmao</a>
                                         <a class="tag-btn" href="#">Mlem</a>
-
                                     </span>
                                 </div>
                                 <div class="tag-row">
-                                    <span class="tag-label">Share</span><span class="dots">:</span><span
-                                        class="tag-label-value"> &nbsp;
+                                    <span class="tag-label">Share</span>
+                                    <span class="dots">:</span>
+                                    <span class="tag-label-value">
                                         <ul class="social">
-                                            <li><a href="#" target="_blank"><i class="icon-facebook"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="icon-twitter"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="icon-google-plus"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="icon-pinterest"></i></a></li>
-                                            <li><a href="#" target="_blank"><i class="icon-youtube"></i></a></li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="icon-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="icon-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="icon-google-plus"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="icon-pinterest"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="icon-youtube"></i>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </span>
                                 </div>
@@ -160,8 +207,7 @@
                                         temporibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio alias mollitia hic
                                         reprehenderit, voluptas libero obcaecati dignissimos impedit cumque, vitae
                                         officia. Repellat doloremque vitae omnis nobis saepe atque consequatur
-                                        temporibus?
-                                    </p>
+                                        temporibus?</p>
                                 </div>
                                 <h2>Reviews(6)</h2>
                                 <div>
@@ -171,11 +217,11 @@
                                         </div>
                                         <div class="form-group col-sm-6 col-xs-12">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" required />
+                                            <input type="text" class="form-control" required/>
                                         </div>
                                         <div class="form-group col-sm-6 col-xs-12">
                                             <label>Email</label>
-                                            <input type="email" class="form-control" required />
+                                            <input type="email" class="form-control" required/>
                                         </div>
                                         <div class="form-group col-sm-12 col-xs-12">
                                             <label>Review</label>
@@ -190,6 +236,7 @@
                         </div>
                     </div>
             </section>
+
             <section class="related-products wow fadeInUp">
                 <div class="container">
                     <div class="row">
@@ -201,25 +248,38 @@
                                 <div class="item">
                                     <div class="wrapper">
                                         <div class="pro-img">
-                                            <img class="img-responsive"
-                                                src="{{url('assets-frontend')}}/images/product-img-7.jpg" />
+                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-7.jpg"/>
                                         </div>
                                         <div class="contain-wrapper">
                                             <div class="tit">Lmao</div>
                                             <div class="price">
                                                 <div class="new-price">$3.00</div>
-                                                <div class="old-price"><del>$5.00</del></div>
+                                                <div class="old-price">
+                                                    <del>$5.00</del>
+                                                </div>
                                             </div>
-                                            <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
+                                            <div class="btn-part">
+                                                <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                                 <i class="icon-basket-supermarket"></i>
                                             </div>
                                         </div>
                                         <div class="wrapper-box-hover">
                                             <div class="text">
                                                 <ul>
-                                                    <li><a href="whishlist.html"><i class="icon-heart"></i></a></li>
-                                                    <li><a href="product-detail.html"><i class="icon-view"></i></a></li>
-                                                    <li><a href="cart.html"><i class="icon-basket-supermarket"></i></a>
+                                                    <li>
+                                                        <a href="{{route('whishlist')}}">
+                                                            <i class="icon-heart"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('detail')}}">
+                                                            <i class="icon-view"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('cart')}}">
+                                                            <i class="icon-basket-supermarket"></i>
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -229,25 +289,38 @@
                                 <div class="item">
                                     <div class="wrapper">
                                         <div class="pro-img">
-                                            <img class="img-responsive"
-                                                src="{{url('assets-frontend')}}/images/product-img-8.jpg" />
+                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-8.jpg"/>
                                         </div>
                                         <div class="contain-wrapper">
                                             <div class="tit">Bru</div>
                                             <div class="price">
                                                 <div class="new-price">$3.00</div>
-                                                <div class="old-price"><del>$7.00</del></div>
+                                                <div class="old-price">
+                                                    <del>$7.00</del>
+                                                </div>
                                             </div>
-                                            <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
+                                            <div class="btn-part">
+                                                <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                                 <i class="icon-basket-supermarket"></i>
                                             </div>
                                         </div>
                                         <div class="wrapper-box-hover">
                                             <div class="text">
                                                 <ul>
-                                                    <li><a href="whishlist.html"><i class="icon-heart"></i></a></li>
-                                                    <li><a href="product-detail.html"><i class="icon-view"></i></a></li>
-                                                    <li><a href="cart.html"><i class="icon-basket-supermarket"></i></a>
+                                                    <li>
+                                                        <a href="{{route('whishlist')}}">
+                                                            <i class="icon-heart"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('detail')}}">
+                                                            <i class="icon-view"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('cart')}}">
+                                                            <i class="icon-basket-supermarket"></i>
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -257,25 +330,38 @@
                                 <div class="item">
                                     <div class="wrapper">
                                         <div class="pro-img">
-                                            <img class="img-responsive"
-                                                src="{{url('assets-frontend')}}/images/product-img-9.jpg" />
+                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-9.jpg"/>
                                         </div>
                                         <div class="contain-wrapper">
                                             <div class="tit">Lmao Bru</div>
                                             <div class="price">
                                                 <div class="new-price">$4.00</div>
-                                                <div class="old-price"><del>$6.00</del></div>
+                                                <div class="old-price">
+                                                    <del>$6.00</del>
+                                                </div>
                                             </div>
-                                            <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
+                                            <div class="btn-part">
+                                                <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                                 <i class="icon-basket-supermarket"></i>
                                             </div>
                                         </div>
                                         <div class="wrapper-box-hover">
                                             <div class="text">
                                                 <ul>
-                                                    <li><a href="whishlist.html"><i class="icon-heart"></i></a></li>
-                                                    <li><a href="product-detail.html"><i class="icon-view"></i></a></li>
-                                                    <li><a href="cart.html"><i class="icon-basket-supermarket"></i></a>
+                                                    <li>
+                                                        <a href="{{route('whishlist')}}">
+                                                            <i class="icon-heart"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('detail')}}">
+                                                            <i class="icon-view"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('cart')}}">
+                                                            <i class="icon-basket-supermarket"></i>
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -285,25 +371,38 @@
                                 <div class="item">
                                     <div class="wrapper">
                                         <div class="pro-img">
-                                            <img class="img-responsive"
-                                                src="{{url('assets-frontend')}}/images/product-img-5.jpg" />
+                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-5.jpg"/>
                                         </div>
                                         <div class="contain-wrapper">
                                             <div class="tit">Mòe lol</div>
                                             <div class="price">
                                                 <div class="new-price">$3.00</div>
-                                                <div class="old-price"><del>$6.00</del></div>
+                                                <div class="old-price">
+                                                    <del>$6.00</del>
+                                                </div>
                                             </div>
-                                            <div class="btn-part"> <a href="cart.html" class="cart-btn">buy now</a>
+                                            <div class="btn-part">
+                                                <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                                 <i class="icon-basket-supermarket"></i>
                                             </div>
                                         </div>
                                         <div class="wrapper-box-hover">
                                             <div class="text">
                                                 <ul>
-                                                    <li><a href="whishlist.html"><i class="icon-heart"></i></a></li>
-                                                    <li><a href="product-detail.html"><i class="icon-view"></i></a></li>
-                                                    <li><a href="cart.html"><i class="icon-basket-supermarket"></i></a>
+                                                    <li>
+                                                        <a href="{{route('whishlist')}}">
+                                                            <i class="icon-heart"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('detail')}}">
+                                                            <i class="icon-view"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{route('cart')}}">
+                                                            <i class="icon-basket-supermarket"></i>
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>

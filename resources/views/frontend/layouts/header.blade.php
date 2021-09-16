@@ -29,22 +29,46 @@
             <div class="lpart">
                 <div class="social">
                     <ul class="social-widget">
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-google-plus"></i></a></li>
-                        <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                        <li><a href="#"><i class="icon-youtube"></i></a></li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-google-plus"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-youtube"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="tel-and-email">
-                    <p class="tel">Phone: <a href="">0123456789</a></p>
-                    <p class="mail">Email: <a href="">kemkiuu@gmail.com</a></p>
+                    <p class="tel">Phone:
+                        <a href="#">0123 456 789</a>
+                    </p>
+                    <p class="mail">Email:
+                        <a href="#">kemkiuu@gmail.com</a>
+                    </p>
                 </div>
             </div>
             <div class="rpart">
                 <div class="country">
                     <div id="country" class="select">
-                        <img src="{{url('assets-frontend')}}/images/vietnam-flag-icon.png" />Vietnam
+                        <img src="{{url('assets-frontend')}}/images/america-flag-icon.png"/>America
                     </div>
                     <div id="country-drop" class="dropdown" style="display:none">
                         <ul>
@@ -60,23 +84,22 @@
                         </ul>
                     </div>
                 </div>
-                <div class="country">
-                    <div id="country" class="select">
-                        <i class="icon-dollar-symbol"></i>French
+                <div class="currency">
+                    <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                        <i class="icon-dollar-symbol"></i>usd
+                        <i class="icon-angle-down"></i>
                     </div>
-                    <div id="country-drop" class="dropdown" style="display:none">
-                        <ul>
-                            <li>
-                            <i class="icon-dollar-symbol"></i>French
-                            </li>
-                            <li>
-                            <i class="icon-dollar-symbol"></i>India
-                            </li>
-                            <li>
-                            <i class="icon-dollar-symbol"></i>Vietnam
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#">usd</a>
+                        </li>
+                        <li>
+                            <a href="#">vnd</a>
+                        </li>
+                        <li>
+                            <a href="#">lmao</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="account">
                     <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
@@ -84,12 +107,24 @@
                         <i class="icon-angle-down"></i>
                     </div>
                     <ul class="dropdown-menu">
-                        <li><a href="{{route('my_account')}}">My Account</a></li>
-                        <li><a href="{{route('whishlist')}}">Wishlist</a></li>
-                        <li><a href="{{route('checkout')}}">checkout</a></li>
-                        <li><a href="{{route('blog')}}">blog</a></li>
-                        <li><a href="{{route('register')}}">register</a></li>
-                        <li><a href="{{route('login')}}">login</a></li>
+                        <li>
+                            <a href="{{route('my_account')}}">My Account</a>
+                        </li>
+                        <li>
+                            <a href="{{route('whishlist')}}">Wishlist</a>
+                        </li>
+                        <li>
+                            <a href="{{route('checkout')}}">checkout</a>
+                        </li>
+                        <li>
+                            <a href="{{route('cart')}}">cart</a>
+                        </li>
+                        <li>
+                            <a href="{{route('register')}}">register</a>
+                        </li>
+                        <li>
+                            <a href="{{route('login')}}">login</a>
+                        </li>
                     </ul>
                 </div>
             </div>

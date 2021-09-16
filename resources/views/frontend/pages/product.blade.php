@@ -6,14 +6,16 @@
 <link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/product.css">
 
 <section class="sub-banner wow fadeInUp">
-    <img class="banner" src="{{url('assets-frontend')}}/images/product-page-banner.jpg" />
+    <img class="banner" src="{{url('assets-frontend')}}/images/product-page-banner.jpg"/>
 </section>
 
 <section class="breadcrumb-section wow fadeInUp">
     <div class="container">
         <div class="breadcrumb">
             <ul class="list-inline">
-                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="{{route('home')}}">Home</a>
+                </li>
                 <li>Products</li>
             </ul>
             <h1 class="page-tit">Products</h1>
@@ -24,7 +26,7 @@
 <div class="content-part listing-page">
     <div class="container">
         <div class="row">
-            <aside class="col-md-4 col-sm-12 col-xs-12  wow fadeInLeft">
+            <aside class="col-md-4 col-sm-12 col-xs-12 wow fadeInLeft">
                 <div id="sidebar">
                     <div class="widget categories-widget">
                         <div class="widget-tit">
@@ -64,21 +66,36 @@
                         <div class="widget-contian" id="top-seller">
                             <div class="seller-box">
                                 <div class="seller-img">
-                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/top-seller-img-1.jpg" />
+                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/top-seller-img-1.jpg"/>
                                 </div>
                                 <div class="seller-text">
                                     <a class="seller-name" href="#">Raddish Chits</a>
                                     <div class="ratting">
                                         <ul>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -87,21 +104,36 @@
                             </div>
                             <div class="seller-box">
                                 <div class="seller-img">
-                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/top-seller-img-2.jpg" />
+                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/top-seller-img-2.jpg"/>
                                 </div>
                                 <div class="seller-text">
                                     <a class="seller-name" href="#">Raddish Chits</a>
                                     <div class="ratting">
                                         <ul>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -110,21 +142,36 @@
                             </div>
                             <div class="seller-box">
                                 <div class="seller-img">
-                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/top-seller-img-3.jpg" />
+                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/top-seller-img-3.jpg"/>
                                 </div>
                                 <div class="seller-text">
                                     <a class="seller-name" href="#">Raddish Chits</a>
                                     <div class="ratting">
                                         <ul>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -180,7 +227,10 @@
                                 </div>
                             </div>
                             <div class="l-part">
-                                <div>Showing <span>1–20</span> of <span>30 results</span></div>
+                                <div>Showing
+                                    <span>1–20</span> of
+                                    <span>30 results</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -188,27 +238,48 @@
                         <div class="col-sm-4 col-xs-12 wow fadeInUp item">
                             <div class="wrapper">
                                 <div class="pro-img">
-                                    <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-1.jpg" /></a>
+                                    <a href="{{route('detail')}}">
+                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-1.jpg"/>
+                                    </a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Lmao</a></div>
+                                    <div class="tit">
+                                        <a href="{{route('detail')}}">Lmao</a>
+                                    </div>
                                     <div class="ratting">
                                         <ul>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="price">
                                         <div class="new-price">$2.00</div>
-                                        <div class="old-price"><del>$7.00</del></div>
+                                        <div class="old-price">
+                                            <del>$7.00</del>
+                                        </div>
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('cart')}}" class="cart-btn">buy now</a>
@@ -225,34 +296,55 @@
                         <div class="col-sm-4 col-xs-12 wow fadeInUp item">
                             <div class="wrapper">
                                 <div class="pro-img">
-                                    <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-2.jpg" /></a>
+                                    <a href="{{route('detail')}}">
+                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-2.jpg"/>
+                                    </a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Bru</a></div>
+                                    <div class="tit">
+                                        <a href="{{route('detail')}}">Bru</a>
+                                    </div>
                                     <div class="ratting">
                                         <ul>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="price">
                                         <div class="new-price">$3.00</div>
-                                        <div class="old-price"><del>$6.00</del></div>
+                                        <div class="old-price">
+                                            <del>$6.00</del>
+                                        </div>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="cart.html" class="cart-btn">buy now</a>
+                                        <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                         <i class="icon-basket-supermarket"></i>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="cart.html" class="cart-btn">whishlist</a>
+                                        <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
                                         <i class="icon-heart"></i>
                                     </div>
                                 </div>
@@ -261,34 +353,55 @@
                         <div class="col-sm-4 col-xs-12 wow fadeInUp item">
                             <div class="wrapper">
                                 <div class="pro-img">
-                                    <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-3.jpg" /></a>
+                                    <a href="{{route('detail')}}">
+                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-3.jpg"/>
+                                    </a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Mlem</a></div>
+                                    <div class="tit">
+                                        <a href="{{route('detail')}}">Mlem</a>
+                                    </div>
                                     <div class="ratting">
                                         <ul>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="price">
                                         <div class="new-price">$4.00</div>
-                                        <div class="old-price"><del>$6.00</del></div>
+                                        <div class="old-price">
+                                            <del>$6.00</del>
+                                        </div>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="cart.html" class="cart-btn">buy now</a>
+                                        <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                         <i class="icon-basket-supermarket"></i>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="cart.html" class="cart-btn">whishlist</a>
+                                        <a href="route('whishlist')" class="cart-btn">whishlist</a>
                                         <i class="icon-heart"></i>
                                     </div>
                                 </div>
@@ -299,21 +412,40 @@
                         <div class="col-sm-4 col-xs-12 wow fadeInUp item">
                             <div class="wrapper">
                                 <div class="pro-img">
-                                    <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-1.jpg" /></a>
+                                    <a href="{{route('detail')}}">
+                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-1.jpg"/>
+                                    </a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Bru</a></div>
+                                    <div class="tit">
+                                        <a href="{{route('detail')}}">Bru</a>
+                                    </div>
                                     <div class="ratting">
                                         <ul>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
@@ -336,34 +468,55 @@
                         <div class="col-sm-4 col-xs-12 wow fadeInUp item">
                             <div class="wrapper">
                                 <div class="pro-img">
-                                    <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-2.jpg" /></a>
+                                    <a href="{{route('detail')}}">
+                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-2.jpg"/>
+                                    </a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Bla Bla</a></div>
+                                    <div class="tit">
+                                        <a href="{{route('detail')}}">Bla Bla</a>
+                                    </div>
                                     <div class="ratting">
                                         <ul>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="price">
                                         <div class="new-price">$4.00</div>
-                                        <div class="old-price"><del>$5.00</del></div>
+                                        <div class="old-price">
+                                            <del>$5.00</del>
+                                        </div>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="cart.html" class="cart-btn">buy now</a>
+                                        <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                         <i class="icon-basket-supermarket"></i>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="cart.html" class="cart-btn">whishlist</a>
+                                        <a href="route('whishlist')" class="cart-btn">whishlist</a>
                                         <i class="icon-heart"></i>
                                     </div>
                                 </div>
@@ -372,34 +525,55 @@
                         <div class="col-sm-4 col-xs-12 wow fadeInUp item">
                             <div class="wrapper">
                                 <div class="pro-img">
-                                    <a href="{{route('detail')}}"><img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-3.jpg" /></a>
+                                    <a href="{{route('detail')}}">
+                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/product-img-3.jpg"/>
+                                    </a>
                                 </div>
                                 <div class="contain-wrapper">
-                                    <div class="tit"><a href="{{route('detail')}}">Mòe lol</a></div>
+                                    <div class="tit">
+                                        <a href="{{route('detail')}}">Mòe lol</a>
+                                    </div>
                                     <div class="ratting">
                                         <ul>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
-                                            <li><a href="#"><img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png"></a>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star.png">
+                                                </a>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="price">
                                         <div class="new-price">$4.00</div>
-                                        <div class="old-price"><del>$7.00</del></div>
+                                        <div class="old-price">
+                                            <del>$7.00</del>
+                                        </div>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="cart.html" class="cart-btn">buy now</a>
+                                        <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                         <i class="icon-basket-supermarket"></i>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="cart.html" class="cart-btn">whishlist</a>
+                                        <a href="route('whishlist')" class="cart-btn">whishlist</a>
                                         <i class="icon-heart"></i>
                                     </div>
                                 </div>

@@ -97,7 +97,7 @@
                             <a href="#">vnd</a>
                         </li>
                         <li>
-                            <a href="#">lmao</a>
+                            <a href="#">bru</a>
                         </li>
                     </ul>
                 </div>

@@ -9,17 +9,18 @@
     <meta name="author" content="">
     <title>Organic Foodstore</title>
     <!-- Library -->
-    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/fontello.css" />
-    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/owl.theme.default.min.css">
-    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/library/animate.css">
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/fontello.css" />
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/animate.css">
     <!-- End library -->
     <!-- Layout -->
-    <link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/layout.css"/>
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/page/layout.css" />
     <!-- End layout -->
     <!-- Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900">
     <!-- End font -->
 </head>
 
@@ -68,18 +69,18 @@
             <div class="rpart">
                 <div class="country">
                     <div id="country" class="select">
-                        <img src="{{url('assets-frontend')}}/images/america-flag-icon.png"/>America
+                        <img src="{{ url('assets-frontend') }}/images/america-flag-icon.png" />America
                     </div>
                     <div id="country-drop" class="dropdown" style="display:none">
                         <ul>
                             <li>
-                                <img src="{{url('assets-frontend')}}/images/vietnam-flag-icon.png"/>Vietnam
+                                <img src="{{ url('assets-frontend') }}/images/vietnam-flag-icon.png" />Vietnam
                             </li>
                             <li>
-                                <img src="{{url('assets-frontend')}}/images/america-flag-icon.png"/>America
+                                <img src="{{ url('assets-frontend') }}/images/america-flag-icon.png" />America
                             </li>
                             <li>
-                                <img src="{{url('assets-frontend')}}/images/china-flag-icon.png"/>China
+                                <img src="{{ url('assets-frontend') }}/images/china-flag-icon.png" />China
                             </li>
                         </ul>
                     </div>
@@ -108,25 +109,30 @@
                     </div>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{route('my_account')}}">My Account</a>
+                            <a href="{{ route('my_account') }}">My Account</a>
                         </li>
                         <li>
-                            <a href="{{route('whishlist')}}">Wishlist</a>
+                            <a href="{{ route('whishlist') }}">Wishlist</a>
                         </li>
                         <li>
-                            <a href="{{route('checkout')}}">checkout</a>
+                            <a href="{{ route('checkout') }}">checkout</a>
                         </li>
                         <li>
-                            <a href="{{route('cart')}}">cart</a>
+                            <a href="{{ route('cart') }}">cart</a>
                         </li>
-                        <li>
-                            <a href="{{route('register')}}">register</a>
-                        </li>
-                        <li>
-                            <a href="{{route('login')}}">login</a>
-                        </li>
+                        @if (Auth::check())
+                            <li>
+                                <a href="{{ route('logout') }}">Logout</a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{ route('register') }}">register</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('login') }}">login</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>
         </div>
-

@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -69,8 +69,19 @@ class User extends Authenticatable
 
     public function add(Request $req)
     {
+        $imageName = '';
         if ($req->avatar) {
-            
+            $upImage = $req->avatar;
+            $imageName = time() . $upImage->getClientOriginalName();
+            $upImage->move(config('const.avatarPath'), $imageName);
         }
+        return $this->create([
+            'name' => trimm($req->name),
+            'avatar' => $imageName,
+            'phone' => $req->phone,
+            'address' => trimm($req->address),
+            'email' => trimm($req->email),
+            'password' => Hash::make($req->password),
+        ]);
     }
 }

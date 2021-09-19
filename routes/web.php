@@ -5,7 +5,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\CustomerController;
-use App\Http\Controllers\Backend\HomeAdminController;
+use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\ProductController;
@@ -13,8 +13,7 @@ use App\Http\Controllers\Backend\ShipController;
 use App\Http\Controllers\Backend\SlideController;
 
 use App\Http\Controllers\Frontend\ShopController;
-use App\Http\Controllers\Frontend\RegisterController;
-
+use App\Http\Controllers\Frontend\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,9 +34,9 @@ Route::get('/', function () {
 });
 
 // Backend
-Route::group(['prefix'=>'admin'], function() {
+Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin'], function() {
 
-    Route::get('/', [HomeAdminController::class, 'home_admin'])->name('home_admin');
+    Route::get('/', [AdminController::class, 'index'])->name('home_admin');
 
     Route::resource('category', CategoryController::class);
     Route::get('/category-restore/{id}', [CategoryController::class, 'restore'])->name('category-restore');
@@ -62,6 +61,9 @@ Route::group(['prefix'=>'admin'], function() {
     Route::resource('coupon', CouponController::class);
 
 });
+Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
+Route::post('admin/login', [AdminController::class, 'postLogin'])->name('admin.login');
+
 
 // Frontend
 Route::group(['prefix'=>''], function() {
@@ -80,10 +82,11 @@ Route::group(['prefix'=>''], function() {
 
     Route::get('my_account', [ShopController::class, 'my_account'])->name('my_account');
 
-    Route::get('register', [RegisterController::class, 'index'])->name('register');
-    Route::post('register', [RegisterController::class, 'register'])->name('register.register');
-
-    Route::get('login', [ShopController::class, 'login'])->name('login');
+    Route::get('register', [UserController::class, 'register'])->name('register');
+    Route::post('register', [UserController::class, 'postRegister'])->name('post_register');
+    Route::get('login', [UserController::class, 'login'])->name('login');
+    Route::post('login', [UserController::class, 'postLogin'])->name('post_login');
+    Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
     Route::get('blog', [ShopController::class, 'blog'])->name('blog');
 

@@ -10,10 +10,20 @@
     width: 100%
 }
 
+.account-form-login .name-input {
+    width: 100%;
+    float: left;
+}
+
 .account-form-reg {
     float: left;
     padding: 0 45px;
     width: 100%
+}
+
+.account-form-reg label {
+    width: 100%;
+    float: left;
 }
 
 .account-form-login h2,
@@ -69,7 +79,15 @@
 
 .account-form-login input[type="text"].form-control,
 .account-form-reg input[type="text"].form-control {
-    margin-bottom: 27px;
+    margin-bottom: 5px;
+}
+
+.asterisk_input {
+    width: 100%;
+    float: left;
+    font-weight: 500;
+    color: #f33232;
+    margin-bottom: 15px;
 }
 
 .account-form-login button[type="submit"],
@@ -109,8 +127,8 @@
     color: #8e8b88;
 }
 
-.account-form-login label {
-    display: inline-block;
+.account-form-login .pull {
+    display: inline-block !important;
     line-height: 20px;
 }
 

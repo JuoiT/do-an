@@ -624,6 +624,12 @@
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="{{ url('assets-backend') }}/js/scripts/form-file-uploads.min.js"></script>
 
+<script>
+    function openInNewTab(url) {
+        window.open(url, '_blank').focus();
+    }
+</script>
+
 @yield('script')
 <!-- END PAGE LEVEL JS-->
 </body>

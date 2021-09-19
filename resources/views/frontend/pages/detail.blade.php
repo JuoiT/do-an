@@ -419,3 +419,9 @@
 </div>
 
 @stop
+
+@section('script')
+<script src="{{url('assets-frontend')}}/js/responsiveTabs.min.js"></script>
+<script src="{{url('assets-frontend')}}/js/smoothproducts.min.js"></script>
+<script src="{{url('assets-frontend')}}/js/detail.js"></script>
+@stop

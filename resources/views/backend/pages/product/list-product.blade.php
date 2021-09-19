@@ -74,10 +74,8 @@
                                         <div class="pr-3">Trạng thái</div>
                                         <select id="status" class="input-field" name="status">
                                             <option value="">Tất cả</option>
-                                            <option {{ session('filter.products.status') == '1' ? 'selected' : '' }} value="1">Còn
-                                            </option>
-                                            <option {{ session('filter.products.status') == '0' ? 'selected' : '' }} value="0">Hết
-                                            </option>
+                                            <option {{ session('filter.products.status') == '1' ? 'selected' : '' }} value="1">Còn</option>
+                                            <option {{ session('filter.products.status') == '0' ? 'selected' : '' }} value="0">Hết</option>
                                         </select>
                                     </div>
                                     <div class="valign-wrapper col s4">
@@ -110,20 +108,19 @@
                         @if (count($list_product) > 0)
                             @foreach ($list_product as $value)
                                 <tr>
-                                    {{-- 5 là số bản ghi trên 1 trang--}}
                                     <td>
-                                        {{ $loop->index + 1 + ($list_product->currentPage() - 1) * 5 }}
+                                        {{ $loop->index + 1 + ($list_product->currentPage() - 1) * config("const.records") }}
                                     </td>
                                     <td>
-                                        @if (strlen(" $value->name") > 15)
-                                            {{ substr("$value->name", 0, 15) }}...
+                                        @if (mb_strlen($value->name, "utf-8") > 15)
+                                            {{mb_substr($value->name,0,15, "utf-8"); }}...
                                         @else
-                                            {{ substr("$value->name", 0, 15) }}
+                                            {{$value->name}}
                                         @endif
                                     </td>
                                     <td>
                                         <img class=" responsive-img" style="width: 150px;"
-                                            src="{{ url('product-images') }}/{{ $value->image }}" alt="">
+                                            src="{{ url('upload-images') }}/{{ $value->image }}" alt="">
                                     </td>
                                     <td>
                                         <span>
@@ -142,7 +139,11 @@
                                         @endif
                                     </td>
                                     <td>
-                                        {{ $value->category->name }}
+                                        @if (mb_strlen($value->category->name, "utf-8") > 15)
+                                            {{mb_substr($value->category->name,0,15, "utf-8"); }}...
+                                        @else
+                                            {{ $value->category->name }}
+                                        @endif
                                     </td>
                                     <td>
                                         @if (session('filter.products.trashed') == 'true')

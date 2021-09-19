@@ -57,3 +57,7 @@
 </div>
 
 @stop
+
+@section('script')
+<script src="{{url('assets-frontend')}}/js/login-register.js"></script>
+@stop

@@ -49,7 +49,7 @@
     color: #fff;
 }
 
-.responsive-slider .slides ul li .slide-body .caption.header .sub-tit {
+.responsive-slider .slides ul li .slide-body .caption.header .sub-tit a {
     color: #9dc86b;
     font-weight: 600;
     font-size: 32px;
@@ -609,7 +609,7 @@
     display: none;
 }
 
-.deal-slider .tit {
+.deal-slider .tit a {
     color: #4a4642;
     font-weight: 600;
     font-size: 16px;

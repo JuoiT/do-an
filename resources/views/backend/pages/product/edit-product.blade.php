@@ -92,7 +92,7 @@
                                     <div class="select-wrapper">
                                         <select name="category_id" id="input">
                                             {{-- <option value="" disabled="" selected>Choose category</option> --}}
-                                            @foreach($category as $cate)
+                                            @foreach($categories as $cate)
                                                 <option {{((old('category_id')?old('category_id'):$product->category_id)) == $cate->id?'selected':''}} value="{{$cate->id}}">{{$cate->name}}</option>
                                             @endforeach
                                         </select>

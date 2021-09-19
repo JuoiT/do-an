@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-
 class ShopController extends Controller
 {
     public function home()
@@ -64,5 +63,10 @@ class ShopController extends Controller
     public function blog_detail()
     {
         return view('frontend.pages.blog-detail');
+    }
+
+    public function contact()
+    {
+        return view('frontend.pages.contact');
     }
 }

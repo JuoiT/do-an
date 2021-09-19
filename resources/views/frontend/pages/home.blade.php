@@ -13,7 +13,9 @@
                     <img src="{{url('assets-frontend')}}/images/slider-banner.jpg">
                     <div class="carouseal-caption">
                         <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
-                            <div class="sub-tit">Luan nv Lmao</div>
+                            <div class="sub-tit">
+                                <a href="{{route('product')}}">Luan nv Lmao</a>
+                            </div>
                             <h2>
                                 <span>100%</span> Sale
                             </h2>
@@ -28,7 +30,9 @@
                     <div class="carouseal-caption">
                         <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500"
                             data-length="300">
-                            <div class="sub-tit">Lmao Bru Lmao</div>
+                            <div class="sub-tit">
+                                <a href="{{route('product')}}">Lmao Bru Lmao</a>
+                            </div>
                             <h2>
                                 <span>100%</span> chất bảo quản
                             </h2>
@@ -52,7 +56,7 @@
                         <div class="tit">
                             <span>Bru</span> Lmao
                         </div>
-                        <a class="btn">View Collections</a>
+                        <a href="{{route('product')}}" class="btn">View Collections</a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 wow bounce">
@@ -61,7 +65,7 @@
                         <div class="tit">
                             <span>Bru</span> Luan nv
                         </div>
-                        <a class="btn">View Collections</a>
+                        <a href="{{route('product')}}" class="btn">View Collections</a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-xs-12 wow bounce">
@@ -70,7 +74,7 @@
                         <div class="tit">
                             <span>Bru</span> Dak
                         </div>
-                        <a class="btn">View Collections</a>
+                        <a href="{{route('product')}}" class="btn">View Collections</a>
                     </div>
                 </div>
             </div>
@@ -108,7 +112,7 @@
                                     </div>
                                 </div>
                                 <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <a class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
                                 </div>
                             </div>
@@ -149,7 +153,7 @@
                                     </div>
                                 </div>
                                 <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <a class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
                                 </div>
                             </div>
@@ -191,7 +195,7 @@
                                     </div>
                                 </div>
                                 <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <a class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
                                 </div>
                             </div>
@@ -232,7 +236,7 @@
                                     </div>
                                 </div>
                                 <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <a class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
                                 </div>
                             </div>
@@ -274,7 +278,7 @@
                                     </div>
                                 </div>
                                 <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <a class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
                                 </div>
                             </div>
@@ -315,7 +319,7 @@
                                     </div>
                                 </div>
                                 <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <a class="cart-btn">buy now</a>
                                     <i class="icon-basket-supermarket"></i>
                                 </div>
                             </div>
@@ -368,10 +372,14 @@
                                 <div class="owl-carousel owl-theme deal-slider">
                                     <div class="item">
                                         <div class="pro-img">
-                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-7.png"/>
+                                            <a href="{{route('detail')}}">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-7.png"/>
+                                            </a>
                                         </div>
                                         <div class="contain-wrapper">
-                                            <div class="tit">Ngu như chó</div>
+                                            <div class="tit">
+                                                <a href="{{route('detail')}}">Ngu như chó</a>
+                                            </div>
                                             <div class="price">
                                                 <div class="new-price">$3.00</div>
                                                 <div class="old-price">
@@ -386,10 +394,14 @@
                                     </div>
                                     <div class="item">
                                         <div class="pro-img">
-                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-7.png"/>
+                                            <a href="{{route('detail')}}">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-7.png"/>
+                                            </a>
                                         </div>
                                         <div class="contain-wrapper">
-                                            <div class="tit">Óc chó</div>
+                                            <div class="tit">
+                                                <a href="{{route('detail')}}">Óc chó</a>
+                                            </div>
                                             <div class="price">
                                                 <div class="new-price">$2.00</div>
                                                 <div class="old-price">
@@ -404,10 +416,14 @@
                                     </div>
                                     <div class="item">
                                         <div class="pro-img">
-                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-7.png"/>
+                                            <a href="{{route('detail')}}">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-7.png"/>
+                                            </a>
                                         </div>
                                         <div class="contain-wrapper">
-                                            <div class="tit">Lmao Bru</div>
+                                            <div class="tit">
+                                                <a href="{{route('detail')}}">Lmao Bru</a>
+                                            </div>
                                             <div class="price">
                                                 <div class="new-price">$3.00</div>
                                                 <div class="old-price">
@@ -429,10 +445,10 @@
                             <button class="btn active" onclick="filterSelection('all')">All</button>/
                             <button class="btn" onclick="filterSelection('fruit')"> Fruit</button>/
                             <button class="btn" onclick="filterSelection('meet')"> Meet</button>/
-                            <button class="btn" onclick="filterSelection('vegatable')"> Vegetable</button>
+                            <button class="btn" onclick="filterSelection('vegetable')"> Vegetable</button>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6  col-xs-12 pull-left wow fadeInLeft">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pull-left wow fadeInLeft">
                         <div class="filterDiv fruit">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-1.jpg"/>
@@ -480,7 +496,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="filterDiv meet ">
+                        <div class="filterDiv meet">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-2.jpg"/>
                             </div>
@@ -527,7 +543,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="filterDiv vegatable ">
+                        <div class="filterDiv vegetable">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-3.jpg"/>
                             </div>
@@ -575,8 +591,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pull-right  wow fadeInRight">
-                        <div class="filterDiv fruit ">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pull-right wow fadeInRight">
+                        <div class="filterDiv fruit">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-4.jpg"/>
                             </div>
@@ -670,7 +686,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="filterDiv vegatable ">
+                        <div class="filterDiv vegetable">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-6.jpg"/>
                             </div>
@@ -900,6 +916,10 @@
     </div>
 </section>
 <div class="clearfix"></div>
+@stop
 
-
+@section('script')
+<script src="{{url('assets-frontend')}}/js/responsive-slider.js"></script>
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+<script src="{{url('assets-frontend')}}/js/home.js"></script>
 @stop

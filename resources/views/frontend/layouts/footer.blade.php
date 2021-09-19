@@ -217,38 +217,8 @@
 <script src="{{url('assets-frontend')}}/js/custom.js"></script>
 <script src="{{url('assets-frontend')}}/js/owl.carousel.min.js"></script>
 <script src="{{url('assets-frontend')}}/js/wow.min.js"></script>
-@if(Request::url() === 'http://127.0.0.1:8000/organic/home')
-<script src="{{url('assets-frontend')}}/js/responsive-slider.js"></script>
 <script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
-<script src="{{url('assets-frontend')}}/js/home.js"></script>
-@elseif(Request::url() === 'http://127.0.0.1:8000/organic/product')
-<script src="{{url('assets-frontend')}}/js/bootstrap-slider.min.js"></script>
-<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
-<script src="{{url('assets-frontend')}}/js/product.js"></script>
-@elseif(Request::url() === 'http://127.0.0.1:8000/organic/login')
-<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
-<script src="{{url('assets-frontend')}}/js/login-register.js"></script>
-@elseif(Request::url() === 'http://127.0.0.1:8000/organic/detail')
-<script src="{{url('assets-frontend')}}/js/responsiveTabs.min.js"></script>
-<script src="{{url('assets-frontend')}}/js/smoothproducts.min.js"></script>
-<script src="{{url('assets-frontend')}}/js/detail.js"></script>
-@elseif(Request::url() === 'http://127.0.0.1:8000/organic/blog')
-<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
-<script src="{{url('assets-frontend')}}/js/jquery.matchHeight-min.js"></script>
-<script src="{{url('assets-frontend')}}/js/blog.js"></script>
-@elseif(Request::url() === 'http://127.0.0.1:8000/organic/detail')
-<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
-<script src="{{url('assets-frontend')}}/js/blog-detail.js"></script>
-@elseif(Request::url() === 'http://127.0.0.1:8000/organic/cart')
-<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
-<script src="{{url('assets-frontend')}}/js/cart.js"></script>
-@elseif(Request::url() === 'http://127.0.0.1:8000/organic/checkout')
-<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
-<script src="{{url('assets-frontend')}}/js/check-out.js"></script>
-@elseif(Request::url() === 'http://127.0.0.1:8000/organic/whishlist')
-<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
-<script src="{{url('assets-frontend')}}/js/whishlist.js"></script>
-@endif
+@yield('script')
 
 </body>
 

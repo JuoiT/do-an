@@ -286,6 +286,7 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
+
                     <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
                         <div class="widget-title">
                             <h2 class="blog-header text-left">Recent Post</h2>
@@ -328,6 +329,7 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
+
                     <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
                         <div class="widget-title">
                             <h2 class="blog-header text-left">cetegory</h2>
@@ -363,6 +365,7 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
+
                     <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
                         <div class="widget-title">
                             <h2 class="blog-header text-left">Tags</h2>
@@ -394,6 +397,7 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
+
                     <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
                         <div class="widget-title">
                             <h2 class="blog-header text-left">Archives</h2>
@@ -439,4 +443,8 @@
     </div>
 </div>
 
+@stop
+@section('script')
+<script src="{{url('assets-frontend')}}/js/jquery.matchHeight-min.js"></script>
+<script src="{{url('assets-frontend')}}/js/blog.js"></script>
 @stop

@@ -11,7 +11,10 @@ use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ShipController;
 use App\Http\Controllers\Backend\SlideController;
+
 use App\Http\Controllers\Frontend\ShopController;
+use App\Http\Controllers\Frontend\RegisterController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,7 +64,7 @@ Route::group(['prefix'=>'admin'], function() {
 });
 
 // Frontend
-Route::group(['prefix'=>'organic'], function() {
+Route::group(['prefix'=>''], function() {
 
     Route::get('home', [ShopController::class, 'home'])->name('home');
 
@@ -77,12 +80,15 @@ Route::group(['prefix'=>'organic'], function() {
 
     Route::get('my_account', [ShopController::class, 'my_account'])->name('my_account');
 
-    Route::get('register', [ShopController::class, 'register'])->name('register');
+    Route::get('register', [RegisterController::class, 'index'])->name('register');
+    Route::post('register', [RegisterController::class, 'register'])->name('register.register');
 
     Route::get('login', [ShopController::class, 'login'])->name('login');
 
     Route::get('blog', [ShopController::class, 'blog'])->name('blog');
 
     Route::get('blog_detail', [ShopController::class, 'blog_detail'])->name('blog_detail');
+
+    Route::get('contact', [ShopController::class, 'contact'])->name('contact');
 
 });

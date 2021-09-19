@@ -25,7 +25,7 @@ class CategoryController extends Controller
         }
         
         $query = Category::filter($params);
-        $list_category = $query->withCount('products')->paginate(5);
+        $list_category = $query->withCount('products')->paginate(config("const.records"));
         return view('backend.pages.category.list-category', compact('list_category'));
     }
 

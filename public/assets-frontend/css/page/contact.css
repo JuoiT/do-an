@@ -1,0 +1,141 @@
+.content-part.contact-page .logo-part {
+    padding-bottom: 52px;
+}
+
+.content-part.contact-page .address-part .inner-part {
+    display: inline-block;
+}
+
+.content-part.contact-page .inner-part .box {
+    background: url(../../images/bg.png) center top no-repeat;
+    display: inline-block;
+    width: 325px;
+    height: 325px;
+    padding: 60px 0 0 0;
+    float: left;
+}
+
+.content-part.contact-page .inner-part .box h3 {
+    font-family: 'frente_h1regular';
+    color: #fff;
+    font-size: 48px;
+    text-transform: uppercase;
+    line-height: 40px;
+    margin: 20px 0 12px 0;
+}
+
+.content-part.contact-page .inner-part .box p,
+.content-part.contact-page .inner-part .box a {
+    font-size: 15px;
+    color: #fff;
+    line-height: 22px;
+    font-weight: 500;
+}
+
+.content-part.contact-page .inner-part .box a:hover {
+    color: #5a4a3b;
+}
+
+.content-part.contact-page .inner-part {
+    padding-bottom: 135px;
+}
+
+.content-part.contact-page .map-section {
+    padding-left: 0
+}
+
+.content-part.contact-page .map-section img {
+    width: 100%;
+}
+
+.content-part.contact-page .form-part {
+    background: url(../../images/contact-page-form-bg.png) left top no-repeat;
+    background-size: cover;
+    padding-right: 0;
+}
+
+.content-part.contact-page .form-part .inner-part {
+    float: right;
+    width: 560px;
+    padding: 55px 105px 0px 21px;
+}
+
+.content-part.contact-page .form-part .tit h3 {
+    margin: 0 0 62px 0;
+    font-size: 72px;
+    line-height: 60px;
+    font-family: 'frente_h1regular';
+    color: #5ba628;
+}
+
+.content-part.contact-page .form-part .tit h3 span {
+    color: #fff;
+    line-height: 60px;
+    display: inline-block;
+}
+
+.content-part.contact-page .form-part .form-control {
+    height: 48px;
+    border-radius: 0;
+    background: rgba(130, 188, 63, 0.20);
+    font-weight: 700;
+    color: #91c950;
+    color: #91c950;
+    text-transform: none;
+    margin: 0;
+    padding: 0 20px;
+    line-height: 48px;
+}
+
+.content-part.contact-page .form-part .form-group {
+    margin-bottom: 22px;
+}
+
+.content-part.contact-page .form-part .form-group textarea {
+    height: 133px;
+    resize: none;
+    margin-bottom: 40px;
+}
+
+.content-part.contact-page .form-part .form-control:placeholder {
+    opacity: 1 !important;
+    color: #92c950;
+    text-transform: uppercase;
+}
+
+.content-part.contact-page .form-part .form-control:-moz-placeholder {
+    opacity: 1 !important;
+    color: #92c950;
+    text-transform: uppercase;
+}
+
+.content-part.contact-page .form-part .form-control::-moz-placeholder {
+    opacity: 1 !important;
+    color: #92c950;
+    text-transform: uppercase;
+}
+
+.content-part.contact-page .form-part .form-control:-ms-input-placeholder {
+    opacity: 1 !important;
+    color: #92c950;
+    text-transform: uppercase;
+}
+
+.content-part.contact-page .form-part .submit {
+    width: 100%;
+    border: none;
+    background: #78cf3c;
+    color: #181010;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 52px;
+    transition: 0.3s all ease-in;
+    -webkit-transition: 0.3s all ease-in;
+    -moz-transition: 0.3s all ease-in;
+}
+
+.content-part.contact-page .form-part .submit:hover {
+    color: #78cf3c;
+    background: #181010;
+}

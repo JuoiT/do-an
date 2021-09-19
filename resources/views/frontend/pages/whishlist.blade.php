@@ -138,3 +138,6 @@
 </div>
 
 @stop
+@section('script')
+<script src="{{url('assets-frontend')}}/js/whishlist.js"></script>
+@endsection

@@ -7,6 +7,7 @@
 <section class="sub-banner wow fadeInUp">
     <img class="banner" src="{{url('assets-frontend')}}/images/cart-page-banner.jpg"/>
 </section>
+
 <section class="breadcrumb-section wow fadeInUp">
     <div class="container">
         <div class="breadcrumb">
@@ -34,12 +35,12 @@
                 <div class="blog-txt wow fadeInUp">
                     <ul>
                         <li>
-                            <a href="#">
+                            <a>
                                 <i class="icon-clock"></i>July 30, 2021
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a>
                                 <i class="icon-interface"></i>3 Comments
                             </a>
                         </li>
@@ -53,6 +54,7 @@
                         numquam, incidunt accusantium impedit, itaque earum vel soluta provident molestias aperiam
                         officiis obcaecati. Delectus, quaerat voluptates?
                     </p>
+
                     <section class="middle-section">
                         <div class="row">
                             <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 pull-right wow fadeInRight">
@@ -76,6 +78,7 @@
                             </div>
                         </div>
                     </section>
+
                     <section class="bottom-section">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
@@ -90,13 +93,13 @@
                                     <div class="tag-part">
                                         <ul>
                                             <li>
-                                                <a href="#">Bru</a>
+                                                <a>Bru</a>
                                             </li>
                                             <li>
-                                                <a href="#">Lmao</a>
+                                                <a>Lmao</a>
                                             </li>
                                             <li>
-                                                <a href="#">Dak</a>
+                                                <a>Dak</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -134,6 +137,7 @@
                             </div>
                         </div>
                     </section>
+
                     <section class="comment-section">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
@@ -200,6 +204,7 @@
                             </div>
                         </div>
                     </section>
+
                     <section class="form-section wow fadeInUp">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -222,6 +227,7 @@
                             </div>
                         </div>
                     </section>
+
                 </div>
             </div>
             <div class="col-md-3 hidden-sm-down">
@@ -278,8 +284,8 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="clearfix"></div>
+
                     <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
                         <div class="widget-title">
                             <h2 class="blog-header text-left">cetegory</h2>
@@ -315,6 +321,7 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
+
                     <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
                         <div class="widget-title">
                             <h2 class="blog-header text-left">Tags</h2>
@@ -346,6 +353,7 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
+
                     <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
                         <div class="widget-title">
                             <h2 class="blog-header text-left">Archives</h2>
@@ -392,3 +400,7 @@
 </div>
 
 @stop
+
+@section('script')
+<script src="{{url('assets-frontend')}}/js/blog-detail.js"></script>
+@endsection

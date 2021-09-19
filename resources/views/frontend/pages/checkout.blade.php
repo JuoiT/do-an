@@ -107,3 +107,6 @@
 </div>
 
 @stop
+@section('script')
+<script src="{{url('assets-frontend')}}/js/check-out.js"></script>
+@endsection

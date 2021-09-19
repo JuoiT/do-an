@@ -55,8 +55,8 @@
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/blog') ? 'active' : ''}}">
                         <a href="{{route('blog')}}">Blog</a>
                     </li>
-                    <li class="">
-                        <a href="#">Contact</a>
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/contact') ? 'active' : ''}}">
+                        <a href="{{route('contact')}}">Contact</a>
                     </li>
                 </ul>
             </div>

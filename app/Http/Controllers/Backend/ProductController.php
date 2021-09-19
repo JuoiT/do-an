@@ -30,7 +30,7 @@ class ProductController extends Controller
         }
         
         $query = Product::filter($params);
-        $list_product = $query->with('category')->paginate(5);
+        $list_product = $query->with('category')->paginate(config("const.records"));
 
         return view('backend.pages.product.list-product', compact('list_product', 'categories'));
     }
@@ -86,7 +86,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $categories = Category::all();
-        // $desImages = ProductImage::where('product_id', $id)->get();
+        $desImages = ProductImage::where('product_id', $id)->get();
         // dd($desImages);
         return view('backend.pages.product.edit-product', compact('product', 'categories', 'desImages'));
     }

@@ -106,7 +106,13 @@
                                     <tr>
                                         {{-- 5 là số bản ghi trên 1 trang --}}
                                         <td>{{ $loop->index + 1 + ($list_category->currentPage() - 1) * 5 }}</td>
-                                        <td>{{ $value->name }}</td>
+                                        <td>
+                                        @if (mb_strlen($value->name, "utf-8") > 25)
+                                            {{mb_substr($value->name,0,25, "utf-8"); }}...
+                                        @else
+                                            {{$value->name}}
+                                        @endif
+                                    </td>
                                         <td>
                                             @if ($value->status == 1)
                                                 <span class="badge green lighten-5 green-text text-accent-4">Còn</span>

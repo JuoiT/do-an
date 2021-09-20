@@ -103,7 +103,7 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: url(../images/tit-bottom.jpg)left top no-repeat;
+    background: url(../../images/tit-bottom.jpg)left top no-repeat;
 }
 
 .mar-btm-60 {
@@ -120,7 +120,7 @@
     color: #4a4642;
     font-weight: 600;
     line-height: 14px;
-    background: url(../images/sidebar-list-icon.png) left top no-repeat;
+    background: url(../../images/sidebar-list-icon.png) left top no-repeat;
     padding-bottom: 22px;
 }
 
@@ -492,7 +492,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background: url(../images/title-decorator.png)left top no-repeat;
+    background: url(../../images/title-decorator.png)left top no-repeat;
     height: 54px;
 }
 

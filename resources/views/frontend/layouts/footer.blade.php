@@ -6,7 +6,7 @@
                     <div class="inline">
                         <div class="box">
                             <div class="icon">
-                                <i class="icon-delivery-truck"></i>
+                                <i class="icon-truck"></i>
                             </div>
                             <div class="text-part">
                                 <h3>Free Shipping</h3>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="box">
                             <div class="icon">
-                                <i class="icon-phone-call"></i>
+                                <i class="icon-phone"></i>
                             </div>
                             <div class="text-part">
                                 <h3>Hotline</h3>
@@ -57,16 +57,16 @@
                         <img class="img-responsive" src="{{url('assets-frontend')}}/images/footer-logo.png"/>
                     </div>
                     <div class="adress">
-                        <i class="icon-placeholder"></i>
+                        <i class="icon-map-pin"></i>
                         <span>Hanoi</span>
                     </div>
                     <div class="clearfix"></div>
                     <div class="phone">
-                        <i class="icon-icon"></i>
+                        <i class="icon-phone"></i>
                         <a href="#">0123 456 789</a>
                     </div>
                     <div class="mail">
-                        <i class="icon-envelope"></i>
+                        <i class="icon-mail"></i>
                         <a href="#">kemkiuu@gmail.com</a>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
                         </li>
                         <li>
                             <a href="#">
-                                <i class="icon-google-plus"></i>
+                                <i class="icon-google"></i>
                             </a>
                         </li>
                         <li>
@@ -178,7 +178,7 @@
                         </li>
                         <li>
                             <a href="#">
-                                <i class="icon-youtube"></i>
+                                <i class="icon-youtube-play"></i>
                             </a>
                         </li>
                     </ul>

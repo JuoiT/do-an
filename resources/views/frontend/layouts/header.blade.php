@@ -9,8 +9,8 @@
     <meta name="author" content="">
     <title>Organic Foodstore</title>
     <!-- Library -->
-    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/fontello.css" />
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/fontello.css"/>
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/animate.css">
@@ -42,7 +42,7 @@
                         </li>
                         <li>
                             <a href="#">
-                                <i class="icon-google-plus"></i>
+                                <i class="icon-google"></i>
                             </a>
                         </li>
                         <li>
@@ -52,7 +52,7 @@
                         </li>
                         <li>
                             <a href="#">
-                                <i class="icon-youtube"></i>
+                                <i class="icon-youtube-play"></i>
                             </a>
                         </li>
                     </ul>
@@ -87,7 +87,7 @@
                 </div>
                 <div class="currency">
                     <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                        <i class="icon-dollar-symbol"></i>usd
+                        <i class="icon-dollar"></i>usd
                         <i class="icon-angle-down"></i>
                     </div>
                     <ul class="dropdown-menu">
@@ -104,7 +104,7 @@
                 </div>
                 <div class="account">
                     <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                        <i class="icon-avatar"></i>My Account
+                        <i class="icon-user-o"></i>My Account
                         <i class="icon-angle-down"></i>
                     </div>
                     <ul class="dropdown-menu">

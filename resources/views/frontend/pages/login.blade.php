@@ -33,21 +33,29 @@
 
                             <h2 class="text-left text-capitalize">Login</h2>
 
-                            <input type="text" id="email" name="email" class="form-control" placeholder="Your Email" />
+                        <div class="input-field">
+                            <label class="name-input" for="email">Email</label>
+                            <input type="text" name="email" class="form-control required" placeholder="Your Email"/>
+                            <small class="asterisk_input">Lmao</small>
+                        </div>
 
-                            <input type="text" id="phone" name="phone" maxlength="10" class="form-control"
-                                placeholder="Your Phone" />
+                        <div class="input-field">
+                            <label class="name-input" for="password">Password</label>
+                            <input type="text" name="password" class="form-control required" placeholder="Password"/>
+                            <small class="asterisk_input">Lmao</small>
+                        </div>
 
-                            <input type="password" name="password" class="form-control" placeholder="Password" />
-
-                            <label>
-                                <input name="remember" type="checkbox">
+                        <div class="input-field">
+                            <label class="pull">
+                                <input name="" type="checkbox">
                                 <a> Remember me</a>
                             </label>
 
-                            <label class="pull-right">
-                                <span id="login-type" style="cursor: pointer"> Using phone number instead</span>
+                            <label class="pull pull-right">
+                                <input name="" type="checkbox">
+                                <a> Forgot your Password</a>
                             </label>
+                        </div>
 
                             <button type="submit">LOGIN</button>
 

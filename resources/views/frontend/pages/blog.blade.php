@@ -41,7 +41,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-interface"></i>3 Comments
+                                            <i class="icon-commenting-o"></i>3 Comments
                                         </a>
                                     </li>
                                 </ul>
@@ -66,7 +66,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-interface"></i>2 Comments
+                                            <i class="icon-commenting-o"></i>2 Comments
                                         </a>
                                     </li>
                                 </ul>
@@ -91,7 +91,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-interface"></i>4 Comments
+                                            <i class="icon-commenting-o"></i>4 Comments
                                         </a>
                                     </li>
                                 </ul>
@@ -116,7 +116,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-interface"></i>3 Comments
+                                            <i class="icon-commenting-o"></i>3 Comments
                                         </a>
                                     </li>
                                 </ul>
@@ -141,7 +141,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-interface"></i>6 Comments
+                                            <i class="icon-commenting-o"></i>6 Comments
                                         </a>
                                     </li>
                                 </ul>
@@ -166,7 +166,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-interface"></i>2 Comments
+                                            <i class="icon-commenting-o"></i>2 Comments
                                         </a>
                                     </li>
                                 </ul>
@@ -191,7 +191,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-interface"></i>2 Comments
+                                            <i class="icon-commenting-o"></i>2 Comments
                                         </a>
                                     </li>
                                 </ul>
@@ -216,7 +216,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-interface"></i>1 Comments
+                                            <i class="icon-commenting-o"></i>1 Comments
                                         </a>
                                     </li>
                                 </ul>
@@ -241,7 +241,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-interface"></i>3 Comments
+                                            <i class="icon-commenting-o"></i>3 Comments
                                         </a>
                                     </li>
                                 </ul>
@@ -258,7 +258,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                             <div class="pagination text-center">
                                 <a class="left" href="#">
-                                    <i class="icon-right-arrow"></i>
+                                    <i class="icon-angle-right"></i>
                                 </a>
                                 <a class="active" href="#">1</a>
                                 <a href="#">2</a>
@@ -266,7 +266,7 @@
                                 <a href="#">4</a>
                                 <a href="#">5</a>
                                 <a class="right" href="#">
-                                    <i class="icon-right-arrow"></i>
+                                    <i class="icon-angle-right"></i>
                                 </a>
                             </div>
                         </div>

@@ -295,6 +295,11 @@ header .top-header .social-widget li a:hover i {
     background: #90c31c;
 }
 
+.account .btn i.icon-user-o {
+    padding-right: 4px;
+    font-size: 15px;
+}
+
 .account .btn i.icon-avatar {
     padding-right: 4px;
     font-size: 15px;
@@ -452,13 +457,13 @@ button {
     transition: all .3s ease-in;
 }
 
-.remove:hover .icon-cancel-music:before,
-.remove:hover .icon-cancel-music {
+.remove:hover .icon-cancel:before,
+.remove:hover .icon-cancel {
     color: #fff;
 }
 
-.icon-cancel-music:before,
-.icon-cancel-music {
+.icon-cancel:before,
+.icon-cancel {
     margin: 0;
     width: 30px;
     height: 30px;
@@ -685,16 +690,16 @@ button {
     color: #928a83;
 }
 
-.cart-popup .box .clear-btn i.icon-cancel-music,
-.cart-popup .box .clear-btn i.icon-cancel-music:before {
+.cart-popup .box .clear-btn i.icon-cancel,
+.cart-popup .box .clear-btn i.icon-cancel:before {
     color: #928a83 !important;
     width: auto;
     height: auto;
     line-height: inherit;
 }
 
-.cart-popup .box .clear-btn:hover i.icon-cancel-music,
-.cart-popup .box .clear-btn:hover i.icon-cancel-music:before {
+.cart-popup .box .clear-btn:hover i.icon-cancel,
+.cart-popup .box .clear-btn:hover i.icon-cancel:before {
     color: #81af76 !important;
 }
 

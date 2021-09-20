@@ -111,12 +111,12 @@
                                     <ul class="list-inline">
                                         <li>
                                             <a href="#">
-                                                <i class="icon-favorite-heart-button"></i>
+                                                <i class="icon-heart"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
-                                                <i class="icon-line-menu"></i>
+                                                <i class="icon-menu"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -155,7 +155,7 @@
                                             </li>
                                             <li>
                                                 <a href="#" target="_blank">
-                                                    <i class="icon-google-plus"></i>
+                                                    <i class="icon-google"></i>
                                                 </a>
                                             </li>
                                             <li>
@@ -165,7 +165,7 @@
                                             </li>
                                             <li>
                                                 <a href="#" target="_blank">
-                                                    <i class="icon-youtube"></i>
+                                                    <i class="icon-youtube-play"></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -260,7 +260,7 @@
                                             </div>
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </div>
                                         </div>
                                         <div class="wrapper-box-hover">
@@ -268,17 +268,17 @@
                                                 <ul>
                                                     <li>
                                                         <a href="{{route('whishlist')}}">
-                                                            <i class="icon-heart"></i>
+                                                            <i class="icon-heart-empty"></i>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('detail')}}">
-                                                            <i class="icon-view"></i>
+                                                            <i class="icon-eye"></i>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('cart')}}">
-                                                            <i class="icon-basket-supermarket"></i>
+                                                            <i class="icon-shopping-basket"></i>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -301,7 +301,7 @@
                                             </div>
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </div>
                                         </div>
                                         <div class="wrapper-box-hover">
@@ -309,17 +309,17 @@
                                                 <ul>
                                                     <li>
                                                         <a href="{{route('whishlist')}}">
-                                                            <i class="icon-heart"></i>
+                                                            <i class="icon-heart-empty"></i>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('detail')}}">
-                                                            <i class="icon-view"></i>
+                                                            <i class="icon-eye"></i>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('cart')}}">
-                                                            <i class="icon-basket-supermarket"></i>
+                                                            <i class="icon-shopping-basket"></i>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -342,7 +342,7 @@
                                             </div>
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </div>
                                         </div>
                                         <div class="wrapper-box-hover">
@@ -350,17 +350,17 @@
                                                 <ul>
                                                     <li>
                                                         <a href="{{route('whishlist')}}">
-                                                            <i class="icon-heart"></i>
+                                                            <i class="icon-heart-empty"></i>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('detail')}}">
-                                                            <i class="icon-view"></i>
+                                                            <i class="icon-eye"></i>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('cart')}}">
-                                                            <i class="icon-basket-supermarket"></i>
+                                                            <i class="icon-shopping-basket"></i>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -383,7 +383,7 @@
                                             </div>
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </div>
                                         </div>
                                         <div class="wrapper-box-hover">
@@ -391,17 +391,17 @@
                                                 <ul>
                                                     <li>
                                                         <a href="{{route('whishlist')}}">
-                                                            <i class="icon-heart"></i>
+                                                            <i class="icon-heart-empty"></i>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('detail')}}">
-                                                            <i class="icon-view"></i>
+                                                            <i class="icon-eye"></i>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('cart')}}">
-                                                            <i class="icon-basket-supermarket"></i>
+                                                            <i class="icon-shopping-basket"></i>
                                                         </a>
                                                     </li>
                                                 </ul>

@@ -32,9 +32,9 @@
                         <div class="widget-tit">
                             <h2>Categories</h2>
                             <div class="button" data-toggle="collapse" data-target="#categories">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
+                                <span class="icon-barcode"></span>
+                                <span class="icon-barcode"></span>
+                                <span class="icon-barcode"></span>
                             </div>
                         </div>
                         <div class="widget-contian" id="categories">
@@ -58,9 +58,9 @@
                         <div class="widget-tit">
                             <h2>top seller</h2>
                             <div class="button">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
+                                <span class="icon-barcode"></span>
+                                <span class="icon-barcode"></span>
+                                <span class="icon-barcode"></span>
                             </div>
                         </div>
                         <div class="widget-contian" id="top-seller">
@@ -184,9 +184,9 @@
                         <div class="widget-tit">
                             <h2>Popular tags</h2>
                             <div class="button" data-toggle="collapse" data-target="#tag">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
+                                <span class="icon-barcode"></span>
+                                <span class="icon-barcode"></span>
+                                <span class="icon-barcode"></span>
                             </div>
                         </div>
                         <div class="widget-contian" id="tag">
@@ -283,11 +283,11 @@
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                        <i class="icon-basket-supermarket"></i>
+                                        <i class="icon-shopping-basket"></i>
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                        <i class="icon-heart"></i>
+                                        <i class="icon-heart-empty"></i>
                                     </div>
                                 </div>
                                 <div class="sale">sale</div>
@@ -341,11 +341,11 @@
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                        <i class="icon-basket-supermarket"></i>
+                                        <i class="icon-shopping-basket"></i>
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                        <i class="icon-heart"></i>
+                                        <i class="icon-heart-empty"></i>
                                     </div>
                                 </div>
                             </div>
@@ -398,11 +398,11 @@
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                        <i class="icon-basket-supermarket"></i>
+                                        <i class="icon-shopping-basket"></i>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="route('whishlist')" class="cart-btn">whishlist</a>
-                                        <i class="icon-heart"></i>
+                                        <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                        <i class="icon-heart-empty"></i>
                                     </div>
                                 </div>
                                 <div class="new">new</div>
@@ -454,11 +454,11 @@
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                        <i class="icon-basket-supermarket"></i>
+                                        <i class="icon-shopping-basket"></i>
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                        <i class="icon-heart"></i>
+                                        <i class="icon-heart-empty"></i>
                                     </div>
                                 </div>
                                 <div class="sale">sale</div>
@@ -512,11 +512,11 @@
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                        <i class="icon-basket-supermarket"></i>
+                                        <i class="icon-shopping-basket"></i>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="route('whishlist')" class="cart-btn">whishlist</a>
-                                        <i class="icon-heart"></i>
+                                        <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                        <i class="icon-heart-empty"></i>
                                     </div>
                                 </div>
                             </div>
@@ -569,11 +569,11 @@
                                     </div>
                                     <div class="btn-part">
                                         <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                        <i class="icon-basket-supermarket"></i>
+                                        <i class="icon-shopping-basket"></i>
                                     </div>
                                     <div class="btn-part">
-                                        <a href="route('whishlist')" class="cart-btn">whishlist</a>
-                                        <i class="icon-heart"></i>
+                                        <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                        <i class="icon-heart-empty"></i>
                                     </div>
                                 </div>
                                 <div class="new">new</div>
@@ -584,7 +584,7 @@
                                 <ul class="pagination">
                                     <li class="page-item indicator left">
                                         <a class="page-link" href="#">
-                                            <i class="icon-right-arrow"></i>
+                                            <i class="icon-angle-right"></i>
                                         </a>
                                     </li>
                                     <li class="page-item">
@@ -598,7 +598,7 @@
                                     </li>
                                     <li class="page-item indicator right">
                                         <a class="page-link" href="#">
-                                            <i class="icon-right-arrow"></i>
+                                            <i class="icon-angle-right"></i>
                                         </a>
                                     </li>
                                 </ul>

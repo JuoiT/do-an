@@ -130,11 +130,11 @@
     display: block;
 }
 
-#sidebar .widget ul.level-2>li>a .icon-right-arrow {
+#sidebar .widget ul.level-2>li>a .icon-angle-right {
     font-size: 12px;
 }
 
-.icon-right-arrow:before {
+.icon-angle-right:before {
     font-weight: 700;
     margin: 0 8px 0 0;
     font-size: 12px;
@@ -760,19 +760,19 @@
     background: #4ba011;
 }
 
-.pagination>li>a .icon-right-arrow {
+.pagination>li>a .icon-angle-right {
     line-height: 48px;
     height: 48px;
     display: block;
 }
 
-.pagination>li>a .icon-right-arrow:before {
+.pagination>li>a .icon-angle-right:before {
     line-height: 50px;
     height: 50px;
     margin: 0;
 }
 
-.pagination>li.left>a .icon-right-arrow {
+.pagination>li.left>a .icon-angle-right {
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);

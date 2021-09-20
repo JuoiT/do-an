@@ -41,7 +41,7 @@
                         </li>
                         <li>
                             <a>
-                                <i class="icon-interface"></i>3 Comments
+                                <i class="icon-commenting-o"></i>3 Comments
                             </a>
                         </li>
                     </ul>
@@ -118,7 +118,7 @@
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-google-plus"></i>
+                                                    <i class="icon-google"></i>
                                                 </a>
                                             </li>
                                             <li>
@@ -128,7 +128,7 @@
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <i class="icon-youtube"></i>
+                                                    <i class="icon-youtube-play"></i>
                                                 </a>
                                             </li>
                                         </ul>

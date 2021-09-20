@@ -446,8 +446,8 @@ h2.blog-header {
     margin: 0;
 }
 
-.icon-right-arrow::before {
-    font-size: 11px;
+.icon-angle-right::before {
+    font-size: 18px;
 }
 
 .blog .pagination a.left i:before {

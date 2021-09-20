@@ -113,7 +113,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                             <div class="wrapper-box-hover">
@@ -121,17 +121,17 @@
                                     <ul>
                                         <li>
                                             <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart"></i>
+                                                <i class="icon-heart-empty"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('detail')}}">
-                                                <i class="icon-view"></i>
+                                                <i class="icon-eye"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('cart')}}">
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -154,7 +154,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                             <div class="wrapper-box-hover">
@@ -162,17 +162,17 @@
                                     <ul>
                                         <li>
                                             <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart"></i>
+                                                <i class="icon-heart-empty"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('detail')}}">
-                                                <i class="icon-view"></i>
+                                                <i class="icon-eye"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('cart')}}">
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -196,7 +196,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                             <div class="wrapper-box-hover">
@@ -204,17 +204,17 @@
                                     <ul>
                                         <li>
                                             <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart"></i>
+                                                <i class="icon-heart-empty"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('detail')}}">
-                                                <i class="icon-view"></i>
+                                                <i class="icon-eye"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('cart')}}">
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -237,7 +237,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                             <div class="wrapper-box-hover">
@@ -245,17 +245,17 @@
                                     <ul>
                                         <li>
                                             <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart"></i>
+                                                <i class="icon-heart-empty"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('detail')}}">
-                                                <i class="icon-view"></i>
+                                                <i class="icon-eye"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('cart')}}">
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -279,7 +279,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                             <div class="wrapper-box-hover">
@@ -287,17 +287,17 @@
                                     <ul>
                                         <li>
                                             <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart"></i>
+                                                <i class="icon-heart-empty"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('detail')}}">
-                                                <i class="icon-view"></i>
+                                                <i class="icon-eye"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('cart')}}">
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -320,7 +320,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                             <div class="wrapper-box-hover">
@@ -328,17 +328,17 @@
                                     <ul>
                                         <li>
                                             <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart"></i>
+                                                <i class="icon-heart-empty"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('detail')}}">
-                                                <i class="icon-view"></i>
+                                                <i class="icon-eye"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{route('cart')}}">
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </a>
                                         </li>
                                     </ul>
@@ -388,7 +388,7 @@
                                             </div>
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -410,7 +410,7 @@
                                             </div>
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -432,7 +432,7 @@
                                             </div>
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                                <i class="icon-basket-supermarket"></i>
+                                                <i class="icon-shopping-basket"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -444,7 +444,7 @@
                         <div id="myBtnContainer" class="wow fadeInLeft">
                             <button class="btn active" onclick="filterSelection('all')">All</button>/
                             <button class="btn" onclick="filterSelection('fruit')"> Fruit</button>/
-                            <button class="btn" onclick="filterSelection('meet')"> Meet</button>/
+                            <button class="btn" onclick="filterSelection('nut')"> Nut</button>/
                             <button class="btn" onclick="filterSelection('vegetable')"> Vegetable</button>
                         </div>
                     </div>
@@ -492,11 +492,11 @@
                                 </div>
                                 <div class="btn-part">
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="filterDiv meet">
+                        <div class="filterDiv nut">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-2.jpg"/>
                             </div>
@@ -539,7 +539,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                         </div>
@@ -586,7 +586,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                         </div>
@@ -635,11 +635,11 @@
                                 </div>
                                 <div class="btn-part">
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                         </div>
-                        <div class="filterDiv meet">
+                        <div class="filterDiv nut">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-5.jpg"/>
                             </div>
@@ -682,7 +682,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                         </div>
@@ -729,7 +729,7 @@
                                 </div>
                                 <div class="btn-part">
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-basket-supermarket"></i>
+                                    <i class="icon-shopping-basket"></i>
                                 </div>
                             </div>
                         </div>
@@ -849,7 +849,7 @@
             <div class="col-md-3 col-sm-3 col-xs-12 first wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="icon-part">
                     <img class="img-responsive center-block" src="{{url('assets-frontend')}}/images/step-1.png"/>
-                    <i class="icon-carrot"></i>
+                    <i class="icon-basket"></i>
                 </div>
                 <div class="process-name">
                     <div class="step">step 01</div>
@@ -859,7 +859,7 @@
             <div class="col-md-3 col-sm-3 col-xs-12 second wow fadeIn" data-wow-duration="1s" data-wow-delay="1.3s">
                 <div class="icon-part">
                     <img class="img-responsive center-block" src="{{url('assets-frontend')}}/images/step-2.png"/>
-                    <i class="icon-warehouse"></i>
+                    <i class="icon-home"></i>
                 </div>
                 <div class="process-name">
                     <div class="step">step 02</div>
@@ -869,7 +869,7 @@
             <div class="col-md-3 col-sm-3 col-xs-12 third wow fadeIn" data-wow-duration="1s" data-wow-delay="2.3s">
                 <div class="icon-part">
                     <img class="img-responsive center-block" src="{{url('assets-frontend')}}/images/step-3.png"/>
-                    <i class="icon-placeholder-filled-point"></i>
+                    <i class="icon-map-pin"></i>
                 </div>
                 <div class="process-name">
                     <div class="step">step 03</div>
@@ -879,7 +879,7 @@
             <div class="col-md-3 col-sm-3 col-xs-12 fourth wow fadeIn" data-wow-duration="1s" data-wow-delay="3.3s">
                 <div class="icon-part">
                     <img class="img-responsive center-block" src="{{url('assets-frontend')}}/images/step-4.png"/>
-                    <i class="icon-package"></i>
+                    <i class="icon-truck"></i>
                 </div>
                 <div class="process-name">
                     <div class="step">step 04</div>

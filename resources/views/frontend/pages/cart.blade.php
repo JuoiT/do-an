@@ -57,7 +57,7 @@
                         <td class="total">$2.00</td>
                         <td class="cancle">
                             <a href="#">
-                                <i class="icon-cancel-music"></i>
+                                <i class="icon-cancel"></i>
                             </a>
                         </td>
                     </tr>
@@ -81,7 +81,7 @@
                         <td class="total">$6.00</td>
                         <td class="cancle">
                             <a href="#">
-                                <i class="icon-cancel-music"></i>
+                                <i class="icon-cancel"></i>
                             </a>
                         </td>
                     </tr>
@@ -91,15 +91,15 @@
                         <td colspan="6">
                             <div class="l-part">
                                 <a class="continue-shopping-btn" href="#">Continue Shopping
-                                    <i class="icon-right-arrow-1"></i>
+                                    <i class="icon-right"></i>
                                 </a>
                             </div>
                             <div class="r-part">
                                 <a class="cancle-cart-btn" href="#">
-                                    <i class="icon-cancel-music"></i>delete cart
+                                    <i class="icon-cancel"></i>delete cart
                                 </a>
                                 <a class="update-cart-btn" href="#">
-                                    <i class="icon-refresh"></i>update cart
+                                    <i class="icon-arrows-cw"></i>update cart
                                 </a>
                             </div>
                         </td>
@@ -126,7 +126,7 @@
                             <span class="price">$12.00</span>
                         </div>
                         <a class="checkout-btn" href="#">
-                            <i class="icon-check-mark"></i>Proceed to checkout
+                            <i class="icon-ok"></i>Proceed to checkout
                         </a>
                     </div>
                 </div>
@@ -163,5 +163,6 @@
 @stop
 
 @section('script')
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
 <script src="{{url('assets-frontend')}}/js/cart.js"></script>
 @endsection

@@ -56,7 +56,7 @@
                         </td>
                         <td class="cancle">
                             <a href="#">
-                                <i class="icon-cancel-music"></i>
+                                <i class="icon-cancel"></i>
                             </a>
                         </td>
                     </tr>
@@ -80,7 +80,7 @@
                         </td>
                         <td class="cancle">
                             <a href="#">
-                                <i class="icon-cancel-music"></i>
+                                <i class="icon-cancel"></i>
                             </a>
                         </td>
                     </tr>
@@ -103,7 +103,7 @@
                         </td>
                         <td class="cancle">
                             <a href="#">
-                                <i class="icon-cancel-music"></i>
+                                <i class="icon-cancel"></i>
                             </a>
                         </td>
                     </tr>
@@ -127,7 +127,7 @@
                         </td>
                         <td class="cancle">
                             <a href="#">
-                                <i class="icon-cancel-music"></i>
+                                <i class="icon-cancel"></i>
                             </a>
                         </td>
                     </tr>

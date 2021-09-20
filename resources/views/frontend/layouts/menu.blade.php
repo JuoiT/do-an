@@ -3,18 +3,13 @@
         <div class="vishlist">
             <div class="vishlist-inner">
                 <a href="{{route('whishlist')}}">
-                    <i class="icon-heart"></i>
+                    <i class="icon-heart-empty"></i>
                 </a>
                 <div class="vishlist-counter">01</div>
             </div>
         </div>
         <nav class="navbar">
             <div class="nav-header">
-                <button type="button" class="navbar-toggle">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <div class="logo">
                     <a href="{{route('home')}}">
                         <img src="{{url('assets-frontend')}}/images/logo.png"/>
@@ -22,14 +17,6 @@
                 </div>
             </div>
             <div class="collapse" id="organic-food-navigation">
-                <div class="remove">
-                    <i class="icon-cancel-music"></i>
-                </div>
-                <div class="menu-logo">
-                    <a href="{{route('home')}}">
-                        <img src="{{url('assets-frontend')}}/images/logo.png"/>
-                    </a>
-                </div>
                 <ul class="nav navbar-nav">
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/home') ? 'active' : ''}}">
                         <a href="{{route('home')}}">Home</a>
@@ -65,14 +52,14 @@
             <div class="search">
                 <div class="search-inner">
                     <a href="#">
-                        <i class="icon-magnifying-glass"></i>
+                        <i class="icon-search"></i>
                     </a>
                 </div>
             </div>
             <div class="cart">
                 <div class="cart-inner">
                     <a href="#">
-                        <i class="icon-shopping-bag"></i>
+                        <i class="icon-shopping-basket"></i>
                     </a>
                     <div class="cart-counter">01</div>
                 </div>
@@ -88,7 +75,7 @@
                                 <div class="quantity-and-price">1 x $2.00</div>
                             </div>
                             <a href="#" class="clear-btn">
-                                <i class="icon-cancel-music"></i>
+                                <i class="icon-cancel"></i>
                             </a>
                         </div>
                         <div class="box">
@@ -100,7 +87,7 @@
                                 <div class="quantity-and-price">2 x $4.00</div>
                             </div>
                             <a href="#" class="clear-btn">
-                                <i class="icon-cancel-music"></i>
+                                <i class="icon-cancel"></i>
                             </a>
                         </div>
                     </div>
@@ -125,7 +112,7 @@
                             <i class="icon-search"></i>
                         </div>
                         <div class="cross">
-                            <i class="icon-cancel-music"></i>
+                            <i class="icon-cancel"></i>
                         </div>
                     </div>
                 </div>

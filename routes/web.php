@@ -34,7 +34,7 @@ Route::get('/', function () {
 });
 
 // Backend
-Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin'], function() {
+Route::group(['prefix'=>'admin'], function() {
 
     Route::get('/', [AdminController::class, 'index'])->name('home_admin');
 

@@ -23,7 +23,7 @@ class CategoryController extends Controller
             // for paginate / redirect, get old filter value from session
             $params = session()->get("filter.categories");
         }
-        
+
         $query = Category::filter($params);
         $list_category = $query->withCount('products')->paginate(config("const.records"));
         return view('backend.pages.category.list-category', compact('list_category'));
@@ -90,9 +90,11 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->update($request->all());
         if ($category) {
-            return redirect()->route('category.index')->with('success', 'Sửa danh mục thành công!');
+            toast('Sửa danh mục thành công!','success');
+            return redirect()->route('category.index');
         } else {
-            return redirect()->back()->with('error', 'Sửa danh mục thất bại!');
+            toast('Sửa danh mục thất bại!!','success');
+            return redirect()->back();
         }
     }
 

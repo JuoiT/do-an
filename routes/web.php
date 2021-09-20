@@ -68,7 +68,7 @@ Route::post('admin/login', [AdminController::class, 'postLogin'])->name('admin.l
 // Frontend
 Route::group(['prefix'=>''], function() {
 
-    Route::get('home', [ShopController::class, 'home'])->name('home');
+    Route::get('/', [ShopController::class, 'home'])->name('home');
 
     Route::get('product', [ShopController::class, 'product'])->name('product');
 

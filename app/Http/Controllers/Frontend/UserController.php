@@ -7,6 +7,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -17,7 +18,10 @@ class UserController extends Controller
 
     public function login()
     {
-        return view('frontend.pages.login');
+        // Check if remembered customer
+        if (!Auth::viaRemember()) {
+            return view('frontend.pages.login');
+        }
     }
 
     public function postRegister(RegisterRequest $req)
@@ -42,8 +46,11 @@ class UserController extends Controller
             $credentials = $req->only('phone', 'password');
         }
 
-        if (Auth::attempt($credentials, $remember)) {
-            return redirect()->route('home');
+        $user = User::where([['email', $credentials['email']], ['password', $credentials['password']], ['role', 'customer']]);
+        if ($user) {
+            if (Auth::attempt($credentials, $remember)) {
+                return redirect()->route('home');
+            }
         }
     }
 

@@ -24,12 +24,14 @@ class ProductController extends Controller
         $categories = Category::all();
 
         $params = $request->all();
-        if (count($params)<=1) {
+
+        if (count($params) <= 1) {
             // for paginate / redirect, get old filter value from session
             $params = session()->get("filter.products");
         }
-        
+
         $query = Product::filter($params);
+        // config("const.records") số lượng hiển thị chung trên trang admin
         $list_product = $query->with('category')->paginate(config("const.records"));
 
         return view('backend.pages.product.list-product', compact('list_product', 'categories'));

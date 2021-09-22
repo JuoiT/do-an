@@ -630,6 +630,8 @@
     }
 </script>
 
+@include('sweetalert::alert')
+
 @yield('script')
 <!-- END PAGE LEVEL JS-->
 </body>

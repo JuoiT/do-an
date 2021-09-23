@@ -49,9 +49,11 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->all());
         if ($category) {
-            return redirect()->route('category.index')->with('success', 'Thêm mới danh mục thành công!');
+            toast('Thêm danh mục thành công!','success');
+            return redirect()->route('category.index');
         } else {
-            return redirect()->back()->with('error', 'Thêm mới danh mục thất bại!');
+            toast('Thêm mới danh mục thất bại!','error');
+            return redirect()->back();
         }
     }
 

@@ -1,21 +1,6 @@
 @extends('backend.master')
 
 @section('main')
-
-    @if (Session::get('success'))
-        <div class="alert alert-success">
-            <strong
-                class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">{{ Session::get('success') }}</strong>
-        </div>
-    @endif
-
-    @if (Session::get('error'))
-        <div class="alert alert-danger">
-            <strong
-                class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-deep-orange-orange gradient-shadow">{{ Session::get('error') }}</strong>
-        </div>
-    @endif
-
     <div class="section">
         <div class="row">
             <div class="col s12 m6 l8">
@@ -133,7 +118,7 @@
                                                     @method('DELETE')
                                                     @csrf
                                                     <input type="hidden" value="{{ $value->id }}">
-                                                    <button title="move to trash" style="border: none !important;"
+                                                    <button title="move to trash" style="border: none !important; padding: 0"
                                                         class="badge pink lighten-5 material-icons pink-text"
                                                         type="submit">clear</button>
                                                 </form>

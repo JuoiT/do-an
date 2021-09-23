@@ -505,7 +505,6 @@
 
 .shorting-box-1 {
     float: left;
-    margin-right: 25px;
     position: relative;
 }
 
@@ -519,18 +518,16 @@
 }
 
 .filter .shorting-box-1 select {
-    width: 146px;
     position: relative;
 }
 
 .filter .shorting-box-2 select {
-    width: 84px;
     position: relative;
 }
 
 .shorting-box-2 {
     float: left;
-    margin-right: 25px;
+    margin-left: 10px;
     position: relative;
 }
 

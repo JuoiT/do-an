@@ -22,7 +22,7 @@
                         <input type="hidden" value="{{$category->id}}" name="id">
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="text" id="name" value="{{$category->name}}" name="name" placeholder="Name">
+                                <input type="text" id="name" value="{{old('name')?old('name'):$category->name}}" name="name" placeholder="Name">
                                 <label class="active">Name</label>
                                 @if($errors->has('name'))
                                 <span style="color: orangered;">{{$errors->first('name')}}</span>

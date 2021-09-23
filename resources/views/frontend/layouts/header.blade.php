@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/animate.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- End library -->
     <!-- Layout -->
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/page/layout.css" />

@@ -58,7 +58,9 @@
                                     @method('DELETE')
                                     @csrf
                                     <input type="hidden" value="{{$value->id}}">
-                                    <button style="border: none !important;" class="badge pink lighten-5 material-icons pink-text" type="submit">clear</button>
+                                    <button title="move to trash" style="border: none !important; padding: 0"
+                                                        class="badge pink lighten-5 material-icons pink-text"
+                                                        type="submit">clear</button>
                                 </form>
                             </td>
                         </tr>

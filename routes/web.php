@@ -73,7 +73,7 @@ Route::group(['prefix'=>''], function() {
     Route::get('product', [ShopController::class, 'product'])->name('product');
     Route::get('filter-product', [ShopController::class, 'filter'])->name('filter_product');
 
-    Route::get('detail', [ShopController::class, 'detail'])->name('detail');
+    Route::get('detail/{id}', [ShopController::class, 'detail'])->name('detail');
 
     // Route::get('cart', [ShopController::class, 'cart'])->name('cart');
     Route::get('cart', [CartController::class, 'index'])->name('cart');

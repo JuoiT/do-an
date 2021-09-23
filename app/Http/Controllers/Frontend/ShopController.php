@@ -9,11 +9,12 @@ use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
-    private $limit = 2;
+    // so luong san pham hien thi
+    private $limit = 6;
 
     public function home()
     {
-        $new_product = Product::orderBy('created_at', 'DESC')->limit(6)->get();
+        $hot_product = Product::orderBy('created_at', 'DESC')->limit(6)->get();
         $best_seller = Product::where('sale_price', '>', '0')->get();
         $category = Category::all();
         return view('frontend.pages.home', compact('new_product', 'category'));
@@ -21,9 +22,10 @@ class ShopController extends Controller
 
     public function product()
     {
-        $products = Product::all();
+        $hotProducts = Product::orderBy('created_at', 'DESC')->limit(3)->get();
+        $bestSeller = Product::withCount('orderDetails')->orderBy('order_details_count', 'DESC')->limit(3)->get();
         $categories = Category::all();
-        return view('frontend.pages.product', compact('products', 'categories'));
+        return view('frontend.pages.product', compact('categories', 'hotProducts', 'bestSeller'));
     }
 
     public function filter(Request $request)
@@ -40,8 +42,8 @@ class ShopController extends Controller
 
         $query = Product::filter($params);
         $page = intval($request->page);
-        $totalPage = ceil($query->count()/$this->limit);
-        $offset = ($page-1)*$this->limit;
+        $totalPage = ceil($query->count() / $this->limit);
+        $offset = ($page - 1) * $this->limit;
         $products = $query->with('category')->limit($this->limit)->offset($offset)->get();
 
         return view('frontend.pages.ajax.shop-products', compact('products', 'page', 'totalPage'));

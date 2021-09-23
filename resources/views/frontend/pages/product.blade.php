@@ -28,7 +28,7 @@
             <div class="row">
                 <aside class="col-md-4 col-sm-12 col-xs-12 wow fadeInLeft">
                     <div id="sidebar">
-                        <div class="widget categories-widget">
+                        {{-- <div class="widget categories-widget">
                             <div class="widget-tit">
                                 <h2>Categories</h2>
                                 <div class="button" data-toggle="collapse" data-target="#categories">
@@ -50,10 +50,12 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
+
+                        {{-- hot products --}}
                         <div class="widget top-seller-widget" data-toggle="collapse" data-target="#top-seller">
                             <div class="widget-tit">
-                                <h2>top seller</h2>
+                                <h2>Hot products</h2>
                                 <div class="button">
                                     <span class="icon-barcode"></span>
                                     <span class="icon-barcode"></span>
@@ -61,140 +63,135 @@
                                 </div>
                             </div>
                             <div class="widget-contian" id="top-seller">
-                                <div class="seller-box">
-                                    <div class="seller-img">
-                                        <img class="img-responsive"
-                                            src="{{ url('assets-frontend') }}/images/top-seller-img-1.jpg" />
-                                    </div>
-                                    <div class="seller-text">
-                                        <a class="seller-name" href="#">Lmao</a>
-                                        <div class="ratting">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                @foreach ($hotProducts as $item)
+                                    <div class="seller-box">
+                                        <div class="seller-img">
+                                            <img class="img-responsive" style="height: 70px; width: 90px; object-fit: cover"
+                                                src="{{ url('upload-images') }}/{{ $item->image }}" />
                                         </div>
-                                        <div class="price">$1.00</div>
-                                    </div>
-                                </div>
-                                <div class="seller-box">
-                                    <div class="seller-img">
-                                        <img class="img-responsive"
-                                            src="{{ url('assets-frontend') }}/images/top-seller-img-2.jpg" />
-                                    </div>
-                                    <div class="seller-text">
-                                        <a class="seller-name" href="#">Bru</a>
-                                        <div class="ratting">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                        <div class="seller-text">
+                                            <a class="seller-name" style="font-weight: 700; font-size: 14px"
+                                                href="{{ route('detail', $item->id) }}">{{ $item->name }}</a>
+                                            <div class="ratting">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="price">
+                                                @if ($item->sale_price > 0)
+                                                    <span class="text-success">{{ toVnd($item->sale_price) }}</span>
+                                                    <small><del
+                                                            class="text-danger">{{ toVnd($item->price) }}</del></small>
+                                                @else
+                                                    <span class="text-success">{{ toVnd($item->price) }}</span>
+                                                @endif
+                                            </div>
                                         </div>
-                                        <div class="price">$2.00</div>
                                     </div>
-                                </div>
-                                <div class="seller-box">
-                                    <div class="seller-img">
-                                        <img class="img-responsive"
-                                            src="{{ url('assets-frontend') }}/images/top-seller-img-3.jpg" />
-                                    </div>
-                                    <div class="seller-text">
-                                        <a class="seller-name" href="#">Dak</a>
-                                        <div class="ratting">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="img-responsive"
-                                                            src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="price">$3.00</div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
+                        {{-- end hot products --}}
+
+                        {{-- top seller --}}
+                        <div class="widget top-seller-widget" data-toggle="collapse" data-target="#top-seller">
+                            <div class="widget-tit">
+                                <h2>Top seller</h2>
+                                <div class="button">
+                                    <span class="icon-barcode"></span>
+                                    <span class="icon-barcode"></span>
+                                    <span class="icon-barcode"></span>
+                                </div>
+                            </div>
+                            <div class="widget-contian" id="top-seller">
+                                @foreach ($bestSeller as $item)
+                                    <div class="seller-box">
+                                        <div class="seller-img">
+                                            <img class="img-responsive" style="height: 70px; width: 90px; object-fit: cover"
+                                                src="{{ url('upload-images') }}/{{ $item->image }}" />
+                                        </div>
+                                        <div class="seller-text">
+                                            <a class="seller-name" style="font-weight: 700; font-size: 14px"
+                                                href="{{ route('detail', $item->id) }}">{{ $item->name }}</a>
+                                            <div class="ratting">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive"
+                                                                src="{{ url('assets-frontend') }}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="price">
+                                                @if ($item->sale_price > 0)
+                                                    <span class="text-success">{{ toVnd($item->sale_price) }}</span>
+                                                    <small><del
+                                                            class="text-danger">{{ toVnd($item->price) }}</del></small>
+                                                @else
+                                                    <span class="text-success">{{ toVnd($item->price) }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        {{-- end top seller --}}
+
                         <div class="widget tag-widgwet">
                             <div class="widget-tit">
                                 <h2>Popular tags</h2>
@@ -221,6 +218,7 @@
                 </aside>
                 <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInRight">
                     <div class="row">
+                        <h3 style="padding-bottom: 20px">Danh sách sản phẩm</h3>
                         <div class="col-sm-12 col-xs-12">
                             {{-- Start filter --}}
                             <div class="filter">
@@ -247,46 +245,18 @@
                                 </div>
                                 <div class="r-part">
                                     <div class="form-group">
-                                        <input type="text" class="form-control f-filter" value="" name="search" id="f-search"
-                                            aria-describedby="helpId" placeholder="Tìm kiếm">
+                                        <input type="text" class="form-control f-filter" value="" name="search"
+                                            id="f-search" aria-describedby="helpId" placeholder="Tìm kiếm">
                                     </div>
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-                    </div>
-                    <div class="col-sm-12 col-xs-12 wow fadeInUp item">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item indicator left">
-                                    <a class="page-link" href="#">
-                                        <i class="icon-angle-right"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link active" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item indicator right">
-                                    <a class="page-link" href="#">
-                                        <i class="icon-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-=======
                         {{-- End filter --}}
 
                         <div id="shop-product">
-                            {{-- Show product (ajax.shop-product)  --}}
+                            {{-- Show product (ajax.shop-product) --}}
 
                         </div>
->>>>>>> bf96f3b1822add2ab26bd4e1018a870e9d40f523
                     </div>
                 </div>
             </div>

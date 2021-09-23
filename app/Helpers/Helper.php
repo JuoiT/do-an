@@ -25,4 +25,15 @@ if (!function_exists('trimm')){
         return $string;
     }
 }
+
+/**
+ * Loại bỏ khoảng trắng thừa, ký tự đặc biệt khỏi chuối
+ * @string 
+ */
+if (!function_exists('toVnd')){
+    function toVnd($price){
+        $result = number_format($price, 0, '.', ',').'đ';
+        return $result;
+    }
+}
 ?>

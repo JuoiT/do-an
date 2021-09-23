@@ -5,14 +5,14 @@
             <div class="col-sm-4 col-xs-12 wow fadeInUp item">
                 <div class="wrapper">
                     <div class="pro-img">
-                        <a href="{{ route('detail') }}">
+                        <a href="{{ route('detail', $product->id) }}">
                             <img style="height: 200px;" class="img-responsive"
                                 src="{{ url('upload-images') . '/' . $product->image }}" />
                         </a>
                     </div>
                     <div class="contain-wrapper">
                         <div class="tit pt-2">
-                            <a href="{{ route('detail') }}">{{ $product->name }}</a>
+                            <a href="{{ route('detail', $product->id) }}">{{ $product->name }}</a>
                         </div>
                         <div class="ratting">
                             <ul>
@@ -50,12 +50,12 @@
                         </div>
                         <div class="price">
                             @if ($product->sale_price > 0)
-                                <div class="new-price">{{ $product->sale_price }}</div>
+                                <div class="new-price">{{ toVnd($product->sale_price) }}</div>
                                 <div class="old-price">
-                                    <del>{{ $product->price }}đ</del>
+                                    <del>{{ toVnd($product->price) }}</del>
                                 </div>
                             @else
-                                <div class="new-price">{{ $product->price }}đ</div>
+                                <div class="new-price">{{ toVnd($product->price) }}</div>
                             @endif
                         </div>
                         <div class="btn-part">

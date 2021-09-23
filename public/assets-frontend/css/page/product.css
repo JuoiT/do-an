@@ -461,7 +461,7 @@
 /* Begin filter */
 
 .filter {
-    padding-bottom: 120px;
+    padding-bottom: 20px;
     float: left;
     width: 100%;
 }
@@ -509,12 +509,13 @@
 }
 
 .filter select {
-    height: 32px;
-    border: 1px solid #cbcbcb;
+    border: none;
+    background-color: rgb(241, 241, 241);
+    outline: none;
     color: #908b87;
     font-size: 14px;
     padding: 0 10px;
-    height: 30px;
+    height: 40px;
 }
 
 .filter .shorting-box-1 select {

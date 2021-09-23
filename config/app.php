@@ -228,11 +228,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> f1479355b5a51c6bbe8e553ac433ce4038d0fbe5
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ],
 

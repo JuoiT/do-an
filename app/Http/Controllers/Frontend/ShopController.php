@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
+    private $limit = 2;
+
     public function home()
     {
         $new_product = Product::orderBy('created_at', 'DESC')->limit(5)->get();
@@ -36,9 +38,12 @@ class ShopController extends Controller
         }
 
         $query = Product::filter($params);
-        $products = $query->with('category')->paginate(9);
+        $page = intval($request->page);
+        $totalPage = ceil($query->count()/$this->limit);
+        $offset = ($page-1)*$this->limit;
+        $products = $query->with('category')->limit($this->limit)->offset($offset)->get();
 
-        return view('frontend.pages.ajax.filter', compact('products'));
+        return view('frontend.pages.ajax.shop-products', compact('products', 'page', 'totalPage'));
     }
 
     // public function detail()

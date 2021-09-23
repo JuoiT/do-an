@@ -254,8 +254,10 @@
                             </div>
                         </div>
                         {{-- End filter --}}
-                        <div id="products" class="product-list list-group">
-                            {{-- Show product ajax --}}
+
+                        <div id="shop-product">
+                            {{-- Show product (ajax.shop-product)  --}}
+
                         </div>
                     </div>
                 </div>
@@ -276,31 +278,31 @@
             $('.f-filter').change(function() {
                 filter(1);
             });
-
-            function filter(page) {
-                var ajaxurl = 'filter-product';
-
-                $.ajax({
-                    type: "GET",
-                    url: ajaxurl,
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        category_id: jQuery('#f-category').val(),
-                        orderBy: jQuery('#f-order-by').val(),
-                        name: jQuery('#f-search').val(),
-                        page: page,
-                    },
-
-                    success: function(data) {
-                        console.log('filter work');
-                        // console.log(data);
-                        $("#products").html(data);
-                    },
-                    error: function(data) {
-                        console.log(data);
-                    }
-                });
-            }
         });
+
+        function filter(page) {
+            var ajaxurl = 'filter-product';
+
+            $.ajax({
+                type: "GET",
+                url: ajaxurl,
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    category_id: jQuery('#f-category').val(),
+                    orderBy: jQuery('#f-order-by').val(),
+                    name: jQuery('#f-search').val(),
+                    page: page,
+                },
+
+                success: function(data) {
+                    console.log('filter work');
+                    // console.log(data);
+                    $("#shop-product").html(data);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
     </script>
 @stop

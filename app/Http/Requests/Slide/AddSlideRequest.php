@@ -27,6 +27,7 @@ class AddSlideRequest extends FormRequest
             'name' => 'required|unique:slides',
             'image' => 'required|image|unique:slides',
             'link' => 'required|url|unique:slides',
+            'time' => 'required|date|after_or_equal:now',
             'status' => 'required|boolean',
         ];
     }
@@ -42,6 +43,9 @@ class AddSlideRequest extends FormRequest
             'link.required' => "Đường link không được để rỗng!",
             'link.url' => "Đường link không hợp lệ!",
             'link.unique' => "Đường link $this->name đã tồn tại!",
+            'time.required' => "Thời gian không được để rỗng!",
+            'time.date' => "Thời gian không hợp lệ!",
+            'time.after_or_equal' => "Thời gian phải từ ngày hôm nay!",
             'status.required' => "Danh mục không được để rỗng!",
             'status.boolean' => "Đừng phá nữa ba!",
         ];

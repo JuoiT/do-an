@@ -23,50 +23,60 @@
                     <h4 class="card-title mb-0">Danh sách banner</h4>
                 </div>
                 <table class="subscription-table responsive-table highlight">
-                    <thead>
-                        <tr>
-                            <th>STT</th>
-                            <th>Name</th>
-                            <th>Image</th>
-                            <th>Link</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
+                    @if (count($list_banner) > 0)
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Link</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    @endif
                     <tbody>
-                        @foreach($list_banner as $value)
-                        <tr>
-                            <td>
-                                {{$loop->index+1}}
-                            </td>
-                            <td>
-                                {{$value->name}}
-                            </td>
-                            <td>
-                                <img style="width: 250px;" src="{{url('upload-banner')}}/{{$value->image}}" alt="">
-                            </td>
-                            <td>
-                                {{$value->link}}
-                            </td>
-                            <td>
-                                @if($value->status==1)
-                                <span class="badge green lighten-5 green-text text-accent-4">Hiện</span>
-                                @else
-                                <span class="badge pink lighten-5 pink-text text-accent-2">Ẩn</span>
-                                @endif
-                            </td>
-                            <td>
-                                <a href="{{route('banner.edit', $value->id)}}"><i class="badge green lighten-5 material-icons green-text">edit_note</i></a>
-                                <form style="display: inline-block !important;"
-                                    action="{{route('banner.destroy', $value->id)}}" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <input type="hidden" value="{{$value->id}}">
-                                    <button style="border: none !important;" class="badge pink lighten-5 material-icons pink-text" type="submit">clear</button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
+                        @if (count($list_banner) > 0)
+                            @foreach($list_banner as $value)
+                            <tr>
+                                <td>
+                                    {{$loop->index+1}}
+                                </td>
+                                <td>
+                                    {{$value->name}}
+                                </td>
+                                <td>
+                                    <img style="width: 250px;" src="{{url('upload-banner')}}/{{$value->image}}" alt="">
+                                </td>
+                                <td>
+                                    {{$value->link}}
+                                </td>
+                                <td>
+                                    @if($value->status==1)
+                                    <span class="badge green lighten-5 green-text text-accent-4">Hiện</span>
+                                    @else
+                                    <span class="badge pink lighten-5 pink-text text-accent-2">Ẩn</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="{{route('banner.edit', $value->id)}}"><i class="badge green lighten-5 material-icons green-text">edit_note</i></a>
+                                    <form style="display: inline-block !important;"
+                                        action="{{route('banner.destroy', $value->id)}}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
+                                        <input type="hidden" value="{{$value->id}}">
+                                        <button style="border: none !important;" class="badge pink lighten-5 material-icons pink-text" type="submit">clear</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <div style="padding: 10px; text-align: center; font-size: 20px; color:rgb(155, 0, 0)">
+                                    Không tìm thấy bản ghi nào!
+                                </div>
+                            </tr>
+                        @endif
                     </tbody>
                 </table>
                 <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">

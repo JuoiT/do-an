@@ -577,8 +577,10 @@
             <div class="input-field col s12">
                 <div class="switch">
                     Footer Dark
-                    <label class="float-right"><input class="footer-dark-checkbox" type="checkbox" /> <span
-                            class="lever ml-0"></span></label>
+                    <label class="float-right">
+                        <input class="footer-dark-checkbox" type="checkbox"/>
+                        <span class="lever ml-0"></span>
+                    </label>
                 </div>
             </div>
             <div class="input-field col s12">
@@ -594,10 +596,13 @@
 <footer
     class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
     <div class="footer-copyright">
-        <div class="container"><span>&copy; 2020 <a
-                    href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PIXINVENT</a>
-                All rights reserved.</span><span class="right hide-on-small-only">Design and Developed by <a
-                    href="https://pixinvent.com/">PIXINVENT</a></span></div>
+        <div class="container">
+            <span>&copy; 2020
+                <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PIXINVENT</a>All rights reserved.
+            </span><span class="right hide-on-small-only">Design and Developed by
+                <a href="https://pixinvent.com/">PIXINVENT</a>
+            </span>
+        </div>
     </div>
 </footer>
 

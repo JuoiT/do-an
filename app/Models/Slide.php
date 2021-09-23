@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use App\Models\FilterableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Slide extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, FilterableTrait;
 
-    protected $fillable = ['name', 'image', 'link', 'status'];
+    protected $fillable = ['name', 'image', 'link', 'time', 'status'];
+    protected $filterable = ['status'];
 
     public function add_slide($request)
     {
@@ -23,6 +25,7 @@ class Slide extends Model
             'name' => $request->name,
             'image' => $file_name,
             'link' => $request->link,
+            'time' => $request->time,
             'status' => $request->status,
         ]);
         return $add_slide;
@@ -39,8 +42,22 @@ class Slide extends Model
                 'name' => $request->name,
                 'image' => $file_name,
                 'link' => $request->link,
+                'time' => $request->time,
                 'status' => $request->status,
         ]);
         return $edit_slide;
+    }
+
+    public function filterName($query, $value)
+    {
+        return $query->where('name', 'LIKE', '%' . $value . '%');
+    }
+
+    public function filterTrashed($query, $value)
+    {
+        if ($value == 'true') {
+            $query->onlyTrashed();
+        }
+        return $query;
     }
 }

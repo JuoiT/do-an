@@ -579,31 +579,31 @@
                                 <div class="new">new</div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-xs-12 wow fadeInUp item">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item indicator left">
-                                        <a class="page-link" href="#">
-                                            <i class="icon-angle-right"></i>
-                                        </a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link active" href="#">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-                                    <li class="page-item indicator right">
-                                        <a class="page-link" href="#">
-                                            <i class="icon-angle-right"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 wow fadeInUp item">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item indicator left">
+                                    <a class="page-link" href="#">
+                                        <i class="icon-angle-right"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link active" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item indicator right">
+                                    <a class="page-link" href="#">
+                                        <i class="icon-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>

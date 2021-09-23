@@ -49,6 +49,16 @@
 
                         <div class="row">
                             <div class="input-field col s12">
+                                <input type="date" value="{{old('time')}}" name="time" placeholder="Time">
+                                <label class="active">Time</label>
+                                @if($errors->has('time'))
+                                <span style="color: orangered;">{{$errors->first('time')}}</span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
                                 <label class="active">Status</label>
                                 <p>
                                     <label>

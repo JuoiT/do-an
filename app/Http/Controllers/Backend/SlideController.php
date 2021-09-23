@@ -7,6 +7,7 @@ use App\Http\Requests\Slide\AddSlideRequest;
 use App\Http\Requests\Slide\EditSlideRequest;
 use App\Models\Slide;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SlideController extends Controller
 {
@@ -15,9 +16,17 @@ class SlideController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $list_slide = Slide::paginate(5);
+        $params = $request->all();
+        if (count($params)<=1) {
+            // for paginate / redirect, get old filter value from session
+            $params = session()->get("filter.slides");
+        }
+
+        $query = Slide::filter($params);
+        $list_slide = $query->paginate(config("const.records"));
+
         return view('backend.pages.slide.list-slide', compact('list_slide'));
     }
 
@@ -95,6 +104,21 @@ class SlideController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $slide = Slide::withTrashed()->find($id);
+        // move to trash - force delete from trashed
+        if ($slide->deleted_at != null)
+            $slide->forceDelete();
+        else
+            $slide->delete();
+
+        return redirect(route('slide.index'));
+    }
+
+    public function restore($id)
+    {
+        $slide = Slide::onlyTrashed($id);
+        $slide->restore();
+
+        return redirect(route('slide.index'));
     }
 }

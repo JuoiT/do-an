@@ -21,23 +21,8 @@
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/home') ? 'active' : ''}}">
                         <a href="{{route('home')}}">Home</a>
                     </li>
-                    <li class="">
-                        <a href="#">History</a>
-                    </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/product') ? 'active' : ''}}">
                         <a href="{{route('product')}}">Shop</a>
-                    </li>
-                    <li class="">
-                        <a href="#">Fruits</a>
-                    </li>
-                    <li class="">
-                        <a href="#">Organic Fruits</a>
-                    </li>
-                    <li class="">
-                        <a href="#">Sprouts</a>
-                    </li>
-                    <li class="">
-                        <a href="#">Custom</a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/blog') ? 'active' : ''}}">
                         <a href="{{route('blog')}}">Blog</a>

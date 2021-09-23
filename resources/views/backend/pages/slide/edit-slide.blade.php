@@ -51,16 +51,26 @@
 
                         <div class="row">
                             <div class="input-field col s12">
+                                <input type="date" value="{{$slide->time}}" name="time" placeholder="Time">
+                                <label class="active">Time</label>
+                                @if($errors->has('time'))
+                                <span style="color: orangered;">{{$errors->first('time')}}</span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
                                 <label class="active">Status</label>
                                 <p>
                                     <label>
-                                        <input name="status" type="radio" value="1" checked />
+                                        <input name="status" type="radio" value="1" {{((old('status')?old('status'):$slide->status))=='1'?'checked':''}}/>
                                         <span>Hiện</span>
                                     </label>
                                 </p>
                                 <p>
                                     <label>
-                                        <input name="status" type="radio" value="0" />
+                                        <input name="status" type="radio" value="0" {{((old('status')?old('status'):$slide->status))=='0'?'checked':''}}/>
                                         <span>Ẩn</span>
                                     </label>
                                 </p>

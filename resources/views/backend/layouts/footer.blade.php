@@ -630,7 +630,11 @@
     }
 </script>
 
+<<<<<<< HEAD
 @include('sweetalert::alert')
+=======
+@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+>>>>>>> f1479355b5a51c6bbe8e553ac433ce4038d0fbe5
 
 @yield('script')
 <!-- END PAGE LEVEL JS-->

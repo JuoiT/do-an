@@ -144,6 +144,10 @@
     width: 100%;
 }
 
+.owl-carousel .owl-item img {
+    width: auto;
+}
+
 
 /* End Freds-Entry-Section */
 
@@ -295,32 +299,22 @@
     color: #a7cf47;
 }
 
-.new-arrivals-section .wrapper .wrapper-box-hover,
-.product-list .wrapper .wrapper-box-hover,
-.related-product-slider .wrapper .wrapper-box-hover {
-    z-index: 99;
-    -webkit-transition: all 0.4s ease-out;
-    -moz-transition: all 0.4s ease-out;
-    -o-transition: all 0.4s ease-out;
-    transition: all 0.4s ease-out;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 1;
-    background: rgba(167, 207, 71, 0.8);
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    -webkit-transform: scale(0);
-    cursor: pointer;
+.wrapper .contain-wrapper .btn-part {
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
 }
 
-.new-arrivals-section .wrapper:hover .wrapper-box-hover,
-.product-list .wrapper:hover .wrapper-box-hover,
-.related-product-slider .wrapper:hover .wrapper-box-hover {
-    transform: scale(1);
+.deal-slider .contain-wrapper .btn-part {
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.filterDiv .text-part .btn-part {
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
 }
 
 .text {
@@ -703,6 +697,21 @@
     font-size: 16px;
 }
 
+.new-arrivals-slider .contain-wrapper .ratting {
+    width: 43%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+.new-arrivals-slider .contain-wrapper .ratting ul {
+    margin: 10px 0 0 0;
+}
+
+.new-arrivals-slider .contain-wrapper .ratting ul li {
+    float: left;
+    margin: 0 2px;
+}
+
 .filterDiv .text-part .price {
     width: 100%;
     float: left;
@@ -768,6 +777,21 @@
 
 .filterDiv .text-part .ratting ul li {
     float: left;
+}
+
+.deal-slider .contain-wrapper .ratting {
+    width: 43%;
+    margin: 0 auto;
+    padding-bottom: 5px;
+}
+
+.deal-slider .contain-wrapper .ratting ul {
+    margin: 10px 0 0 0;
+}
+
+.deal-slider .contain-wrapper .ratting ul li {
+    float: left;
+    margin: 0 2px;
 }
 
 

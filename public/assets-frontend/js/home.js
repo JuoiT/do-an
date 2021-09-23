@@ -29,8 +29,8 @@ $('.new-arrivals-slider').owlCarousel({
     }
 });
 
-$(".owl-prev").html('<i class="icon-right-arrow"></i>');
-$(".owl-next").html('<i class="icon-right-arrow"></i>');
+$(".owl-prev").html('<i class="icon-angle-right"></i>');
+$(".owl-next").html('<i class="icon-angle-right"></i>');
 
 $('.brand-slider').owlCarousel({
     loop: true,
@@ -61,8 +61,8 @@ $('.brand-slider').owlCarousel({
         }
     }
 });
-$(".owl-prev").html('<i class="icon-right-arrow"></i>');
-$(".owl-next").html('<i class="icon-right-arrow"></i>');
+$(".owl-prev").html('<i class="icon-angle-right"></i>');
+$(".owl-next").html('<i class="icon-angle-right"></i>');
 
 $('.deal-slider').owlCarousel({
     loop: true,

@@ -105,36 +105,48 @@
                             </div>
                             <div class="contain-wrapper">
                                 <div class="tit">Ngu người</div>
-                                <div class="price">
-                                    <div class="new-price">$1.00</div>
-                                    <div class="old-price">
-                                        <del>$1000.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                            </div>
-                            <div class="wrapper-box-hover">
-                                <div class="text">
+                                <div class="ratting">
                                     <ul>
                                         <li>
-                                            <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart-empty"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('detail')}}">
-                                                <i class="icon-eye"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('cart')}}">
-                                                <i class="icon-shopping-basket"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
                                             </a>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="price">
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price">
+                                        <del>$7.00</del>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
                                 </div>
                             </div>
                         </div>
@@ -146,36 +158,48 @@
                             </div>
                             <div class="contain-wrapper">
                                 <div class="tit">Óc chó</div>
-                                <div class="price">
-                                    <div class="new-price">$1.00</div>
-                                    <div class="old-price">
-                                        <del>$2.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                            </div>
-                            <div class="wrapper-box-hover">
-                                <div class="text">
+                                <div class="ratting">
                                     <ul>
                                         <li>
-                                            <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart-empty"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('detail')}}">
-                                                <i class="icon-eye"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('cart')}}">
-                                                <i class="icon-shopping-basket"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
                                             </a>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="price">
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price">
+                                        <del>$7.00</del>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
                                 </div>
                             </div>
                             <div class="sale">sale</div>
@@ -188,36 +212,48 @@
                             </div>
                             <div class="contain-wrapper">
                                 <div class="tit">Ngôn lù</div>
-                                <div class="price">
-                                    <div class="new-price">$2.00</div>
-                                    <div class="old-price">
-                                        <del>$5.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                            </div>
-                            <div class="wrapper-box-hover">
-                                <div class="text">
+                                <div class="ratting">
                                     <ul>
                                         <li>
-                                            <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart-empty"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('detail')}}">
-                                                <i class="icon-eye"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('cart')}}">
-                                                <i class="icon-shopping-basket"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
                                             </a>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="price">
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price">
+                                        <del>$7.00</del>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
                                 </div>
                             </div>
                         </div>
@@ -229,36 +265,48 @@
                             </div>
                             <div class="contain-wrapper">
                                 <div class="tit">Dak Bru</div>
-                                <div class="price">
-                                    <div class="new-price">$4.00</div>
-                                    <div class="old-price">
-                                        <del>$5.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                            </div>
-                            <div class="wrapper-box-hover">
-                                <div class="text">
+                                <div class="ratting">
                                     <ul>
                                         <li>
-                                            <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart-empty"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('detail')}}">
-                                                <i class="icon-eye"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('cart')}}">
-                                                <i class="icon-shopping-basket"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
                                             </a>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="price">
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price">
+                                        <del>$7.00</del>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
                                 </div>
                             </div>
                             <div class="new">new</div>
@@ -271,36 +319,48 @@
                             </div>
                             <div class="contain-wrapper">
                                 <div class="tit">Lmao Bla</div>
-                                <div class="price">
-                                    <div class="new-price">$4.00</div>
-                                    <div class="old-price">
-                                        <del>$6.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                            </div>
-                            <div class="wrapper-box-hover">
-                                <div class="text">
+                                <div class="ratting">
                                     <ul>
                                         <li>
-                                            <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart-empty"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('detail')}}">
-                                                <i class="icon-eye"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('cart')}}">
-                                                <i class="icon-shopping-basket"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
                                             </a>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="price">
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price">
+                                        <del>$7.00</del>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
                                 </div>
                             </div>
                         </div>
@@ -312,36 +372,48 @@
                             </div>
                             <div class="contain-wrapper">
                                 <div class="tit">Mlem Mlem</div>
-                                <div class="price">
-                                    <div class="new-price">$4.00</div>
-                                    <div class="old-price">
-                                        <del>$6.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                            </div>
-                            <div class="wrapper-box-hover">
-                                <div class="text">
+                                <div class="ratting">
                                     <ul>
                                         <li>
-                                            <a href="{{route('whishlist')}}">
-                                                <i class="icon-heart-empty"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('detail')}}">
-                                                <i class="icon-eye"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{route('cart')}}">
-                                                <i class="icon-shopping-basket"></i>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
                                             </a>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="price">
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price">
+                                        <del>$7.00</del>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
                                 </div>
                             </div>
                         </div>
@@ -380,6 +452,35 @@
                                             <div class="tit">
                                                 <a href="{{route('detail')}}">Ngu như chó</a>
                                             </div>
+                                            <div class="ratting">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                             <div class="price">
                                                 <div class="new-price">$3.00</div>
                                                 <div class="old-price">
@@ -389,6 +490,10 @@
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                                 <i class="icon-shopping-basket"></i>
+                                            </div>
+                                            <div class="btn-part">
+                                                <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                                <i class="icon-heart-empty"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -402,6 +507,35 @@
                                             <div class="tit">
                                                 <a href="{{route('detail')}}">Óc chó</a>
                                             </div>
+                                            <div class="ratting">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                             <div class="price">
                                                 <div class="new-price">$2.00</div>
                                                 <div class="old-price">
@@ -411,6 +545,10 @@
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                                 <i class="icon-shopping-basket"></i>
+                                            </div>
+                                            <div class="btn-part">
+                                                <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                                <i class="icon-heart-empty"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -424,6 +562,35 @@
                                             <div class="tit">
                                                 <a href="{{route('detail')}}">Lmao Bru</a>
                                             </div>
+                                            <div class="ratting">
+                                                <ul>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                             <div class="price">
                                                 <div class="new-price">$3.00</div>
                                                 <div class="old-price">
@@ -433,6 +600,10 @@
                                             <div class="btn-part">
                                                 <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                                 <i class="icon-shopping-basket"></i>
+                                            </div>
+                                            <div class="btn-part">
+                                                <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                                <i class="icon-heart-empty"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -494,6 +665,10 @@
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                     <i class="icon-shopping-basket"></i>
                                 </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="filterDiv nut">
@@ -541,6 +716,10 @@
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                     <i class="icon-shopping-basket"></i>
                                 </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="filterDiv vegetable">
@@ -587,6 +766,10 @@
                                 <div class="btn-part">
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                     <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
                                 </div>
                             </div>
                         </div>
@@ -637,6 +820,10 @@
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                     <i class="icon-shopping-basket"></i>
                                 </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="filterDiv nut">
@@ -684,6 +871,10 @@
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                     <i class="icon-shopping-basket"></i>
                                 </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
+                                </div>
                             </div>
                         </div>
                         <div class="filterDiv vegetable">
@@ -730,6 +921,10 @@
                                 <div class="btn-part">
                                     <a href="{{route('cart')}}" class="cart-btn">buy now</a>
                                     <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
                                 </div>
                             </div>
                         </div>

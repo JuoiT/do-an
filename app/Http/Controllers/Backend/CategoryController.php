@@ -23,7 +23,7 @@ class CategoryController extends Controller
             // for paginate / redirect, get old filter value from session
             $params = session()->get("filter.categories");
         }
-        
+
         $query = Category::filter($params);
         $list_category = $query->withCount('products')->paginate(config("const.records"));
         return view('backend.pages.category.list-category', compact('list_category'));

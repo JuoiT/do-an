@@ -14,10 +14,10 @@ class ShopController extends Controller
 
     public function home()
     {
-        $hot_product = Product::orderBy('created_at', 'DESC')->limit(6)->get();
+        $new_product = Product::orderBy('created_at', 'DESC')->limit(6)->get();
         $best_seller = Product::where('sale_price', '>', '0')->get();
         $category = Category::all();
-        return view('frontend.pages.home', compact('new_product', 'category'));
+        return view('frontend.pages.home', compact('new_product', 'best_seller', 'category'));
     }
 
     public function product()

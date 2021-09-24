@@ -67,7 +67,9 @@
                             <i class="icon-heart-empty"></i>
                         </div>
                     </div>
-                    <div class="sale">sale</div>
+                    @if ($product->sale_price > 0)
+                        <div class="sale">sale</div>
+                    @endif
                 </div>
             </div>
         @endforeach
@@ -78,20 +80,22 @@
     <div class="navigation">
         <ul class="pagination " id="pagination">
             @if ($page != 1)
-                <li onClick="filter({{$page-1}})" class="previous" aria-controls="" id="p-previous"><button style="outline: none"
-                        class="btn"><i class="fa fa-angle-left" aria-hidden="true"></i></button></li>
+                <li onClick="filter({{ $page - 1 }})" class="previous" aria-controls="" id="p-previous">
+                    <button style="outline: none" class="btn"><i class="fa fa-angle-left"
+                            aria-hidden="true"></i></button></li>
             @endif
             @if ($totalPage > 1)
                 @for ($i = 1; $i <= $totalPage; $i++)
-                    <li onClick="filter({{$i}})" class="p-page" aria-controls="">
+                    <li onClick="filter({{ $i }})" class="p-page" aria-controls="">
                         <button style="outline: none; width: 35px"
                             class="btn choose-page {{ $i == $page ? 'bg-success' : '' }}">{{ $i }}</button>
                     </li>
                 @endfor
             @endif
             @if ($page != $totalPage)
-                <li onClick="filter({{$page+1}})" class="next" aria-controls="" id="p-next"><button style="outline: none"
-                        class="btn"><i class="fa fa-angle-right" aria-hidden="true"></i></button></li>
+                <li onClick="filter({{ $page + 1 }})" class="next" aria-controls="" id="p-next"><button
+                        style="outline: none" class="btn"><i class="fa fa-angle-right"
+                            aria-hidden="true"></i></button></li>
             @endif
         </ul>
     </div>

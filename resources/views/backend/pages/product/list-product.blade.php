@@ -124,11 +124,11 @@
                                     </td>
                                     <td>
                                         <span>
-                                            {{ $value->price }}
+                                            {{ toVnd($value->price) }}
                                         </span>
                                         <br>
                                         <span class="green-text" {{ $value->sale_price == 0 ? 'hidden' : '' }}>
-                                            {{ $value->sale_price }}
+                                            {{ toVnd($value->sale_price) }}
                                         </span>
                                     </td>
                                     <td>

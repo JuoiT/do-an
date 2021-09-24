@@ -194,7 +194,7 @@
 
                         <div class="widget tag-widgwet">
                             <div class="widget-tit">
-                                <h2>Popular tags</h2>
+                                <h2>New Blogs</h2>
                                 <div class="button" data-toggle="collapse" data-target="#tag">
                                     <span class="icon-barcode"></span>
                                     <span class="icon-barcode"></span>
@@ -204,13 +204,6 @@
                             <div class="widget-contian" id="tag">
                                 <div class="tag-div">
                                     <a class="tag-btn" href="#">Bru</a>
-                                    <a class="tag-btn" href="#">Lmao</a>
-                                    <a class="tag-btn" href="#">Dảkádasd</a>
-                                    <a class="tag-btn" href="#">Mlem</a>
-                                    <a class="tag-btn" href="#">Mòe</a>
-                                    <a class="tag-btn" href="#">Luan nv</a>
-                                    <a class="tag-btn" href="#">Bla</a>
-                                    <a class="tag-btn" href="#">Blu</a>
                                 </div>
                             </div>
                         </div>

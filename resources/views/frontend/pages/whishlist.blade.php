@@ -140,4 +140,5 @@
 @stop
 @section('script')
 <script src="{{url('assets-frontend')}}/js/whishlist.js"></script>
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
 @endsection

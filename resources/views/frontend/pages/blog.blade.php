@@ -446,5 +446,6 @@
 @stop
 @section('script')
 <script src="{{url('assets-frontend')}}/js/jquery.matchHeight-min.js"></script>
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
 <script src="{{url('assets-frontend')}}/js/blog.js"></script>
 @stop

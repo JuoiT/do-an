@@ -50,8 +50,10 @@ Route::group(['prefix'=>'admin'], function() {
     Route::resource('blog', BlogController::class);
 
     Route::resource('banner', BannerController::class);
+    Route::get('/banner-restore/{id}', [BannerController::class, 'restore'])->name('banner-restore');
 
     Route::resource('slide', SlideController::class);
+    Route::get('/slide-restore/{id}', [SlideController::class, 'restore'])->name('slide-restore');
 
     Route::resource('user', CustomerController::class);
 

@@ -95,4 +95,5 @@
 @stop
 @section('script')
 <script src="{{url('assets-frontend')}}/js/contact.js"></script>
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
 @endsection

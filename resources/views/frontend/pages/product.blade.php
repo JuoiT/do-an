@@ -261,6 +261,7 @@
 @section('script')
     <script src="{{ url('assets-frontend') }}/js/bootstrap-slider.min.js"></script>
     <script src="{{ url('assets-frontend') }}/js/product.js"></script>
+    <script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
 
     <script>
         jQuery(document).ready(function() {

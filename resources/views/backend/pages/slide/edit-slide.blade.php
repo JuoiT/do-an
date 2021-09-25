@@ -41,6 +41,26 @@
 
                         <div class="row">
                             <div class="input-field col s12">
+                                <input type="text" value="{{$slide->content}}" name="content" placeholder="Content">
+                                <label class="active">Content</label>
+                                @if($errors->has('content'))
+                                <span style="color: orangered;">{{$errors->first('content')}}</span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" value="{{$slide->caption}}" name="caption" placeholder="Caption">
+                                <label class="active">Caption</label>
+                                @if($errors->has('caption'))
+                                <span style="color: orangered;">{{$errors->first('caption')}}</span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
                                 <input type="text" value="{{$slide->link}}" name="link" placeholder="Link">
                                 <label class="active">Link</label>
                                 @if($errors->has('link'))
@@ -51,7 +71,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input type="date" value="{{$slide->time}}" name="time" placeholder="Time">
+                                <input type="datetime-local" value="{{$slide->time}}" name="time" placeholder="Time">
                                 <label class="active">Time</label>
                                 @if($errors->has('time'))
                                 <span style="color: orangered;">{{$errors->first('time')}}</span>

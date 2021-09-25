@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Slide;
+use App\Models\Banner;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ShopController extends Controller
@@ -14,10 +17,14 @@ class ShopController extends Controller
 
     public function home()
     {
-        $new_product = Product::orderBy('created_at', 'DESC')->limit(6)->get();
-        $best_seller = Product::where('sale_price', '>', '0')->get();
+        // dd(Carbon::now());
+        $new_product = Product::orderBy('created_at', 'DESC')->limit(5)->get();
         $category = Category::all();
-        return view('frontend.pages.home', compact('new_product', 'best_seller', 'category'));
+        $slide = Slide::where('status', '1')->get();
+        $banner_pro = Banner::where('role', '1')->where('status', '1')->get();
+        $banner_blog = Banner::where('role', '0')->where('status', '1')->get();
+        $sale_product = Product::where('sale_price', '>', '0')->orderByRaw('sale_price / price DESC')->get();
+        return view('frontend.pages.home', compact('new_product', 'category', 'slide', 'banner_pro', 'banner_blog'));
     }
 
     public function product()
@@ -49,53 +56,53 @@ class ShopController extends Controller
         return view('frontend.pages.ajax.shop-products', compact('products', 'page', 'totalPage'));
     }
 
-    // public function detail()
-    // {
-    //     return view('frontend.pages.detail');
-    // }
+    public function detail()
+    {
+        return view('frontend.pages.detail');
+    }
 
-    // public function cart()
-    // {
-    //     return view('frontend.pages.cart');
-    // }
+    public function cart()
+    {
+        return view('frontend.pages.cart');
+    }
 
-    // public function checkout()
-    // {
-    //     return view('frontend.pages.checkout');
-    // }
+    public function checkout()
+    {
+        return view('frontend.pages.checkout');
+    }
 
-    // public function whishlist()
-    // {
-    //     return view('frontend.pages.whishlist');
-    // }
+    public function whishlist()
+    {
+        return view('frontend.pages.whishlist');
+    }
 
-    // public function my_account()
-    // {
-    //     return view('frontend.pages.my-account');
-    // }
+    public function my_account()
+    {
+        return view('frontend.pages.my-account');
+    }
 
-    // public function register()
-    // {
-    //     return view('frontend.pages.register');
-    // }
+    public function register()
+    {
+        return view('frontend.pages.register');
+    }
 
-    // public function login()
-    // {
-    //     return view('frontend.pages.login');
-    // }
+    public function login()
+    {
+        return view('frontend.pages.login');
+    }
 
-    // public function blog()
-    // {
-    //     return view('frontend.pages.blog');
-    // }
+    public function blog()
+    {
+        return view('frontend.pages.blog');
+    }
 
-    // public function blog_detail()
-    // {
-    //     return view('frontend.pages.blog-detail');
-    // }
+    public function blog_detail()
+    {
+        return view('frontend.pages.blog-detail');
+    }
 
-    // public function contact()
-    // {
-    //     return view('frontend.pages.contact');
-    // }
+    public function contact()
+    {
+        return view('frontend.pages.contact');
+    }
 }

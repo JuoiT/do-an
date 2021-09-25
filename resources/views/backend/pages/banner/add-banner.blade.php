@@ -49,6 +49,27 @@
 
                         <div class="row">
                             <div class="input-field col s12">
+                                <label class="active">Vai trò</label>
+                                <p>
+                                    <label>
+                                        <input name="role" type="radio" value="1"/>
+                                        <span>Product</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input name="role" type="radio" value="0"/>
+                                        <span>Blog</span>
+                                    </label>
+                                </p>
+                                @if($errors->has('role'))
+                                <span style="color: orangered;">{{$errors->first('role')}}</span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
                                 <label class="active">Status</label>
                                 <p>
                                     <label>

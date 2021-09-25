@@ -35,7 +35,7 @@
                                             <option {{ session('filter.slides.orderBy') == 'created_at' ? 'selected' : '' }}
                                                 value="created_at">Ngày thêm</option>
                                             <option {{ session('filter.slides.orderBy') == 'time' ? 'selected' : '' }}
-                                                value="updated_at">Ngày hết hạn</option>
+                                                value="time">Ngày hết hạn</option>
                                             <option {{ session('filter.slides.orderBy') == 'name' ? 'selected' : '' }}
                                                 value="name">Tên sản phẩm</option>
                                             <option {{session('filter.slides.orderBy')=='order_details_count'?'selected':''}}
@@ -82,7 +82,8 @@
                                 <th>STT</th>
                                 <th>Name</th>
                                 <th>Image</th>
-                                <th>Link</th>
+                                <th>Content</th>
+                                <th>Caption</th>
                                 <th>Time</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -90,7 +91,6 @@
                         </thead>
                     @endif
                     <tbody>
-<<<<<<< HEAD
                         @if (count($list_slide) > 0)
                             @foreach($list_slide as $value)
                             <tr>
@@ -104,7 +104,10 @@
                                     <img style="width: 250px;" src="{{url('upload-slide')}}/{{$value->image}}" alt="">
                                 </td>
                                 <td>
-                                    {{$value->link}}
+                                    {{$value->content}}
+                                </td>
+                                <td>
+                                    {{$value->caption}}
                                 </td>
                                 <td>
                                     {{$value->time}}
@@ -117,14 +120,20 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{route('slide.edit', $value->id)}}"><i class="badge green lighten-5 material-icons green-text">edit_note</i></a>
-                                    <form style="display: inline-block !important;"
-                                        action="{{route('slide.destroy', $value->id)}}" method="POST">
-                                        @method('DELETE')
-                                        @csrf
-                                        <input type="hidden" value="{{$value->id}}">
-                                        <button style="border: none !important;" class="badge pink lighten-5 material-icons pink-text" type="submit">clear</button>
-                                    </form>
+                                    @if (session('filter.slides.trashed') == 'true')
+                                        <a title="restore" href="{{ route('slide-restore', $value->id) }}">
+                                            <i class="badge green lighten-5 material-icons green-text">restore</i>
+                                        </a>
+                                    @else
+                                        <a href="{{route('slide.edit', $value->id)}}"><i class="badge green lighten-5 material-icons green-text">edit_note</i></a>
+                                        <form style="display: inline-block !important;"
+                                            action="{{route('slide.destroy', $value->id)}}" method="POST">
+                                            @method('DELETE')
+                                            @csrf
+                                            <input type="hidden" value="{{$value->id}}">
+                                            <button style="border: none !important;" class="badge pink lighten-5 material-icons pink-text" type="submit">clear</button>
+                                        </form>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach
@@ -135,43 +144,6 @@
                                 </div>
                             </tr>
                         @endif
-=======
-                        @foreach($list_slide as $value)
-                        <tr>
-                            <td>
-                                {{$loop->index+1}}
-                            </td>
-                            <td>
-                                {{$value->name}}
-                            </td>
-                            <td>
-                                <img style="width: 250px;" src="{{url('upload-slide')}}/{{$value->image}}" alt="">
-                            </td>
-                            <td>
-                                {{$value->link}}
-                            </td>
-                            <td>
-                                @if($value->status==1)
-                                <span class="badge green lighten-5 green-text text-accent-4">Hiện</span>
-                                @else
-                                <span class="badge pink lighten-5 pink-text text-accent-2">Ẩn</span>
-                                @endif
-                            </td>
-                            <td>
-                                <a href="{{route('slide.edit', $value->id)}}"><i class="badge green lighten-5 material-icons green-text">edit_note</i></a>
-                                <form style="display: inline-block !important;"
-                                    action="{{route('slide.destroy', $value->id)}}" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <input type="hidden" value="{{$value->id}}">
-                                    <button title="move to trash" style="border: none !important; padding: 0"
-                                                        class="badge pink lighten-5 material-icons pink-text"
-                                                        type="submit">clear</button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
->>>>>>> bf96f3b1822add2ab26bd4e1018a870e9d40f523
                     </tbody>
                 </table>
                 <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">

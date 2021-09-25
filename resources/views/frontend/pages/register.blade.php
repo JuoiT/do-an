@@ -103,3 +103,8 @@
     </div>
 
 @stop
+
+@section('script')
+    <script src="{{ url('assets-frontend') }}/js/login-register.js"></script>
+    <script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+@stop

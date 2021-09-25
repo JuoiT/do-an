@@ -7,6 +7,7 @@ use App\Http\Requests\Banner\AddBannerRequest;
 use App\Http\Requests\Banner\EditBannerRequest;
 use App\Models\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BannerController extends Controller
 {
@@ -15,9 +16,16 @@ class BannerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $list_banner = Banner::paginate(5);
+        $params = $request->all();
+        if (count($params)<=1) {
+            // for paginate / redirect, get old filter value from session
+            $params = session()->get("filter.slides");
+        }
+
+        $query = Banner::filter($params);
+        $list_banner = $query->paginate(config("const.records"));
         return view('backend.pages.banner.list-banner', compact('list_banner'));
     }
 
@@ -39,6 +47,13 @@ class BannerController extends Controller
      */
     public function store(AddBannerRequest $request, Banner $add_banner)
     {
+        $list_pro = Banner::where('role', '1')->where('status', '1')->count();
+        $list_blog = Banner::where('role', '0')->where('status', '1')->count();
+
+        if ($list_pro >= 3 && $request->role == '1' || $list_blog >= 4 && $request->role == '0') {
+            $request->status = '0';
+        }
+
         $banner = $add_banner->add_banner($request);
         if ($banner) {
             return redirect()->route('banner.index')->with('success', 'Thêm mới banner thành công!');

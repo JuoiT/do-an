@@ -212,13 +212,12 @@
     </div>
 </footer>
 
+<!-- <script src="{{url('assets-frontend')}}/js/jquery-3.6.0.min.js"></script> -->
 <script src="{{url('assets-frontend')}}/js/jquery-1.11.3.min.js"></script>
-{{-- <script src="{{url('assets-frontend')}}/js/jquery-3.6.0.min.js"></script> --}}
 <script src="{{url('assets-frontend')}}/js/bootstrap.min.js"></script>
 <script src="{{url('assets-frontend')}}/js/custom.js"></script>
 <script src="{{url('assets-frontend')}}/js/owl.carousel.min.js"></script>
 <script src="{{url('assets-frontend')}}/js/wow.min.js"></script>
-<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
 @yield('script')
 
 </body>

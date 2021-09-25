@@ -403,4 +403,5 @@
 
 @section('script')
 <script src="{{url('assets-frontend')}}/js/blog-detail.js"></script>
+<script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
 @endsection

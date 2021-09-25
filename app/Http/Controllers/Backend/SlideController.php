@@ -16,8 +16,15 @@ class SlideController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, Slide $update_time)
     {
+
+        $slide =Slide::all();
+        foreach ($slide as $key => $value) {
+            if ($value->time < now()) {
+                $update_time->update_time($value, $value->id);
+            }
+        }
         $params = $request->all();
         if (count($params)<=1) {
             // for paginate / redirect, get old filter value from session
@@ -48,6 +55,10 @@ class SlideController extends Controller
      */
     public function store(AddSlideRequest $request, Slide $add_slide)
     {
+        $quan = Slide::where('status', 1)->count();
+        if ($quan >= 3) {
+            $request->status = '0';
+        }
         $slide = $add_slide->add_slide($request);
         if ($slide) {
             return redirect()->route('slide.index')->with('success', 'Thêm mới slide thành công!');
@@ -88,6 +99,7 @@ class SlideController extends Controller
      */
     public function update(EditSlideRequest $request, $id, Slide $edit_slide)
     {
+
         $slide = $edit_slide->edit_slide($request, $id);
         if ($slide) {
             return redirect()->route('slide.index')->with('success', 'Sửa slide thành công!');
@@ -111,14 +123,14 @@ class SlideController extends Controller
         else
             $slide->delete();
 
-        return redirect(route('slide.index'));
+        return redirect(route('slide.index'))->with('success', 'Xóa slide thành công!');
     }
 
     public function restore($id)
     {
-        $slide = Slide::onlyTrashed($id);
+        $slide = Slide::onlyTrashed()->find($id);
         $slide->restore();
 
-        return redirect(route('slide.index'));
+        return redirect(route('slide.index'))->with('success', 'Khôi phục slide thành công!');
     }
 }

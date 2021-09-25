@@ -35,13 +35,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
                         <div class="sp-wrap">
-                            <a href="{{url('assets-frontend')}}/images/fruit_01.jpg">
+                            <a>
                                 <img src="{{url('assets-frontend')}}/images/fruit_01.jpg" alt="">
                             </a>
-                            <a href="{{url('assets-frontend')}}/images/fruit_02.jpg">
+                            <a>
                                 <img src="{{url('assets-frontend')}}/images/fruit_02.jpg" alt="">
                             </a>
-                            <a href="{{url('assets-frontend')}}/images/fruit_03.jpg">
+                            <a>
                                 <img src="{{url('assets-frontend')}}/images/fruit_03.jpg" alt="">
                             </a>
                         </div>

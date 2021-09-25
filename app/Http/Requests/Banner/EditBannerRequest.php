@@ -27,6 +27,7 @@ class EditBannerRequest extends FormRequest
             'name' => 'required|unique:banners,name,'.$this->id,
             'image' => 'required|image|unique:banners,image,'.$this->id,
             'link' => 'required|url|unique:banners,link,'.$this->id,
+            'role' => 'required|boolean',
             'status' => 'required|boolean',
         ];
     }
@@ -42,6 +43,8 @@ class EditBannerRequest extends FormRequest
             'link.required' => "Đường link không được để rỗng!",
             'link.url' => "Đường link không hợp lệ!",
             'link.unique' => "Đường link $this->name đã tồn tại!",
+            'role.required' => "Vai trò không được để rỗng!",
+            'role.boolean' => "Đừng phá nữa ba!",
             'status.required' => "Danh mục không được để rỗng!",
             'status.boolean' => "Đừng phá nữa ba!",
         ];

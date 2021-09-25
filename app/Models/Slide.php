@@ -11,7 +11,8 @@ class Slide extends Model
 {
     use HasFactory, SoftDeletes, FilterableTrait;
 
-    protected $fillable = ['name', 'image', 'link', 'time', 'status'];
+    protected $table = 'slides';
+    protected $fillable = ['name', 'image', 'link', 'content', 'caption', 'time', 'status'];
     protected $filterable = ['status'];
 
     public function add_slide($request)
@@ -25,6 +26,8 @@ class Slide extends Model
             'name' => $request->name,
             'image' => $file_name,
             'link' => $request->link,
+            'content' => $request->content,
+            'caption' => $request->caption,
             'time' => $request->time,
             'status' => $request->status,
         ]);
@@ -42,10 +45,26 @@ class Slide extends Model
                 'name' => $request->name,
                 'image' => $file_name,
                 'link' => $request->link,
+                'content' => $request->content,
+                'caption' => $request->caption,
                 'time' => $request->time,
                 'status' => $request->status,
         ]);
         return $edit_slide;
+    }
+
+    public function update_time($request, $id)
+    {
+        $update_time = Slide::find($id)->update([
+                'name' => $request->name,
+                'image' => $request->image,
+                'link' => $request->link,
+                'content' => $request->content,
+                'caption' => $request->caption,
+                'time' => $request->time,
+                'status' => '0',
+        ]);
+        return $update_time;
     }
 
     public function filterName($query, $value)

@@ -8,39 +8,25 @@
 <div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
     <div class="slides" data-group="slides">
         <ul>
+            @foreach($slide as $value)
             <li>
                 <div class="slide-body" data-group="slide">
-                    <img src="{{url('assets-frontend')}}/images/slider-banner.jpg">
+                    <img src="{{url('upload-slide')}}/{{$value->image}}">
                     <div class="carouseal-caption">
                         <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500" data-length="300">
                             <div class="sub-tit">
-                                <a href="{{route('product')}}">Luan nv Lmao</a>
+                                <a href="{{$value->link}}">{{$value->name}}</a>
                             </div>
                             <h2>
-                                <span>100%</span> Sale
+                                <!-- <span></span> -->
+                                {{$value->content}}
                             </h2>
-                            <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">Bla Bla Bla Bru Lmao dak áncnal</div>
+                            <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">{{$value->caption}}</div>
                         </div>
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="slide-body" data-group="slide">
-                    <img src="{{url('assets-frontend')}}/images/slider-banner.jpg">
-                    <div class="carouseal-caption">
-                        <div class="caption header" data-animate="slideAppearRightToLeft" data-delay="500"
-                            data-length="300">
-                            <div class="sub-tit">
-                                <a href="{{route('product')}}">Lmao Bru Lmao</a>
-                            </div>
-                            <h2>
-                                <span>100%</span> chất bảo quản
-                            </h2>
-                            <div class="caption sub" data-animate="slideAppearLeftToRight" data-delay="800" data-length="300">Không chết không lấy tiền</div>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            @endforeach
         </ul>
     </div>
 </div>
@@ -50,33 +36,17 @@
     <div class="pos-absolute">
         <div class="container">
             <div class="row">
+                @foreach($banner_pro as $value)
                 <div class="col-sm-4 col-xs-12 wow bounce">
-                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/fresh-fruits-img.jpg"/>
+                    <img class="img-responsive" src="{{url('upload-banner')}}/{{$value->image}}"/>
                     <div class="tit-btn-wrapper">
                         <div class="tit">
-                            <span>Bru</span> Lmao
+                            <span>{{explode(' ', $value->name, 2)[0]}}</span> {{explode(' ', $value->name, 2)[1]}}
                         </div>
-                        <a href="{{route('product')}}" class="btn">View Collections</a>
+                        <a href="{{$value->link}}" class="btn">View Collections</a>
                     </div>
                 </div>
-                <div class="col-sm-4 col-xs-12 wow bounce">
-                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/fresh-vegetables-img.jpg"/>
-                    <div class="tit-btn-wrapper">
-                        <div class="tit">
-                            <span>Bru</span> Luan nv
-                        </div>
-                        <a href="{{route('product')}}" class="btn">View Collections</a>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-12 wow bounce">
-                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/organic-foods-img.jpg"/>
-                    <div class="tit-btn-wrapper">
-                        <div class="tit">
-                            <span>Bru</span> Dak
-                        </div>
-                        <a href="{{route('product')}}" class="btn">View Collections</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -179,13 +149,13 @@
                                 <div class="owl-carousel owl-theme deal-slider">
                                     <div class="item">
                                         <div class="pro-img">
-                                            <a href="{{route('detail')}}">
+                                            <a href="{{route('detail', 1)}}">
                                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-7.png"/>
                                             </a>
                                         </div>
                                         <div class="contain-wrapper">
                                             <div class="tit">
-                                                <a href="{{route('detail')}}">Ngu như chó</a>
+                                                <a href="{{route('detail', 1)}}">Ngu như chó</a>
                                             </div>
                                             <div class="ratting">
                                                 <ul>
@@ -234,13 +204,13 @@
                                     </div>
                                     <div class="item">
                                         <div class="pro-img">
-                                            <a href="{{route('detail')}}">
+                                            <a href="{{route('detail', 1)}}">
                                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-7.png"/>
                                             </a>
                                         </div>
                                         <div class="contain-wrapper">
                                             <div class="tit">
-                                                <a href="{{route('detail')}}">Óc chó</a>
+                                                <a href="{{route('detail', 1)}}">Óc chó</a>
                                             </div>
                                             <div class="ratting">
                                                 <ul>
@@ -289,13 +259,13 @@
                                     </div>
                                     <div class="item">
                                         <div class="pro-img">
-                                            <a href="{{route('detail')}}">
+                                            <a href="{{route('detail', 1)}}">
                                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-7.png"/>
                                             </a>
                                         </div>
                                         <div class="contain-wrapper">
                                             <div class="tit">
-                                                <a href="{{route('detail')}}">Lmao Bru</a>
+                                                <a href="{{route('detail', 1)}}">Lmao Bru</a>
                                             </div>
                                             <div class="ratting">
                                                 <ul>
@@ -355,6 +325,57 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pull-left wow fadeInLeft">
+                        <div class="filterDiv all">
+                            <div class="img-part">
+                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-1.jpg"/>
+                            </div>
+                            <div class="text-part">
+                                <div class="box-tit">Bla Bla</div>
+                                <div class="ratting">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="price">
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price">
+                                        <del>$3.00</del>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
+                                </div>
+                            </div>
+                        </div>
                         <div class="filterDiv fruit">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-1.jpg"/>
@@ -510,6 +531,57 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pull-right wow fadeInRight">
+                        <div class="filterDiv all">
+                            <div class="img-part">
+                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-1.jpg"/>
+                            </div>
+                            <div class="text-part">
+                                <div class="box-tit">Bla Bla</div>
+                                <div class="ratting">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="price">
+                                    <div class="new-price">$2.00</div>
+                                    <div class="old-price">
+                                        <del>$3.00</del>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <i class="icon-shopping-basket"></i>
+                                </div>
+                                <div class="btn-part">
+                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                    <i class="icon-heart-empty"></i>
+                                </div>
+                            </div>
+                        </div>
                         <div class="filterDiv fruit">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-4.jpg"/>
@@ -709,54 +781,20 @@
     </div>
     <div class="container-fluid">
         <div class="row no-gutter">
-            <div class="col-sm-3 col-xs-12 wow slideInLeft" data-wow-duration="1s" data-wow-delay="1.3s">
+            @foreach($banner_blog as $key => $value)
+            <div class="col-sm-3 col-xs-12 wow {{($key == 0 || $key == 1) ? 'slideInLeft' : 'slideInRight'}}" data-wow-duration="1s" data-wow-delay="{{($key == 1 || $key == 2) ? '1.3s' : '2.3s'}}">
                 <div class="wrapper">
-                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/organic-news-img-1.jpg"/>
+                    <img class="img-responsive" src="{{url('upload-banner')}}/{{$value->image}}"/>
                     <div class="overlay"></div>
                     <div class="text">
-                        <div class="date">July 30, 2021</div>
+                        <div class="date">{{$value->created_at}}</div>
                         <div class="title">
-                            <a href="#">Bru Lmao Dak Mlem</a>
+                            <a href="#">{{$value->name}}</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-xs-12 wow slideInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
-                <div class="wrapper">
-                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/organic-news-img-2.jpg"/>
-                    <div class="overlay"></div>
-                    <div class="text">
-                        <div class="date">July 15, 2021</div>
-                        <div class="title">
-                            <a href="#">Ngu vua du</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-12 wow slideInRight" data-wow-duration="1s" data-wow-delay="0.3s">
-                <div class="wrapper">
-                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/organic-news-img-3.jpg"/>
-                    <div class="overlay"></div>
-                    <div class="text">
-                        <div class="date">July 1, 2021</div>
-                        <div class="title">
-                            <a href="#">Ngu hoi qua</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3 col-xs-12 wow slideInRight" data-wow-duration="1s" data-wow-delay="1.3s">
-                <div class="wrapper">
-                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/organic-news-img-4.jpg"/>
-                    <div class="overlay"></div>
-                    <div class="text">
-                        <div class="date">June 30, 2021</div>
-                        <div class="title">
-                            <a href="#">Ngu vai lol</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

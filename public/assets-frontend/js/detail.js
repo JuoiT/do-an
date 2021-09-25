@@ -68,7 +68,8 @@ Dropdown('#country');
 
 
 
-// *************** SearchBar ***************
+
+// ************* SearchBar *************
 
 $(document).ready(function() {
     $('.search-inner a').click(function() {
@@ -137,4 +138,6 @@ $('.input-number').change(function() {
         alert('Sorry, the maximum value was reached');
         $(this).val($(this).data('oldValue'));
     }
+
+
 });

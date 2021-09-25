@@ -272,7 +272,7 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{route('detail')}}">
+                                                        <a href="{{route('detail', 1)}}">
                                                             <i class="icon-eye"></i>
                                                         </a>
                                                     </li>
@@ -313,7 +313,7 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{route('detail')}}">
+                                                        <a href="{{route('detail',1)}}">
                                                             <i class="icon-eye"></i>
                                                         </a>
                                                     </li>
@@ -354,7 +354,7 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{route('detail')}}">
+                                                        <a href="{{route('detail',1)}}">
                                                             <i class="icon-eye"></i>
                                                         </a>
                                                     </li>
@@ -395,7 +395,7 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{route('detail')}}">
+                                                        <a href="{{route('detail',1)}}">
                                                             <i class="icon-eye"></i>
                                                         </a>
                                                     </li>

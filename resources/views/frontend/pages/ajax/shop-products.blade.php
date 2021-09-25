@@ -50,20 +50,20 @@
                         </div>
                         <div class="price">
                             @if ($product->sale_price > 0)
-                                <div class="new-price">{{ toVnd($product->sale_price) }}</div>
+                                <div class="new-price">{{ toUsd($product->sale_price) }}</div>
                                 <div class="old-price">
-                                    <del>{{ toVnd($product->price) }}</del>
+                                    <del>{{ toUsd($product->price) }}</del>
                                 </div>
                             @else
-                                <div class="new-price">{{ toVnd($product->price) }}</div>
+                                <div class="new-price">{{ toUsd($product->price) }}</div>
                             @endif
                         </div>
                         <div class="btn-part">
-                            <a href="{{ route('cart.add') }}" class="cart-btn">Mua ngay</a>
+                            <a href="{{ route('cart.add') }}" class="cart-btn">Buy now</a>
                             <i class="icon-shopping-basket"></i>
                         </div>
                         <div class="btn-part">
-                            <a href="{{ route('whishlist') }}" class="cart-btn">Yêu thích</a>
+                            <a href="{{ route('whishlist') }}" class="cart-btn">Whishlist</a>
                             <i class="icon-heart-empty"></i>
                         </div>
                     </div>

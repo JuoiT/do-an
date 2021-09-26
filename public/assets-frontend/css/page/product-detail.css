@@ -16,7 +16,7 @@
 }
 
 .responsive-tabs__list:after {
-    content: '';
+    content: "";
     width: 100%;
     position: absolute;
     left: 0;
@@ -71,7 +71,7 @@
 }
 
 .responsive-tabs__panel:after {
-    content: '';
+    content: "";
     clear: both;
 }
 
@@ -97,13 +97,13 @@
 }
 
 .responsive-tabs__panel h3:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 4px;
-    background: url(../../images/tit-bottom.jpg)left top no-repeat;
+    background: url(../../images/tit-bottom.jpg) left top no-repeat;
 }
 
 .mar-btm-60 {
@@ -160,7 +160,7 @@
 }
 
 .product-single-meta .product-name:after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: 0;
@@ -468,7 +468,6 @@
     box-shadow: none;
 }
 
-
 /* Begin related-products */
 
 .related-products .tit h2 {
@@ -487,17 +486,17 @@
 }
 
 .related-products .tit h2:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
-    background: url(../../images/title-decorator.png)left top no-repeat;
+    background: url(../../images/title-decorator.png) left top no-repeat;
     height: 54px;
 }
 
 .related-products .tit h2:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -586,7 +585,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    ;
     opacity: 1;
     background: rgba(167, 207, 71, 0.8);
     overflow: hidden;
@@ -661,13 +659,127 @@
     right: 0 !important;
 }
 
-.related-product-slider.owl-theme .owl-nav [class*=owl-] i:before {
+.related-product-slider.owl-theme .owl-nav [class*="owl-"] i:before {
     color: #d6d6d6;
 }
 
-.related-product-slider.owl-theme .owl-nav [class*=owl-]:hover i:before {
+.related-product-slider.owl-theme .owl-nav [class*="owl-"]:hover i:before {
     color: #698c17;
 }
 
+/*  
+ *  Pure CSS star rating that works without reversing order
+ *  of inputs
+ *  -------------------------------------------------------
+ *  NOTE: For the styling to work, there needs to be a radio
+ *        input selected by default. There also needs to be a
+ *        radio input before the first star, regardless of
+ *        whether you offer a 'no rating' or 0 stars option
+ *  
+ *  This codepen uses FontAwesome icons
+ */
+
+.rating-group {
+    display: inline-flex;
+}
+
+/* make hover effect work properly in IE */
+.rating__icon {
+    pointer-events: none;
+}
+
+/* hide radio inputs */
+.rating__input {
+    position: absolute !important;
+    left: -9999px !important;
+}
+
+/* hide 'none' input from screenreaders */
+.rating__input--none {
+    display: none;
+}
+
+/* set icon padding and size */
+.rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 2rem;
+}
+
+/* set default star color */
+.rating__icon--star {
+    color: orange;
+}
+
+/* if any input is checked, make its following siblings grey */
+.rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+}
+
+/* make all stars orange on rating group hover */
+.rating-group:hover .rating__label .rating__icon--star {
+    color: orange;
+}
+
+/* make hovered input's following siblings grey on hover */
+.rating__input:hover ~ .rating__label .rating__icon--star {
+    color: #ddd;
+}
+
+/* comment */
+/* comment */
+/* comment */
+.R-title {
+    color: #00aeef;
+    font-size: 22px;
+    font-weight: 700;
+}
+.comment-section .media-review {
+    padding: 20px 0px;
+}
+.comment-section .media .media-user {
+    margin-right: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgb(236, 236, 236);
+    width: 77px !important;
+    height: 77px;
+}
+.comment-section .media .media-user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.comment-section .media .M-flex {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+.comment-section .media .M-flex .title {
+    font-size: 12px;
+    color: #1c1d36;
+    font-weight: 400;
+}
+.comment-section .media .M-flex .title span {
+    font-size: 20px;
+    display: block;
+    font-weight: 700;
+}
+.comment-section .media .description {
+    font-size: 14px;
+    color: #5b5b5b;
+    /* margin-bottom: 20px; */
+}
+.rating-row ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.rating-row ul li {
+    color: #ffc107;
+    font-size: 20px;
+    margin: 0px 5px 0px 0px;
+}
 
 /* Begin related-products */

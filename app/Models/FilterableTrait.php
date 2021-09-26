@@ -36,17 +36,8 @@ trait FilterableTrait
                 continue;
             }
 
-            if (empty($this->_filterable) || !is_array($this->_filterable)) {
-                continue;
-            }
-
             // Filter truc tiep tu truong filterable
             if (in_array($field, $this->filterable)) {
-                session()->put("filter.$this->table.$field", $value);
-                $query->where($this->table . '.' . $field, $value);
-                continue;
-            }
-            if (in_array($field, $this->_filterable)) {
                 session()->put("filter.$this->table.$field", $value);
                 $query->where($this->table . '.' . $field, $value);
                 continue;

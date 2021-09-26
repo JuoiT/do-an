@@ -261,7 +261,7 @@
 @section('script')
     <script src="{{ url('assets-frontend') }}/js/bootstrap-slider.min.js"></script>
     <script src="{{ url('assets-frontend') }}/js/product.js"></script>
-    <script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+    <script src="{{ url('assets-frontend') }}/js/jquery.event.move.js"></script>
 
     <script>
         jQuery(document).ready(function() {
@@ -287,6 +287,10 @@
                 },
 
                 success: function(data) {
+                    $('html,body').animate({
+                        scrollTop: $(".breadcrumb").offset().top
+                    }, 'slow');
+
                     console.log('filter work');
                     // console.log(data);
                     $("#shop-product").html(data);

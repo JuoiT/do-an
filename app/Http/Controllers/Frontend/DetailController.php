@@ -20,5 +20,6 @@ class DetailController extends Controller
     public function addComment(AddCommentRequest $req, Comment $cmt)
     {
         $comment = $cmt->add($req);
+        return redirect()->back();
     }
 }

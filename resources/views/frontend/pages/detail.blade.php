@@ -51,39 +51,20 @@
                             <div class="product-single-meta">
                                 <div class="product-name">{{ $product->name }}</div>
                                 <div class="ratting">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive"
-                                                    src="{{ url('assets-frontend') }}/images/green-star-1.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive"
-                                                    src="{{ url('assets-frontend') }}/images/green-star-1.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive"
-                                                    src="{{ url('assets-frontend') }}/images/green-star-1.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive"
-                                                    src="{{ url('assets-frontend') }}/images/dark-star-1.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive"
-                                                    src="{{ url('assets-frontend') }}/images/dark-star-1.png">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <span>( 05 reviews )</span>
+                                    <div class="rating-row">
+                                        <ul>
+                                            @for ($i = 0; $i < (floor($product->comments->avg('rating'))); $i++)
+                                                <li class=""><i class=" fa fa-star">
+                                                    </i></li>
+                                                @endfor
+                                                @for ($i = 5; $i > (floor($product->comments->avg('rating'))); $i--)
+                                                <li class=""><i class=" fa fa-star-o">
+                                                    </i></li>
+                                                @endfor
+                                        </ul>
+                                        <span>( {{ $product->comments->count() }} reviews, avg:
+                                            {{ round($product->comments->avg('rating'), 2) }})</span>
+                                    </div>
                                 </div>
                                 <div class="price">
                                     @if ($product->sale_price > 0)
@@ -200,7 +181,7 @@
                                     <div class="responsive-tabs__panel--active">
                                         <div class="product-information">{!! $product->description !!}</div>
                                     </div>
-                                    <h2>Reviews(6)</h2>
+                                    <h2>Reviews({{ $product->comments->count() }})</h2>
                                     <div class="reviews">
                                         <div class="comment-section">
                                             <h3>Recently Reviews</h3>
@@ -216,28 +197,31 @@
                                                                                 alt="">
                                                                         </div>
                                                                         <div>
-                                                                            <h2 class="title"><span> {{$comment->user->name}}
-                                                                            </span>
-                                                                            <div style="padding: 5px 0">{{ $comment->created_at->format('d/m/Y') }}</div>
+                                                                            <h2 class="title"><span>
+                                                                                    {{ $comment->user->name }}
+                                                                                </span>
+                                                                                <div style="padding: 5px 0">
+                                                                                    {{ $comment->created_at->format('d/m/Y') }}
+                                                                                </div>
                                                                                 <div class="rating-row">
                                                                                     <ul>
                                                                                         @for ($i = 0; $i < $comment->rating; $i++)
-                                                                                        <li class=""><i class=" fa
-                                                                                            fa-star">
-                                                                                            </i></li>
+                                                                                            <li class=""><i class=" fa
+                                                                                                fa-star">
+                                                                                                </i></li>
                                                                                         @endfor
                                                                                         @for ($i = 5; $i > $comment->rating; $i--)
-                                                                                        <li class=""><i class=" fa
-                                                                                            fa-star-o">
-                                                                                            </i></li>
+                                                                                            <li class=""><i class=" fa
+                                                                                                fa-star-o">
+                                                                                                </i></li>
                                                                                         @endfor
-                                                                                            
                                                                                     </ul>
                                                                                 </div>
                                                                             </h2>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="description">{{$comment->content}}</div>
+                                                                    <div class="description">{{ $comment->content }}
+                                                                    </div>
                                                                 </div>
                                                             </div>
 

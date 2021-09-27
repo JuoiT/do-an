@@ -27,12 +27,23 @@ if (!function_exists('trimm')){
 }
 
 /**
- * Loại bỏ khoảng trắng thừa, ký tự đặc biệt khỏi chuối
- * @string 
+ * Chuyển giá sang tiền việt
+ * @float 
  */
 if (!function_exists('toVnd')){
     function toVnd($price){
         $result = number_format($price, 0, '.', ',').'đ';
+        return $result;
+    }
+}
+
+/**
+ * Chuyển giá sang tiền việt
+ * @float 
+ */
+if (!function_exists('toUsd')){
+    function toUsd($price){
+        $result = '$'.number_format($price, 0, '.', '.');
         return $result;
     }
 }

@@ -19,7 +19,12 @@ class ShopController extends Controller
     {
         // dd(Carbon::now());
         $new_product = Product::orderBy('created_at', 'DESC')->limit(5)->get();
+<<<<<<< HEAD
         $category = Category::withCount('products')->get();
+=======
+        $category = Category::all();
+        
+>>>>>>> 7cc27c4e66394b0e8b44cc719b3014178c9b4224
         $slide = Slide::where('status', '1')->get();
         $banner_pro = Banner::where('role', '1')->where('status', '1')->get();
         $banner_blog = Banner::where('role', '0')->where('status', '1')->get();
@@ -44,6 +49,8 @@ class ShopController extends Controller
     {
         $params = $request->all();
         $params['orderByRole'] = 'desc';
+        // Uncomment if want to show only instock product
+        // $params['status'] = '1';
         if ($params['orderBy'] == 'price-desc') {
             $params['orderBy'] = 'product_price';
         }

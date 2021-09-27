@@ -68,7 +68,8 @@ Dropdown('#country');
 
 
 
-// *************** SearchBar ***************
+
+// ************* SearchBar *************
 
 $(document).ready(function() {
     $('.search-inner a').click(function() {

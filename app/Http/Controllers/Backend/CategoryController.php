@@ -115,7 +115,7 @@ class CategoryController extends Controller
 
     public function restore($id)
     {
-        $category = Category::onlyTrashed($id);
+        $category = Category::onlyTrashed()->find($id);
         $category->restore();
 
         return redirect(route('category.index'))->with('success', 'Khôi phục danh mục thành công!');

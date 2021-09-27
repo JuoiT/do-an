@@ -108,11 +108,11 @@
                                             </div>
                                             <div class="price">
                                                 @if ($item->sale_price > 0)
-                                                    <span class="text-success">{{ toVnd($item->sale_price) }}</span>
+                                                    <span class="text-success">{{ toUsd($item->sale_price) }}</span>
                                                     <small><del
-                                                            class="text-danger">{{ toVnd($item->price) }}</del></small>
+                                                            class="text-danger">{{ toUsd($item->price) }}</del></small>
                                                 @else
-                                                    <span class="text-success">{{ toVnd($item->price) }}</span>
+                                                    <span class="text-success">{{ toUsd($item->price) }}</span>
                                                 @endif
                                             </div>
                                         </div>
@@ -125,7 +125,7 @@
                         {{-- top seller --}}
                         <div class="widget top-seller-widget" data-toggle="collapse" data-target="#top-seller">
                             <div class="widget-tit">
-                                <h2>Top seller</h2>
+                                <h2>Best seller</h2>
                                 <div class="button">
                                     <span class="icon-barcode"></span>
                                     <span class="icon-barcode"></span>
@@ -178,11 +178,11 @@
                                             </div>
                                             <div class="price">
                                                 @if ($item->sale_price > 0)
-                                                    <span class="text-success">{{ toVnd($item->sale_price) }}</span>
+                                                    <span class="text-success">{{ toUsd($item->sale_price) }}</span>
                                                     <small><del
-                                                            class="text-danger">{{ toVnd($item->price) }}</del></small>
+                                                            class="text-danger">{{ toUsd($item->price) }}</del></small>
                                                 @else
-                                                    <span class="text-success">{{ toVnd($item->price) }}</span>
+                                                    <span class="text-success">{{ toUsd($item->price) }}</span>
                                                 @endif
                                             </div>
                                         </div>
@@ -211,35 +211,35 @@
                 </aside>
                 <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInRight">
                     <div class="row">
-                        <h3 style="padding-bottom: 20px">Danh sách sản phẩm</h3>
+                        {{-- <h3 style="padding-bottom: 20px">Danh sách sản phẩm</h3> --}}
                         <div class="col-sm-12 col-xs-12">
                             {{-- Start filter --}}
                             <div class="filter">
                                 <div class="l-part">
                                     <div class="shorting-box-1">
-                                        <label class="shorting-label">Danh mục:</label>
+                                        <label class="shorting-label">Category:</label>
                                         <select id="f-category" class="f-filter">
-                                            <option value="" selected>Tất cả</option>
+                                            <option value="" selected>All</option>
                                             @foreach ($categories as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="shorting-box-2">
-                                        <label class="shorting-label">Lọc: </label>
+                                        <label class="shorting-label">Filter: </label>
                                         <select id="f-order-by" class="f-filter">
-                                            <option value="created_at" selected>Mới nhất</option>
-                                            {{-- <option value="hot">Sản phẩm hot</option> --}}
-                                            <option value="order_details_count">Bán chạy</option>
-                                            <option value="price-asc">Giá tăng dần</option>
-                                            <option value="price-desc">Giá giảm dần</option>
+                                            <option value="created_at" selected>Newest</option>
+                                            {{-- <option value="hot">Hottest</option> --}}
+                                            <option value="order_details_count">Best seller</option>
+                                            <option value="price-asc">Price ascending</option>
+                                            <option value="price-desc">Price descending</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="r-part">
                                     <div class="form-group">
                                         <input type="text" class="form-control f-filter" value="" name="search"
-                                            id="f-search" aria-describedby="helpId" placeholder="Tìm kiếm">
+                                            id="f-search" aria-describedby="helpId" placeholder="Search">
                                     </div>
                                 </div>
                             </div>
@@ -261,7 +261,7 @@
 @section('script')
     <script src="{{ url('assets-frontend') }}/js/bootstrap-slider.min.js"></script>
     <script src="{{ url('assets-frontend') }}/js/product.js"></script>
-    <script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+    <script src="{{ url('assets-frontend') }}/js/jquery.event.move.js"></script>
 
     <script>
         jQuery(document).ready(function() {
@@ -287,6 +287,10 @@
                 },
 
                 success: function(data) {
+                    $('html,body').animate({
+                        scrollTop: $(".breadcrumb").offset().top
+                    }, 'slow');
+
                     console.log('filter work');
                     // console.log(data);
                     $("#shop-product").html(data);

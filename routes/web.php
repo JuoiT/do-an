@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ShipController;
 use App\Http\Controllers\Backend\SlideController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\UserController;
 use Illuminate\Support\Facades\Route;
@@ -75,7 +76,8 @@ Route::group(['prefix'=>''], function() {
     Route::get('product', [ShopController::class, 'product'])->name('product');
     Route::get('filter-product', [ShopController::class, 'filter'])->name('filter_product');
 
-    Route::get('detail/{id}', [ShopController::class, 'detail'])->name('detail');
+    Route::get('detail/{id}', [DetailController::class, 'detail'])->name('detail');
+    Route::post('detail-comment', [DetailController::class, 'addComment'])->name('add_comment');
 
     // Route::get('cart', [ShopController::class, 'cart'])->name('cart');
     Route::get('cart', [CartController::class, 'index'])->name('cart');

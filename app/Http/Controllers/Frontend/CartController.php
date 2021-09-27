@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Helpers\Cart;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -13,13 +15,15 @@ class CartController extends Controller
         return view('frontend.pages.cart');
     }
 
-    public function add()
+    public function add(Request $req, Cart $cart)
     {
-        dd('them moi');     
+        $product = Product::find($req->product_id);
+        $cart->add($product, $req->quantity);
+        return redirect()->back();
     }
 
-    function show()
+    function show(Cart $cart)
     {
-        dd('show');
+        dd($cart);
     }
 }

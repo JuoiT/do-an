@@ -81,7 +81,8 @@ Route::group(['prefix'=>''], function() {
 
     // Route::get('cart', [ShopController::class, 'cart'])->name('cart');
     Route::get('cart', [CartController::class, 'index'])->name('cart');
-    Route::get('cart/add', [CartController::class, 'add'])->name('cart.add');
+    Route::post('cart/add', [CartController::class, 'add'])->name('cart.add');
+    Route::get('cart/show', [CartController::class, 'show'])->name('cart.show');
 
     Route::get('checkout', [ShopController::class, 'checkout'])->name('checkout');
 

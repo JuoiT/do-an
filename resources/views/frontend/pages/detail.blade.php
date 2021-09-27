@@ -85,7 +85,9 @@
                                     @endif
                                 </div>
                                 <div class="cart-process">
-                                    <form action="" method="POST">
+                                    <form action="{{route('cart.add')}}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         <div class="qty">
                                             <span class="input-group-btn">
                                                 <button type="button" class="btn btn-default btn-number" disabled="disabled"
@@ -239,7 +241,7 @@
                                             </form>
                                         @else
                                             <h3><a href="{{ route('login') }}">Login</a><span> and shopping to write
-                                                comment!</span></h3>
+                                                    comment!</span></h3>
                                         @endif
 
                                         <div class="comment-section">
@@ -306,48 +308,58 @@
                                     <h2>Related Products</h2>
                                 </div>
                                 <div class="owl-carousel owl-theme related-product-slider">
-                                    <div class="item">
-                                        <div class="wrapper">
-                                            <div class="pro-img">
-                                                <img class="img-responsive"
-                                                    src="{{ url('assets-frontend') }}/images/product-img-7.jpg" />
-                                            </div>
-                                            <div class="contain-wrapper">
-                                                <div class="tit">Lmao</div>
-                                                <div class="price">
-                                                    <div class="new-price">$3.00</div>
-                                                    <div class="old-price">
-                                                        <del>$5.00</del>
+                                    @foreach ($relatedProducts as $item)
+                                        <div class="item">
+                                            <div class="wrapper">
+                                                <div class="pro-img">
+                                                    <img class="img-responsive"
+                                                        src="{{ url('upload-images') }}/{{ $item->image }}" />
+                                                </div>
+                                                <div class="contain-wrapper">
+                                                    <div class="tit">{{ $item->name }}</div>
+                                                    @if ($item->sale_price > 0)
+                                                        <div class="price">
+                                                            <div class="new-price">{{ toUsd($item->sale_price) }}
+                                                            </div>
+                                                            <div class="old-price">
+                                                                <del>{{ toUsd($item->price) }}</del>
+                                                            </div>
+                                                        </div>
+                                                    @else
+                                                        <div class="price">
+                                                            <div class="new-price">{{ toUsd($item->price) }}</div>
+                                                        </div>
+                                                    @endif
+
+                                                    <div class="btn-part">
+                                                        <a href="{{ route('cart') }}" class="cart-btn">buy now</a>
+                                                        <i class="icon-shopping-basket"></i>
                                                     </div>
                                                 </div>
-                                                <div class="btn-part">
-                                                    <a href="{{ route('cart') }}" class="cart-btn">buy now</a>
-                                                    <i class="icon-shopping-basket"></i>
-                                                </div>
-                                            </div>
-                                            <div class="wrapper-box-hover">
-                                                <div class="text">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="{{ route('whishlist') }}">
-                                                                <i class="icon-heart-empty"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ route('detail', 1) }}">
-                                                                <i class="icon-eye"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ route('cart') }}">
-                                                                <i class="icon-shopping-basket"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                <div class="wrapper-box-hover">
+                                                    <div class="text">
+                                                        <ul>
+                                                            <li>
+                                                                <a href="{{ route('whishlist') }}">
+                                                                    <i class="icon-heart-empty"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="{{ route('detail', 1) }}">
+                                                                    <i class="icon-eye"></i>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="{{ route('cart') }}">
+                                                                    <i class="icon-shopping-basket"></i>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

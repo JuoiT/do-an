@@ -19,12 +19,17 @@ class ShopController extends Controller
     {
         // dd(Carbon::now());
         $new_product = Product::orderBy('created_at', 'DESC')->limit(5)->get();
-        $category = Category::all();
+        $category = Category::withCount('products')->get();
         $slide = Slide::where('status', '1')->get();
         $banner_pro = Banner::where('role', '1')->where('status', '1')->get();
         $banner_blog = Banner::where('role', '0')->where('status', '1')->get();
-        $sale_product = Product::where('sale_price', '>', '0')->orderByRaw('sale_price / price DESC')->get();
-        return view('frontend.pages.home', compact('new_product', 'category', 'slide', 'banner_pro', 'banner_blog'));
+        $sale_product = Product::where('sale_price', '>', '0')->orderByRaw('sale_price / price ASC')->get();
+        $sale_cat_pro = Product::all();
+        // dd(count($category));
+        // for ($i=1; $i < count($new_product); $i++) {
+
+        // }
+        return view('frontend.pages.home', compact('new_product', 'category', 'slide', 'banner_pro', 'banner_blog', 'sale_product'));
     }
 
     public function product()

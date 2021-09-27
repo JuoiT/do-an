@@ -141,6 +141,7 @@
                         </h2>
                     </div>
                 </div>
+                <?php $i = 1; ?>
                 <div class="filter-part">
                     <div class="col-lg-4 col-md-5 col-sm-8 col-xs-12 center-part">
                         <div class="slider-bg wow slideInDown">
@@ -318,423 +319,265 @@
                     </div>
                     <div class="col-sm-12 col-xs-12">
                         <div id="myBtnContainer" class="wow fadeInLeft">
-                            <button class="btn active" onclick="filterSelection('all')">All</button>/
-                            <button class="btn" onclick="filterSelection('fruit')"> Fruit</button>/
-                            <button class="btn" onclick="filterSelection('nut')"> Nut</button>/
-                            <button class="btn" onclick="filterSelection('vegetable')"> Vegetable</button>
+                            /<button class="btn active" onclick="filterSelection('all')">All</button>/
+                            @foreach($category as $value)
+                                @if($value->products_count != 0)
+                                    <button class="btn" onclick="filterSelection('{{$value->id}}')"> {{$value->name}}</button>/
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pull-left wow fadeInLeft">
-                        <div class="filterDiv all">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-1.jpg"/>
-                            </div>
-                            <div class="text-part">
-                                <div class="box-tit">Bla Bla</div>
-                                <div class="ratting">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="price">
-                                    <div class="new-price">$2.00</div>
-                                    <div class="old-price">
-                                        <del>$3.00</del>
+                        @foreach($sale_product as $value)
+                            @if($i % 2 == 1)
+                                <div class="filterDiv all">
+                                    <div class="img-part">
+                                        <img class="img-responsive" src="{{url('upload-images')}}/{{$value->image}}"/>
+                                    </div>
+                                    <div class="text-part">
+                                        <div class="box-tit">{{$value -> name}}</div>
+                                        <div class="ratting">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="price">
+                                            <div class="new-price">${{$value->sale_price == 0 ? "$value->price" : "$value->sale_price"}}</div>
+                                            <div class="old-price">
+                                                <del>{{$value->sale_price == 0 ? '' : "$$value->price"}}</del>
+                                            </div>
+                                        </div>
+                                        <div class="btn-part">
+                                            <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                            <i class="icon-shopping-basket"></i>
+                                        </div>
+                                        <div class="btn-part">
+                                            <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                            <i class="icon-heart-empty"></i>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                    <i class="icon-heart-empty"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filterDiv fruit">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-1.jpg"/>
-                            </div>
-                            <div class="text-part">
-                                <div class="box-tit">Bla Bla</div>
-                                <div class="ratting">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="price">
-                                    <div class="new-price">$2.00</div>
-                                    <div class="old-price">
-                                        <del>$3.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                    <i class="icon-heart-empty"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filterDiv nut">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-2.jpg"/>
-                            </div>
-                            <div class="text-part">
-                                <div class="box-tit">Bru lamo</div>
-                                <div class="ratting">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="price">
-                                    <div class="new-price">$3.00</div>
-                                    <div class="old-price">
-                                        <del>$6.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                    <i class="icon-heart-empty"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filterDiv vegetable">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-3.jpg"/>
-                            </div>
-                            <div class="text-part">
-                                <div class="box-tit">Dak Bru</div>
-                                <div class="ratting">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="price">
-                                    <div class="new-price">$3.00</div>
-                                    <div class="old-price">
-                                        <del>$8.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                    <i class="icon-heart-empty"></i>
-                                </div>
-                            </div>
-                        </div>
+                            @endif
+                            <?php $i+=1 ?>
+                            @if($i > 6)
+                                @break
+                            @endif
+                        @endforeach
+                        <?php $i =1; ?>
+                        @foreach($category as $_value)
+                            @foreach($sale_product as $value)
+                                @if($value->category_id == $_value->id)
+                                    @if($i % 2 == 1)
+                                        <div class="filterDiv {{$_value->id}}">
+                                            <div class="img-part">
+                                                <img class="img-responsive" src="{{url('upload-images')}}/{{$value->image}}"/>
+                                            </div>
+                                            <div class="text-part">
+                                                <div class="box-tit">{{$value -> name}}</div>
+                                                <div class="ratting">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="price">
+                                                    <div class="new-price">${{$value->sale_price == 0 ? "$value->price" : "$value->sale_price"}}</div>
+                                                    <div class="old-price">
+                                                        <del>{{$value->sale_price == 0 ? '' : "$$value->price"}}</del>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-part">
+                                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                                    <i class="icon-shopping-basket"></i>
+                                                </div>
+                                                <div class="btn-part">
+                                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                                    <i class="icon-heart-empty"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    <?php $i+=1 ?>
+                                    @if( $i > 6)
+                                        @break
+                                    @endif
+                                @endif
+                            @endforeach
+                            <?php $i = 1; ?>
+                        @endforeach
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 pull-right wow fadeInRight">
-                        <div class="filterDiv all">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-1.jpg"/>
-                            </div>
-                            <div class="text-part">
-                                <div class="box-tit">Bla Bla</div>
-                                <div class="ratting">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="price">
-                                    <div class="new-price">$2.00</div>
-                                    <div class="old-price">
-                                        <del>$3.00</del>
+                        @foreach($sale_product as $value)
+                            @if($i % 2 == 0)
+                                <div class="filterDiv all">
+                                    <div class="img-part">
+                                        <img class="img-responsive" src="{{url('upload-images')}}/{{$value->image}}"/>
+                                    </div>
+                                    <div class="text-part">
+                                        <div class="box-tit">{{$value->name}}</div>
+                                        <div class="ratting">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="price">
+                                            <div class="new-price">${{$value->sale_price == 0 ? "$value->price" : "$value->sale_price"}}</div>
+                                            <div class="old-price">
+                                                <del>{{$value->sale_price == 0 ? '' : "$$value->price"}}</del>
+                                            </div>
+                                        </div>
+                                        <div class="btn-part">
+                                            <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                            <i class="icon-shopping-basket"></i>
+                                        </div>
+                                        <div class="btn-part">
+                                            <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                            <i class="icon-heart-empty"></i>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                    <i class="icon-heart-empty"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filterDiv fruit">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-4.jpg"/>
-                            </div>
-                            <div class="text-part">
-                                <div class="box-tit">Lmao Lmao</div>
-                                <div class="ratting">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="price">
-                                    <div class="new-price">$3.00</div>
-                                    <div class="old-price">
-                                        <del>$6.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                    <i class="icon-heart-empty"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filterDiv nut">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-5.jpg"/>
-                            </div>
-                            <div class="text-part">
-                                <div class="box-tit">Mlem Mlem</div>
-                                <div class="ratting">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="price">
-                                    <div class="new-price">$2.00</div>
-                                    <div class="old-price">
-                                        <del>$4.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                    <i class="icon-heart-empty"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="filterDiv vegetable">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/deal-img-6.jpg"/>
-                            </div>
-                            <div class="text-part">
-                                <div class="box-tit">Ngu vừa đủ</div>
-                                <div class="ratting">
-                                    <ul>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="price">
-                                    <div class="new-price">$3.00</div>
-                                    <div class="old-price">
-                                        <del>$9.00</del>
-                                    </div>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
-                                    <i class="icon-shopping-basket"></i>
-                                </div>
-                                <div class="btn-part">
-                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                    <i class="icon-heart-empty"></i>
-                                </div>
-                            </div>
-                        </div>
+                            @endif
+                            <?php $i+=1 ?>
+                            @if($i > 6)
+                                @break
+                            @endif
+                        @endforeach
+                        <?php $i =1; ?>
+                        @foreach($category as $_value)
+                            @foreach($sale_product as $value)
+                                @if($value->category_id == $_value->id)
+                                    @if($i % 2 == 0)
+                                        <div class="filterDiv {{$_value->id}}">
+                                            <div class="img-part">
+                                                <img class="img-responsive" src="{{url('upload-images')}}/{{$value->image}}"/>
+                                            </div>
+                                            <div class="text-part">
+                                                <div class="box-tit">{{$value -> name}}</div>
+                                                <div class="ratting">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/green-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/dark-star-2.png">
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="price">
+                                                    <div class="new-price">${{$value->sale_price == 0 ? "$value->price" : "$value->sale_price"}}</div>
+                                                    <div class="old-price">
+                                                        <del>{{$value->sale_price == 0 ? '' : "$$value->price"}}</del>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-part">
+                                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                                    <i class="icon-shopping-basket"></i>
+                                                </div>
+                                                <div class="btn-part">
+                                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
+                                                    <i class="icon-heart-empty"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    <?php $i+=1 ?>
+                                    @if($i > 6)
+                                        @break
+                                    @endif
+                                @endif
+                            @endforeach
+                            <?php $i =1; ?>
+                        @endforeach
                     </div>
                 </div>
             </div>

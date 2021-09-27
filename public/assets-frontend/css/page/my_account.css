@@ -261,7 +261,27 @@
 /* Order */
 
 .fress-section .rpart .order {
-    background: blue;
+    background: #d6d6d6;
+}
+
+.fress-section .rpart .order .sidebar li {
+    width: 20%;
+    float: left;
+}
+
+.fress-section .rpart .order .sidebar li button {
+    width: 100%;
+}
+
+.fress-section .rpart .order .sidebar button {
+    border: none;
+    background: none;
+    float: left;
+}
+
+.fress-section .rpart .order .sidebar li button.btn.active,
+.fress-section .rpart .order .sidebar li button.btn:focus {
+    outline: none;
 }
 
 

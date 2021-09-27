@@ -97,30 +97,28 @@
                     <div class="filterDiv order">
                         <ul id="myBtnOrder" class="sidebar">
                             <li>
-                                <button class="btn" onclick="filterSelection('confirmation')">
-                                    <i class="icon-user-o"></i>My account
-                                </button>
+                                <button class="btn active" onclick="selection('confirmation')">Confirmation</button>
                             </li>
                             <li>
-                                <button class="btn active" onclick="filterSelection('waiting')">
-                                    <i class="icon-doc-text"></i>Order
-                                </button>
+                                <button class="btn" onclick="selection('waiting')">Waiting</button>
                             </li>
                             <li>
-                                <button class="btn" onclick="filterSelection('delivering')">
-                                    <i class="icon-bell"></i>Notification
-                                </button>
+                                <button class="btn" onclick="selection('delivering')">Delivering</button>
                             </li>
                             <li>
-                                <button class="btn" onclick="filterSelection('delivered')">
-                                    <i class="icon-bell"></i>Notification
-                                </button>
+                                <button class="btn" onclick="selection('delivered')">Delivered</button>
                             </li>
                             <li>
-                                <button class="btn" onclick="filterSelection('cancelled')">
-                                    <i class="icon-bell"></i>Notification
-                                </button>
+                                <button class="btn" onclick="selection('cancelled')">Cancelled</button>
                             </li>
+                        </ul>
+                        <ul class="value">
+                            <!-- <li class="no_order">Chưa có đơn hàng nào!</li> -->
+                            <div class="filterLi confirmation">1111111111111111111</div>
+                            <div class="filterLi waiting">222222222222222222222</div>
+                            <div class="filterLi delivering">33333333333333333333</div>
+                            <div class="filterLi delivered">44444444444444444444</div>
+                            <div class="filterLi cancelled">5555555555555555555555</div>
                         </ul>
                     </div>
                     <div class="filterDiv notification">c</div>

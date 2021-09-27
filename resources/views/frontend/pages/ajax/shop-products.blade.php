@@ -16,36 +16,16 @@
                         </div>
                         <div class="ratting">
                             <ul>
+                                @for ($i = 0; $i < (floor($product->comments->avg('rating'))); $i++)
                                 <li>
-                                    <a href="#">
-                                        <img class="img-responsive"
-                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                    </a>
+                                    <img class="img-responsive" src="{{ url('assets-frontend') }}/images/green-star-2.png">
                                 </li>
+                                @endfor
+                                @for ($i = 5; $i > (floor($product->comments->avg('rating'))); $i--)
                                 <li>
-                                    <a href="#">
-                                        <img class="img-responsive"
-                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                    </a>
+                                    <img class="img-responsive" src="{{ url('assets-frontend') }}/images/dark-star-2.png">
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-responsive"
-                                            src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-responsive"
-                                            src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <img class="img-responsive"
-                                            src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                    </a>
-                                </li>
+                                @endfor
                             </ul>
                         </div>
                         <div class="price">
@@ -59,11 +39,24 @@
                             @endif
                         </div>
                         <div class="btn-part">
-                            <a href="{{ route('cart.add') }}" class="cart-btn">Buy now</a>
+                            <form action="{{route('cart.add')}}" method="GET">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <input type="hidden" name="quantity" value="1">
+                                <div class="cart">
+                                    <button type="submit" class="cart-btn">Buy now</button>
+                                </div>
+                            </form>
                             <i class="icon-shopping-basket"></i>
                         </div>
                         <div class="btn-part">
-                            <a href="{{ route('whishlist') }}" class="cart-btn">Whishlist</a>
+                            <form action="{{route('whishlist.add')}}" method="GET">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <div class="cart">
+                                    <button type="submit" class="cart-btn">Whishlist</button>
+                                </div>
+                            </form>
                             <i class="icon-heart-empty"></i>
                         </div>
                     </div>

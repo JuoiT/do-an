@@ -46,14 +46,14 @@
                     <a href="#">
                         <i class="icon-shopping-basket"></i>
                     </a>
-                    <div class="cart-counter">01</div>
+                    <div class="cart-counter">{{session('cart.totalQuantity')}}</div>
                 </div>
                 <div class="cart-popup">
                     <p class="item-in-cart">{{session()->has('cart.totalQuantity')?session('cart.totalQuantity'):'0'}} item(s) in your cart</p>
                     <div class="item-list">
                         @if (session()->has('cart.items'))
                             @foreach (session('cart.items') as $item)
-                                <div class="box">
+                                <div class="box cart-item-{{$item['product_id']}}">
                                     <div class="img-part">
                                         <img class="img-responsive" style="width: 100px"
                                             src="{{ url('upload-images') }}/{{$item['image']}}">
@@ -62,7 +62,7 @@
                                         <a class="product-name" href="{{route('detail', $item['product_id'])}}">{{$item['name']}}</a>
                                         <div class="quantity-and-price"><span>{{$item['quantity']}} x {{toUsd($item['price'])}}</span></div>
                                     </div>
-                                    <a href="#" class="clear-btn" title="Remove this">
+                                    <a href="{{route('cart.remove-item', $item['product_id'])}}" class="clear-btn" title="Remove this">
                                         <i class="icon-cancel"></i>
                                     </a>
                                 </div>

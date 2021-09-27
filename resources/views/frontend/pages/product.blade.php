@@ -74,36 +74,16 @@
                                                 href="{{ route('detail', $item->id) }}">{{ $item->name }}</a>
                                             <div class="ratting">
                                                 <ul>
+                                                    @for ($i = 0; $i < (floor($item->comments->avg('rating'))); $i++)
                                                     <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                        </a>
+                                                        <img class="img-responsive" src="{{ url('assets-frontend') }}/images/green-star-2.png">
                                                     </li>
+                                                    @endfor
+                                                    @for ($i = 5; $i > (floor($item->comments->avg('rating'))); $i--)
                                                     <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                        </a>
+                                                        <img class="img-responsive" src="{{ url('assets-frontend') }}/images/dark-star-2.png">
                                                     </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                        </a>
-                                                    </li>
+                                                    @endfor
                                                 </ul>
                                             </div>
                                             <div class="price">
@@ -144,36 +124,16 @@
                                                 href="{{ route('detail', $item->id) }}">{{ $item->name }}</a>
                                             <div class="ratting">
                                                 <ul>
+                                                    @for ($i = 0; $i < (floor($item->comments->avg('rating'))); $i++)
                                                     <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                        </a>
+                                                        <img class="img-responsive" src="{{ url('assets-frontend') }}/images/green-star-2.png">
                                                     </li>
+                                                    @endfor
+                                                    @for ($i = 5; $i > (floor($item->comments->avg('rating'))); $i--)
                                                     <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                        </a>
+                                                        <img class="img-responsive" src="{{ url('assets-frontend') }}/images/dark-star-2.png">
                                                     </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">
-                                                            <img class="img-responsive"
-                                                                src="{{ url('assets-frontend') }}/images/dark-star-2.png">
-                                                        </a>
-                                                    </li>
+                                                    @endfor
                                                 </ul>
                                             </div>
                                             <div class="price">

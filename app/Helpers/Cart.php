@@ -13,6 +13,7 @@ class Cart
     public function __construct()
     {
         // session()->forget('cart.items');
+        // session()->forget('cart');
         $this->items = session('cart.items') ? session('cart.items') : [];
     }
 
@@ -31,19 +32,13 @@ class Cart
         } else {
             $this->items[$product->id] = $item;
         }
-
-        session(['cart.items' => $this->items]);
-        session(['cart.totalPrice' => $this->getTotalPrice()]);
-        session(['cart.totalQuantity' => $this->getTotalQuantity()]);
+        $this->updateCart();
     }
 
     public function update($product_id, $quantity)
     {
         $this->items[$product_id]['quantity'] = $quantity;
-
-        session(['cart.items' => $this->items]);
-        session(['cart.totalPrice' => $this->getTotalPrice()]);
-        session(['cart.totalQuantity' => $this->getTotalQuantity()]);
+        $this->updateCart();
     }
 
     public function getTotalPrice()
@@ -65,8 +60,27 @@ class Cart
     }
 
 
-    public function items()
+    public function getItems()
     {
         return $this->items;
+    }
+
+    public function removeItem($product_id)
+    {
+        unset($this->items[$product_id]);
+        $this->updateCart();
+    }
+
+    public function removeAll()
+    {
+        $this->items = [];
+        $this->updateCart();
+    }
+
+    public function updateCart()
+    {
+        session(['cart.items' => $this->items]);
+        session(['cart.totalPrice' => $this->getTotalPrice()]);
+        session(['cart.totalQuantity' => $this->getTotalQuantity()]);
     }
 }

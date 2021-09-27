@@ -9,10 +9,12 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function index()
+    public function index(Cart $cart)
     {
-
-        return view('frontend.pages.cart');
+        $items = $cart->getItems();
+        $totalQuantity = $cart->getTotalQuantity();
+        $totalPrice = $cart->getTotalPrice();
+        return view('frontend.pages.cart', compact('items', 'totalQuantity', 'totalPrice'));
     }
 
     public function add(Request $req, Cart $cart)
@@ -22,8 +24,21 @@ class CartController extends Controller
         return redirect()->back();
     }
 
-    function show(Cart $cart)
+    public function update(Request $req, Cart $cart)
     {
-        dd($cart);
+        $cart->update($req->product_id, $req->quantity);
+        return redirect()->back();
+    }
+
+    public function removeItem($id)
+    {
+        $cart = new Cart();
+        $cart->removeItem($id);
+        return redirect()->back();
+    }
+
+    public function removeAll(Cart $cart)
+    {
+        $cart->removeAll();
     }
 }

@@ -673,7 +673,7 @@
     line-height: 1.2;
     color: #4a4642;
     font-weight: 600;
-    padding-bottom: 8px;
+    padding: 8px 0;
 }
 
 .wrapper .contain-wrapper .tit a {

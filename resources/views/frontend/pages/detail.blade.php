@@ -85,7 +85,7 @@
                                     @endif
                                 </div>
                                 <div class="cart-process">
-                                    <form action="{{route('cart.add')}}" method="POST">
+                                    <form action="{{route('cart.add')}}" method="GET">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         <div class="qty">

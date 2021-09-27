@@ -18,16 +18,16 @@
             </div>
             <div class="collapse" id="organic-food-navigation">
                 <ul class="nav navbar-nav">
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/home') ? 'active' : ''}}">
+                    <li class="{{url()->current()==route('home') ? 'active' : ''}}">
                         <a href="{{route('home')}}">Home</a>
                     </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/product') ? 'active' : ''}}">
+                    <li class="{{url()->current()==route('product') ? 'active' : ''}}">
                         <a href="{{route('product')}}">Shop</a>
                     </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/blog') ? 'active' : ''}}">
+                    <li class="{{url()->current()==route('blog') ? 'active' : ''}}">
                         <a href="{{route('blog')}}">Blog</a>
                     </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/contact') ? 'active' : ''}}">
+                    <li class="{{url()->current()==route('contact') ? 'active' : ''}}">
                         <a href="{{route('contact')}}">Contact</a>
                     </li>
                 </ul>

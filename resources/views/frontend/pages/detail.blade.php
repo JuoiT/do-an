@@ -183,6 +183,65 @@
                                     </div>
                                     <h2>Reviews({{ $product->comments->count() }})</h2>
                                     <div class="reviews">
+                                        @if (Auth()->user())
+                                            <form class="product-review-form row" action="{{ route('add_comment') }}"
+                                                method="POST">
+                                                <div class="col-sm-12 col-xs-12">
+                                                    <h3>Write a review</h3>
+                                                </div>
+
+                                                @csrf
+                                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                                <input type="hidden" name="user_id" value="{{ Auth()->user()->id }}">
+                                                <div class="form-group col-sm-12 col-xs-12">
+                                                    <div id="full-stars-example-two">
+                                                        <div class="rating-group">
+                                                            {{-- <input disabled checked
+                                                            class="rating__input rating__input--none" name="rating3"
+                                                            id="rating3-none" value="0" type="radio"> --}}
+                                                            <label aria-label="1 star" class="rating__label"
+                                                                for="rating3-1"><i
+                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                                            <input class="rating__input" name="rating3" id="rating3-1"
+                                                                value="1" type="radio">
+                                                            <label aria-label="2 stars" class="rating__label"
+                                                                for="rating3-2"><i
+                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                                            <input class="rating__input" name="rating3" id="rating3-2"
+                                                                value="2" type="radio">
+                                                            <label aria-label="3 stars" class="rating__label"
+                                                                for="rating3-3"><i
+                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                                            <input class="rating__input" name="rating3" id="rating3-3"
+                                                                value="3" type="radio">
+                                                            <label aria-label="4 stars" class="rating__label"
+                                                                for="rating3-4"><i
+                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                                            <input class="rating__input" name="rating3" id="rating3-4"
+                                                                value="4" type="radio">
+                                                            <label aria-label="5 stars" class="rating__label"
+                                                                for="rating3-5"><i
+                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                                            <input class="rating__input" name="rating3" id="rating3-5"
+                                                                value="5" type="radio" checked>
+                                                        </div>
+                                                    </div>
+                                                    <textarea class="form-control" name="content" maxlength="2000"
+                                                        rows="3" placeholder="Your rating and comment"></textarea>
+                                                    @if ($errors->has('content'))
+                                                        <small
+                                                            class="text-danger">{{ $errors->first('content') }}</small>
+                                                    @endif
+                                                </div>
+                                                <div class="col-sm-12 col-xs-12">
+                                                    <button type="submit" class="btn btn-primary">Send</button>
+                                                </div>
+                                            </form>
+                                        @else
+                                            <h3><a href="{{ route('login') }}">Login</a><span> and shopping to write
+                                                comment!</span></h3>
+                                        @endif
+
                                         <div class="comment-section">
                                             <h3>Recently Reviews</h3>
                                             <div class="comment-section">
@@ -232,64 +291,7 @@
                                             </div>
                                         </div>
 
-                                        @if (Auth()->user())
-                                            <form class="product-review-form row" action="{{ route('add_comment') }}"
-                                                method="POST">
-                                                <div class="col-sm-12 col-xs-12">
-                                                    <h3>Write a review</h3>
-                                                </div>
 
-                                                @csrf
-                                                <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                                <input type="hidden" name="user_id" value="{{ Auth()->user()->id }}">
-                                                <div class="form-group col-sm-12 col-xs-12">
-                                                    <div id="full-stars-example-two">
-                                                        <div class="rating-group">
-                                                            <input disabled checked
-                                                                class="rating__input rating__input--none" name="rating3"
-                                                                id="rating3-none" value="0" type="radio">
-                                                            <label aria-label="1 star" class="rating__label"
-                                                                for="rating3-1"><i
-                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                                            <input class="rating__input" name="rating3" id="rating3-1"
-                                                                value="1" type="radio">
-                                                            <label aria-label="2 stars" class="rating__label"
-                                                                for="rating3-2"><i
-                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                                            <input class="rating__input" name="rating3" id="rating3-2"
-                                                                value="2" type="radio">
-                                                            <label aria-label="3 stars" class="rating__label"
-                                                                for="rating3-3"><i
-                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                                            <input class="rating__input" name="rating3" id="rating3-3"
-                                                                value="3" type="radio">
-                                                            <label aria-label="4 stars" class="rating__label"
-                                                                for="rating3-4"><i
-                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                                            <input class="rating__input" name="rating3" id="rating3-4"
-                                                                value="4" type="radio">
-                                                            <label aria-label="5 stars" class="rating__label"
-                                                                for="rating3-5"><i
-                                                                    class="rating__icon rating__icon--star fa fa-star"></i></label>
-                                                            <input class="rating__input" name="rating3" id="rating3-5"
-                                                                value="5" type="radio" checked>
-                                                        </div>
-                                                    </div>
-                                                    <textarea class="form-control" name="content" maxlength="2000"
-                                                        rows="3" placeholder="Your rating and comment"></textarea>
-                                                    @if ($errors->has('content'))
-                                                        <small
-                                                            class="text-danger">{{ $errors->first('content') }}</small>
-                                                    @endif
-                                                </div>
-                                                <div class="col-sm-12 col-xs-12">
-                                                    <button type="submit" class="btn btn-primary">Send</button>
-                                                </div>
-                                            </form>
-                                        @else
-                                            <a href="{{ route('login') }}">Login</a><span> and shopping to write
-                                                comment!</span>
-                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -316,132 +318,6 @@
                                                     <div class="new-price">$3.00</div>
                                                     <div class="old-price">
                                                         <del>$5.00</del>
-                                                    </div>
-                                                </div>
-                                                <div class="btn-part">
-                                                    <a href="{{ route('cart') }}" class="cart-btn">buy now</a>
-                                                    <i class="icon-shopping-basket"></i>
-                                                </div>
-                                            </div>
-                                            <div class="wrapper-box-hover">
-                                                <div class="text">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="{{ route('whishlist') }}">
-                                                                <i class="icon-heart-empty"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ route('detail', 1) }}">
-                                                                <i class="icon-eye"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ route('cart') }}">
-                                                                <i class="icon-shopping-basket"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="wrapper">
-                                            <div class="pro-img">
-                                                <img class="img-responsive"
-                                                    src="{{ url('assets-frontend') }}/images/product-img-8.jpg" />
-                                            </div>
-                                            <div class="contain-wrapper">
-                                                <div class="tit">Bru</div>
-                                                <div class="price">
-                                                    <div class="new-price">$3.00</div>
-                                                    <div class="old-price">
-                                                        <del>$7.00</del>
-                                                    </div>
-                                                </div>
-                                                <div class="btn-part">
-                                                    <a href="{{ route('cart') }}" class="cart-btn">buy now</a>
-                                                    <i class="icon-shopping-basket"></i>
-                                                </div>
-                                            </div>
-                                            <div class="wrapper-box-hover">
-                                                <div class="text">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="{{ route('whishlist') }}">
-                                                                <i class="icon-heart-empty"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ route('detail', 1) }}">
-                                                                <i class="icon-eye"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ route('cart') }}">
-                                                                <i class="icon-shopping-basket"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="wrapper">
-                                            <div class="pro-img">
-                                                <img class="img-responsive"
-                                                    src="{{ url('assets-frontend') }}/images/product-img-9.jpg" />
-                                            </div>
-                                            <div class="contain-wrapper">
-                                                <div class="tit">Lmao Bru</div>
-                                                <div class="price">
-                                                    <div class="new-price">$4.00</div>
-                                                    <div class="old-price">
-                                                        <del>$6.00</del>
-                                                    </div>
-                                                </div>
-                                                <div class="btn-part">
-                                                    <a href="{{ route('cart') }}" class="cart-btn">buy now</a>
-                                                    <i class="icon-shopping-basket"></i>
-                                                </div>
-                                            </div>
-                                            <div class="wrapper-box-hover">
-                                                <div class="text">
-                                                    <ul>
-                                                        <li>
-                                                            <a href="{{ route('whishlist') }}">
-                                                                <i class="icon-heart-empty"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ route('detail', 1) }}">
-                                                                <i class="icon-eye"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{ route('cart') }}">
-                                                                <i class="icon-shopping-basket"></i>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="wrapper">
-                                            <div class="pro-img">
-                                                <img class="img-responsive"
-                                                    src="{{ url('assets-frontend') }}/images/product-img-5.jpg" />
-                                            </div>
-                                            <div class="contain-wrapper">
-                                                <div class="tit">Mòe lol</div>
-                                                <div class="price">
-                                                    <div class="new-price">$3.00</div>
-                                                    <div class="old-price">
-                                                        <del>$6.00</del>
                                                     </div>
                                                 </div>
                                                 <div class="btn-part">

@@ -14,7 +14,8 @@ class DetailController extends Controller
     {
         $product = Product::with('productImages', 'category')->find($id);
         $comments = Comment::where('product_id', $id)->orderBy('created_at', 'DESC')->limit(3)->get();
-        return view('frontend.pages.detail', compact('product', 'comments'));
+        $relatedProducts = Product::where('category_id', $product->category->id)->orderBy('created_at', 'DESC')->limit(6)->get();
+        return view('frontend.pages.detail', compact('product', 'comments', 'relatedProducts'));
     }
 
     public function addComment(AddCommentRequest $req, Comment $cmt)

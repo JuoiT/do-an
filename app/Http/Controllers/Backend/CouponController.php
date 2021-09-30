@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Coupon;
 use Illuminate\Http\Request;
 
 class CouponController extends Controller
@@ -12,9 +13,16 @@ class CouponController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $list_coupon = [];
+        // session()->forget("filter.coupons");
+        $params = $request->all();
+        if (count($params)<=1) {
+            // for paginate / redirect, get old filter value from session
+            $params = session()->get("filter.coupons");
+        }
+        $query = Coupon::filter($params);
+        $list_coupon = $query->paginate(config("const.records"));
         return view('backend.pages.coupon.list-coupon', compact('list_coupon'));
     }
 

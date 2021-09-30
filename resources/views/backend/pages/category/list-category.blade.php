@@ -67,7 +67,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn mt-2 green">Lọc sản phẩm</button>
+                            <button type="submit" class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">Lọc sản phẩm</button>
                     </form>
 
                     <div class="card-content pb-1">

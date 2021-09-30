@@ -417,10 +417,6 @@ header .bottom-header {
     position: initial;
 }
 
-.nav-header {
-    margin-bottom: 16px;
-}
-
 button {
     border-radius: 0;
     -webkit-appearance: button;
@@ -430,6 +426,43 @@ button {
 
 .logo a {
     display: inline-block;
+}
+
+.remove {
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    cursor: pointer;
+    background: #88c442;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+.remove:hover .icon-cancel:before,
+.remove:hover .icon-cancel {
+    color: #fff;
+}
+
+.nav-header {
+    margin-bottom: 16px;
+}
+
+.icon-cancel:before,
+.icon-cancel {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #fff;
 }
 
 .collapse {
@@ -935,7 +968,7 @@ button {
 }
 
 .content-part.listing-page {
-    padding-bottom: 275px;
+    /* padding-bottom: 275px; */
 }
 
 
@@ -1277,7 +1310,7 @@ footer .top-footer {
 
 .bottom-footer .rpart {
     float: right;
-    width: 25%;
+    width: 40%;
 }
 
 .bottom-footer .rpart .payment {

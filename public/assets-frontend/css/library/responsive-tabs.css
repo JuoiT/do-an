@@ -1,7 +1,7 @@
 /* REQUIRED for core functionality */
 
 .responsive-tabs__heading {
-    display: none;
+    display: none !important;
 }
 
 .responsive-tabs__list__item {
@@ -11,14 +11,14 @@
 
 @media (max-width: 767px) {
     .responsive-tabs__list {
-        display: none;
+        /* display: none; */
     }
     .responsive-tabs__heading {
         display: block;
         cursor: pointer;
     }
     .responsive-tabs__panel--closed-accordion-only {
-        display: none;
+        /* display: none; */
     }
 }
 

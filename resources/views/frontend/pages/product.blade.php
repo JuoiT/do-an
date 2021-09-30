@@ -32,9 +32,9 @@
                             <div class="widget-tit">
                                 <h2>Categories</h2>
                                 <div class="button" data-toggle="collapse" data-target="#categories">
-                                    <span class="icon-barcode"></span>
-                                    <span class="icon-barcode"></span>
-                                    <span class="icon-barcode"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
                                 </div>
                             </div>
                             <div class="widget-contian" id="categories">
@@ -53,16 +53,16 @@
                         </div> --}}
 
                         {{-- hot products --}}
-                        <div class="widget top-seller-widget" data-toggle="collapse" data-target="#top-seller">
+                        <div class="widget top-seller-widget">
                             <div class="widget-tit">
                                 <h2>Hot products</h2>
-                                <div class="button">
-                                    <span class="icon-barcode"></span>
-                                    <span class="icon-barcode"></span>
-                                    <span class="icon-barcode"></span>
+                                <div class="button" data-toggle="collapse" data-target="#hot-product">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
                                 </div>
                             </div>
-                            <div class="widget-contian" id="top-seller">
+                            <div class="widget-contian" id="hot-product">
                                 @foreach ($hotProducts as $item)
                                     <div class="seller-box">
                                         <div class="seller-img">
@@ -123,13 +123,13 @@
                         {{-- end hot products --}}
 
                         {{-- top seller --}}
-                        <div class="widget top-seller-widget" data-toggle="collapse" data-target="#top-seller">
+                        <div class="widget top-seller-widget">
                             <div class="widget-tit">
                                 <h2>Best seller</h2>
-                                <div class="button">
-                                    <span class="icon-barcode"></span>
-                                    <span class="icon-barcode"></span>
-                                    <span class="icon-barcode"></span>
+                                <div class="button" data-toggle="collapse" data-target="#top-seller">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
                                 </div>
                             </div>
                             <div class="widget-contian" id="top-seller">
@@ -194,7 +194,7 @@
 
                         <div class="widget tag-widgwet">
                             <div class="widget-tit">
-                                <h2>New Blogs</h2>
+                                <h2>Popular tags</h2>
                                 <div class="button" data-toggle="collapse" data-target="#tag">
                                     <span class="icon-barcode"></span>
                                     <span class="icon-barcode"></span>
@@ -203,6 +203,9 @@
                             </div>
                             <div class="widget-contian" id="tag">
                                 <div class="tag-div">
+                                    <a class="tag-btn" href="#">Bru</a>
+                                    <a class="tag-btn" href="#">Bru</a>
+                                    <a class="tag-btn" href="#">Bru</a>
                                     <a class="tag-btn" href="#">Bru</a>
                                 </div>
                             </div>

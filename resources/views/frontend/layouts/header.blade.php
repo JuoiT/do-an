@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- End library -->
     <!-- Layout -->
-    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/page/layout.css" />
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/page/respon.css"/>
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/page/layout.css"/>
     <!-- End layout -->
     <!-- Font -->
     <link rel="stylesheet"
@@ -69,7 +70,7 @@
                 </div>
             </div>
             <div class="rpart">
-                <div class="country">
+                <!-- <div class="country">
                     <div id="country" class="select">
                         <img src="{{ url('assets-frontend') }}/images/america-flag-icon.png" />America
                     </div>
@@ -86,8 +87,8 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="currency">
+                </div> -->
+                <!-- <div class="currency">
                     <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                         <i class="icon-dollar"></i>usd
                         <i class="icon-angle-down"></i>
@@ -103,7 +104,7 @@
                             <a href="#">bru</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="account">
                     <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
                         <i class="icon-user-o"></i>My Account

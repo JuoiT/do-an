@@ -10,6 +10,11 @@
         </div>
         <nav class="navbar">
             <div class="nav-header">
+                <button type="button" class="navbar-toggle">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
                 <div class="logo">
                     <a href="{{route('home')}}">
                         <img src="{{url('assets-frontend')}}/images/logo.png"/>
@@ -17,17 +22,25 @@
                 </div>
             </div>
             <div class="collapse" id="organic-food-navigation">
+                <div class="remove">
+                    <i class="icon-cancel"></i>
+                </div>
+                <div class="menu-logo">
+                    <a href="{{route('home')}}">
+                        <img src="{{url('assets-frontend')}}/images/logo.png" />
+                    </a>
+                </div>
                 <ul class="nav navbar-nav">
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/home') ? 'active' : ''}}">
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000') ? 'active' : ''}}">
                         <a href="{{route('home')}}">Home</a>
                     </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/product') ? 'active' : ''}}">
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/product') ? 'active' : ''}}">
                         <a href="{{route('product')}}">Shop</a>
                     </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/blog') ? 'active' : ''}}">
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/blog') ? 'active' : ''}}">
                         <a href="{{route('blog')}}">Blog</a>
                     </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/organic/contact') ? 'active' : ''}}">
+                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/contact') ? 'active' : ''}}">
                         <a href="{{route('contact')}}">Contact</a>
                     </li>
                 </ul>
@@ -56,8 +69,8 @@
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/cart-popup-img-1.jpg">
                             </div>
                             <div class="text-part">
-                                <a class="product-name">Lmao Mlem</a>
-                                <div class="quantity-and-price">1 x $2.00</div>
+                                <a class="product-name">Lmao Mlem Lmao Mlem Lmao Mlem</a>
+                                <div class="quantity-and-price">1 x $2.000000000000000000000</div>
                             </div>
                             <a href="#" class="clear-btn">
                                 <i class="icon-cancel"></i>

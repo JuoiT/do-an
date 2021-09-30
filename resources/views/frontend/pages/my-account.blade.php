@@ -97,6 +97,9 @@
                     <div class="filterDiv order">
                         <ul id="myBtnOrder" class="sidebar">
                             <li>
+                                <button class="btn" onclick="selection('all')">All</button>
+                            </li>
+                            <li>
                                 <button class="btn active" onclick="selection('confirmation')">Confirmation</button>
                             </li>
                             <li>
@@ -114,11 +117,446 @@
                         </ul>
                         <ul class="value">
                             <!-- <li class="no_order">Chưa có đơn hàng nào!</li> -->
-                            <div class="filterLi confirmation">1111111111111111111</div>
-                            <div class="filterLi waiting">222222222222222222222</div>
-                            <div class="filterLi delivering">33333333333333333333</div>
-                            <div class="filterLi delivered">44444444444444444444</div>
-                            <div class="filterLi cancelled">5555555555555555555555</div>
+                            <div class="filterLi confirmation">
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>confirmation</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <!-- <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div> -->
+                                        <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>confirmation</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <!-- <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div> -->
+                                        <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filterLi waiting">
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>waiting</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <!-- <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div> -->
+                                        <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>waiting</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <!-- <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div> -->
+                                        <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filterLi delivering">
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>delivering</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <!-- <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div> -->
+                                        <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>delivering</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <!-- <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div> -->
+                                        <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filterLi delivered">
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>delivered</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div>
+                                        <!-- <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>delivered</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div>
+                                        <!-- <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filterLi cancelled">
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>cancelled</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div>
+                                        <!-- <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="list_order">
+                                    <div class="header">
+                                        <p>cancelled</p>
+                                    </div>
+                                    <div class="body">
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192281fruit_07.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Apple</p>
+                                                    <p class="quantity">x5</p>
+                                                </div>
+                                                <div class="price">$23</div>
+                                            </a>
+                                        </div>
+                                        <div class="item">
+                                            <a href="">
+                                                <div class="image">
+                                                    <img src="{{url('upload-images')}}/1632192112fruit_15.jpg" alt="">
+                                                </div>
+                                                <div class="name">
+                                                    <p class="name_product">Orange</p>
+                                                    <p class="quantity">x4</p>
+                                                </div>
+                                                <div class="price">$27</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="footer">
+                                        <div class="total_price">
+                                            <p class="total">Total price:</p>
+                                            <p class="price">$50</p>
+                                        </div>
+                                        <div class="repurchase">
+                                            <button type="submit">Repurchase</button>
+                                        </div>
+                                        <!-- <div class="cancel">
+                                            <button type="submit">Cancel</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
                         </ul>
                     </div>
                     <div class="filterDiv notification">c</div>

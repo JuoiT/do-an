@@ -434,13 +434,13 @@
 .owl-theme .owl-nav .owl-prev {
     position: absolute;
     top: 47%;
-    left: -80px !important;
+    left: -80px;
 }
 
 .owl-theme .owl-nav .owl-next {
     position: absolute;
     top: 47%;
-    right: -80px !important;
+    right: -80px;
 }
 
 .brand-slider.owl-theme .owl-nav .owl-prev,
@@ -698,7 +698,7 @@
 }
 
 .new-arrivals-slider .contain-wrapper .ratting {
-    width: 43%;
+    width: 90px;
     margin: 0 auto;
     padding-bottom: 25px;
 }
@@ -780,7 +780,7 @@
 }
 
 .deal-slider .contain-wrapper .ratting {
-    width: 43%;
+    width: 90px;
     margin: 0 auto;
     padding-bottom: 5px;
 }
@@ -1228,14 +1228,6 @@
 
 .brand .brand-slider .owl-nav [class*=owl-]:hover {
     color: #c9e584;
-}
-
-.owl-theme .owl-nav .owl-next {
-    right: 0;
-}
-
-.owl-theme .owl-nav .owl-prev {
-    left: 0;
 }
 
 .brand-slider.owl-carousel .owl-item img {

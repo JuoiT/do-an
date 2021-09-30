@@ -82,10 +82,14 @@ Route::group(['prefix'=>''], function() {
     // Route::get('cart', [ShopController::class, 'cart'])->name('cart');
     Route::get('cart', [CartController::class, 'index'])->name('cart');
     Route::get('cart/add', [CartController::class, 'add'])->name('cart.add');
+    Route::get('cart/update', [CartController::class, 'update'])->name('cart.update');
+    Route::get('cart/remove-item/{id}', [CartController::class, 'removeItem'])->name('cart.remove-item');
+    Route::get('cart/remove-all', [CartController::class, 'removeAll'])->name('cart.remove-all');
 
     Route::get('checkout', [ShopController::class, 'checkout'])->name('checkout');
 
     Route::get('whishlist', [ShopController::class, 'whishlist'])->name('whishlist');
+    Route::get('whishlist/add', [ShopController::class, 'add'])->name('whishlist.add');
 
     Route::get('my_account', [ShopController::class, 'my_account'])->name('my_account');
 

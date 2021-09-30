@@ -2,7 +2,7 @@
     <div class="container">
         <div class="vishlist">
             <div class="vishlist-inner">
-                <a href="{{route('whishlist')}}">
+                <a href="{{ route('whishlist') }}">
                     <i class="icon-heart-empty"></i>
                 </a>
                 <div class="vishlist-counter">01</div>
@@ -16,8 +16,8 @@
                 <span class="icon-bar"></span>
                 </button>
                 <div class="logo">
-                    <a href="{{route('home')}}">
-                        <img src="{{url('assets-frontend')}}/images/logo.png"/>
+                    <a href="{{ route('home') }}">
+                        <img src="{{ url('assets-frontend') }}/images/logo.png" />
                     </a>
                 </div>
             </div>
@@ -31,6 +31,7 @@
                     </a>
                 </div>
                 <ul class="nav navbar-nav">
+<<<<<<< HEAD
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000') ? 'active' : ''}}">
                         <a href="{{route('home')}}">Home</a>
                     </li>
@@ -42,6 +43,19 @@
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/contact') ? 'active' : ''}}">
                         <a href="{{route('contact')}}">Contact</a>
+=======
+                    <li class="{{ url()->current() == route('home') ? 'active' : '' }}">
+                        <a href="{{ route('home') }}">Home</a>
+                    </li>
+                    <li class="{{ url()->current() == route('product') ? 'active' : '' }}">
+                        <a href="{{ route('product') }}">Shop</a>
+                    </li>
+                    <li class="{{ url()->current() == route('blog') ? 'active' : '' }}">
+                        <a href="{{ route('blog') }}">Blog</a>
+                    </li>
+                    <li class="{{ url()->current() == route('contact') ? 'active' : '' }}">
+                        <a href="{{ route('contact') }}">Contact</a>
+>>>>>>> 7ff1e57f491ca0eaefa04f5e985357262ac7182c
                     </li>
                 </ul>
             </div>
@@ -59,11 +73,12 @@
                     <a href="#">
                         <i class="icon-shopping-basket"></i>
                     </a>
-                    <div class="cart-counter">01</div>
+                    <div class="cart-counter">{{session('cart.totalQuantity')}}</div>
                 </div>
                 <div class="cart-popup">
-                    <p class="item-in-cart">2 items in your cart</p>
+                    <p class="item-in-cart">{{session()->has('cart.totalQuantity')?session('cart.totalQuantity'):'0'}} item(s) in your cart</p>
                     <div class="item-list">
+<<<<<<< HEAD
                         <div class="box">
                             <div class="img-part">
                                 <img class="img-responsive" src="{{url('assets-frontend')}}/images/cart-popup-img-1.jpg">
@@ -88,14 +103,40 @@
                                 <i class="icon-cancel"></i>
                             </a>
                         </div>
+=======
+                        @if (session()->has('cart.items'))
+                            @foreach (session('cart.items') as $item)
+                                <div class="box cart-item-{{$item['product_id']}}">
+                                    <div class="img-part">
+                                        <img class="img-responsive" style="width: 100px"
+                                            src="{{ url('upload-images') }}/{{$item['image']}}">
+                                    </div>
+                                    <div class="text-part">
+                                        <a class="product-name" href="{{route('detail', $item['product_id'])}}">{{$item['name']}}</a>
+                                        <div class="quantity-and-price"><span>{{$item['quantity']}} x {{toUsd($item['price'])}}</span></div>
+                                    </div>
+                                    <a href="{{route('cart.remove-item', $item['product_id'])}}" class="clear-btn" title="Remove this">
+                                        <i class="icon-cancel"></i>
+                                    </a>
+                                </div>
+                            @endforeach
+                        @else
+                            <span>Nothing here</span>
+                        @endif
+>>>>>>> 7ff1e57f491ca0eaefa04f5e985357262ac7182c
                     </div>
                     <div class="cart-total">
-                        <span>Total: $6.00</span>
+                        <span>Total: </span>
+                        @if (session()->has('cart.totalPrice'))
+                            <span>{{ toUsd(session('cart.totalPrice')) }}</span>
+                        @else
+                            <span>{{ toUsd(0) }}</span>
+                        @endif
                     </div>
                     <div class="cart-btm">
                         <div class="btn-group">
-                            <a href="{{route('cart')}}" class="btn cart-view">View Cart</a>
-                            <a href="{{route('checkout')}}" class="btn checkout">Checkout</a>
+                            <a href="{{ route('cart') }}" class="btn cart-view">View Cart</a>
+                            <a href="{{ route('checkout') }}" class="btn checkout">Checkout</a>
                         </div>
                     </div>
                 </div>
@@ -105,7 +146,7 @@
             <div class="inner">
                 <div class="container-1">
                     <div class="pos-rel">
-                        <input class="input-serch" type="text" name="search" placeholder="Search"/>
+                        <input class="input-serch" type="text" name="search" placeholder="Search" />
                         <div class="cross">
                             <i class="icon-search"></i>
                         </div>

@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ShipController;
 use App\Http\Controllers\Backend\SlideController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\UserController;
@@ -35,7 +36,7 @@ Route::get('/', function () {
 });
 
 // Backend
-Route::group(['prefix'=>'admin'], function() {
+Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin'], function() {
 
     Route::get('/', [AdminController::class, 'index'])->name('home_admin');
 
@@ -86,7 +87,7 @@ Route::group(['prefix'=>''], function() {
     Route::get('cart/remove-item/{id}', [CartController::class, 'removeItem'])->name('cart.remove-item');
     Route::get('cart/remove-all', [CartController::class, 'removeAll'])->name('cart.remove-all');
 
-    Route::get('checkout', [ShopController::class, 'checkout'])->name('checkout');
+    Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
 
     Route::get('whishlist', [ShopController::class, 'whishlist'])->name('whishlist');
     Route::get('whishlist/add', [ShopController::class, 'add'])->name('whishlist.add');

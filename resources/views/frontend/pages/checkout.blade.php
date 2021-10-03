@@ -69,23 +69,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($items as $item)
                                     <tr>
-                                        <td>Lmao x 2</td>
-                                        <td>$5.00</td>
+                                        <td>{{$item['name']}}</td>
+                                        <td>{{toUsd($item['quantity']*$item['price'])}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Bru x 2</td>
-                                        <td>$5.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mlem x 2</td>
-                                        <td>$5.00</td>
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr class="cart-subtotal">
                                         <td>SUB TOTAL</td>
-                                        <td>$15.00</td>
+                                        <td>{{toUsd($totalPrice)}}</td>
                                     </tr>
                                     <tr class="cart-shopping">
                                         <td>SHIPPING</td>

@@ -665,6 +665,7 @@ button {
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.19);
     padding: 30px 22px 25px;
     text-align: left;
+    overflow: hidden;
 }
 
 .cart-popup .item-in-cart {
@@ -677,6 +678,10 @@ button {
 .cart-popup .item-list {
     float: left;
     width: 100%;
+    max-height: 270px;
+    overflow-y: scroll;
+    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    box-sizing: content-box; /* So the width will be 100% + 17px */
 }
 
 .cart-popup .box {

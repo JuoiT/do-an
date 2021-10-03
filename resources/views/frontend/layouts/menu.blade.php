@@ -31,19 +31,6 @@
                     </a>
                 </div>
                 <ul class="nav navbar-nav">
-<<<<<<< HEAD
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000') ? 'active' : ''}}">
-                        <a href="{{route('home')}}">Home</a>
-                    </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/product') ? 'active' : ''}}">
-                        <a href="{{route('product')}}">Shop</a>
-                    </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/blog') ? 'active' : ''}}">
-                        <a href="{{route('blog')}}">Blog</a>
-                    </li>
-                    <li class="{{(Request::url() === 'http://127.0.0.1:8000/contact') ? 'active' : ''}}">
-                        <a href="{{route('contact')}}">Contact</a>
-=======
                     <li class="{{ url()->current() == route('home') ? 'active' : '' }}">
                         <a href="{{ route('home') }}">Home</a>
                     </li>
@@ -55,7 +42,6 @@
                     </li>
                     <li class="{{ url()->current() == route('contact') ? 'active' : '' }}">
                         <a href="{{ route('contact') }}">Contact</a>
->>>>>>> 7ff1e57f491ca0eaefa04f5e985357262ac7182c
                     </li>
                 </ul>
             </div>
@@ -78,32 +64,6 @@
                 <div class="cart-popup">
                     <p class="item-in-cart">{{session()->has('cart.totalQuantity')?session('cart.totalQuantity'):'0'}} item(s) in your cart</p>
                     <div class="item-list">
-<<<<<<< HEAD
-                        <div class="box">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/cart-popup-img-1.jpg">
-                            </div>
-                            <div class="text-part">
-                                <a class="product-name">Lmao Mlem Lmao Mlem Lmao Mlem</a>
-                                <div class="quantity-and-price">1 x $2.000000000000000000000</div>
-                            </div>
-                            <a href="#" class="clear-btn">
-                                <i class="icon-cancel"></i>
-                            </a>
-                        </div>
-                        <div class="box">
-                            <div class="img-part">
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/cart-popup-img-2.jpg">
-                            </div>
-                            <div class="text-part">
-                                <a class="product-name">Bru Dak</a>
-                                <div class="quantity-and-price">2 x $4.00</div>
-                            </div>
-                            <a href="#" class="clear-btn">
-                                <i class="icon-cancel"></i>
-                            </a>
-                        </div>
-=======
                         @if (session()->has('cart.items'))
                             @foreach (session('cart.items') as $item)
                                 <div class="box cart-item-{{$item['product_id']}}">
@@ -123,7 +83,6 @@
                         @else
                             <span>Nothing here</span>
                         @endif
->>>>>>> 7ff1e57f491ca0eaefa04f5e985357262ac7182c
                     </div>
                     <div class="cart-total">
                         <span>Total: </span>

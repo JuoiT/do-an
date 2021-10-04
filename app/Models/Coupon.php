@@ -12,7 +12,7 @@ class Coupon extends Model
     use HasFactory, SoftDeletes, FilterableTrait;
 
     protected $table = "coupons";
-    protected $fillable = ['name', 'status', 'value', 'start_at', 'end_at', 'limit', 'description'];
+    protected $fillable = ['name', 'status', 'value', 'code', 'apply', 'start_at', 'end_at', 'limit', 'description'];
     protected $filterable = ['status'];
 
 

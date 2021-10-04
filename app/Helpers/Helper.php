@@ -14,7 +14,7 @@ if (!function_exists('formatDate')) {
 
 /**
  * Loại bỏ khoảng trắng thừa, ký tự đặc biệt khỏi chuối
- * @string 
+ * @string
  */
 if (!function_exists('trimm')){
     function trimm($string){
@@ -28,7 +28,7 @@ if (!function_exists('trimm')){
 
 /**
  * Chuyển giá sang tiền việt
- * @float 
+ * @float
  */
 if (!function_exists('toVnd')){
     function toVnd($price){
@@ -38,8 +38,8 @@ if (!function_exists('toVnd')){
 }
 
 /**
- * Chuyển giá sang tiền việt
- * @float 
+ * Chuyển giá sang Dola
+ * @float
  */
 if (!function_exists('toUsd')){
     function toUsd($price){
@@ -48,3 +48,5 @@ if (!function_exists('toUsd')){
     }
 }
 ?>
+
+

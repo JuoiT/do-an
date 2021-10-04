@@ -37,54 +37,32 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($items as $value)
                     <tr>
                         <td class="cart-image-wrapper">
                             <a href="#">
-                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-1.jpg" alt="">
+                                <img class="cart-image" src="{{url('upload-images')}}/{{$value['image']}}" alt="">
                             </a>
                         </td>
                         <td class="product-tit">
-                            <a href="#">Lmao</a>
+                            <a href="#">{{$value['name']}}</a>
                         </td>
                         <td class="price">
-                            <span class="money">$2.00</span>
+                            <span class="money">${{$value['price']}}</span>
                         </td>
                         <td>
                             <div class="qty">
-                                <input type="number" name="quantity" value="1" min="1">
+                                <input type="number" name="quantity" value="{{$value['quantity']}}" min="1">
                             </div>
                         </td>
-                        <td class="total">$2.00</td>
+                        <td class="total">${{$value['price'] * $value['quantity']}}</td>
                         <td class="cancle">
                             <a href="#">
                                 <i class="icon-cancel"></i>
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="cart-image-wrapper">
-                            <a href="#">
-                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-2.jpg" alt="">
-                            </a>
-                        </td>
-                        <td class="product-tit">
-                            <a href="#">Bru</a>
-                        </td>
-                        <td class="price">
-                            <span class="money">$3.00</span>
-                        </td>
-                        <td>
-                            <div class="qty">
-                                <input type="number" name="quantity" value="2" min="1">
-                            </div>
-                        </td>
-                        <td class="total">$6.00</td>
-                        <td class="cancle">
-                            <a href="#">
-                                <i class="icon-cancel"></i>
-                            </a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
@@ -98,7 +76,7 @@
                                 <a class="cancle-cart-btn" href="#">
                                     <i class="icon-cancel"></i>delete cart
                                 </a>
-                                <a class="update-cart-btn" href="#">
+                                <a class="update-cart-btn" href="{{route('cart.update')}}">
                                     <i class="icon-arrows-cw"></i>update cart
                                 </a>
                             </div>

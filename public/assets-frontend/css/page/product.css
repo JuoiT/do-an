@@ -361,6 +361,14 @@
     display: inline-block;
 }
 
+.wrapper .contain-wrapper .btn-part .cart button {
+    background-color: #fff;
+}
+
+.wrapper .contain-wrapper .btn-part .cart button:hover {
+    background-color: #88c442;
+}
+
 .btn-part i {
     transition: 0.3s all ease-in;
     -webkit-transition: 0.3s all ease-in;

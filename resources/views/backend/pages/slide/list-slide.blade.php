@@ -19,50 +19,48 @@
         <div class="col s12 m6 l8">
             <div class="card subscriber-list-card animate fadeRight">
                 <a class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow"
-                href="{{route('slide.create')}}">Thêm mới</a>
+                href="{{route('slide.create')}}">Add</a>
                 <div class="card-content pb-1">
 
                     {{-- Form filter --}}
                     <form class="" action=" {{ route('slide.index') }}" method="get">
                         @csrf
                         <div class="card-content pb-1">
-                            <h4 class="card-title mt-2">Lọc slide</h4>
+                            <h4 class="card-title mt-2">Filter slide</h4>
                             <div class="row">
                                 <div class="row">
                                     <div class="valign-wrapper col s6">
-                                        <div class="pr-3">Sắp xếp</div>
+                                        <div class="pr-3">Sort</div>
                                         <select id="field" class="input-field" name="orderBy">
                                             <option {{ session('filter.slides.orderBy') == 'created_at' ? 'selected' : '' }}
-                                                value="created_at">Ngày thêm</option>
+                                                value="created_at">Created date</option>
                                             <option {{ session('filter.slides.orderBy') == 'time' ? 'selected' : '' }}
-                                                value="time">Ngày hết hạn</option>
+                                                value="time">End</option>
                                             <option {{ session('filter.slides.orderBy') == 'name' ? 'selected' : '' }}
-                                                value="name">Tên sản phẩm</option>
-                                            <option {{session('filter.slides.orderBy')=='order_details_count'?'selected':''}}
-                                                value="order_details_count">Số lượng bán</option>
+                                                value="name">Name</option>
                                         </select>
                                         <select id="role" class="input-field" name="orderByRole">
                                             <option {{ session('filter.slides.orderByRole') == 'desc' ? 'selected' : '' }}
-                                                value="desc">Giảm dần</option>
+                                                value="desc">Decrease</option>
                                             <option {{ session('filter.slides.orderByRole') == 'asc' ? 'selected' : '' }}
-                                                value="asc">Tăng dần</option>
+                                                value="asc">Ascending</option>
                                         </select>
                                     </div>
                                     <div class="valign-wrapper col s3 offset-s3 mt-1">
                                         <label class="mt-1">
                                             <input type="checkbox" id="isShowTrash" value="true" name="trashed"
                                                 {{ session('filter.slides.trashed') == 'true' ? 'checked' : '' }} />
-                                            <span class="list-title">Xem thùng rác</span>
+                                            <span class="list-title">Trash</span>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="valign-wrapper col s4">
-                                        <div class="pr-3">Trạng thái</div>
+                                        <div class="pr-3">Status</div>
                                         <select id="status" class="input-field" name="status">
-                                            <option value="">Tất cả</option>
-                                            <option {{ session('filter.slides.status') == '1' ? 'selected' : '' }} value="1">Hiện</option>
-                                            <option {{ session('filter.slides.status') == '0' ? 'selected' : '' }} value="0">Ẩn</option>
+                                            <option value="">All</option>
+                                            <option {{ session('filter.slides.status') == '1' ? 'selected' : '' }} value="1">Exist</option>
+                                            <option {{ session('filter.slides.status') == '0' ? 'selected' : '' }} value="0">Hide</option>
                                         </select>
                                     </div>
                                     <div class="valign-wrapper col s8">
@@ -71,9 +69,9 @@
                                 </div>
                             </div>
 
-                        <button type="submit" class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">Lọc slide</button>
+                        <button type="submit" class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">Filter slide</button>
                     </form>
-                    <h4 class="card-title mb-0">Danh sách slide</h4>
+                    <h4 class="card-title mb-0">List slide</h4>
                 </div>
                 <table class="subscription-table responsive-table highlight">
                     @if (count($list_slide) > 0)
@@ -114,9 +112,9 @@
                                 </td>
                                 <td>
                                     @if($value->status==1)
-                                    <span class="badge green lighten-5 green-text text-accent-4">Hiện</span>
+                                    <span class="badge green lighten-5 green-text text-accent-4">Exist</span>
                                     @else
-                                    <span class="badge pink lighten-5 pink-text text-accent-2">Ẩn</span>
+                                    <span class="badge pink lighten-5 pink-text text-accent-2">Hide</span>
                                     @endif
                                 </td>
                                 <td>
@@ -140,7 +138,7 @@
                         @else
                             <tr>
                                 <div style="padding: 10px; text-align: center; font-size: 20px; color:rgb(155, 0, 0)">
-                                    Không tìm thấy bản ghi nào!
+                                    Nothing here!
                                 </div>
                             </tr>
                         @endif

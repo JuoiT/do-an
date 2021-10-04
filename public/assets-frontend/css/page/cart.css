@@ -100,6 +100,10 @@
     color: #fff;
 }
 
+.table .cart-image-wrapper {
+    width: 150px;
+}
+
 .table tfoot .l-part .continue-shopping-btn:hover i:before {
     color: #fff;
 }

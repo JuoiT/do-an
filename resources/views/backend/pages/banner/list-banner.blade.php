@@ -18,67 +18,67 @@
     <div class="row">
         <div class="col s12 m6 l8">
             <div class="card subscriber-list-card animate fadeRight">
-                <a class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow" href="{{route('banner.create')}}">Thêm mới</a>
+                <a class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow" href="{{route('banner.create')}}">Add</a>
                 <div class="card-content pb-1">
 
-{{-- Form filter --}}
-<form class="" action=" {{ route('banner.index') }}" method="get">
-    @csrf
-    <div class="card-content pb-1">
-        <h4 class="card-title mt-2">Lọc banner</h4>
-        <div class="row">
-            <div class="row">
-                <div class="valign-wrapper col s6">
-                    <div class="pr-3">Sắp xếp</div>
-                    <select id="field" class="input-field" name="orderBy">
-                        <option {{ session('filter.banners.orderBy') == 'created_at' ? 'selected' : '' }}
-                            value="created_at">Ngày thêm</option>
-                        <option {{ session('filter.banners.orderBy') == 'name' ? 'selected' : '' }}
-                            value="name">Tên sản phẩm</option>
-                        <option {{session('filter.banners.orderBy')=='order_details_count'?'selected':''}}
-                            value="order_details_count">Số lượng bán</option>
-                    </select>
-                    <select id="role" class="input-field" name="orderByRole">
-                        <option {{ session('filter.banners.orderByRole') == 'desc' ? 'selected' : '' }}
-                            value="desc">Giảm dần</option>
-                        <option {{ session('filter.banners.orderByRole') == 'asc' ? 'selected' : '' }}
-                            value="asc">Tăng dần</option>
-                    </select>
-                </div>
-                <div class="valign-wrapper col s3 offset-s3 mt-1">
-                    <label class="mt-1">
-                        <input type="checkbox" id="isShowTrash" value="true" name="trashed"
-                            {{ session('filter.banners.trashed') == 'true' ? 'checked' : '' }} />
-                        <span class="list-title">Xem thùng rác</span>
-                    </label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="valign-wrapper col s4">
-                    <div class="pr-3">Trạng thái</div>
-                    <select id="status" class="input-field" name="status">
-                        <option value="">Tất cả</option>
-                        <option {{ session('filter.banners.status') == '1' ? 'selected' : '' }} value="1">Hiện</option>
-                        <option {{ session('filter.banners.status') == '0' ? 'selected' : '' }} value="0">Ẩn</option>
-                    </select>
-                </div>
-                <div class="valign-wrapper col s4">
-                    <div class="pr-3">Vai trò</div>
-                    <select id="role" class="input-field" name="role">
-                        <option value="">Tất cả</option>
-                        <option {{ session('filter.banners.role') == '1' ? 'selected' : '' }} value="1">Sản phẩm</option>
-                        <option {{ session('filter.banners.role') == '0' ? 'selected' : '' }} value="0">Bài viết</option>
-                    </select>
-                </div>
-                <div class="valign-wrapper col s4">
-                    <input value="{{ session('filter.banners.name') }}" type="text" name="name" id="searchValue" placeholder="Search by name"/>
-                </div>
-            </div>
-        </div>
+                {{-- Form filter --}}
+                <form class="" action=" {{ route('banner.index') }}" method="get">
+                    @csrf
+                    <div class="card-content pb-1">
+                        <h4 class="card-title mt-2">Filter banner</h4>
+                        <div class="row">
+                            <div class="row">
+                                <div class="valign-wrapper col s6">
+                                    <div class="pr-3">Sort</div>
+                                    <select id="field" class="input-field" name="orderBy">
+                                        <option {{ session('filter.banners.orderBy') == 'created_at' ? 'selected' : '' }}
+                                            value="created_at">Created date</option>
+                                        <option {{ session('filter.banners.orderBy') == 'name' ? 'selected' : '' }}
+                                            value="name">Name</option>
+                                        <option {{session('filter.banners.orderBy')=='order_details_count'?'selected':''}}
+                                            value="order_details_count">Quantity</option>
+                                    </select>
+                                    <select id="role" class="input-field" name="orderByRole">
+                                        <option {{ session('filter.banners.orderByRole') == 'desc' ? 'selected' : '' }}
+                                            value="desc">Decrease</option>
+                                        <option {{ session('filter.banners.orderByRole') == 'asc' ? 'selected' : '' }}
+                                            value="asc">Ascending</option>
+                                    </select>
+                                </div>
+                                <div class="valign-wrapper col s3 offset-s3 mt-1">
+                                    <label class="mt-1">
+                                        <input type="checkbox" id="isShowTrash" value="true" name="trashed"
+                                            {{ session('filter.banners.trashed') == 'true' ? 'checked' : '' }} />
+                                        <span class="list-title">Trash</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="valign-wrapper col s4">
+                                    <div class="pr-3">Status</div>
+                                    <select id="status" class="input-field" name="status">
+                                        <option value="">All</option>
+                                        <option {{ session('filter.banners.status') == '1' ? 'selected' : '' }} value="1">Exist</option>
+                                        <option {{ session('filter.banners.status') == '0' ? 'selected' : '' }} value="0">Hide</option>
+                                    </select>
+                                </div>
+                                <div class="valign-wrapper col s4">
+                                    <div class="pr-3">Role</div>
+                                    <select id="role" class="input-field" name="role">
+                                        <option value="">All</option>
+                                        <option {{ session('filter.banners.role') == '1' ? 'selected' : '' }} value="1">Product</option>
+                                        <option {{ session('filter.banners.role') == '0' ? 'selected' : '' }} value="0">Blog</option>
+                                    </select>
+                                </div>
+                                <div class="valign-wrapper col s4">
+                                    <input value="{{ session('filter.banners.name') }}" type="text" name="name" id="searchValue" placeholder="Search by name"/>
+                                </div>
+                            </div>
+                        </div>
 
-    <button type="submit" class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">Lọc banner</button>
-</form>
-                    <h4 class="card-title mb-0">Danh sách banner</h4>
+                    <button type="submit" class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">Filter banner</button>
+                </form>
+                    <h4 class="card-title mb-0">List banner</h4>
                 </div>
                 <table class="subscription-table responsive-table highlight">
                     @if (count($list_banner) > 0)
@@ -119,9 +119,9 @@
                                 </td>
                                 <td>
                                     @if($value->status==1)
-                                    <span class="badge green lighten-5 green-text text-accent-4">Hiện</span>
+                                    <span class="badge green lighten-5 green-text text-accent-4">Exist</span>
                                     @else
-                                    <span class="badge pink lighten-5 pink-text text-accent-2">Ẩn</span>
+                                    <span class="badge pink lighten-5 pink-text text-accent-2">Hide</span>
                                     @endif
                                 </td>
                                 <td>
@@ -139,7 +139,7 @@
                         @else
                             <tr>
                                 <div style="padding: 10px; text-align: center; font-size: 20px; color:rgb(155, 0, 0)">
-                                    Không tìm thấy bản ghi nào!
+                                    Nothing here!
                                 </div>
                             </tr>
                         @endif

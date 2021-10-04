@@ -49,7 +49,14 @@ class UserController extends Controller
         $user = User::where([['email', $credentials['email']], ['password', $credentials['password']], ['role', 'customer']]);
         if ($user) {
             if (Auth::attempt($credentials, $remember)) {
-                return redirect()->back();
+                return redirect()->route('home');
+            }
+        }
+
+        $admin = User::where([['email', $credentials['email']], ['password', $credentials['password']], ['role', 'admin']]);
+        if ($admin) {
+            if (Auth::attempt($credentials, $remember)) {
+                return redirect()->route('admin.postLogin');
             }
         }
     }

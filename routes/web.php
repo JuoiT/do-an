@@ -66,8 +66,9 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin'], function() {
     Route::resource('coupon', CouponController::class);
 
 });
-Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
-Route::post('admin/login', [AdminController::class, 'postLogin'])->name('admin.login');
+
+
+Route::post('admin/login', [AdminController::class, 'postLogin'])->name('admin.postLogin');
 
 
 // Frontend
@@ -98,8 +99,10 @@ Route::group(['prefix'=>''], function() {
 
     Route::get('register', [UserController::class, 'register'])->name('register');
     Route::post('register', [UserController::class, 'postRegister'])->name('post_register');
+
     Route::get('login', [UserController::class, 'login'])->name('login');
     Route::post('login', [UserController::class, 'postLogin'])->name('post_login');
+
     Route::get('logout', [UserController::class, 'logout'])->name('logout');
 
     Route::get('blog', [ShopController::class, 'blog'])->name('blog');

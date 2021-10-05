@@ -86,9 +86,11 @@
                 @endfor
             @endif
             @if ($page != $totalPage)
-                <li onClick="filter({{ $page + 1 }})" class="next" aria-controls="" id="p-next"><button
-                        style="outline: none" class="btn"><i class="fa fa-angle-right"
-                            aria-hidden="true"></i></button></li>
+                <li onClick="filter({{ $page + 1 }})" class="next" aria-controls="" id="p-next">
+                    <button style="outline: none" class="btn">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </button>
+                </li>
             @endif
         </ul>
     </div>

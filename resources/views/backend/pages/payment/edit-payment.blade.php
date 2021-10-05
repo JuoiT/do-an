@@ -14,7 +14,7 @@
         <div class="col s12 m6 l8">
             <div id="placeholder" class="card card card-default scrollspy">
                 <div class="card-content">
-                    <h4 class="card-title">Sửa thông tin phương thức thanh toán</h4>
+                    <h4 class="card-title">Edit payment</h4>
                     <form action="{{route('payment.update', $payment->id)}}" method="POST">
                         @method('PUT')
                         @csrf
@@ -36,13 +36,13 @@
                                 <p>
                                     <label>
                                         <input name="status" type="radio" value="1" {{($payment->status == 1) ? 'checked' : ''}}/>
-                                        <span>Còn</span>
+                                        <span>Available</span>
                                     </label>
                                 </p>
                                 <p>
                                     <label>
                                         <input name="status" type="radio" value="0" {{($payment->status == 0) ? 'checked' : ''}}/>
-                                        <span>Hết</span>
+                                        <span>Unavailable</span>
                                     </label>
                                 </p>
                                 @if($errors->has('status'))

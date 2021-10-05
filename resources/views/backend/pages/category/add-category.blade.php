@@ -14,7 +14,7 @@
         <div class="col s12 m6 l8">
             <div id="placeholder" class="card card card-default scrollspy">
                 <div class="card-content">
-                    <h4 class="card-title">Thêm mới danh mục</h4>
+                    <h4 class="card-title">Add category</h4>
                     <form action="{{route('category.index')}}" method="POST">
                         @csrf
 
@@ -34,13 +34,13 @@
                                 <p>
                                     <label>
                                         <input name="status" type="radio" value="1" checked />
-                                        <span>Còn</span>
+                                        <span>Available</span>
                                     </label>
                                 </p>
                                 <p>
                                     <label>
                                         <input name="status" type="radio" value="0" />
-                                        <span>Hết</span>
+                                        <span>Unavailable</span>
                                     </label>
                                 </p>
                                 @if($errors->has('status'))

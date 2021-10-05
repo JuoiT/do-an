@@ -20,11 +20,11 @@ class AuthAdmin
     public function handle(Request $request, Closure $next, ...$guards)
     {
         if (!Auth::check()) {
-            return redirect()->route('admin.login');
+            return redirect()->route('login');
         } else {
             // check role, role == admin is accepted
             if (Auth::user()->role != 'admin') {
-                return redirect()->route('admin.login');
+                return redirect()->route('login');
             }
 
             return $next($request);

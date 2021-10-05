@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Coupon\AddCouponRequest;
+use App\Http\Requests\Coupon\EditCouponRequest;
 use App\Models\Coupon;
 use Illuminate\Http\Request;
 
@@ -42,9 +44,16 @@ class CouponController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AddCouponRequest $request)
     {
-        //
+        $coupon = Coupon::create($request->all());
+        if ($coupon) {
+            toast('Thêm coupon thành công!','success');
+            return redirect()->route('coupon.index');
+        } else {
+            toast('Thêm mới coupon thất bại!','error');
+            return redirect()->back();
+        }
     }
 
     /**
@@ -66,7 +75,8 @@ class CouponController extends Controller
      */
     public function edit($id)
     {
-        //
+        $coupon = Coupon::find($id);
+        return view('backend.pages.coupon.edit-coupon', compact('coupon'));
     }
 
     /**
@@ -76,9 +86,17 @@ class CouponController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditCouponRequest $request, $id)
     {
-        //
+        $coupon = Coupon::find($id);
+        $coupon->update($request->all());
+        if ($coupon) {
+            toast('Sửa coupon thành công!','success');
+            return redirect()->route('coupon.index');
+        } else {
+            toast('Sửa coupon thất bại!!','error');
+            return redirect()->back();
+        }
     }
 
     /**
@@ -89,6 +107,16 @@ class CouponController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $coupon = Coupon::find($id);
+        $coupon->delete();
+        return redirect()->route('coupon.index')->with('success', 'Xóa coupon thành công!');
+    }
+
+    public function restore($id)
+    {
+        $coupon = Coupon::onlyTrashed()->find($id);
+        $coupon->restore();
+
+        return redirect(route('coupon.index'))->with('success', 'Khôi phục coupon thành công!');
     }
 }

@@ -18,9 +18,9 @@
     <div class="row">
         <div class="col s12 m6 l8">
             <div class="card subscriber-list-card animate fadeRight">
-                <a class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow" href="{{route('blog.create')}}">Thêm mới</a>
+                <a class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow" href="{{route('blog.create')}}">Add</a>
                 <div class="card-content pb-1">
-                    <h4 class="card-title mb-0">Danh sách blog</h4>
+                    <h4 class="card-title mb-0">List blog</h4>
                 </div>
                 <table class="subscription-table responsive-table highlight">
                     <thead>
@@ -60,9 +60,9 @@
                             </td>
                             <td>
                                 @if($value->status==1)
-                                <span class="badge green lighten-5 green-text text-accent-4">Còn</span>
+                                <span class="badge green lighten-5 green-text text-accent-4">Available</span>
                                 @else
-                                <span class="badge pink lighten-5 pink-text text-accent-2">Hết</span>
+                                <span class="badge pink lighten-5 pink-text text-accent-2">Unavailable</span>
                                 @endif
                             </td>
                             <td>

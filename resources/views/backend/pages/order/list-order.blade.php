@@ -19,7 +19,7 @@
         <div class="col s12 m6 l8">
             <div class="card subscriber-list-card animate fadeRight">
                 <div class="card-content pb-1">
-                    <h4 class="card-title mb-0">Danh sách order</h4>
+                    <h4 class="card-title mb-0">List order</h4>
                 </div>
                 <table class="subscription-table responsive-table highlight">
                     <thead>

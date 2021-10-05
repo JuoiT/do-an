@@ -30,7 +30,7 @@ var x = location.href;
         <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin') ? 'active' : ''}} bold">
             <a class="waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin') ? 'active' : ''}}" href="{{route('home_admin')}}">
                 <i class="material-icons">home</i>
-                <span class="menu-title" data-i18n="Chat">Trang chủ</span>
+                <span class="menu-title" data-i18n="Chat">Home</span>
             </a>
         </li>
 
@@ -39,20 +39,20 @@ var x = location.href;
         <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/category'|Request::url() === 'http://127.0.0.1:8000/admin/category/create') ? 'active' : ''}} bold">
             <a class="collapsible-header waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin/category'|Request::url() === 'http://127.0.0.1:8000/admin/category/create') ? 'active' : ''}}" href="JavaScript:void(0)">
                 <i class="material-icons">settings_input_svideo</i>
-                <span class="menu-title" data-i18n="Dashboard">Danh mục</span>
+                <span class="menu-title" data-i18n="Dashboard">Category</span>
             </a>
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/category') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/category') ? 'active' : ''}}" href="{{route('category.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách danh mục</span>
+                            <span data-i18n="Modern">List category</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/category/create') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/category/create') ? 'active' : ''}}" href="{{route('category.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Thêm mới danh mục</span>
+                            <span data-i18n="Modern">Add category</span>
                         </a>
                     </li>
                 </ul>
@@ -64,20 +64,20 @@ var x = location.href;
         <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/product'|Request::url() === 'http://127.0.0.1:8000/admin/product/create') ? 'active' : ''}} bold">
             <a class="collapsible-header waves-effect waves-cyan {{(Request::url() === 'http://127.0.0.1:8000/admin/product'|Request::url() === 'http://127.0.0.1:8000/admin/product/create') ? 'active' : ''}}" href="JavaScript:void(0)">
                 <i class="material-icons">dvr</i>
-                <span class="menu-title" data-i18n="Templates">Sản phẩm</span>
+                <span class="menu-title" data-i18n="Templates">Product</span>
             </a>
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/product') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/product') ? 'active' : ''}}" href="{{route('product.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách sản phẩm</span>
+                            <span data-i18n="Modern">List product</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/product/create') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/product/create') ? 'active' : ''}}" href="{{route('product.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="eCommerce">Thêm mới sản phẩm</span>
+                            <span data-i18n="eCommerce">Add product</span>
                         </a>
                     </li>
                 </ul>
@@ -96,7 +96,7 @@ var x = location.href;
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/user') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/user') ? 'active' : ''}}" href="{{route('user.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách khách hàng</span>
+                            <span data-i18n="Modern">List user</span>
                         </a>
                     </li>
                 </ul>
@@ -115,13 +115,13 @@ var x = location.href;
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner') ? 'active' : ''}}" href="{{route('banner.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách banner</span>
+                            <span data-i18n="Modern">List banner</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner/create') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/banner/create') ? 'active' : ''}}" href="{{route('banner.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="eCommerce">Thêm mới banner</span>
+                            <span data-i18n="eCommerce">Add banner</span>
                         </a>
                     </li>
                 </ul>
@@ -140,13 +140,13 @@ var x = location.href;
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide') ? 'active' : ''}}" href="{{route('slide.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách slide</span>
+                            <span data-i18n="Modern">List slide</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide/create') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/slide/create') ? 'active' : ''}}" href="{{route('slide.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="eCommerce">Thêm mới slide</span>
+                            <span data-i18n="eCommerce">Add slide</span>
                         </a>
                     </li>
                 </ul>
@@ -165,13 +165,13 @@ var x = location.href;
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog') ? 'active' : ''}}" href="{{route('blog.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách blogs</span>
+                            <span data-i18n="Modern">List blogs</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog/create') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/blog/create') ? 'active' : ''}}" href="{{route('blog.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="eCommerce">Thêm mới blog</span>
+                            <span data-i18n="eCommerce">Add blog</span>
                         </a>
                     </li>
                 </ul>
@@ -190,13 +190,13 @@ var x = location.href;
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/ship') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/ship') ? 'active' : ''}}" href="{{route('ship.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách ships</span>
+                            <span data-i18n="Modern">List ships</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/ship/create') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/ship/create') ? 'active' : ''}}" href="{{route('ship.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="eCommerce">Thêm mới ship</span>
+                            <span data-i18n="eCommerce">Add ship</span>
                         </a>
                     </li>
                 </ul>
@@ -215,13 +215,13 @@ var x = location.href;
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/payment') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/payment') ? 'active' : ''}}" href="{{route('payment.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách payments</span>
+                            <span data-i18n="Modern">List payments</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/payment/create') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/payment/create') ? 'active' : ''}}" href="{{route('payment.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="eCommerce">Thêm mới payment</span>
+                            <span data-i18n="eCommerce">Add payment</span>
                         </a>
                     </li>
                 </ul>
@@ -240,13 +240,13 @@ var x = location.href;
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/coupon') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/coupon') ? 'active' : ''}}" href="{{route('coupon.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách coupons</span>
+                            <span data-i18n="Modern">List coupons</span>
                         </a>
                     </li>
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/coupon/create') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/coupon/create') ? 'active' : ''}}" href="{{route('coupon.create')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="eCommerce">Thêm mới coupon</span>
+                            <span data-i18n="eCommerce">Add coupon</span>
                         </a>
                     </li>
                 </ul>
@@ -265,7 +265,7 @@ var x = location.href;
                     <li class="{{(Request::url() === 'http://127.0.0.1:8000/admin/order') ? 'active' : ''}}">
                         <a class="{{(Request::url() === 'http://127.0.0.1:8000/admin/order') ? 'active' : ''}}" href="{{route('order.index')}}">
                             <i class="material-icons">radio_button_unchecked</i>
-                            <span data-i18n="Modern">Danh sách order</span>
+                            <span data-i18n="Modern">List order</span>
                         </a>
                     </li>
                 </ul>

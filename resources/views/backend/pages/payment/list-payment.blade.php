@@ -21,9 +21,9 @@
         <div class="col s12 m6 l8">
             <div class="card subscriber-list-card animate fadeRight">
                 <a class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow"
-                    href="{{route('payment.create')}}">Thêm mới</a>
+                    href="{{route('payment.create')}}">Add</a>
                 <div class="card-content pb-1">
-                    <h4 class="card-title mb-0">Danh sách phương thức thanh toán</h4>
+                    <h4 class="card-title mb-0">List payment</h4>
                 </div>
                 <table class="subscription-table responsive-table highlight">
                     <thead>
@@ -39,9 +39,9 @@
                             <td>{{$value->name}}</td>
                             <td>
                                 @if($value->status==1)
-                                <span class="badge green lighten-5 green-text text-accent-4">Còn</span>
+                                <span class="badge green lighten-5 green-text text-accent-4">Available</span>
                                 @else
-                                <span class="badge pink lighten-5 pink-text text-accent-2">Hết</span>
+                                <span class="badge pink lighten-5 pink-text text-accent-2">Unavailable</span>
                                 @endif
                             </td>
                             <td><a href="{{route('payment.edit', $value->id)}}"><i class="badge green lighten-5 material-icons green-text">edit_note</i></a>
@@ -49,9 +49,7 @@
                                     @method('DELETE')
                                     @csrf
                                     <input type="hidden" value="{{$value->id}}">
-                                    <button title="move to trash" style="border: none !important; padding: 0"
-                                                        class="badge pink lighten-5 material-icons pink-text"
-                                                        type="submit">clear</button>
+                                    <button title="move to trash" style="border: none !important; padding: 0" class="badge pink lighten-5 material-icons pink-text" type="submit">clear</button>
                                 </form>
                             </td>
                         </tr>

@@ -13,7 +13,7 @@
         <div class="col s12 m6 l8">
             <div id="placeholder" class="card card card-default scrollspy">
                 <div class="card-content">
-                    <h4 class="card-title">Thêm mới banner</h4>
+                    <h4 class="card-title">Add banner</h4>
                     <form action="{{route('banner.index')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
@@ -49,7 +49,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <label class="active">Vai trò</label>
+                                <label class="active">Role</label>
                                 <p>
                                     <label>
                                         <input name="role" type="radio" value="1"/>
@@ -74,13 +74,13 @@
                                 <p>
                                     <label>
                                         <input name="status" type="radio" value="1" checked />
-                                        <span>Hiện</span>
+                                        <span>Exist</span>
                                     </label>
                                 </p>
                                 <p>
                                     <label>
                                         <input name="status" type="radio" value="0" />
-                                        <span>Ẩn</span>
+                                        <span>Hide</span>
                                     </label>
                                 </p>
                                 @if($errors->has('status'))

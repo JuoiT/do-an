@@ -31,18 +31,34 @@
                         <form class="account-form-login" method="POST" action="{{ route('post_login') }}">
                             @csrf
 
+                            <input type="hidden" name="previousUrl" value="{{url()->previous()}}">
+
                             <h2 class="text-left text-capitalize">Login</h2>
 
                             <div class="input-field">
                                 <label class="name-input" for="email">Email</label>
+<<<<<<< HEAD
                                 <input type="text" name="email" class="form-control required" placeholder="Your Email"/>
                                 <small class="asterisk_input">Lmao</small>
+=======
+                                <input type="text" name="email" class="form-control required" placeholder="Your Email" />
+                                @if ($errors->has('email'))
+                                    <small class="asterisk_input">{{ $errors->first('email') }}</small>
+                                @endif
+>>>>>>> 94aa2b2076858aa675fcfd89267398ee5964a8db
                             </div>
 
                             <div class="input-field">
                                 <label class="name-input" for="password">Password</label>
+<<<<<<< HEAD
                                 <input type="text" name="password" class="form-control required" placeholder="Password"/>
                                 <small class="asterisk_input">Lmao</small>
+=======
+                                <input type="password" name="password" class="form-control required" placeholder="Password" />
+                                @if ($errors->has('password'))
+                                <small class="asterisk_input">{{ $errors->first('password') }}</small>
+                            @endif
+>>>>>>> 94aa2b2076858aa675fcfd89267398ee5964a8db
                             </div>
 
                             <div class="input-field">
@@ -56,6 +72,11 @@
                                     <a> Forgot your Password</a>
                                 </label>
                             </div>
+<<<<<<< HEAD
+=======
+
+                            <small>Don't have an account?<a style="color: green" href="{{route('register')}}"> Register now</a></small>
+>>>>>>> 94aa2b2076858aa675fcfd89267398ee5964a8db
 
                             <button type="submit">LOGIN</button>
 
@@ -71,7 +92,7 @@
 
 @section('script')
     <script src="{{ url('assets-frontend') }}/js/login-register.js"></script>
-    <script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+    <script src="{{ url('assets-frontend') }}/js/jquery.event.move.js"></script>
     <script>
         $("#phone").hide();
 

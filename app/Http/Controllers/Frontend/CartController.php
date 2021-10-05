@@ -6,6 +6,7 @@ use App\Helpers\Cart;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+Use Alert;
 
 class CartController extends Controller
 {
@@ -27,7 +28,6 @@ class CartController extends Controller
     public function update(Request $req, Cart $cart)
     {
         $cart->update($req->product_id, $req->quantity);
-        return redirect()->back();
     }
 
     public function removeItem($id)
@@ -39,6 +39,8 @@ class CartController extends Controller
 
     public function removeAll(Cart $cart)
     {
+        
         $cart->removeAll();
+        return redirect()->back();
     }
 }

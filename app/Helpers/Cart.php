@@ -26,19 +26,21 @@ class Cart
             'quantity' => $quantity,
             'image' => $product->image
         ];
-
+        
         if (isset($this->items[$product->id])) {
             $this->items[$product->id]['quantity'] += $quantity;
         } else {
             $this->items[$product->id] = $item;
         }
         $this->updateCart();
+        toast('Added '.$product->name.' to cart!', 'success');
     }
 
     public function update($product_id, $quantity)
     {
         $this->items[$product_id]['quantity'] = $quantity;
         $this->updateCart();
+        toast('Cart has been updated!', 'success');
     }
 
     public function getTotalPrice()
@@ -69,12 +71,14 @@ class Cart
     {
         unset($this->items[$product_id]);
         $this->updateCart();
+        toast('Removed!', 'success');
     }
 
     public function removeAll()
     {
         $this->items = [];
         $this->updateCart();
+        toast('Removed all items from cart!', 'success');
     }
 
     public function updateCart()

@@ -25,13 +25,10 @@
                     <thead>
                         <tr>
                             <th>STT</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Address</th>
+                            <th>Infomation</th>
                             <th>Total Amount</th>
-                            <th>Date</th>
+                            <th>Role</th>
                             <th>Status</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,29 +38,30 @@
                                 {{$loop->index+1}}
                             </td>
                             <td>
-                                {{$value->user->name}}
-                            </td>
-                            <td>
+                                {{$value->name}}
+                                <br>
                                 {{$value->phone}}
-                            </td>
-                            <td>
+                                <br>
                                 {{$value->address}}
                             </td>
                             <td>
-                                {{number_format($value->total_amount)}} đ
+                                {{toUsd($value->total_amount)}}
                             </td>
                             <td>
-                                {{$value->created_at}}
+                                {{$value->role}}
                             </td>
                             <td>
                                 @if($value->status==1)
+<<<<<<< HEAD
                                 <span class="badge green lighten-5 green-text text-accent-4">Activate</span>
                                 @else
                                 <span class="badge pink lighten-5 pink-text text-accent-2">Inactivate</span>
+=======
+                                <span class="badge green lighten-5 green-text text-accent-4">Active</span>
+                                @else
+                                <span class="badge pink lighten-5 pink-text text-accent-2">Inactive</span>
+>>>>>>> 94aa2b2076858aa675fcfd89267398ee5964a8db
                                 @endif
-                            </td>
-                            <td>
-                                <a href="{{route('user.show', $value->id)}}" class="badge green lighten-5 green-text text-accent-4">Detail</a>
                             </td>
                         </tr>
                         @endforeach

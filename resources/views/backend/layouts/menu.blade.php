@@ -4,7 +4,7 @@ var x = location.href;
 <aside class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-light sidenav-active-square">
     <div class="brand-sidebar">
         <h1 class="logo-wrapper">
-            <a class="brand-logo darken-1" href="index.html">
+            <a class="brand-logo darken-1" href="{{route('home_admin')}}">
                 <img class="hide-on-med-and-down" src="{{url('assets-backend')}}/images/logo/materialize-logo-color.png" alt="materialize logo" />
                 <img class="show-on-medium-and-down hide-on-med-and-up" src="{{url('assets-backend')}}/images/logo/materialize-logo.png" alt="materialize logo" />
                 <span class="logo-text hide-on-med-and-down">Brủh Lmao</span>

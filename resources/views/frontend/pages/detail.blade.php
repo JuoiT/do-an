@@ -330,11 +330,6 @@
                                                             <div class="new-price">{{ toUsd($item->price) }}</div>
                                                         </div>
                                                     @endif
-
-                                                    <div class="btn-part">
-                                                        <a href="{{ route('cart') }}" class="cart-btn">buy now</a>
-                                                        <i class="icon-shopping-basket"></i>
-                                                    </div>
                                                 </div>
                                                 <div class="wrapper-box-hover">
                                                     <div class="text">
@@ -345,14 +340,19 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="{{ route('detail', 1) }}">
+                                                                <a href="{{ route('detail', $item->id) }}">
                                                                     <i class="icon-eye"></i>
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <a href="{{ route('cart') }}">
-                                                                    <i class="icon-shopping-basket"></i>
-                                                                </a>
+                                                                <form action="{{route('cart.add')}}" method="GET">
+                                                                    @csrf
+                                                                    <input type="hidden" name="product_id" value="{{ $item->id }}">
+                                                                    <input type="hidden" name="quantity" value="1">
+                                                                    <div class="cart">
+                                                                        <button type="submit" style="border: none; background: none"><a><i class="icon-shopping-basket"></i></a></button>
+                                                                    </div>
+                                                                </form>
                                                             </li>
                                                         </ul>
                                                     </div>

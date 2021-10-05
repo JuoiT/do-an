@@ -3,5 +3,5 @@
 @include('frontend.layouts.menu')
 
 @yield('main')
-
+@include('sweetalert::alert')
 @include('frontend.layouts.footer')

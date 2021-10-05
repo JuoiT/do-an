@@ -19,7 +19,7 @@ var x = location.href;
         <!-- Chuyển đến cửa hàng -->
 
         <li class="bold">
-            <a class="waves-effect waves-cyan" href="#" onclick="openInNewTab('{{route('home')}}')">
+            <a class="waves-effect waves-cyan" href="{{route('home')}}" onclick="openInNewTab('')">
                 <i class="material-icons">storefront</i>
                 <span class="menu-title" data-i18n="Chat">Shop</span>
             </a>

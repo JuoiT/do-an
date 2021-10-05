@@ -41,6 +41,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin'], function() {
     Route::get('/', [AdminController::class, 'index'])->name('home_admin');
     Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 
+    Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+
     Route::resource('category', CategoryController::class);
     Route::get('/category-restore/{id}', [CategoryController::class, 'restore'])->name('category-restore');
 
@@ -91,6 +93,7 @@ Route::group(['prefix'=>''], function() {
     Route::get('cart/remove-all', [CartController::class, 'removeAll'])->name('cart.remove-all');
 
     Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
+    // Route::get('checkout/coupon', [CheckoutController::class, 'coupon'])->name('checkout.coupon');
     Route::post('checkout', [CheckoutController::class, 'submit'])->name('checkout');
 
     Route::get('whishlist', [ShopController::class, 'whishlist'])->name('whishlist');

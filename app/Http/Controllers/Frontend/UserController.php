@@ -41,12 +41,6 @@ class UserController extends Controller
     public function postLogin(LoginRequest $req)
     {
         $remember = $req->remember;
-<<<<<<< HEAD
-        if ($req->has('email')) {
-            $credentials = $req->only('email', 'password');
-        } else {
-            $credentials = $req->only('phone', 'password');
-=======
         $credentials = $req->only('email', 'password');
 
         $user = User::where('email', $credentials['email'])
@@ -71,7 +65,6 @@ class UserController extends Controller
         } else {
             toast('Login failed, can\'t find your account!', 'error');
             return redirect()->route('login');
->>>>>>> 94aa2b2076858aa675fcfd89267398ee5964a8db
         }
     }
 

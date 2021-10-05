@@ -578,7 +578,7 @@
                 <div class="switch">
                     Footer Dark
                     <label class="float-right">
-                        <input class="footer-dark-checkbox" type="checkbox"/>
+                        <input class="footer-dark-checkbox" type="checkbox" />
                         <span class="lever ml-0"></span>
                     </label>
                 </div>
@@ -598,7 +598,8 @@
     <div class="footer-copyright">
         <div class="container">
             <span>&copy; 2020
-                <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PIXINVENT</a>All rights reserved.
+                <a href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PIXINVENT</a>All
+                rights reserved.
             </span><span class="right hide-on-small-only">Design and Developed by
                 <a href="https://pixinvent.com/">PIXINVENT</a>
             </span>
@@ -633,7 +634,18 @@
     function openInNewTab(url) {
         window.open(url, '_blank').focus();
     }
+
+    M.toast({
+        html: {{ Session::get('message') }},
+        classes: 'rounded'
+    });
 </script>
+
+@if (Session::has('message'))
+    <div class="alert">
+        {{ Session::get('message') }}
+    </div>
+@endif
 
 @include('sweetalert::alert')
 

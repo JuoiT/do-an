@@ -152,7 +152,7 @@
                         </div>
                         {{-- end top seller --}}
 
-                        <div class="widget tag-widgwet">
+                        {{-- <div class="widget tag-widgwet">
                             <div class="widget-tit">
                                 <h2>Popular tags</h2>
                                 <div class="button" data-toggle="collapse" data-target="#tag">
@@ -169,7 +169,7 @@
                                     <a class="tag-btn" href="#">Bru</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </aside>
                 <div class="col-md-8 col-sm-12 col-xs-12 wow fadeInRight">

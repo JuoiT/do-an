@@ -56,7 +56,7 @@
                                         <div class="qty">
                                             <input type="number" dataId="{{ $item['product_id'] }}" class="quantity-field"
                                                 id="qtt-{{ $item['product_id'] }}" name="quantity"
-                                                value={{ $item['quantity'] }} min="0">
+                                                value={{ $item['quantity'] }} min=1>
                                         </div>
                                     </td>
                                     <td class="total">{{ $item['quantity'] * $item['price'] }}</td>
@@ -72,7 +72,7 @@
                             <tr>
                                 <td colspan="6">
                                     <div class="l-part">
-                                        <a class="continue-shopping-btn" href="#">Continue Shopping
+                                        <a class="continue-shopping-btn" href="{{ route('product') }}">Continue Shopping
                                             <i class="icon-right"></i>
                                         </a>
                                     </div>
@@ -119,7 +119,7 @@
                 </div>
             </div>
         @else
-            <h2>Nothing here! <a href="{{route('product')}}"></a></h2>
+            <h2>Nothing here! <a style="color: green" href="{{route('product')}}">Shopping now!</a></h2>
         @endif
     </div>
 
@@ -134,6 +134,9 @@
             $('.quantity-field').on('change', function() {
                 id = this.id.split('-')[1];
                 value = this.value;
+                if (value < 1) {
+                    value = 1;
+                }
                 console.log(id);
 
                 $.ajax({
@@ -147,7 +150,9 @@
 
                     success: function(data) {
                         console.log('updated');
-                        // console.log(data);
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 1000);
                     },
                     error: function(data) {
                         console.log(data);

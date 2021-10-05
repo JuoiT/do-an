@@ -31,31 +31,39 @@
                         <form class="account-form-login" method="POST" action="{{ route('post_login') }}">
                             @csrf
 
+                            <input type="hidden" name="previousUrl" value="{{url()->previous()}}">
+
                             <h2 class="text-left text-capitalize">Login</h2>
 
-                        <div class="input-field">
-                            <label class="name-input" for="email">Email</label>
-                            <input type="text" name="email" class="form-control required" placeholder="Your Email"/>
-                            <small class="asterisk_input">Lmao</small>
-                        </div>
+                            <div class="input-field">
+                                <label class="name-input" for="email">Email</label>
+                                <input type="text" name="email" class="form-control required" placeholder="Your Email" />
+                                @if ($errors->has('email'))
+                                    <small class="asterisk_input">{{ $errors->first('email') }}</small>
+                                @endif
+                            </div>
 
-                        <div class="input-field">
-                            <label class="name-input" for="password">Password</label>
-                            <input type="text" name="password" class="form-control required" placeholder="Password"/>
-                            <small class="asterisk_input">Lmao</small>
-                        </div>
+                            <div class="input-field">
+                                <label class="name-input" for="password">Password</label>
+                                <input type="password" name="password" class="form-control required" placeholder="Password" />
+                                @if ($errors->has('password'))
+                                <small class="asterisk_input">{{ $errors->first('password') }}</small>
+                            @endif
+                            </div>
 
-                        <div class="input-field">
-                            <label class="pull">
-                                <input name="" type="checkbox">
-                                <a> Remember me</a>
-                            </label>
+                            <div class="input-field">
+                                <label class="pull">
+                                    <input name="" type="checkbox">
+                                    <a> Remember me</a>
+                                </label>
 
-                            <label class="pull pull-right">
-                                <input name="" type="checkbox">
-                                <a> Forgot your Password</a>
-                            </label>
-                        </div>
+                                <label class="pull pull-right">
+                                    <input name="" type="checkbox">
+                                    <a> Forgot your Password</a>
+                                </label>
+                            </div>
+
+                            <small>Don't have an account?<a style="color: green" href="{{route('register')}}"> Register now</a></small>
 
                             <button type="submit">LOGIN</button>
 
@@ -71,7 +79,7 @@
 
 @section('script')
     <script src="{{ url('assets-frontend') }}/js/login-register.js"></script>
-    <script src="{{url('assets-frontend')}}/js/jquery.event.move.js"></script>
+    <script src="{{ url('assets-frontend') }}/js/jquery.event.move.js"></script>
     <script>
         $("#phone").hide();
 

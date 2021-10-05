@@ -92,6 +92,8 @@
                                     placeholder="Repeat Password" required="required" />
                             </div>
 
+                            <small>Already have an account?<a style="color: green" href="{{route('login')}}"> Login now</a></small>
+
                             <button type="submit">Register</button>
 
                         </form>

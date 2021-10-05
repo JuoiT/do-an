@@ -16,6 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
+            $table->string('name', 255)->unsigned();
+            $table->string('phone', 255)->unsigned();
+            $table->string('email', 255)->unsigned();
+            $table->string('address', 255)->unsigned();
             $table->bigInteger('payment_id')->unsigned();
             $table->bigInteger('ship_id')->unsigned();
             $table->bigInteger('coupon_id')->unsigned()->nullable();
@@ -23,6 +27,7 @@ class CreateOrdersTable extends Migration
             $table->integer('quantity')->unsigned();
             $table->tinyInteger('status')->default(1);
             $table->text('description')->nullable();
+
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('payment_id')->references('id')->on('payments');
             $table->foreign('ship_id')->references('id')->on('ships');

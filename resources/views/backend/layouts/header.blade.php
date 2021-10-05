@@ -70,7 +70,7 @@
                         <li>
                             <a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown">
                                 <span class="avatar-status avatar-online">
-                                    <img alt="avatar">
+                                    <img src="{{url('upload-avatars')}}/{{Auth::user()->avatar}}" alt="avatar">
                                 </span>
                             </a>
                         </li>
@@ -166,7 +166,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="grey-text text-darken-1" href="">
+                            <a class="grey-text text-darken-1" href="{{route('logout')}}">
                                 <i class="material-icons">keyboard_tab</i>Logout
                             </a>
                         </li>

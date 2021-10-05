@@ -511,7 +511,7 @@
 
 .related-product-slider .wrapper .contain-wrapper {
     padding: 0 20px 38px;
-    min-height: 198px;
+    /* min-height: 198px; */
 }
 
 .related-product-slider .wrapper .contain-wrapper .tit {

@@ -25,13 +25,10 @@
                     <thead>
                         <tr>
                             <th>STT</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Address</th>
+                            <th>Infomation</th>
                             <th>Total Amount</th>
-                            <th>Date</th>
+                            <th>Role</th>
                             <th>Status</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,29 +38,24 @@
                                 {{$loop->index+1}}
                             </td>
                             <td>
-                                {{$value->user->name}}
-                            </td>
-                            <td>
+                                {{$value->name}}
+                                <br>
                                 {{$value->phone}}
-                            </td>
-                            <td>
+                                <br>
                                 {{$value->address}}
                             </td>
                             <td>
-                                {{number_format($value->total_amount)}} đ
+                                {{toUsd($value->total_amount)}}
                             </td>
                             <td>
-                                {{$value->created_at}}
+                                {{$value->role}}
                             </td>
                             <td>
                                 @if($value->status==1)
-                                <span class="badge green lighten-5 green-text text-accent-4">Đã hoàn thành</span>
+                                <span class="badge green lighten-5 green-text text-accent-4">Active</span>
                                 @else
-                                <span class="badge pink lighten-5 pink-text text-accent-2">Chưa hoàn thành</span>
+                                <span class="badge pink lighten-5 pink-text text-accent-2">Inactive</span>
                                 @endif
-                            </td>
-                            <td>
-                                <a href="{{route('user.show', $value->id)}}" class="badge green lighten-5 green-text text-accent-4">Detail</a>
                             </td>
                         </tr>
                         @endforeach

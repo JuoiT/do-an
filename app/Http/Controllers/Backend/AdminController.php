@@ -22,9 +22,14 @@ class AdminController extends Controller
     {
         $auth = Auth::attempt($req->only('email', 'password'));
         if ($auth) {
-            return redirect()->route('home_admin');
+            return redirect()->route('home_admin')->with('message', Auth::user()->name);
         } else {
             return redirect()->back();
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
     }
 }

@@ -115,7 +115,7 @@ select.form-control option {
 }
 
 .checkout-info button[type="submit"] {
-    float: left;
+    text-align: right;
     border: 1px solid #549843;
     background: #fff;
     height: 52px;
@@ -127,7 +127,6 @@ select.form-control option {
     border-radius: 5px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    margin-top: 48px;
 }
 
 .checkout-info button[type="submit"]:hover,
@@ -254,4 +253,46 @@ select.form-control option {
     font-size: 10px;
     font-family: 'fontello';
     color: #424242;
+}
+
+
+.coupon {
+    float: left;
+    width: 100%;
+    background: #d9d5d2;
+    padding: 30px 40px 25px;
+    margin-bottom: 44px;
+}
+
+.coupon label {
+    font-size: 24px;
+    color: #5a4a3b;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin: 0;
+    line-height: 52px;
+}
+
+.coupon .coupon_text {
+    margin: 0 18px;
+    line-height: 46px;
+    border: 3px solid #fff;
+    background: transparent;
+    padding: 0 15px;
+    width: calc(100% - 440px);
+}
+
+.coupon .coupon-btn {
+    padding: 0 80px;
+    background: #5a4a3b;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 46px;
+    border: 3px solid transparent;
+}
+
+.coupon .coupon-btn:hover {
+    background: #549843;
 }

@@ -11,9 +11,9 @@
         <nav class="navbar">
             <div class="nav-header">
                 <button type="button" class="navbar-toggle">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 <div class="logo">
                     <a href="{{ route('home') }}">
@@ -26,8 +26,8 @@
                     <i class="icon-cancel"></i>
                 </div>
                 <div class="menu-logo">
-                    <a href="{{route('home')}}">
-                        <img src="{{url('assets-frontend')}}/images/logo.png" />
+                    <a href="{{ route('home') }}">
+                        <img src="{{ url('assets-frontend') }}/images/logo.png" />
                     </a>
                 </div>
                 <ul class="nav navbar-nav">
@@ -59,29 +59,34 @@
                     <a href="#">
                         <i class="icon-shopping-basket"></i>
                     </a>
-                    <div class="cart-counter">{{session('cart.totalQuantity')}}</div>
+                    @if (session()->has('cart.items'))
+                        <div class="cart-counter">{{ session('cart.totalQuantity') }}</div>
+                    @endif
                 </div>
                 <div class="cart-popup">
-                    <p class="item-in-cart">{{session()->has('cart.totalQuantity')?session('cart.totalQuantity'):'0'}} item(s) in your cart</p>
+                    <p class="item-in-cart">
+                        {{ session()->has('cart.totalQuantity') ? session('cart.totalQuantity') : '0' }} item(s) in your
+                        cart</p>
                     <div class="item-list">
                         @if (session()->has('cart.items'))
                             @foreach (session('cart.items') as $item)
-                                <div class="box cart-item-{{$item['product_id']}}">
+                                <div class="box cart-item-{{ $item['product_id'] }}">
                                     <div class="img-part">
                                         <img class="img-responsive" style="width: 100px"
-                                            src="{{ url('upload-images') }}/{{$item['image']}}">
+                                            src="{{ url('upload-images') }}/{{ $item['image'] }}">
                                     </div>
                                     <div class="text-part">
-                                        <a class="product-name" href="{{route('detail', $item['product_id'])}}">{{$item['name']}}</a>
-                                        <div class="quantity-and-price"><span>{{$item['quantity']}} x {{toUsd($item['price'])}}</span></div>
+                                        <a class="product-name"
+                                            href="{{ route('detail', $item['product_id']) }}">{{ $item['name'] }}</a>
+                                        <div class="quantity-and-price"><span>{{ $item['quantity'] }} x
+                                                {{ toUsd($item['price']) }}</span></div>
                                     </div>
-                                    <a href="{{route('cart.remove-item', $item['product_id'])}}" class="clear-btn" title="Remove this">
+                                    <a href="{{ route('cart.remove-item', $item['product_id']) }}"
+                                        class="clear-btn" title="Remove this">
                                         <i class="icon-cancel"></i>
                                     </a>
                                 </div>
                             @endforeach
-                        @else
-                            <span>Nothing here</span>
                         @endif
                     </div>
                     <div class="cart-total">

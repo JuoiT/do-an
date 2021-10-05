@@ -9,16 +9,16 @@
     <meta name="author" content="">
     <title>Organic Foodstore</title>
     <!-- Library -->
-    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/bootstrap.min.css"/>
-    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/fontello.css"/>
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/fontello.css" />
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/owl.carousel.min.css">
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/library/animate.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- End library -->
     <!-- Layout -->
-    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/page/respon.css"/>
-    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/page/layout.css"/>
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/page/respon.css" />
+    <link rel="stylesheet" href="{{ url('assets-frontend') }}/css/page/layout.css" />
     <!-- End layout -->
     <!-- Font -->
     <link rel="stylesheet"
@@ -107,7 +107,7 @@
                 </div> -->
                 <div class="account">
                     <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                        <i class="icon-user-o"></i>My Account
+                        <i class="icon-user-o"></i>{{ Auth::user() ? Auth::user()->name : 'My Account' }}
                         <i class="icon-angle-down"></i>
                     </div>
                     <ul class="dropdown-menu">

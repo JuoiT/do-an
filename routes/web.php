@@ -16,6 +16,7 @@ use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\DetailController;
 use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\WhishlistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -92,8 +93,9 @@ Route::group(['prefix'=>''], function() {
     Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
     Route::post('checkout', [CheckoutController::class, 'submit'])->name('checkout');
 
-    Route::get('whishlist', [ShopController::class, 'whishlist'])->name('whishlist');
-    Route::get('whishlist/add', [ShopController::class, 'add'])->name('whishlist.add');
+    Route::get('whishlist', [WhishlistController::class, 'index'])->name('whishlist');
+    Route::get('whishlist/add', [WhishlistController::class, 'add'])->name('whishlist.add');
+    Route::get('whishlist/remove', [WhishlistController::class, 'remove'])->name('whishlist.remove');
 
     Route::get('my_account', [ShopController::class, 'my_account'])->name('my_account');
 

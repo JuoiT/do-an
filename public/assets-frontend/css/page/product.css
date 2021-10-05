@@ -586,13 +586,13 @@
 /* Begin product */
 
 .product-list {
-    float: left;
+    /* float: left; */
     width: 100%
 }
 
-.product-list .col-sm-4:nth-child(3n+1) {
+/* .product-list .col-sm-4:nth-child(3n+1) {
     clear: both
-}
+} */
 
 .product-list .wrapper {
     margin-bottom: 30px;

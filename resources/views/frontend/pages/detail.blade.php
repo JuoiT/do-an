@@ -85,7 +85,7 @@
                                     @endif
                                 </div>
                                 <div class="cart-process">
-                                    <form action="{{route('cart.add')}}" method="GET">
+                                    <form action="{{ route('cart.add') }}" method="GET">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         <div class="qty">
@@ -107,9 +107,17 @@
                                     <div class="extra">
                                         <ul class="list-inline">
                                             <li>
-                                                <a href="#">
-                                                    <i class="icon-heart"></i>
-                                                </a>
+                                                @if (isFavorited($product->id))
+                                                    <a
+                                                        href="{{ route('whishlist.remove') . '?product_id=' . $product->id }}">
+                                                        <i style="color: red" class="icon-heart"></i>
+                                                    </a>
+                                                @else
+                                                    <a
+                                                        href="{{ route('whishlist.add') . '?product_id=' . $product->id }}">
+                                                        <i class="icon-heart"></i>
+                                                    </a>
+                                                @endif
                                             </li>
                                             {{-- <li>
                                                 <a href="#">
@@ -251,10 +259,10 @@
                                                     <div class="comment-section">
                                                         @foreach ($comments as $comment)
                                                             <div class="media media-review">
-                                                                <div class="media-body">
+                                                                <div class="media-body" style="border-left: 5px solid rgb(116, 197, 116)">
                                                                     <div class="M-flex">
                                                                         <div class="media-user"><img
-                                                                                src="https://i.imgur.com/nUNhspp.jpg"
+                                                                                src="{{url('upload-avatars').'/'.$comment->user->avatar}}"
                                                                                 alt="">
                                                                         </div>
                                                                         <div>
@@ -281,7 +289,7 @@
                                                                             </h2>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="description">{{ $comment->content }}
+                                                                    <div class="description" style="padding-left: 93px"><p>{{ $comment->content }}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -335,9 +343,17 @@
                                                     <div class="text">
                                                         <ul>
                                                             <li>
-                                                                <a href="{{ route('whishlist') }}">
-                                                                    <i class="icon-heart-empty"></i>
-                                                                </a>
+                                                                @if (isFavorited($item->id))
+                                                                    <a
+                                                                        href="{{ route('whishlist.remove') . '?product_id=' . $item->id }}">
+                                                                        <i style="color: red" class="icon-heart"></i>
+                                                                    </a>
+                                                                @else
+                                                                    <a
+                                                                        href="{{ route('whishlist.add') . '?product_id=' . $item->id }}">
+                                                                        <i class="icon-heart"></i>
+                                                                    </a>
+                                                                @endif
                                                             </li>
                                                             <li>
                                                                 <a href="{{ route('detail', $item->id) }}">
@@ -345,12 +361,15 @@
                                                                 </a>
                                                             </li>
                                                             <li>
-                                                                <form action="{{route('cart.add')}}" method="GET">
+                                                                <form action="{{ route('cart.add') }}" method="GET">
                                                                     @csrf
-                                                                    <input type="hidden" name="product_id" value="{{ $item->id }}">
+                                                                    <input type="hidden" name="product_id"
+                                                                        value="{{ $item->id }}">
                                                                     <input type="hidden" name="quantity" value="1">
                                                                     <div class="cart">
-                                                                        <button type="submit" style="border: none; background: none"><a><i class="icon-shopping-basket"></i></a></button>
+                                                                        <button type="submit"
+                                                                            style="border: none; background: none"><a><i
+                                                                                    class="icon-shopping-basket"></i></a></button>
                                                                     </div>
                                                                 </form>
                                                             </li>

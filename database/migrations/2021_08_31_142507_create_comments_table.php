@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('blog_id')->unsigned()->nullable();
             $table->bigInteger('product_id')->unsigned()->nullable();
+            $table->tityInteger('rating')->unsigned()->nullable();
             $table->string('content', 2000);
             $table->tinyInteger('status')->default(1);
             $table->foreign('user_id')->references('id')->on('users');

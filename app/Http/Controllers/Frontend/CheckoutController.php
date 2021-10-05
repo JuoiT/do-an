@@ -17,14 +17,14 @@ class CheckoutController extends Controller
         $totalPrice = $cart->getTotalPrice();
 
         $ships = $ship->all();
-        $shipDefault = $ships[1];   
+        $shipDefault = $ships[0];   
         if ($request->has('ship_id')) {
             $shipDefault = $ship->find($request->ship_id);
         }
         
         $payments = $payment->all();
 
-        $paymentDefault = $payment[1];
+        $paymentDefault = $payment[0];
         if ($request->has('payment_id')) {
             $paymentDefault = $payment->find($request->payment_id);
         }

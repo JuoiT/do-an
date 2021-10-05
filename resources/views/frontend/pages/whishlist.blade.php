@@ -3,6 +3,7 @@
 @section('main')
 
 <link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/whishlist.css">
+<link rel="stylesheet" href="{{url('assets-frontend')}}/css/page/product.css">
 
 <section class="sub-banner wow fadeInUp">
     <img class="banner" src="{{url('assets-frontend')}}/images/cart-page-banner.jpg">
@@ -14,126 +15,110 @@
                 <li>
                     <a href="{{route('home')}}">Home</a>
                 </li>
-                <li>Shoping Cart</li>
+                <li>Whishlist</li>
             </ul>
-            <h1 class="page-tit">Shoping Cart</h1>
+            <h1 class="page-tit">Whishlist</h1>
         </div>
     </div>
 </section>
 
 <div class="content-part whishlist-page">
     <div class="container">
-        <div class="table-responsive">
-            <table class="table table-hover table-responsive wow fadeInUp">
-                <thead>
-                    <tr>
-                        <th class="product">PRODUCT</th>
-                        <th class="name">Name</th>
-                        <th class="price">Price</th>
-                        <th class="quantity">Status</th>
-                        <th class="total">Add to cart</th>
-                        <th class="cancle"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="cart-image-wrapper">
-                            <a href="#">
-                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-1.jpg" alt="">
+        @if (count($favs) > 0)
+        {{-- show list favs --}}
+        <div id="favs" class="product-list list-group row">
+            @foreach ($favs as $product)
+                <div class="col-md-3 col-sm-4 col-xs-12 wow fadeInUp item">
+                    <div class="wrapper">
+                        <div class="pro-img">
+                            <a href="{{ route('detail', $product->product->id) }}">
+                                <img style="height: 200px;" class="img-responsive"
+                                    src="{{ url('upload-images') . '/' . $product->product->image }}" />
                             </a>
-                        </td>
-                        <td class="product-tit">
-                            <a href="#">Lmao</a>
-                        </td>
-                        <td class="price">
-                            <span class="money">$2.00</span>
-                        </td>
-                        <td>
-                            In stock
-                        </td>
-                        <td class="total">
-                            <a class="add-to-cart" href="#">Add to cart</a>
-                        </td>
-                        <td class="cancle">
-                            <a href="#">
-                                <i class="icon-cancel"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cart-image-wrapper">
-                            <a href="#">
-                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-2.jpg" alt="">
-                            </a>
-                        </td>
-                        <td class="product-tit">
-                            <a href="#">Bru</a>
-                        </td>
-                        <td class="price">
-                            <span class="money">$2.00</span>
-                        </td>
-                        <td>
-                            In stock
-                        </td>
-                        <td class="total">
-                            <a class="add-to-cart" href="#">Add to cart</a>
-                        </td>
-                        <td class="cancle">
-                            <a href="#">
-                                <i class="icon-cancel"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cart-image-wrapper">
-                            <a href="#">
-                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-3.jpg" alt=""></a>
-                            </td>
-                        <td class="product-tit">
-                            <a href="#">Dảk</a>
-                        </td>
-                        <td class="price">
-                            <span class="money">$2.00</span>
-                        </td>
-                        <td>
-                            In stock
-                        </td>
-                        <td class="total">
-                            <a class="add-to-cart" href="#">Add to cart</a>
-                        </td>
-                        <td class="cancle">
-                            <a href="#">
-                                <i class="icon-cancel"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cart-image-wrapper">
-                            <a href="#">
-                                <img class="cart-image" src="{{url('assets-frontend')}}/images/cart-img-4.jpg" alt="">
-                            </a>
-                        </td>
-                        <td class="product-tit">
-                            <a href="#">Mlem</a>
-                        </td>
-                        <td class="price">
-                            <span class="money">$2.00</span>
-                        </td>
-                        <td>
-                            In stock
-                        </td>
-                        <td class="total">
-                            <a class="add-to-cart" href="#">Add to cart</a>
-                        </td>
-                        <td class="cancle">
-                            <a href="#">
-                                <i class="icon-cancel"></i>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                        </div>
+                        <div class="contain-wrapper">
+                            <div class="tit pt-2">
+                                <a href="{{ route('detail', $product->product->id) }}">{{ $product->product->name }}</a>
+                            </div>
+                            <div class="ratting">
+                                <ul>
+                                    @for ($i = 0; $i < (floor($product->product->comments->avg('rating'))); $i++)
+                                        <li>
+                                            <img class="img-responsive"
+                                                src="{{ url('assets-frontend') }}/images/green-star-2.png">
+                                        </li>
+            @endfor
+            @for ($i = 5; $i > (floor($product->product->comments->avg('rating'))); $i--)
+            <li>
+                <img class="img-responsive" src="{{ url('assets-frontend') }}/images/dark-star-2.png">
+            </li>
+    @endfor
+    </ul>
+    </div>
+    <div class="price">
+        @if ($product->product->sale_price > 0)
+            <div class="new-price">{{ toUsd($product->product->sale_price) }}</div>
+            <div class="old-price">
+                <del>{{ toUsd($product->product->price) }}</del>
+            </div>
+        @else
+            <div class="new-price">{{ toUsd($product->product->price) }}</div>
+        @endif
+    </div>
+    <div class="btn-part">
+        <form action="{{ route('cart.add') }}" method="GET">
+            @csrf
+            <input type="hidden" name="product_id" value="{{ $product->product->id }}">
+            <input type="hidden" name="quantity" value="1">
+            <div class="cart">
+                <button type="submit" class="cart-btn">Buy now</button>
+            </div>
+        </form>
+        <i class="icon-shopping-basket"></i>
+    </div>
+    @if (isFavorited($product->product->id))
+        <div class="btn-part">
+            <form action="{{ route('whishlist.remove') }}" method="GET">
+                @csrf
+                <input type="hidden" name="product_id" value="{{ $product->product->id }}">
+                <div class="cart">
+                    <button type="submit" class="cart-btn">Whishlist</button>
+                </div>
+            </form>
+            <i style="color: red" class="icon-heart"></i>
         </div>
+    @else
+        <div class="btn-part">
+            <form action="{{ route('whishlist.add') }}" method="GET">
+                @csrf
+                <input type="hidden" name="product_id" value="{{ $product->product->id }}">
+                <div class="cart">
+                    <button type="submit" class="cart-btn">Whishlist</button>
+                </div>
+            </form>
+            <i class="icon-heart"></i>
+        </div>
+    @endif
+    </div>
+    @if ($product->product->sale_price > 0)
+        <div class="sale">sale</div>
+    @endif
+    </div>
+    </div>
+    @endforeach
+    </div>
+    {{-- end show list products --}}
+    
+    {{-- pagination --}}
+    {{ $favs->links() }}
+    {{-- end pagination --}}
+    
+    @else
+    <div class="text-center">
+        <span>Không tìm thấy sản phẩm nào</span>
+    </div>
+    @endif
+    
     </div>
 </div>
 

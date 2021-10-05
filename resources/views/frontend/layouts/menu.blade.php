@@ -5,7 +5,7 @@
                 <a href="{{ route('whishlist') }}">
                     <i class="icon-heart-empty"></i>
                 </a>
-                <div class="vishlist-counter">01</div>
+                <div class="vishlist-counter">{{countFavorited()}}</div>
             </div>
         </div>
         <nav class="navbar">

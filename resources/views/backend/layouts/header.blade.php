@@ -144,12 +144,12 @@
                     </ul>
                     <!-- profile-dropdown-->
                     <ul class="dropdown-content" id="profile-dropdown">
-                        <!-- <li>
+                        <li>
                             <a class="grey-text text-darken-1" href="user-profile-page.html">
                                 <i class="material-icons">person_outline</i>Profile
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="grey-text text-darken-1" href="app-chat.html">
                                 <i class="material-icons">chat_bubble_outline</i>Chat
                             </a>

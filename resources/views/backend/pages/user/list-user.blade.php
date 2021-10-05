@@ -19,7 +19,7 @@
         <div class="col s12 m6 l8">
             <div class="card subscriber-list-card animate fadeRight">
                 <div class="card-content pb-1">
-                    <h4 class="card-title mb-0">Danh sách khách hàng</h4>
+                    <h4 class="card-title mb-0">List custommer</h4>
                 </div>
                 <table class="subscription-table responsive-table highlight">
                     <thead>
@@ -57,9 +57,9 @@
                             </td>
                             <td>
                                 @if($value->status==1)
-                                <span class="badge green lighten-5 green-text text-accent-4">Đã hoàn thành</span>
+                                <span class="badge green lighten-5 green-text text-accent-4">Activate</span>
                                 @else
-                                <span class="badge pink lighten-5 pink-text text-accent-2">Chưa hoàn thành</span>
+                                <span class="badge pink lighten-5 pink-text text-accent-2">Inactivate</span>
                                 @endif
                             </td>
                             <td>
@@ -69,19 +69,19 @@
                         @endforeach
                     </tbody>
                 </table>
-                <!-- <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
-                    if($list_user->currentPage() != 1)
-                    <a href="($list_user->previousPageUrl())" class=" paginate_button previous" aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
+                <div class="dataTables_paginate paging_simple_numbers" id="data-table-contact_paginate">
+                    @if($list_user->currentPage() != 1)
+                    <a href="{{$list_user->previousPageUrl()}}" class=" paginate_button previous" aria-controls="data-table-contact" id="data-table-contact_previous">Previous</a>
                     <span>
-                    endif
-                    for($i=1; $i<=$list_user->lastpage(); $i++)
-                        <a href="($list_user->url($i))" class="($i == $list_user->currentPage() ? 'current' : 'd-none') paginate_button" aria-controls="data-table-contact" >($i)</a>
-                    endfor
-                    if($list_user->currentPage() != $list_user->lastpage())
+                    @endif
+                    @for($i=1; $i<=$list_user->lastpage(); $i++)
+                        <a href="{{$list_user->url($i)}}" class="{{$i == $list_user->currentPage() ? 'current' : 'd-none'}} paginate_button" aria-controls="data-table-contact" >{{$i}}</a>
+                    @endfor
+                    @if($list_user->currentPage() != $list_user->lastpage())
                     </span>
-                    <a href="($list_user->nextPageUrl())" class=" paginate_button next" aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
-                    endif
-                </div> -->
+                    <a href="{{$list_user->nextPageUrl()}}" class=" paginate_button next" aria-controls="data-table-contact" id="data-table-contact_next">Next</a>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

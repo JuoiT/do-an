@@ -66,6 +66,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin'], function() {
 });
 
 
+Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
 Route::post('admin/login', [AdminController::class, 'postLogin'])->name('admin.postLogin');
 
 

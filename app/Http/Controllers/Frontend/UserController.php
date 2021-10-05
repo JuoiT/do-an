@@ -45,20 +45,6 @@ class UserController extends Controller
         } else {
             $credentials = $req->only('phone', 'password');
         }
-
-        $user = User::where([['email', $credentials['email']], ['password', $credentials['password']], ['role', 'customer']]);
-        if ($user) {
-            if (Auth::attempt($credentials, $remember)) {
-                return redirect()->route('home');
-            }
-        }
-
-        $admin = User::where([['email', $credentials['email']], ['password', $credentials['password']], ['role', 'admin']]);
-        if ($admin) {
-            if (Auth::attempt($credentials, $remember)) {
-                return redirect()->route('admin.postLogin');
-            }
-        }
     }
 
     public function logout(Request $req)

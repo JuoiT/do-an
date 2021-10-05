@@ -33,29 +33,29 @@
 
                             <h2 class="text-left text-capitalize">Login</h2>
 
-                        <div class="input-field">
-                            <label class="name-input" for="email">Email</label>
-                            <input type="text" name="email" class="form-control required" placeholder="Your Email"/>
-                            <small class="asterisk_input">Lmao</small>
-                        </div>
+                            <div class="input-field">
+                                <label class="name-input" for="email">Email</label>
+                                <input type="text" name="email" class="form-control required" placeholder="Your Email"/>
+                                <small class="asterisk_input">Lmao</small>
+                            </div>
 
-                        <div class="input-field">
-                            <label class="name-input" for="password">Password</label>
-                            <input type="text" name="password" class="form-control required" placeholder="Password"/>
-                            <small class="asterisk_input">Lmao</small>
-                        </div>
+                            <div class="input-field">
+                                <label class="name-input" for="password">Password</label>
+                                <input type="text" name="password" class="form-control required" placeholder="Password"/>
+                                <small class="asterisk_input">Lmao</small>
+                            </div>
 
-                        <div class="input-field">
-                            <label class="pull">
-                                <input name="" type="checkbox">
-                                <a> Remember me</a>
-                            </label>
+                            <div class="input-field">
+                                <label class="pull">
+                                    <input name="" type="checkbox">
+                                    <a> Remember me</a>
+                                </label>
 
-                            <label class="pull pull-right">
-                                <input name="" type="checkbox">
-                                <a> Forgot your Password</a>
-                            </label>
-                        </div>
+                                <label class="pull pull-right">
+                                    <input name="" type="checkbox">
+                                    <a> Forgot your Password</a>
+                                </label>
+                            </div>
 
                             <button type="submit">LOGIN</button>
 

@@ -104,11 +104,20 @@
                                                 </tr>
                                                 <tr class="cart-shopping">
                                                     <td>SHIPPING</td>
-                                                    <td>{{ toUsd($shipDefault->price) }}</td>
+                                                    @if($couponValue>0)
+                                                        <td>{{ toUsd('0') }}</td>
+                                                    @else
+                                                        <td>{{ toUsd($shipDefault->price) }}</td>
+                                                    @endif
                                                 </tr>
                                                 <tr class="cart-total">
                                                     <td>TOTAL</td>
-                                                    <td>{{ toUsd($totalPrice + $shipDefault->price) }}</td>
+                                                    @if($couponValue!=0)
+                                                        <td>{{ toUsd($totalPrice + $shipDefault->price - $couponValue) }}</td>
+                                                    @else
+                                                        <td>{{ toUsd($totalPrice + $shipDefault->price) }}</td>
+                                                    @endif
+                                                    <input type="hidden" name="total" value="{{ $totalPrice + $shipDefault->price }}">
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -116,8 +125,8 @@
                                 </div>
                                 <div class="coupon wow fadeInUp">
                                     <label>Coupon Code</label>
-                                    <input class="coupon_text" type="text" name="coupon" />
-                                    <button class="coupon-btn">Apply</button>
+                                    <input class="coupon_text" type="text" id="coupon-value" name="coupon" value="{{old('coupon')}}"/>
+                                    <button class="coupon-btn" type="button" id="apply-coupon">Apply</button>
                                 </div>
                             </div>
                             <button type="submit">PLACE ORDER</button>
@@ -141,4 +150,30 @@
 @section('script')
     <script src="{{ url('assets-frontend') }}/js/check-out.js"></script>
     <script src="{{ url('assets-frontend') }}/js/jquery.event.move.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#apply-coupon').on('click', function () {
+                couponValue = $('#coupon-value').val();
+                console.log(couponValue);
+
+                $.ajax({
+                    type: "GET",
+                    url: 'checkout',
+                    data: {
+                        _token: "{{ csrf_token() }}",
+                        coupon: couponValue,
+                    },
+
+                    success: function(data) {
+                        console.log(data);
+                        document.write(data);
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

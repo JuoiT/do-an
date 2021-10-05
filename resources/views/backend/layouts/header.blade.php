@@ -45,7 +45,7 @@
                         <ul class="search-list collection display-none"></ul>
                     </div>
                     <ul class="navbar-list right">
-                        <li class="dropdown-language">
+                        <!-- <li class="dropdown-language">
                             <a class="waves-effect waves-block waves-light translation-button" href="#" data-target="translation-dropdown">
                                 <span class="flag-icon flag-icon-gb"></span>
                             </a>
@@ -66,7 +66,7 @@
                                     <small class="notification-badge">5</small>
                                 </i>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown">
                                 <span class="avatar-status avatar-online">
@@ -81,7 +81,7 @@
                         </li>
                     </ul>
                     <!-- translation-button-->
-                    <ul class="dropdown-content" id="translation-dropdown">
+                    <!-- <ul class="dropdown-content" id="translation-dropdown">
                         <li class="dropdown-item">
                             <a class="grey-text text-darken-1" href="#!" data-language="en">
                                 <i class="flag-icon flag-icon-gb"></i>English
@@ -102,9 +102,9 @@
                                 <i class="flag-icon flag-icon-de"></i>German
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <!-- notifications-dropdown-->
-                    <ul class="dropdown-content" id="notifications-dropdown">
+                    <!-- <ul class="dropdown-content" id="notifications-dropdown">
                         <li>
                             <h6>NOTIFICATIONS
                                 <span class="new badge">5</span>
@@ -141,15 +141,15 @@
                             </a>
                             <time class="media-meta grey-text darken-2" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
                         </li>
-                    </ul>
+                    </ul> -->
                     <!-- profile-dropdown-->
                     <ul class="dropdown-content" id="profile-dropdown">
-                        <!-- <li>
-                            <a class="grey-text text-darken-1" href="user-profile-page.html">
+                        <li>
+                            <a class="grey-text text-darken-1" href="{{route('profile')}}">
                                 <i class="material-icons">person_outline</i>Profile
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="grey-text text-darken-1" href="app-chat.html">
                                 <i class="material-icons">chat_bubble_outline</i>Chat
                             </a>

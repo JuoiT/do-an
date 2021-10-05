@@ -632,7 +632,7 @@
                     <div class="text">
                         <div class="date">{{$value->created_at}}</div>
                         <div class="title">
-                            <a href="#">{{$value->name}}</a>
+                            <a href="{{$value->link}}">{{$value->name}}</a>
                         </div>
                     </div>
                 </div>

@@ -255,7 +255,6 @@ select.form-control option {
     color: #424242;
 }
 
-
 .coupon {
     float: left;
     width: 100%;
@@ -279,7 +278,7 @@ select.form-control option {
     border: 3px solid #fff;
     background: transparent;
     padding: 0 15px;
-    width: calc(100% - 440px);
+    width: calc(100% - 250px);
 }
 
 .coupon .coupon-btn {

@@ -13,6 +13,11 @@ class AdminController extends Controller
         return view('backend.pages.home');
     }
 
+    public function profile()
+    {
+        return view('backend.pages.profile');
+    }
+
     public function login()
     {
         return view('backend.pages.login');

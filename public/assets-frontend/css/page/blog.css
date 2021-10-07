@@ -332,10 +332,12 @@ h2.blog-header {
 }
 
 .blog .blog-info ul li:first-child {
+    width: 45%;
     padding-left: 0;
 }
 
 .blog .blog-info ul li:last-child {
+    width: 55%;
     padding-right: 0;
 }
 

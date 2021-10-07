@@ -7,7 +7,9 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Slide;
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\Favorite;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -85,11 +87,6 @@ class ShopController extends Controller
         return view('frontend.pages.whishlist');
     }
 
-    public function my_account()
-    {
-        return view('frontend.pages.my-account');
-    }
-
     public function register()
     {
         return view('frontend.pages.register');
@@ -102,12 +99,16 @@ class ShopController extends Controller
 
     public function blog()
     {
-        return view('frontend.pages.blog');
+        $list_blog = Blog::orderBy('created_at', 'ASC')->paginate(config("const.record"));
+        $new_blog = Blog::orderBy('created_at', 'ASC')->limit(3)->get();
+        return view('frontend.pages.blog', compact('list_blog', 'new_blog'));
     }
 
-    public function blog_detail()
+    public function blog_detail($id)
     {
-        return view('frontend.pages.blog-detail');
+        $blog_detail = Blog::find($id);
+        $new_blog = Blog::orderBy('created_at', 'ASC')->limit(3)->get();
+        return view('frontend.pages.blog-detail', compact('blog_detail', 'new_blog'));
     }
 
     public function contact()

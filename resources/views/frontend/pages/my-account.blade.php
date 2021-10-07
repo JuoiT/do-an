@@ -13,12 +13,16 @@
                     <div class="my-account">
                         <div class="avatar">
                             <a href="#">
-                                <img src="{{url('assets-frontend')}}/images/blog-9.jpg" alt="">
+                                @if(Auth::user())
+                                <img src="{{url('upload-avatars')}}/{{Auth::user()->avatar}}" alt="">
+                                @endif
                             </a>
                         </div>
                         <div class="content">
                             <div class="name-info">
-                                <p>Luan nv</p>
+                                @if(Auth::user())
+                                <p>{{Auth::user()->name}}</p>
+                                @endif
                             </div>
                             <!-- <div class="edit-info">
                                 <a href="">
@@ -39,11 +43,11 @@
                                     <i class="icon-doc-text"></i>Order
                                 </button>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <button class="btn" onclick="filterSelection('notification')">
                                     <i class="icon-bell"></i>Notification
                                 </button>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -57,38 +61,44 @@
                         <div class="info">
                             <div class="my-info">
 
-                                <form class="account-form">
+                                <form class="account-form" method="POST" action="{{route('update_user')}}" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="hidden" name="id"value="{{Auth::user()->id}}"/>
 
-                                    <input type="text" name="name" class="form-control required" placeholder="Your Name" required="required"/>
+                                    <input type="text" name="name" class="form-control required" placeholder="Your Name" required="required" value="{{Auth::user()->name}}"/>
                                     <span class="asterisk_input"></span>
 
-                                    <input type="text" name="email" class="form-control required" placeholder="Your Email" required="required"/>
+                                    <input type="hidden" name="email" class="form-control required" placeholder="Your Email" required="required" value="{{Auth::user()->email}}"/>
                                     <span class="asterisk_input"></span>
 
-                                    <input type="text" name="phone" class="form-control required" placeholder="Your Phone Number" required="required"/>
+                                    <input type="text" name="phone" class="form-control required" placeholder="Your Phone Number" required="required" value="{{Auth::user()->phone}}"/>
                                     <span class="asterisk_input"></span>
 
-                                    <input type="text" name="password" class="form-control required" placeholder="Password" required="required"/>
+                                    <input type="text" name="address" class="form-control required" placeholder="Your Address" required="required" value="{{Auth::user()->address}}"/>
                                     <span class="asterisk_input"></span>
 
-                                    <input type="text" name="repassword" class="form-control required" placeholder="Repeat Password" required="required"/>
+                                    <input type="password" name="password" class="form-control required" placeholder="Password" required="required" value=""/>
                                     <span class="asterisk_input"></span>
 
                                     <button type="submit">SAVE</button>
-
-                                    </form>
+                                </form>
 
                             </div>
                             <div class="my-avatar">
                                 <div class="avatar">
                                     <div class="avatar-img">
-                                        <img src="{{url('assets-frontend')}}/images/blog-9.jpg" alt="">
+                                        <img src="{{url('upload-avatars')}}/{{Auth::user()->avatar}}" alt="">
                                     </div>
                                     <div class="edit-avatar">
-                                        <input type="file" name="file" id="file" class="inputfile"/>
-                                        <label for="file">Choose a file</label>
+                                        <form action="{{route('update_user')}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" name="id"value="{{Auth::user()->id}}"/>
 
-                                        <button type="submit">Submit</button>
+                                            <input type="file" name="avatar" id="avatar" class="inputfile"/>
+                                            <label for="avatar">Choose a file</label>
+
+                                            <button type="submit">Submit</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -559,7 +569,7 @@
                             </div>
                         </ul>
                     </div>
-                    <div class="filterDiv notification">c</div>
+                    <!-- <div class="filterDiv notification">c</div> -->
                 </div>
             </div>
         </div>

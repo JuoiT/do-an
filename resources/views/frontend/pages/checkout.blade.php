@@ -27,12 +27,12 @@
             @if (Auth()->user())
                 @if ($items)
                     <div class="checkout-info text-left">
-                        <form action="{{route('checkout')}}" method="POST">
+                        <form action="{{ route('checkout') }}" method="POST">
                             @csrf
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             <input type="hidden" name="quantity" value="{{ $totalQuantity }}">
                             <input type="hidden" name="total_price" value="{{ $totalPrice }}">
-                            <input type="hidden" name="items" value="{{json_encode($items)}}">
+                            <input type="hidden" name="items" value="{{ json_encode($items) }}">
                             <div class="row">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <h2 class="checkout-head">Billing & Shipping details</h2>
@@ -73,8 +73,8 @@
                                                 value="{{ Auth::user()->address }}" placeholder="Address" required />
                                         </div>
                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <textarea cols="" rows="5" class="form-control"
-                                                placeholder="Order notes" name="description"></textarea>
+                                            <textarea cols="" rows="5" class="form-control" placeholder="Order notes"
+                                                name="description"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -104,28 +104,26 @@
                                                 </tr>
                                                 <tr class="cart-shopping">
                                                     <td>SHIPPING</td>
-                                                    @if($couponValue>0)
-                                                        <td>{{ toUsd('0') }}</td>
-                                                    @else
-                                                        <td>{{ toUsd($shipDefault->price) }}</td>
-                                                    @endif
+                                                    <td>{{ toUsd($shipDefault->price) }}</td>
                                                 </tr>
                                                 <tr class="cart-total">
                                                     <td>TOTAL</td>
-                                                    @if($couponValue!=0)
-                                                        <td>{{ toUsd($totalPrice + $shipDefault->price - $couponValue) }}</td>
-                                                    @else
-                                                        <td>{{ toUsd($totalPrice + $shipDefault->price) }}</td>
-                                                    @endif
-                                                    <input type="hidden" name="total" value="{{ $totalPrice + $shipDefault->price }}">
+                                                    <td>{{ toUsd($totalPrice + $shipDefault->price) }}</td>
+                                                    <input type="hidden" name="total"
+                                                        value="{{ $totalPrice + $shipDefault->price }}">
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
                                 </div>
                                 <div class="coupon wow fadeInUp">
+                                    @if ($couponActive)
+                                        <h4>Actived coupon: <strong>{{ $couponActive->name }}</strong>
+                                            {{ $couponActive->description }}</h4>
+                                    @endif
                                     <label>Coupon Code</label>
-                                    <input class="coupon_text" type="text" id="coupon-value" name="coupon" value="{{old('coupon')}}"/>
+                                    <input class="coupon_text" type="text" id="coupon-value" name="coupon_id"
+                                        value="{{ $couponActive?$couponActive->code:'' }}" />
                                     <button class="coupon-btn" type="button" id="apply-coupon">Apply</button>
                                 </div>
                             </div>
@@ -152,27 +150,17 @@
     <script src="{{ url('assets-frontend') }}/js/jquery.event.move.js"></script>
 
     <script>
-        $(document).ready(function(){
-            $('#apply-coupon').on('click', function () {
-                couponValue = $('#coupon-value').val();
-                console.log(couponValue);
-
-                $.ajax({
-                    type: "GET",
-                    url: 'checkout',
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        coupon: couponValue,
-                    },
-
-                    success: function(data) {
-                        console.log(data);
-                        document.write(data);
-                    },
-                    error: function(data) {
-                        console.log(data);
-                    }
-                });
+        $(document).ready(function() {
+            $('#apply-coupon').on('click', function() {
+                couponCode = $('#coupon-value').val();
+                console.log(couponCode);
+                url = "{{ route('checkout') }}";
+                url += "?_token="
+                url += "{{ csrf_token() }}";
+                url += "&coupon=";
+                url += couponCode;
+                console.log(url);
+                window.location.href = url;
             });
         });
     </script>

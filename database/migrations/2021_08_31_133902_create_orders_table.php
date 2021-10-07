@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('phone', 255)->unsigned();
             $table->string('email', 255)->unsigned();
             $table->string('address', 255)->unsigned();
-            $table->bigInteger('payment_id')->unsigned();
+            $table->bigInteger('payment_id')->unsigned()->nullable();
             $table->bigInteger('ship_id')->unsigned();
             $table->bigInteger('coupon_id')->unsigned()->nullable();
             $table->double('total_price');

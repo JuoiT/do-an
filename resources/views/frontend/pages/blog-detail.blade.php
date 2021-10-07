@@ -30,13 +30,13 @@
         <div class="row">
             <div class="col-md-9 col-sm-12 col-xs-12 blog-detail">
                 <div class="blog-img wow fadeInUp">
-                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-detail-main-img.jpg"/>
+                    <img class="img-responsive" src="{{url('upload-blogs')}}/{{$blog_detail->avatar}}"/>
                 </div>
                 <div class="blog-txt wow fadeInUp">
                     <ul>
                         <li>
                             <a>
-                                <i class="icon-clock"></i>July 30, 2021
+                                <i class="icon-clock"></i>{{$blog_detail->created_at}}
                             </a>
                         </li>
                         <li>
@@ -45,64 +45,15 @@
                             </a>
                         </li>
                     </ul>
-                    <h2 class="text-left wow fadeInUp">Luan nv Bru Lmao</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum repellat quos soluta ut? Dolor
-                        numquam, incidunt accusantium impedit, itaque earum vel soluta provident molestias aperiam
-                        officiis obcaecati. Delectus, quaerat voluptates?
-                    </p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum repellat quos soluta ut? Dolor
-                        numquam, incidunt accusantium impedit, itaque earum vel soluta provident molestias aperiam
-                        officiis obcaecati. Delectus, quaerat voluptates?
-                    </p>
+                    <h2 class="text-left wow fadeInUp">{{$blog_detail->title}}</h2>
 
-                    <section class="middle-section">
-                        <div class="row">
-                            <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 pull-right wow fadeInRight">
-                                <div class="youtube-video">
-                                    <img class="img-responsive" src="{{url('assets-frontend')}}/images/fresh-vegetables-img.jpg"/>
-                                </div>
-                            </div>
-                            <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12 pull-left wow fadeInLeft">
-                                <div class="tit">
-                                    <h3>Mòe lol</h3>
-                                </div>
-                                <ul class="talk-about-list">
-                                    <li>Luan nv Bru</li>
-                                    <li>Luan nv Lmao</li>
-                                    <li>Luan nv Dak</li>
-                                    <li>Bla Bla</li>
-                                    <li>Blu Bla</li>
-                                    <li>Bru</li>
-                                    <li>Lmao</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
 
                     <section class="bottom-section">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
-                                <h4>Ảo ma canada</h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum repellat quos soluta ut? Dolor
-                                    numquam, incidunt accusantium impedit, itaque earum vel soluta provident molestias aperiam
-                                    officiis obcaecati. Delectus, quaerat voluptates?</p>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum repellat quos soluta ut? Dolor
-                                    numquam, incidunt accusantium impedit, itaque earum vel soluta provident molestias aperiam
-                                    officiis obcaecati. Delectus, quaerat voluptates?</p>
+                                <p>{{!! $blog_detail->content !!}}
+                                </p>
                                 <div class="share-section">
-                                    <div class="tag-part">
-                                        <ul>
-                                            <li>
-                                                <a>Bru</a>
-                                            </li>
-                                            <li>
-                                                <a>Lmao</a>
-                                            </li>
-                                            <li>
-                                                <a>Dak</a>
-                                            </li>
-                                        </ul>
-                                    </div>
                                     <div class="social-part">
                                         <label>Share Link:</label>
                                         <ul class="social">
@@ -132,73 +83,6 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="comment-section">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12 wow fadeInUp">
-                                <div class="tit">
-                                    <h3>3 Comments</h3>
-                                </div>
-                                <div class="comment-box">
-                                    <div class="icon-part">
-                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/user-icon.png"/>
-                                    </div>
-                                    <div class="comment-part">
-                                        <div class="top-part">
-                                            <div class="l-part">
-                                                <div class="date">August 01, 2021</div>
-                                                <div class="user-name">Mòe lol</div>
-                                            </div>
-                                            <div class="r-part">
-                                                <a class="btn replay-btn" href="#">reply</a>
-                                            </div>
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum repellat quos soluta ut? Dolor
-                                                numquam, incidunt accusantium impedit, itaque earum vel soluta provident molestias aperiam
-                                                officiis obcaecati. Delectus, quaerat voluptates?</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="comment-box">
-                                    <div class="icon-part">
-                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/user-icon.png"/>
-                                    </div>
-                                    <div class="comment-part">
-                                        <div class="top-part">
-                                            <div class="l-part">
-                                                <div class="date">August 01, 2021</div>
-                                                <div class="user-name">Chó ngu</div>
-                                            </div>
-                                            <div class="r-part">
-                                                <a class="btn replay-btn" href="#">reply</a>
-                                            </div>
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum repellat quos soluta ut? Dolor
-                                                numquam, incidunt accusantium impedit, itaque earum vel soluta provident molestias aperiam
-                                                officiis obcaecati. Delectus, quaerat voluptates?</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="comment-box">
-                                    <div class="icon-part">
-                                        <img class="img-responsive" src="{{url('assets-frontend')}}/images/user-icon.png"/>
-                                    </div>
-                                    <div class="comment-part">
-                                        <div class="top-part">
-                                            <div class="l-part">
-                                                <div class="date">August 01, 2021</div>
-                                                <div class="user-name">Bò ngu</div>
-                                            </div>
-                                            <div class="r-part">
-                                                <a class="btn replay-btn" href="#">reply</a>
-                                            </div>
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum repellat quos soluta ut? Dolor
-                                                numquam, incidunt accusantium impedit, itaque earum vel soluta provident molestias aperiam
-                                                officiis obcaecati. Delectus, quaerat voluptates?</p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -245,80 +129,22 @@
                     <div class="clearfix"></div>
                     <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
                         <div class="widget-title">
-                            <h2 class="blog-header text-left">Recent Post</h2>
+                            <h2 class="blog-header text-left">New Post</h2>
                         </div>
+                        @foreach($new_blog as $value)
                         <div class="box">
                             <div class="img-part">
-                                <img class="img-fluid" src="{{url('assets-frontend')}}/images/blog-1.jpg"/>
+                                <img class="img-fluid" src="{{url('upload-blogs')}}/{{$value->avatar}}"/>
                             </div>
                             <div class="txt-part">
-                                <a class="blog-tit" href="#">Mòe lol</a>
+                                <a class="blog-tit" href="#">{{$value->title}}</a>
                                 </br>
                                 <a href="#" class="blog-date">
-                                    <i class="icon-clock"></i>July 30, 2021
+                                    <i class="icon-clock"></i>{{$value->created_at}}
                                 </a>
                             </div>
                         </div>
-                        <div class="box">
-                            <div class="img-part">
-                                <img class="img-fluid" src="{{url('assets-frontend')}}/images/blog-4.jpg"/>
-                            </div>
-                            <div class="txt-part">
-                                <a class="blog-tit" href="#">Dak Lmao</a>
-                                </br>
-                                <a href="#" class="blog-date">
-                                    <i class="icon-clock"></i>July 15, 2021
-                                </a>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="img-part">
-                                <img class="img-fluid" src="{{url('assets-frontend')}}/images/blog-7.jpg"/>
-                            </div>
-                            <div class="txt-part">
-                                <a class="blog-tit" href="#">Bla Bla Blu Blu</a>
-                                </br>
-                                <a href="#" class="blog-date">
-                                    <i class="icon-clock"></i>July 1, 2021
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-
-                    <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
-                        <div class="widget-title">
-                            <h2 class="blog-header text-left">cetegory</h2>
-                        </div>
-                        <div class="post-cetegory">
-                            <ul>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Fresh Fruits (8)</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Vegetables (13)</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Lmao (8)</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Bru (8)</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Dak (11)</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="clearfix"></div>
 

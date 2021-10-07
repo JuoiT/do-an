@@ -101,7 +101,8 @@ Route::group(['prefix'=>''], function() {
     Route::get('whishlist/add', [WhishlistController::class, 'add'])->name('whishlist.add');
     Route::get('whishlist/remove', [WhishlistController::class, 'remove'])->name('whishlist.remove');
 
-    Route::get('my_account', [ShopController::class, 'my_account'])->name('my_account');
+    Route::get('my_account', [UserController::class, 'my_account'])->name('my_account');
+    Route::post('my_account', [UserController::class, 'update_user'])->name('update_user');
 
     Route::get('register', [UserController::class, 'register'])->name('register');
     Route::post('register', [UserController::class, 'postRegister'])->name('post_register');
@@ -113,7 +114,7 @@ Route::group(['prefix'=>''], function() {
 
     Route::get('blog', [ShopController::class, 'blog'])->name('blog');
 
-    Route::get('blog_detail', [ShopController::class, 'blog_detail'])->name('blog_detail');
+    Route::get('blog_detail/{id}', [ShopController::class, 'blog_detail'])->name('blog_detail');
 
     Route::get('contact', [ShopController::class, 'contact'])->name('contact');
 

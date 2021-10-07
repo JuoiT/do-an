@@ -27,247 +27,51 @@
         <div class="row">
             <div class="col-md-9 col-sm-12 col-xs-12 blog">
                 <div class="row">
+                    @foreach($list_blog as $value)
                     <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp blog-list-detail">
                         <div class="blog-list">
                             <figure>
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-1.jpg" alt=""/>
+                                <img class="img-responsive" src="{{url('upload-blogs')}}/{{$value->avatar}}" alt=""/>
                             </figure>
                             <div class="blog-info">
                                 <ul>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-clock"></i>July 30, 2021
+                                            <i class="icon-clock"></i>{{$value->created_at}}
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <i class="icon-commenting-o"></i>3 Comments
+                                            <i class="icon-commenting-o"></i>300 Comments
                                         </a>
                                     </li>
                                 </ul>
                                 <h2 class="text-left text-uppercase">
-                                    <a href="{{route('blog_detail')}}">Luan nv Bru Lmao</a>
+                                    <a href="{{route('blog_detail', $value->id)}}">{{$value->title}}</a>
                                 </h2>
-                                <a href="{{route('blog_detail')}}" class="rd-mr text-uppercase">read more</a>
+                                <a href="{{route('blog_detail', $value->id)}}" class="rd-mr text-uppercase">read more</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12  wow fadeInUp blog-list-detail">
-                        <div class="blog-list">
-                            <figure>
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-2.jpg" alt=""/>
-                            </figure>
-                            <div class="blog-info">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-clock"></i>July 15, 2021
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-commenting-o"></i>2 Comments
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h2 class="text-left text-uppercase">
-                                    <a href="{{route('blog_detail')}}">Luan nv cốc bự</a>
-                                </h2>
-                                <a href="{{route('blog_detail')}}" class="rd-mr text-uppercase">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12  wow fadeInUp blog-list-detail">
-                        <div class="blog-list">
-                            <figure>
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-3.jpg" alt=""/>
-                            </figure>
-                            <div class="blog-info">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-clock"></i>July 1, 2021
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-commenting-o"></i>4 Comments
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h2 class="text-left text-uppercase">
-                                    <a href="{{route('blog_detail')}}">Luan nv Dảk</a>
-                                </h2>
-                                <a href="{{route('blog_detail')}}" class="rd-mr text-uppercase">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12  wow fadeInUp blog-list-detail">
-                        <div class="blog-list">
-                            <figure>
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-4.jpg" alt=""/>
-                            </figure>
-                            <div class="blog-info">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-clock"></i>June 30, 2021
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-commenting-o"></i>3 Comments
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h2 class="text-left text-uppercase">
-                                    <a href="{{route('blog_detail')}}">Luan nv mòe</a>
-                                </h2>
-                                <a href="{{route('blog_detail')}}" class="rd-mr text-uppercase">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12  wow fadeInUp blog-list-detail">
-                        <div class="blog-list">
-                            <figure>
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-5.jpg" alt=""/>
-                            </figure>
-                            <div class="blog-info">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-clock"></i>June 15, 2021
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-commenting-o"></i>6 Comments
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h2 class="text-left text-uppercase">
-                                    <a href="{{route('blog_detail')}}">Dảk Brủh Lmao</a>
-                                </h2>
-                                <a href="{{route('blog_detail')}}" class="rd-mr text-uppercase">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12  wow fadeInUp blog-list-detail">
-                        <div class="blog-list">
-                            <figure>
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-6.jpg" alt=""/>
-                            </figure>
-                            <div class="blog-info">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-clock"></i>June 1, 2021
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-commenting-o"></i>2 Comments
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h2 class="text-left text-uppercase">
-                                    <a href="{{route('blog_detail')}}">Bla Bla</a>
-                                </h2>
-                                <a href="{{route('blog_detail')}}" class="rd-mr text-uppercase">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12  wow fadeInUp blog-list-detail">
-                        <div class="blog-list">
-                            <figure>
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-7.jpg" alt=""/>
-                            </figure>
-                            <div class="blog-info">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-clock"></i>May 30, 2021
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-commenting-o"></i>2 Comments
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h2 class="text-left text-uppercase">
-                                    <a href="{{route('blog_detail')}}">Bla Blu</a>
-                                </h2>
-                                <a href="{{route('blog_detail')}}" class="rd-mr text-uppercase">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12  wow fadeInUp blog-list-detail">
-                        <div class="blog-list">
-                            <figure>
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-8.jpg" alt=""/>
-                            </figure>
-                            <div class="blog-info">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-clock"></i>May 15, 2021
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-commenting-o"></i>1 Comments
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h2 class="text-left text-uppercase">
-                                    <a href="{{route('blog_detail')}}">Lmao Lmao</a>
-                                </h2>
-                                <a href="{{route('blog_detail')}}" class="rd-mr text-uppercase">read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12  wow fadeInUp blog-list-detail">
-                        <div class="blog-list">
-                            <figure>
-                                <img class="img-responsive" src="{{url('assets-frontend')}}/images/blog-9.jpg" alt=""/>
-                            </figure>
-                            <div class="blog-info">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-clock"></i>May 1, 2021
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="icon-commenting-o"></i>3 Comments
-                                        </a>
-                                    </li>
-                                </ul>
-                                <h2 class="text-left text-uppercase">
-                                    <a href="{{route('blog_detail')}}">Mòe lol</a>
-                                </h2>
-                                <a href="{{route('blog_detail')}}" class="rd-mr text-uppercase">read more</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="blog-nav">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                             <div class="pagination text-center">
-                                <a class="left" href="#">
-                                    <i class="icon-angle-right"></i>
-                                </a>
-                                <a class="active" href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a class="right" href="#">
-                                    <i class="icon-angle-right"></i>
-                                </a>
+                                @if ($list_blog->currentPage() != 1)
+                                    <a href="{{ $list_blog->previousPageUrl() }}" class="left">
+                                        <i class="icon-angle-right"></i>
+                                    </a>
+                                @endif
+                                @for ($i = 1; $i <= $list_blog->lastpage(); $i++)
+                                    <a href="{{ $list_blog->url($i) }}" class="{{ $i == $list_blog->currentPage() ? 'active' : '' }}">{{ $i }}</a>
+                                @endfor
+                                @if ($list_blog->currentPage() != $list_blog->lastpage())
+                                    <a href="{{ $list_blog->nextPageUrl() }}" class="right">
+                                        <i class="icon-angle-right"></i>
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -291,78 +95,20 @@
                         <div class="widget-title">
                             <h2 class="blog-header text-left">Recent Post</h2>
                         </div>
+                        @foreach($new_blog as $value)
                         <div class="box">
                             <div class="img-part">
-                                <img class="img-fluid" src="{{url('assets-frontend')}}/images/blog-1.jpg"/>
+                                <img class="img-fluid" src="{{url('upload-blogs')}}/{{$value->avatar}}"/>
                             </div>
                             <div class="txt-part">
-                                <a class="blog-tit" href="#">Luan nv Brủh vờ lờ</a>
+                                <a class="blog-tit" href="#">{{$value->title}}</a>
                                 </br>
                                 <a href="#" class="blog-date">
-                                    <i class="icon-clock"></i>July 30, 2021
+                                    <i class="icon-clock"></i>{{$value->created_at}}
                                 </a>
                             </div>
                         </div>
-                        <div class="box">
-                            <div class="img-part">
-                                <img class="img-fluid" src="{{url('assets-frontend')}}/images/blog-4.jpg"/>
-                            </div>
-                            <div class="txt-part">
-                                <a class="blog-tit" href="#">Bla Bla</a>
-                                </br>
-                                <a href="#" class="blog-date">
-                                    <i class="icon-clock"></i>July 15, 2021
-                                </a>
-                            </div>
-                        </div>
-                        <div class="box">
-                            <div class="img-part">
-                                <img class="img-fluid" src="{{url('assets-frontend')}}/images/blog-7.jpg"/>
-                            </div>
-                            <div class="txt-part">
-                                <a class="blog-tit" href="#">Lmao</a>
-                                </br>
-                                <a href="#" class="blog-date">
-                                    <i class="icon-clock"></i>July 1, 2021
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-
-                    <div class="blog_sidebar_widget wow fadeInUp popular-product-widget">
-                        <div class="widget-title">
-                            <h2 class="blog-header text-left">cetegory</h2>
-                        </div>
-                        <div class="post-cetegory">
-                            <ul>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Fresh Fruits (8)</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Vegetables (13)</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Lmao (8)</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Bru (8)</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="post-cetegory-header">
-                                        <a class="" href="#">Dak (11)</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="clearfix"></div>
 

@@ -20,7 +20,6 @@ class CreateBlogsTable extends Migration
             $table->longText('content');
             $table->bigInteger('blog_category_id')->unsigned();
             $table->tinyInteger('status')->default(1);
-            $table->foreign('blog_category_id')->references('id')->on('blog_categories');
             $table->softDeletes();
             $table->timestamps();
         });

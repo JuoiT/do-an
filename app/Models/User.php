@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\FilterableTrait;
+use Illuminate\Support\Facades\File;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -76,6 +77,34 @@ class User extends Authenticatable
             'address' => trimm($req->address),
             'email' => trimm($req->email),
             'password' => Hash::make($req->password),
+        ]);
+    }
+
+    public function update_user(Request $req, $id)
+    {
+        $user = User::find($id);
+        return $user->update([
+            'name' => trimm($req->name),
+            'phone' => $req->phone,
+            'address' => trimm($req->address),
+        ]);
+    }
+
+    public function update_avatar(Request $request, $id, $old_avatar)
+    {
+        $user = User::find($id);
+        $imageName = $old_avatar;
+        if ($request->avatar) {
+            $upImage = $request->avatar;
+            $imageName = null;
+            if ($upImage) {
+                $imageName = time() . $upImage->getClientOriginalName();
+                $upImage->move(config('const.avatarPath'), $imageName);
+            }
+            File::delete(config('const.avatarPath') . '/' . $user->avatar);
+        }
+        return $user->update([
+            'avatar' => $imageName,
         ]);
     }
 }

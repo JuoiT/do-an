@@ -13,9 +13,17 @@ class CustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(User $user)
+    public function index(Request $request)
     {
-        $list_user = $user::all();
+        // session()->forget("filter.users");
+        $params = $request->all();
+        if (count($params)<=1) {
+            // for paginate / redirect, get old filter value from session
+            $params = session()->get("filter.users");
+        }
+
+        $query = User::filter($params);
+        $list_user = $query->paginate(config("const.records"));
         return view('backend.pages.user.list-user', compact('list_user'));
     }
 

@@ -21,6 +21,8 @@ class CreateCouponsTable extends Migration
             $table->tinyInteger('status')->default(0);
             $table->tinyInteger('value');
             $table->integer('limit');
+            $table->string('code', 255);
+            $table->float('apply');
             $table->timestamp('start_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('end_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->softDeletes();

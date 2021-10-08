@@ -8178,7 +8178,7 @@ input[type=range]::-ms-thumb {
 .datepicker-modal {
     min-width: 300px;
     max-width: 325px;
-    max-height: none
+    max-height: none !important
 }
 
 .datepicker-container.modal-content {

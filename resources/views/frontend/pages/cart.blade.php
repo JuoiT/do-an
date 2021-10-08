@@ -42,7 +42,7 @@
                                 <tr>
                                     <td class="cart-image-wrapper">
                                         <a href="{{ route('detail', $item['product_id']) }}">
-                                            <img style="width: 100px; height: 100px;" class="cart-image"
+                                            <img style="width: 100px; height: auto;" class="cart-image"
                                                 src="{{ url('upload-images') }}/{{ $item['image'] }}" alt="">
                                         </a>
                                     </td>

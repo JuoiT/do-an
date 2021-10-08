@@ -347,7 +347,7 @@
 
 .wrapper .contain-wrapper .old-price {
     display: inline;
-    font-weight: 200;
+    font-weight: 700;
     font-size: 14px;
     color: #f53636;
     line-height: 30px;
@@ -589,6 +589,7 @@
     /* float: left; */
     width: 100%
 }
+
 
 /* .product-list .col-sm-4:nth-child(3n+1) {
     clear: both

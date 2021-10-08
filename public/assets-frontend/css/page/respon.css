@@ -417,7 +417,7 @@
     .table>thead>tr>th,
     .table>tbody>tr>td {
         line-height: 16px;
-        padding: 10px 20px;
+        padding: 10px 20px !important;
     }
     /*footer*/
     .helpline .bg .box {
@@ -1016,6 +1016,15 @@
     .coupon label {
         width: 100%;
     }
+    .table>thead>tr>th,
+    .table>tbody>tr>td {
+        font-size: 12px !important;
+        line-height: 16px;
+        padding: 0 !important;
+    }
+    .table .cart-image-wrapper {
+        width: auto !important;
+    }
     .coupon .coupon_text {
         margin: 20px 0 30px 0;
     }
@@ -1046,14 +1055,24 @@
     .bottom-header nav {
         width: 100% !important;
     }
+    .table tfoot .l-part {
+        width: 100% !important;
+    }
+    .table tfoot .r-part {
+        width: 100% !important;
+    }
+    .table tfoot .r-part .cancle-cart-btn {
+        width: 100% !important;
+    }
     .coupon .coupon_text {
         margin: 20px 0 30px 0 !important;
     }
-    header .top-header {
-        height: auto !important;
-    }
     header .top-header .lpart {
-        width: 100%;
+        width: 50%;
+        text-align: center;
+    }
+    header .top-header .rpart {
+        width: 50%;
         text-align: center;
     }
     .coupon .coupon_text,
@@ -1066,9 +1085,6 @@
     }
     .top-header .rpart {
         width: 100%;
-    }
-    header .top-header {
-        height: auto;
     }
     .logo {
         width: 100%;
@@ -1497,5 +1513,12 @@
     }
     .panel-body {
         padding: 0 15px 40px 15px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .table>thead>tr>th,
+    .table>tbody>tr>td {
+        font-size: 10px !important;
     }
 }

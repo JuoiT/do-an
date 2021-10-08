@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.table-responsive {
+    overflow-x: unset;
+}
+
 .table tr,
 .total-box,
 .total-box .tit,

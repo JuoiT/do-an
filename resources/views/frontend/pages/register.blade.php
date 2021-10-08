@@ -43,8 +43,8 @@
                             </div>
 
                             <div class="input-field">
-                                <label for="avatar">Avatar</label>
-                                <input type="file" name="avatar" class="form-control" />
+                                <label for="avatar" class="avatar_res">Chose Avatar</label>
+                                <input style="display: none;" type="file" name="avatar" id="avatar" class="form-control" />
                                 @if ($errors->has('avatar'))
                                     <small class="asterisk_input" style="color: orangered;">{{ $errors->first('avatar') }}</small>
                                 @endif

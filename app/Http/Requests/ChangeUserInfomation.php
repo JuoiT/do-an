@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class ChangeUserInfomation extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,8 +27,8 @@ class RegisterRequest extends FormRequest
             'name' => 'required|max:100',
             'address' => 'required|max:255',
             'email' => 'required|max:255|unique:users|email',
-            'phone' => 'required|numeric|digits:10|unique:users',
-            'password' => 'required|min:6|confirmed'
+            'phone' => 'required|numeric|digits:10',
+            'password' => 'required|confirmed'
         ];
     }
 
@@ -48,11 +48,9 @@ class RegisterRequest extends FormRequest
 
             'phone.required' => "Số điện thoại không được để rỗng!",
             'phone.numeric|phone.digits' => "Số điện thoại không hợp lệ!",
-            'phone.unique' => "Số điện thoại đã được sử dụng!",
 
-            'password.required' => 'Mật khẩu không được để rỗng!',
-            'password.min' => 'Mật khẩu quá ngắn!',
-            'password.confirmed' => 'Mật khẩu không khớp!'
+            'password.required' => 'Nhập mật khẩu để thay đổi!',
+            'password.confirmed' => 'Mật khẩu không đúng!'
         ];
     }
 }

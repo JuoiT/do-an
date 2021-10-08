@@ -63,7 +63,7 @@
 
                                 <form class="account-form" method="POST" action="{{route('update_user')}}" enctype="multipart/form-data">
                                     @csrf
-                                    <input type="hidden" name="id"value="{{Auth::user()->id}}"/>
+                                    <input type="hidden" name="id" value="{{Auth::user()->id}}"/>
 
                                     <input type="text" name="name" class="form-control required" placeholder="Your Name" required="required" value="{{Auth::user()->name}}"/>
                                     <span class="asterisk_input"></span>
@@ -92,7 +92,7 @@
                                     <div class="edit-avatar">
                                         <form action="{{route('update_user')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
-                                            <input type="hidden" name="id"value="{{Auth::user()->id}}"/>
+                                            <input type="hidden" name="id" value="{{Auth::user()->id}}"/>
 
                                             <input type="file" name="avatar" id="avatar" class="inputfile"/>
                                             <label for="avatar">Choose a file</label>

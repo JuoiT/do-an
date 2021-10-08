@@ -108,17 +108,17 @@
     @endforeach
     </div>
     {{-- end show list products --}}
-    
+
     {{-- pagination --}}
     {{ $favs->links() }}
     {{-- end pagination --}}
-    
+
     @else
     <div class="text-center">
-        <span>Không tìm thấy sản phẩm nào</span>
+        <span>Nothing here!</span>
     </div>
     @endif
-    
+
     </div>
 </div>
 

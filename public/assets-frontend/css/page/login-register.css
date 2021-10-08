@@ -41,6 +41,21 @@
     margin: 0 auto;
 }
 
+.account-form-reg .input-field .avatar_res {
+    color: #fff;
+    background-color: #8e8b88;
+    width: auto;
+    padding: 10px 30px;
+    margin: 7px 0;
+    border-radius: 3px;
+    border: 1px solid #8e8b88;
+}
+
+.account-form-reg .input-field .avatar_res:hover {
+    color: #8e8b88;
+    background-color: #fff;
+}
+
 .account-form-login h2:after,
 .account-form-reg h2:after {
     position: absolute;

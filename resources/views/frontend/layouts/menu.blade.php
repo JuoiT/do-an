@@ -1,12 +1,18 @@
 <div class="bottom-header">
     <div class="container">
         <div class="vishlist">
+            @if(Auth::user())
             <div class="vishlist-inner">
                 <a href="{{ route('whishlist') }}">
                     <i class="icon-heart-empty"></i>
                 </a>
+                @if(countFavorited())
                 <div class="vishlist-counter">{{countFavorited()}}</div>
+                @endif
             </div>
+            @else
+            <div style="width: 52px;"></div>
+            @endif
         </div>
         <nav class="navbar">
             <div class="nav-header">

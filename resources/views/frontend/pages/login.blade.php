@@ -47,8 +47,8 @@
                                 <label class="name-input" for="password">Password</label>
                                 <input type="password" name="password" class="form-control required" placeholder="Password" />
                                 @if ($errors->has('password'))
-                                <small class="asterisk_input">{{ $errors->first('password') }}</small>
-                            @endif
+                                    <small class="asterisk_input">{{ $errors->first('password') }}</small>
+                                @endif
                             </div>
 
                             <div class="input-field">

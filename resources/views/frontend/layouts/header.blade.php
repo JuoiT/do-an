@@ -107,10 +107,11 @@
                 </div> -->
                 <div class="account">
                     <div class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-                        <i class="icon-user-o"></i>{{ Auth::user() ? Auth::user()->name : 'My Account' }}
+                        <i class="icon-user-o"></i>{{ Auth::user() ? Auth::user()->name : 'Login' }}
                         <i class="icon-angle-down"></i>
                     </div>
                     <ul class="dropdown-menu">
+                        @if (Auth::check())
                         <li>
                             <a href="{{ route('my_account') }}">My Account</a>
                         </li>
@@ -120,6 +121,7 @@
                         <li>
                             <a href="{{ route('checkout') }}">checkout</a>
                         </li>
+                        @endif
                         <li>
                             <a href="{{ route('cart') }}">cart</a>
                         </li>

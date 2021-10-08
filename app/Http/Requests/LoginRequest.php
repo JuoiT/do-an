@@ -24,20 +24,24 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
+            'avatar' => 'required|image',
             'email' => 'required|max:255|email',
-            'password' => 'required|min:6'
+            'password' => 'required|confirmed'
         ];
     }
 
     public function messages()
     {
         return [
-            'email.required' => "Email không được để rỗng!",
-            'email.max' => "Email quá dài", 
-            'email.email' => "Email không hợp lệ", 
+            'avatar.required' => "Ảnh sản phẩm không được để rỗng!",
+            'avatar.image' => "Ảnh sản phẩm không hợp lệ!",
 
-            'password.required' => 'Mật khẩu không được để rỗng',
-            'password.min' => 'Mật khẩu quá ngắn',
+            'email.required' => "Email không được để rỗng!",
+            'email.max' => "Email quá dài!",
+            'email.email' => "Email không hợp lệ!",
+
+            'password.required' => 'Mật khẩu không được để rỗng!',
+            'password.confirmed' => 'Mật khẩu không đúng!',
         ];
     }
 }

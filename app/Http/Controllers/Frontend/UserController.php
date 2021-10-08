@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ChangeUserInfomation;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
@@ -85,7 +86,7 @@ class UserController extends Controller
         }
     }
 
-    public function update_user(Request $request, User $user)
+    public function update_user(ChangeUserInfomation $request, User $user)
     {
         if (!$request->avatar) {
             $credentials = $request->only('email', 'password');

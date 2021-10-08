@@ -52,15 +52,9 @@
                             </td>
                             <td>
                                 @if($value->status==1)
-<<<<<<< HEAD
-                                <span class="badge green lighten-5 green-text text-accent-4">Activate</span>
-                                @else
-                                <span class="badge pink lighten-5 pink-text text-accent-2">Inactivate</span>
-=======
                                 <span class="badge green lighten-5 green-text text-accent-4">Active</span>
                                 @else
                                 <span class="badge pink lighten-5 pink-text text-accent-2">Inactive</span>
->>>>>>> 94aa2b2076858aa675fcfd89267398ee5964a8db
                                 @endif
                             </td>
                         </tr>

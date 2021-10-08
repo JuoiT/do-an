@@ -273,16 +273,16 @@ select.form-control option {
 }
 
 .coupon .coupon_text {
-    margin: 0 18px;
     line-height: 46px;
     border: 3px solid #fff;
     background: transparent;
     padding: 0 15px;
-    width: calc(100% - 250px);
+    width: 100%;
 }
 
 .coupon .coupon-btn {
     padding: 0 80px;
+    width: 100%;
     background: #5a4a3b;
     color: #fff;
     text-transform: uppercase;

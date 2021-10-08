@@ -53,7 +53,7 @@ class BlogController extends Controller
 
         // upload des_image
         if ($insertedBLog) {
-            return redirect(route('blog.index'));
+            return redirect(route('blog.index'))->with('success', 'Created new blog!');
         }
     }
 
@@ -108,7 +108,7 @@ class BlogController extends Controller
         $updateBlog = $updateBlog->edit($updateBlog, $request, $imageName);
         $updateBlog->save();
 
-        return redirect(route('blog.index'));
+        return redirect(route('blog.index'))->with('success', 'Edited blog!');
     }
 
     /**

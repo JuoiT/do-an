@@ -11,21 +11,21 @@
         content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
     <meta name="author" content="ThemeSelect">
     <title>Admin Login</title>
-    <link rel="apple-touch-icon" href="{{url('assets-backend')}}/images/favicon/apple-touch-icon-152x152.png">
-    <link rel="shortcut icon" type="image/x-icon" href="{{url('assets-backend')}}/images/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="{{ url('assets-backend') }}/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('assets-backend') }}/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- BEGIN: VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="{{url('assets-backend')}}/vendors/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets-backend') }}/vendors/vendors.min.css">
     <!-- END: VENDOR CSS-->
     <!-- BEGIN: Page Level CSS-->
     <link rel="stylesheet" type="text/css"
-        href="{{url('assets-backend')}}/css/themes/vertical-modern-menu-template/materialize.min.css">
+        href="{{ url('assets-backend') }}/css/themes/vertical-modern-menu-template/materialize.min.css">
     <link rel="stylesheet" type="text/css"
-        href="{{url('assets-backend')}}/css/themes/vertical-modern-menu-template/style.min.css">
-    <link rel="stylesheet" type="text/css" href="{{url('assets-backend')}}/css/pages/login.css">
+        href="{{ url('assets-backend') }}/css/themes/vertical-modern-menu-template/style.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets-backend') }}/css/pages/login.css">
     <!-- END: Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{url('assets-backend')}}/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="{{ url('assets-backend') }}/css/custom/custom.css">
     <!-- END: Custom CSS-->
 </head>
 <!-- END: Head-->
@@ -38,7 +38,7 @@
             <div class="container">
                 <div id="login-page" class="row">
                     <div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
-                        <form class="login-form" method="POST" action="{{route('admin.postLogin')}}">
+                        <form class="login-form" method="POST" action="{{ route('admin.postLogin') }}">
                             @csrf
 
                             <div class="row">
@@ -51,6 +51,9 @@
                                     <i class="material-icons prefix pt-2">person_outline</i>
                                     <input id="email" type="text" name="email">
                                     <label for="email" class="center-align">Email</label>
+                                    @if ($errors->has('email'))
+                                        <span style="color: orangered; padding-left: 45px">{{ $errors->first('email') }}</span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="row margin">
@@ -58,13 +61,16 @@
                                     <i class="material-icons prefix pt-2">lock_outline</i>
                                     <input id="password" type="password" name="password">
                                     <label for="password">Password</label>
+                                    @if ($errors->has('password'))
+                                        <span style="color: orangered; padding-left: 45px">{{ $errors->first('password') }}</span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col s12 m12 l12 ml-2 mt-1">
                                     <p>
                                         <label>
-                                            <input type="checkbox" />
+                                            <input type="checkbox" name="remember" />
                                             <span>Remember Me</span>
                                         </label>
                                     </p>
@@ -72,7 +78,8 @@
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <button type="submit" class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">Login</button>
+                                    <button type="submit"
+                                        class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">Login</button>
                                 </div>
                             </div>
                             <!-- <div class="row">
@@ -95,13 +102,14 @@
         </div>
     </div>
 
+
     <!-- BEGIN VENDOR JS-->
-    <script src="{{url('assets-backend')}}/js/vendors.min.js"></script>
+    <script src="{{ url('assets-backend') }}/js/vendors.min.js"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN THEME  JS-->
-    <script src="{{url('assets-backend')}}/js/plugins.min.js"></script>
-    <script src="{{url('assets-backend')}}/js/search.min.js"></script>
-    <script src="{{url('assets-backend')}}/js/custom/custom-script.min.js"></script>
+    <script src="{{ url('assets-backend') }}/js/plugins.min.js"></script>
+    <script src="{{ url('assets-backend') }}/js/search.min.js"></script>
+    <script src="{{ url('assets-backend') }}/js/custom/custom-script.min.js"></script>
     <!-- END THEME  JS-->
 </body>
 

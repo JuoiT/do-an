@@ -2,13 +2,6 @@
 
 @section('main')
 
-    @if (Session::get('error'))
-        <div class="alert alert-danger">
-            <strong
-                class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-deep-orange-orange gradient-shadow">{{ Session::get('error') }}</strong>
-        </div>
-    @endif
-
     <div class="section">
         <div class="row">
             <div class="col s12 m6 l8">

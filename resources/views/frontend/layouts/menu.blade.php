@@ -5,7 +5,9 @@
                 <a href="{{ route('whishlist') }}">
                     <i class="icon-heart-empty"></i>
                 </a>
-                <div class="vishlist-counter">{{countFavorited()}}</div>
+                @if (countFavorited() > 0)
+                    <div class="vishlist-counter">{{ countFavorited() }}</div>
+                @endif
             </div>
         </div>
         <nav class="navbar">
@@ -65,7 +67,8 @@
                 </div>
                 <div class="cart-popup">
                     <p class="item-in-cart">
-                        {{ session()->has('cart.totalQuantity') ? session('cart.totalQuantity') : '0' }} item(s) in your
+                        {{ session()->has('cart.totalQuantity') ? session('cart.totalQuantity') : '0' }} item(s) in
+                        your
                         cart</p>
                     <div class="item-list">
                         @if (session()->has('cart.items'))

@@ -64,7 +64,7 @@ class ProductController extends Controller
         if ($request->des_image) {
             $product->upDesImages($request->des_image, $insertedProduct->id);
         }
-        return redirect(route('product.index'));
+        return redirect(route('product.index'))->with('success', 'Added new product!');
     }
 
     /**

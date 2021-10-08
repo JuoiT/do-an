@@ -112,13 +112,39 @@
                                     </div>
                                 </div>
                                 <div class="btn-part">
-                                    <a href="{{route('cart')}}" class="cart-btn">buy now</a>
+                                    <form action="{{ route('cart.add') }}" method="GET">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $value->id }}">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <div class="cart">
+                                            <button type="submit" class="cart-btn">Buy now</button>
+                                        </div>
+                                    </form>
                                     <i class="icon-shopping-basket"></i>
                                 </div>
-                                <div class="btn-part">
-                                    <a href="{{route('whishlist')}}" class="cart-btn">whishlist</a>
-                                    <i class="icon-heart-empty"></i>
-                                </div>
+                                @if (isFavorited($value->id))
+                                    <div class="btn-part">
+                                        <form action="{{ route('whishlist.remove') }}" method="GET">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{ $value->id }}">
+                                            <div class="cart">
+                                                <button type="submit" class="cart-btn">Whishlist</button>
+                                            </div>
+                                        </form>
+                                        <i style="color: red" class="icon-heart"></i>
+                                    </div>
+                                @else
+                                    <div class="btn-part">
+                                        <form action="{{ route('whishlist.add') }}" method="GET">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{ $value->id }}">
+                                            <div class="cart">
+                                                <button type="submit" class="cart-btn">Whishlist</button>
+                                            </div>
+                                        </form>
+                                        <i class="icon-heart"></i>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>

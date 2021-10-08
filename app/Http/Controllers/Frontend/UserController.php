@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -79,8 +80,9 @@ class UserController extends Controller
     public function my_account()
     {
         if (Auth::user()) {
+            $orders = Order::where('user_id', Auth::user()->id);
             return view('frontend.pages.my-account');
-        }else {
+        } else {
             return redirect()->route('home');
         }
     }
@@ -95,12 +97,11 @@ class UserController extends Controller
                 if ($_user) {
                     toast('Update complete!', 'success');
                     return redirect()->back();
-                }else {
+                } else {
                     toast('Update fail!', 'error');
                     return redirect()->back();
                 }
-            }
-            else {
+            } else {
                 return redirect()->back();
             }
         }
@@ -112,11 +113,10 @@ class UserController extends Controller
             if ($new_avatar) {
                 toast('Update avatar complete!', 'success');
                 return redirect()->back();
-            }else {
+            } else {
                 toast('Update avatar fail!', 'error');
                 return redirect()->back();
             }
         }
-
     }
 }

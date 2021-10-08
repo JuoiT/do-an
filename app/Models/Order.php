@@ -51,7 +51,7 @@ class Order extends Model
         return $this->hasMany(OrderDetail::class);
     }
 
-    public function add(Request $request)
+    public function add(Request $request, $totalPrice, $totalQuantity)
     {
         $order = Order::create([
             'user_id' => $request->user_id,
@@ -62,8 +62,8 @@ class Order extends Model
             'email' => $request->email,
             'phone' => $request->phone,
             'address' => $request->address,
-            'total_price' => $request->total_price,
-            'quantity' => $request->quantity,
+            'total_price' => $totalPrice,
+            'quantity' => $totalQuantity,
             'description' => $request->description
         ]);
 

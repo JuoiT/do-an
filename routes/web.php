@@ -37,7 +37,7 @@ Route::get('/', function () {
 });
 
 // Backend
-Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth.admin'], function () {
 
     Route::get('/', [AdminController::class, 'index'])->name('home_admin');
     Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
@@ -67,7 +67,6 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth.admin'], function() {
     Route::resource('payment', PaymentController::class);
 
     Route::resource('coupon', CouponController::class);
-
 });
 
 
@@ -76,7 +75,7 @@ Route::post('admin/login', [AdminController::class, 'postLogin'])->name('admin.p
 
 
 // Frontend
-Route::group(['prefix'=>''], function() {
+Route::group(['prefix' => ''], function () {
 
     Route::get('/', [ShopController::class, 'home'])->name('home');
 
@@ -94,8 +93,10 @@ Route::group(['prefix'=>''], function() {
     Route::get('cart/remove-all', [CartController::class, 'removeAll'])->name('cart.remove-all');
 
     Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
-    // Route::get('checkout/coupon', [CheckoutController::class, 'coupon'])->name('checkout.coupon');
-    Route::post('checkout', [CheckoutController::class, 'submit'])->name('checkout');
+  
+    Route::post('checkout', [CheckoutController::class, 'index'])->name('checkout');
+    Route::post('checkout/submit', [CheckoutController::class, 'submit'])->name('checkout.submit');
+    Route::get('checkout/table', [CheckoutController::class, 'getTable']);
 
     Route::get('whishlist', [WhishlistController::class, 'index'])->name('whishlist');
     Route::get('whishlist/add', [WhishlistController::class, 'add'])->name('whishlist.add');
@@ -117,5 +118,4 @@ Route::group(['prefix'=>''], function() {
     Route::get('blog_detail/{id}', [ShopController::class, 'blog_detail'])->name('blog_detail');
 
     Route::get('contact', [ShopController::class, 'contact'])->name('contact');
-
 });

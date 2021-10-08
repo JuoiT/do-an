@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Payment;
+use App\Models\Ship;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Else_;
 
@@ -51,8 +54,11 @@ class OrderController extends Controller
     public function show($id)
     {
         $customer = Order::find($id);
+        $payment = Payment::find($customer->payment_id);
+        $coupon = Coupon::find($customer->coupon_id);
+        $ship = Ship::find($customer->ship_id);
         $detail = OrderDetail::where('order_id', $id)->get();
-        return view('backend.pages.order.detail', compact('customer', 'detail'));
+        return view('backend.pages.order.detail', compact('customer', 'detail', 'coupon', 'payment', 'ship'));
     }
 
     /**

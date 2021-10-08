@@ -27,12 +27,12 @@
             @if (Auth()->user())
                 @if ($items)
                     <div class="checkout-info text-left">
-                        <form action="{{ route('checkout') }}" method="POST">
+                        <form action="{{ route('checkout.submit') }}" method="POST">
                             @csrf
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                            <input type="hidden" name="quantity" value="{{ $totalQuantity }}">
+                            {{-- <input type="hidden" name="quantity" value="{{ $totalQuantity }}">
                             <input type="hidden" name="total_price" value="{{ $totalPrice }}">
-                            <input type="hidden" name="items" value="{{ json_encode($items) }}">
+                            <input type="hidden" name="items" value="{{ json_encode($items) }}"> --}}
                             <div class="row">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <h2 class="checkout-head">Billing & Shipping details</h2>
@@ -51,19 +51,22 @@
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="selectdiv">
-                                                <select class="form-control" name="ship_id">
+                                                <select id="ship_id" class="form-control" name="ship_id">
                                                     @foreach ($ships as $item)
-                                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                        <option value="{{ $item->id }}"
+                                                            {{ old('ship_id') == $item->id ? 'selected' : '' }}>
+                                                            {{ $item->name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="selectdiv">
-                                                <select class="form-control" name="payment_id">
+                                                <select id="payment_id" class="form-control" name="payment_id">
                                                     @foreach ($payments as $item)
-                                                        <option value="">Offline</option>
-                                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                        <option value="{{ $item->id }}"
+                                                            {{ old('payment_id') == $item->id ? 'selected' : '' }}>
+                                                            {{ $item->name }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -78,53 +81,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <h2 class="checkout-head">Your Order</h2>
-                                    <div class="checkout-order-table text-left">
-                                        <table class="table-responsive">
-                                            <thead>
-                                                <tr class="th-head">
-                                                    <th scope="col" width="68%">PRODUCT</th>
-                                                    <th scope="col" width="42%">MONEY</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($items as $item)
-                                                    <tr>
-                                                        <td>{{ $item['name'] }}</td>
-                                                        <td>{{ toUsd($item['quantity'] * $item['price']) }}</td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
+                                <div class="col-md-6 col-sm-6 col-xs-12" id="checkout-table">
 
-                                            <tfoot>
-                                                <tr class="cart-subtotal">
-                                                    <td>SUB TOTAL</td>
-                                                    <td>{{ toUsd($totalPrice) }}</td>
-                                                </tr>
-                                                <tr class="cart-shopping">
-                                                    <td>SHIPPING</td>
-                                                    <td>{{ toUsd($shipDefault->price) }}</td>
-                                                </tr>
-                                                <tr class="cart-total">
-                                                    <td>TOTAL</td>
-                                                    <td>{{ toUsd($totalPrice + $shipDefault->price) }}</td>
-                                                    <input type="hidden" name="total"
-                                                        value="{{ $totalPrice + $shipDefault->price }}">
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div>
                                 </div>
                                 <div class="coupon wow fadeInUp">
-                                    @if ($couponActive)
-                                        <h4>Actived coupon: <strong>{{ $couponActive->name }}</strong>
-                                            {{ $couponActive->description }}</h4>
-                                    @endif
-                                    <label>Coupon Code</label>
-                                    <input class="coupon_text" type="text" id="coupon-value" name="coupon_id"
-                                        value="{{ $couponActive?$couponActive->code:'' }}" />
-                                    <button class="coupon-btn" type="button" id="apply-coupon">Apply</button>
+                                    <div class="row">
+                                        <div class="col col-xs-12 col-sm-8">
+                                            <input class="coupon_text" type="text" id="coupon-code"
+                                                placeholder="Coupon code" name="coupon_code"
+                                                value="{{ old('coupon_code') }}" />
+                                        </div>
+                                        <div class="col col-sm-4 col-xs-12">
+                                            <button class="coupon-btn" type="button" id="apply-coupon">Apply</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <button type="submit">PLACE ORDER</button>
@@ -148,20 +118,39 @@
 @section('script')
     <script src="{{ url('assets-frontend') }}/js/check-out.js"></script>
     <script src="{{ url('assets-frontend') }}/js/jquery.event.move.js"></script>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         $(document).ready(function() {
+            sendField();
+            
             $('#apply-coupon').on('click', function() {
-                couponCode = $('#coupon-value').val();
-                console.log(couponCode);
-                url = "{{ route('checkout') }}";
-                url += "?_token="
-                url += "{{ csrf_token() }}";
-                url += "&coupon=";
-                url += couponCode;
-                console.log(url);
-                window.location.href = url;
+                sendField();
+            });
+            $('#ship_id').on('change', function() {
+                sendField();
             });
         });
+
+        function sendField() {
+            var ajaxurl = 'checkout/table';
+
+            $.ajax({
+                type: "GET",
+                url: ajaxurl,
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    coupon: $('#coupon-code').val(),
+                    ship_id: $('#ship_id').val(),
+                },
+
+                success: function(data) {
+                    console.log('sendField work');
+                    $('#checkout-table').html(data);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+        }
     </script>
 @endsection

@@ -196,10 +196,6 @@
     </div>
 @stop
 
-@section('css')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.css">
-@endsection
-
 @section('script')
 
     {{-- show Datatable --}}

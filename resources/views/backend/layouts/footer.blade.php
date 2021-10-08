@@ -635,19 +635,13 @@
         window.open(url, '_blank').focus();
     }
 
-    M.toast({
-        html: {{ Session::get('message') }},
-        classes: 'rounded'
-    });
+    function toast(text) {
+        M.toast({
+            html: text,
+            classes: 'rounded'
+        });
+    }
 </script>
-
-@if (Session::has('message'))
-    <div class="alert">
-        {{ Session::get('message') }}
-    </div>
-@endif
-
-@include('sweetalert::alert')
 
 @yield('script')
 <!-- END PAGE LEVEL JS-->

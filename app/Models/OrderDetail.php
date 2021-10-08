@@ -27,9 +27,9 @@ class OrderDetail extends Model
     {
         $orderDetail = OrderDetail::create([
             'order_id' => $orderId,
-            'product_id' => $items->product_id,
-            'price' => $items->price,
-            'quantity' => $items->quantity
+            'product_id' => $items['product_id'],
+            'price' => $items['price'],
+            'quantity' => $items['quantity']
         ]);
 
         return $orderDetail;

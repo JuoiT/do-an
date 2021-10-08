@@ -2,18 +2,6 @@
 
 @section('main')
 
-@if(Session::get('success'))
-<div class="alert alert-success">
-    <strong class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-green-teal gradient-shadow">{{Session::get('success')}}</strong>
-</div>
-@endif
-
-@if(Session::get('error'))
-<div class="alert alert-danger">
-    <strong class="waves-effect waves-light mt-1 ml-1 btn gradient-45deg-deep-orange-orange gradient-shadow">{{Session::get('error')}}</strong>
-</div>
-@endif
-
 <div class="section">
     <div class="row">
         <div class="col s12 m6 l8">
@@ -25,9 +13,7 @@
                     <thead>
                         <tr>
                             <th>STT</th>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Address</th>
+                            <th>Info</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
                             <th>Order date</th>
@@ -43,11 +29,9 @@
                             </td>
                             <td>
                                 {{$value->user->name}}
-                            </td>
-                            <td>
+                                <br>
                                 {{$value->user->phone}}
-                            </td>
-                            <td>
+                                <br>
                                 {{$value->user->address}}
                             </td>
                             <td>

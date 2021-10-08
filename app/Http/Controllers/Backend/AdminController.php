@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,13 +24,13 @@ class AdminController extends Controller
         return view('backend.pages.login');
     }
 
-    public function postLogin(Request $req)
+    public function postLogin(LoginRequest $req)
     {
-        $auth = Auth::attempt($req->only('email', 'password'));
+        $auth = Auth::attempt($req->only('email', 'password'), $req->has('remember') ? true : false);
         if ($auth) {
-            return redirect()->route('home_admin')->with('message', Auth::user()->name);
+            return redirect()->route('home_admin')->with('success', 'Welcome! ' . Auth::user()->name);
         } else {
-            return redirect()->back();
+            return redirect()->back()->with('error', 'Wrong information!');
         }
     }
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Format định dạng ngày giờ theo chuẩn VN
  */
@@ -7,7 +8,8 @@ use App\Models\Favorite;
 use Illuminate\Support\Facades\Auth;
 
 if (!function_exists('formatDate')) {
-    function formatDate($date, string $format = 'd/m/Y'){
+    function formatDate($date, string $format = 'd/m/Y')
+    {
         if ($date instanceof \Carbon\Carbon) {
             return $date->format($format);
         }
@@ -20,10 +22,11 @@ if (!function_exists('formatDate')) {
  * Loại bỏ khoảng trắng thừa, ký tự đặc biệt khỏi chuối
  * @string
  */
-if (!function_exists('trimm')){
-    function trimm($string){
+if (!function_exists('trimm')) {
+    function trimm($string)
+    {
         $string = trim($string);
-        while (Str::contains($string, "  ")){
+        while (Str::contains($string, "  ")) {
             $string = Str::replace("  ", " ", $string);
         }
         return $string;
@@ -34,9 +37,10 @@ if (!function_exists('trimm')){
  * Chuyển giá sang tiền việt
  * @float
  */
-if (!function_exists('toVnd')){
-    function toVnd($price){
-        $result = number_format($price, 0, '.', ',').'đ';
+if (!function_exists('toVnd')) {
+    function toVnd($price)
+    {
+        $result = number_format($price, 0, '.', ',') . 'đ';
         return $result;
     }
 }
@@ -45,9 +49,10 @@ if (!function_exists('toVnd')){
  * Chuyển giá sang Dola
  * @float
  */
-if (!function_exists('toUsd')){
-    function toUsd($price){
-        $result = '$'.number_format($price, 0, '.', '.');
+if (!function_exists('toUsd')) {
+    function toUsd($price)
+    {
+        $result = '$' . number_format($price, 0, '.', '.');
         return $result;
     }
 }
@@ -57,8 +62,9 @@ if (!function_exists('toUsd')){
  * Return true if favorited
  * @unsigned int
  */
-if (!function_exists('isFavorited')){
-    function isFavorited($product_id){
+if (!function_exists('isFavorited')) {
+    function isFavorited($product_id)
+    {
         $whishList = [];
         if (Auth::user()) {
             $user_id = Auth::user()->id;
@@ -82,8 +88,9 @@ if (!function_exists('isFavorited')){
  * Return true if favorited
  * @unsigned int
  */
-if (!function_exists('countFavorited')){
-    function countFavorited(){
+if (!function_exists('countFavorited')) {
+    function countFavorited()
+    {
         $count = '';
         if (Auth::user()) {
             $user_id = Auth::user()->id;
@@ -93,6 +100,18 @@ if (!function_exists('countFavorited')){
         return $count;
     }
 }
-?>
 
-
+/**
+ * Check favorite
+ * Return true if favorited
+ * @unsigned int
+ */
+if (!function_exists('checkLogin')) {
+    function checkLogin()
+    {
+        if (!Auth::user()) {
+            return false;
+        }
+        return true;
+    }
+}

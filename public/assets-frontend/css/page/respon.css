@@ -719,7 +719,7 @@
         width: 100% !important;
     }
     .coupon .coupon_text {
-        width: calc(100% - 296px) !important;
+        /* width: calc(100% - 296px) !important; */
     }
     .cart-popup {
         right: 15px;

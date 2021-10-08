@@ -11,62 +11,78 @@ use App\Models\Payment;
 use App\Models\Ship;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
     public function index(Request $request, Cart $cart, Ship $ship, Payment $payment)
     {
         $items = $cart->getItems();
+        $ships = $ship->all();
+        $payments = $payment->all();
+
+        return view('frontend.pages.checkout', compact('ships',  'payments', 'items'));
+    }
+
+    public function getTable(Request $request, Ship $ship, Payment $payment, Order $order, Cart $cart)
+    {
+        $items = $cart->getItems();
         $totalQuantity = $cart->getTotalQuantity();
         $totalPrice = $cart->getTotalPrice();
 
-        $ships = $ship->all();
+        $ships = $ship->limit(1)->get();
         $shipDefault = $ships[0];
         if ($request->has('ship_id')) {
-            $shipDefault = $ship->find($request->ship_id);
+            $shipDefault = ($ship->find($request->ship_id));
         }
 
-        $payments = $payment->all();
-        $paymentDefault = '';
-        if ($request->has('payment_id')) {
-            $paymentDefault = $payment->find($request->payment_id);
-        }
-
+        $invalidCouponMessage = null;
         $couponActive = null;
+        $couponFound = null;
         if ($request->has('coupon')) {
-            $coupon = Coupon::where('code', $request->coupon)
-                ->where('limit', '>', 0)
-                ->whereDate('start_at', '<', Carbon::now()->format('Y-m-d H:i:m'))
-                ->whereDate('end_at', '>', Carbon::now()->format('Y-m-d H:i:m'))->get();
-            if (count($coupon) > 0) {
-                if ($coupon[0]->apply <= $totalPrice) {
-                    $couponActive = $coupon[0];
-                    toast('Applied coupon!', 'success');
+            // check if coupon exist
+            if ($request->coupon) {
+                $coupon = Coupon::where('code', $request->coupon)
+                    ->where('limit', '>', 0)
+                    ->whereDate('start_at', '<', Carbon::now()->format('Y-m-d H:i:m'))
+                    ->whereDate('end_at', '>', Carbon::now()->format('Y-m-d H:i:m'))->get();
+
+                if (count($coupon) > 0) {
+                    $couponFound = $coupon[0];
+                    // pre-check if user already use this coupon
+                    $count = $order::where('user_id', Auth::user()->id)->where('coupon_id', $coupon[0]->id)->count();
+
+                    if ($count > 0) {
+                        $invalidCouponMessage = 'You already use this coupon!';
+                    } else if ($coupon[0]->apply <= $totalPrice) {
+                        $couponActive = $couponFound;
+                    } else {
+                        $invalidCouponMessage = 'Your order does not qualify for this coupon!';
+                    }
                 } else {
-                    toast('Your order does not qualify for this coupon!', 'error');
+                    $invalidCouponMessage = 'Coupon code doesn\'t exist or coupon expired!';
                 }
-            } else {
-                toast('Coupon code doesn\'t exist or coupon expired!', 'error');
             }
         }
 
         // coupon value = 0 (free ship), > 0 (discount)
+        $newShip = null;
+        $newTotalPrice = null;
         if ($couponActive) {
-            if ($couponActive->value == 0 && $couponActive->apply < $totalPrice) {
-                $shipDefault->price = 0;
+            if ($couponActive->value == 0 && $couponActive->apply <= $totalPrice) {
+                $newShip = 0;
+                $newTotalPrice = $totalPrice;
             }
-            if ($couponActive->value > 0 && $couponActive->apply < $totalPrice) {
-                $totalPrice = $totalPrice - $couponActive->value;
+            if ($couponActive->value > 0 && $couponActive->apply <= $totalPrice) {
+                $newTotalPrice = $totalPrice + $shipDefault->price - $couponActive->value;
             }
         }
 
-        return view('frontend.pages.checkout', compact('items', 'totalQuantity', 'totalPrice', 'ships', 'shipDefault', 'payments', 'paymentDefault', 'couponActive'));
+        return view('frontend.pages.ajax.checkout-table', compact('items', 'totalQuantity', 'totalPrice', 'couponActive', 'shipDefault', 'invalidCouponMessage', 'newShip', 'newTotalPrice', 'couponFound'));
     }
 
-    public function submit(Request $request, Order $order, OrderDetail $orderDetail, Coupon $coupon, Cart $cart)
+    public function submit(Request $request, Order $order, OrderDetail $orderDetail, Coupon $coupon, Cart $cart, Ship $ship)
     {
-        // dd($request->all());
-
         // check if user already use coupon
         if ($request->coupon_id) {
             $count = $order::where('user_id', $request->user_id)->where('coupon_id', $request->coupon_id)->count();
@@ -76,23 +92,38 @@ class CheckoutController extends Controller
             }
         }
 
-        $isDone = false;
+        $isFail = false;
         // add Order first
-        $creatingOrder = $order->add($request);
+        $totalPrice = $cart->getTotalPrice();
+        $totalQuantity = $cart->getTotalQuantity();
+
+        $shipPrice = $ship->find($request->ship_id)->price;
+        $newTotalPrice = $totalPrice+$shipPrice;
+
+        $couponActive = $coupon->find($request->coupon_id);
+        if ($couponActive) {
+            if ($couponActive->value == 0 && $couponActive->apply < $totalPrice) {
+                $newTotalPrice = $totalPrice;
+            }
+            if ($couponActive->value > 0 && $couponActive->apply < $totalPrice) {
+                $newTotalPrice = $totalPrice + $shipPrice - $couponActive->value;
+            }
+        }
+        $creatingOrder = $order->add($request, $newTotalPrice, $totalQuantity);
 
         if ($creatingOrder) {
             $orderId = $creatingOrder->id;
-            $listItem = json_decode($request->items);
+            $listItem = $cart->getItems();
 
             // add OrderDetails
             foreach ($listItem as $key => $value) {
                 $creatingOrderDetail = $orderDetail->add($value, $orderId);
                 if (!$creatingOrderDetail) {
-                    return $isDone;
+                    $this->submitFail();
                 }
             }
         } else {
-            return $isDone;
+            $this->submitFail();
         }
 
         // update coupon limit
@@ -104,10 +135,14 @@ class CheckoutController extends Controller
         }
 
         // remove all item in cart
+        $cart->removeAll();
+        toast('Order successfully! We will connect you soon!', 'success');
+        return redirect()->route('home');
+    }
 
-        // $cart->removeAll();
-
-        $isDone = true;
-        return $isDone;
+    public function submitFail()
+    {
+        toast('Failed to create your order! Please try again...', 'error');
+        return redirect()->back();
     }
 }

@@ -53,12 +53,12 @@
 
                             <div class="input-field">
                                 <label class="pull">
-                                    <input name="" type="checkbox">
+                                    <input name="remember" type="checkbox">
                                     <a> Remember me</a>
                                 </label>
 
                                 <label class="pull pull-right">
-                                    <input name="" type="checkbox">
+                                    <input name="forgot" type="checkbox">
                                     <a> Forgot your Password</a>
                                 </label>
                             </div>

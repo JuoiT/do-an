@@ -43,7 +43,7 @@ class UserController extends Controller
 
     public function postLogin(LoginRequest $req)
     {
-        $remember = $req->remember;
+        $remember = $req->has('remember') ? true : false;
         $credentials = $req->only('email', 'password');
 
         $user = User::where('email', $credentials['email'])
@@ -81,8 +81,15 @@ class UserController extends Controller
     public function my_account()
     {
         if (Auth::user()) {
-            $orders = Order::where('user_id', Auth::user()->id)->get();
-            return view('frontend.pages.my-account', compact($orders));
+            $orders = Order::where('user_id', Auth::user()->id);
+            $allOrders = $orders->get();
+            dd($allOrders);
+            $confimationOrders = Order::where('user_id', Auth::user()->id);
+            $allOrders = Order::where('user_id', Auth::user()->id)->get();
+            $allOrders = Order::where('user_id', Auth::user()->id)->get();
+            $allOrders = Order::where('user_id', Auth::user()->id)->get();
+            $allOrders = Order::where('user_id', Auth::user()->id)->get();
+            return view('frontend.pages.my-account', compact($allOrders));
         } else {
             return redirect()->route('home');
         }

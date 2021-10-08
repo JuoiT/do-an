@@ -52,7 +52,8 @@
                                     <input id="email" type="text" name="email">
                                     <label for="email" class="center-align">Email</label>
                                     @if ($errors->has('email'))
-                                        <span style="color: orangered; padding-left: 45px">{{ $errors->first('email') }}</span>
+                                        <span
+                                            style="color: orangered; padding-left: 45px">{{ $errors->first('email') }}</span>
                                     @endif
                                 </div>
                             </div>
@@ -62,7 +63,8 @@
                                     <input id="password" type="password" name="password">
                                     <label for="password">Password</label>
                                     @if ($errors->has('password'))
-                                        <span style="color: orangered; padding-left: 45px">{{ $errors->first('password') }}</span>
+                                        <span
+                                            style="color: orangered; padding-left: 45px">{{ $errors->first('password') }}</span>
                                     @endif
                                 </div>
                             </div>
@@ -102,7 +104,24 @@
         </div>
     </div>
 
+    @if (Session::get('success'))
+        @section('script')
+            <script>
+                text =
+                `<strong class="waves-effect waves-light green-text gradient-shadow">{{ Session::get('success') }}</strong>`;
+                toast(text);
+            </script>
+        @endsection
+    @endif
 
+    @if (Session::get('error'))
+        @section('script')
+            <script>
+                text = `<strong class="waves-effect waves-light green-text gradient-shadow">{{ Session::get('error') }}</strong>`;
+                toast(text);
+            </script>
+        @endsection
+    @endif
     <!-- BEGIN VENDOR JS-->
     <script src="{{ url('assets-backend') }}/js/vendors.min.js"></script>
     <!-- BEGIN VENDOR JS-->

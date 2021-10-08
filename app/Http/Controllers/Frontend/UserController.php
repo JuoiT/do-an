@@ -81,8 +81,8 @@ class UserController extends Controller
     public function my_account()
     {
         if (Auth::user()) {
-            $orders = Order::where('user_id', Auth::user()->id);
-            return view('frontend.pages.my-account');
+            $orders = Order::where('user_id', Auth::user()->id)->get();
+            return view('frontend.pages.my-account', compact($orders));
         } else {
             return redirect()->route('home');
         }

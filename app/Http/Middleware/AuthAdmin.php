@@ -24,7 +24,7 @@ class AuthAdmin
         } else {
             // check role, role == admin is accepted
             if (Auth::user()->role != 'admin') {
-                return redirect()->route('admin.login');
+                return redirect()->route('admin.login')->with('error', 'You cant use this account!');
             }
 
             return $next($request);

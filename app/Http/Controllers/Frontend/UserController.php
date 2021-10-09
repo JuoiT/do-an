@@ -124,6 +124,11 @@ class UserController extends Controller
         }
     }
 
+    public function confirmResetPassword()
+    {
+        return view('frontend.pages.pass-reset-confirm');
+    }
+
     public function update_user(ChangeUserInfomation $request, User $user)
     {
         if (!$request->avatar) {

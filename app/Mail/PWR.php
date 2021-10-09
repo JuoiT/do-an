@@ -11,14 +11,15 @@ use Illuminate\Queue\SerializesModels;
 class OrderConfirm extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $token;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($token)
     {
+        $this->token = $token;
     }
 
     /**
@@ -28,6 +29,6 @@ class OrderConfirm extends Mailable
      */
     public function build()
     {
-        return $this->from('kemkiuu@gmail.com')->view('mail.order');
+        return $this->from('kemkiuu@gmail.com')->view('mail.pwr');
     }
 }

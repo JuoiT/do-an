@@ -13,28 +13,9 @@
 </head>
 
 <body>
-    <h2>Thank you!</h2>
+    <h2>We received you reset password reset. <a href="{{ route('reset.password.confirm', ['token' => $token]) }}">Click
+            here </a>to reset.</h2>
 
-    {{-- <table style="padding: 12px; border: 1px solid black">
-        <tr>
-            <td>Name</td>
-            <td>Quantity</td>
-            <td>Price</td>
-            <td>Sub</td>
-        </tr>
-
-        @foreach ($cartItems as $item)
-            <tr>
-                <td>{{ $item['name'] }}</td>
-                <td>{{ $item['quantity'] }}</td>
-                <td>{{ toUsd($item['price']) }}</td>
-                <td>{{ $item['quantity'] * $item['price'] }}</td>
-            </tr>
-        @endforeach
-    </table> --}}
-
-
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

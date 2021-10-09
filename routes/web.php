@@ -107,6 +107,8 @@ Route::group(['prefix' => ''], function () {
     Route::get('my_account/order-cancel/{id}', [UserController::class, 'cancelOrder'])->name('order.cancel');
     Route::get('pass-reset', [UserController::class, 'resetPassword'])->name('password.reset');
     Route::post('pass-reset', [UserController::class, 'postResetPassword'])->name('password.reset');
+    Route::get('pass-reset/confirm', [UserController::class, 'confirmResetPassword'])->name('password.reset.confirm');
+    Route::post('pass-reset/confirm', [UserController::class, 'confirmResetPassword'])->name('password.reset.confirm');
 
     Route::get('register', [UserController::class, 'register'])->name('register');
     Route::post('register', [UserController::class, 'postRegister'])->name('post_register');

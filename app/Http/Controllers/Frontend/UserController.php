@@ -6,10 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ChangeUserInfomation;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\ResetPasswordRequest;
+use App\Http\Requests\ResetPasswordReset;
 use App\Models\Order;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -81,17 +84,43 @@ class UserController extends Controller
     public function my_account()
     {
         if (Auth::user()) {
-            $orders = Order::where('user_id', Auth::user()->id);
-            $allOrders = $orders->get();
-            dd($allOrders);
-            $confimationOrders = Order::where('user_id', Auth::user()->id);
-            $allOrders = Order::where('user_id', Auth::user()->id)->get();
-            $allOrders = Order::where('user_id', Auth::user()->id)->get();
-            $allOrders = Order::where('user_id', Auth::user()->id)->get();
-            $allOrders = Order::where('user_id', Auth::user()->id)->get();
-            return view('frontend.pages.my-account', compact($allOrders));
+            $query = Order::where('user_id', Auth::user()->id)->with('coupon', 'payment', 'ship', 'orderDetails');
+            $allOrders = $query->get();
+            $confirmingOrders = Order::where('user_id', Auth::user()->id)->with('coupon', 'payment', 'ship', 'orderDetails')->where('status', 0)->get();
+            $watingOrders = Order::where('user_id', Auth::user()->id)->with('coupon', 'payment', 'ship', 'orderDetails')->where('status', 1)->get();
+            $deliveringOrders = Order::where('user_id', Auth::user()->id)->with('coupon', 'payment', 'ship', 'orderDetails')->where('status', 2)->get();
+            $deliveredOrders = Order::where('user_id', Auth::user()->id)->with('coupon', 'payment', 'ship', 'orderDetails')->where('status', 3)->get();
+            $cancelledOrders = Order::where('user_id', Auth::user()->id)->with('coupon', 'payment', 'ship', 'orderDetails')->where('status', 4)->get();
+
+            return view('frontend.pages.my-account', compact('allOrders', 'confirmingOrders', 'watingOrders', 'deliveringOrders', 'deliveredOrders', 'cancelledOrders'));
         } else {
+            toast('Please login to continue!', 'warning');
             return redirect()->route('home');
+        }
+    }
+
+    public function cancelOrder($id)
+    {
+        $order = Order::find($id);
+        $order->status = 4;
+        $order->save();
+        toast('Cancelled order..', 'warning');
+        return redirect()->back();
+    }
+
+    public function resetPassword()
+    {
+        return view('frontend.pages.pass-reset');
+    }
+
+    public function postResetPassword(ResetPasswordRequest $request)
+    {
+        $check = User::where('email', $request->email)->first();
+        if ($check) {
+            DB::table('password_resets')->insert([
+                'email'=>$request->email,
+                'token'=>$request->_token
+            ]);
         }
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Helpers\Cart;
 use App\Http\Controllers\Controller;
+use App\Mail\OrderConfirm;
 use App\Models\Coupon;
 use App\Models\Order;
 use App\Models\OrderDetail;
@@ -12,6 +13,7 @@ use App\Models\Ship;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -137,6 +139,8 @@ class CheckoutController extends Controller
         // remove all item in cart
         $cart->removeAll();
         toast('Order successfully! We will connect you soon!', 'success');
+
+        Mail::to($request->email)->send(new OrderConfirm);
         return redirect()->route('home');
     }
 

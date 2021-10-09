@@ -28,17 +28,17 @@ class Order extends Model
 
     public function payment()
     {
-        return $this->hasOne(Payment::class);
+        return $this->belongsTo(Payment::class);
     }
 
     public function ship()
     {
-        return $this->hasOne(Ship::class);
+        return $this->belongsTo(Ship::class);
     }
 
     public function coupon()
     {
-        return $this->hasOne(Coupon::class);
+        return $this->belongsTo(Coupon::class);
     }
 
     public function user()

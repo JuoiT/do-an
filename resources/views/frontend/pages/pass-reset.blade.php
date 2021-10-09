@@ -15,9 +15,9 @@
                     <li>
                         <a href="{{ route('home') }}">Home</a>
                     </li>
-                    <li>Login</li>
+                    <li>Reset Password</li>
                 </ul>
-                <h1 class="page-tit">Login</h1>
+                <h1 class="page-tit">Reset Password</h1>
             </div>
         </div>
     </section>
@@ -28,12 +28,10 @@
                 <div class="row">
                     <div class="main">
 
-                        <form class="account-form-login" method="POST" action="{{ route('post_login') }}">
+                        <form class="account-form-login" method="post" action="{{ route('password.reset') }}">
                             @csrf
 
-                            <input type="hidden" name="previousUrl" value="{{url()->previous()}}">
-
-                            <h2 class="text-left text-capitalize">Login</h2>
+                            <h2 class="text-left text-capitalize">Forget Password</h2>
 
                             <div class="input-field">
                                 <label class="name-input" for="email">Email</label>
@@ -43,28 +41,9 @@
                                 @endif
                             </div>
 
-                            <div class="input-field">
-                                <label class="name-input" for="password">Password</label>
-                                <input type="password" name="password" class="form-control required" placeholder="Password" />
-                                @if ($errors->has('password'))
-                                    <small class="asterisk_input">{{ $errors->first('password') }}</small>
-                                @endif
-                            </div>
-
-                            <div class="input-field">
-                                <label class="pull">
-                                    <input name="remember" type="checkbox">
-                                    <a> Remember me</a>
-                                </label>
-
-                                <label class="pull pull-right">
-                                    <a href="{{route('password.reset')}}">Forgot your Password?</a>
-                                </label>
-                            </div>
-
                             <small>Don't have an account?<a style="color: green" href="{{route('register')}}"> Register now</a></small>
 
-                            <button type="submit">LOGIN</button>
+                            <button type="submit">Reset</button>
 
                         </form>
 
